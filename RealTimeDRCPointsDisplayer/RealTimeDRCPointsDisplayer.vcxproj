@@ -118,7 +118,9 @@
     <Image Include="icon.ico" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="color.h" />
     <ClInclude Include="drc_wr.h" />
+    <ClInclude Include="eosd.h" />
     <ClInclude Include="json.hpp" />
     <ClInclude Include="ProcessJSON.h" />
     <ClInclude Include="drc_game.h" />

@@ -41,17 +41,20 @@ int main(int argc, char* args[])
 	Load_wrs();
 	while (true)
 	{
-		string title = GetProcess();
-		while (ReadMemory(title))
+		while (!GetProcess())
 		{
-			Sleep(100);
-			title = GetProcess();
-			system("cls");
+			std::cout << "Game not found. Finding..." << std::endl;
+			Sleep(2000);
 		}
 			
-		std::cout << "Process not found. Finding game..." << std::endl;
-		
-		Sleep(2000);
+		while (GetProcess())
+		{
+			ReadMemory(gameProcname);
+			Sleep(1000/10);	// 10 FPS
+			system("cls");
+		}
+
+		system("cls");
 	}
 	/*
 	WNDCLASSEX wcex;
