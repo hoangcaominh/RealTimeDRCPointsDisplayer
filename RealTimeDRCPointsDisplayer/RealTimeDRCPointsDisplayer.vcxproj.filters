@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\gHeader">
+      <UniqueIdentifier>{edc3f1ab-a67c-4d0d-a9e1-c5ef7497ff28}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Image Include="icon.ico">
@@ -44,11 +47,14 @@
     <ClInclude Include="ProcessMemory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="eosd.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="color.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="eosd.h">
+      <Filter>Header Files\gHeader</Filter>
+    </ClInclude>
+    <ClInclude Include="in.h">
+      <Filter>Header Files\gHeader</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

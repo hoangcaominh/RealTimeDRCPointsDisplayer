@@ -3,12 +3,15 @@
 #include "color.h"
 #include "ProcessJSON.h"
 
-namespace np_eosd
+namespace ns_eosd
 {
 	// Global variables
-	short int drcpoints_survival, drcpoints_score;
 	char character, type, difficulty, miss_deathbomb, bomb, false_miss = 0, _miss_deathbomb, _bomb;
 	ull score;
+	// variables with suffix _s are for scoring
+	unsigned short base, base_s;
+	char first_bomb;
+	float exp, exp_s;
 	char frame_count;	// used when a deathbomb is performed
 	
 	enum _DIFFICULTY
@@ -30,7 +33,7 @@ namespace np_eosd
 		TYPE_B
 	};
 
-	float getMultiplier(int character, int type)
+	float getMultiplier(char character, char type)
 	{
 		if (character == REIMU && type == TYPE_A)
 			return 1.05f;
@@ -40,7 +43,7 @@ namespace np_eosd
 			return 1.0f;
 	}
 
-	ull getWr(int difficulty, int character, int type)
+	ull getWr(char difficulty, char character, char type)
 	{
 		ull wr;
 		switch (difficulty)
@@ -184,6 +187,109 @@ namespace np_eosd
 		return wr;
 	}
 
+	void getRubrics(char difficulty)
+	{
+		std::cout << "Difficulty: ";
+
+		switch (difficulty)
+		{
+		case EASY:
+			std::cout << "Easy" << std::endl;
+			base = 50;
+			exp = 1.05f;
+			first_bomb = 2;
+			base_s = 350;
+			exp_s = 4.0f;
+			break;
+		case NORMAL:
+			std::cout << "Normal" << std::endl;
+			base = 100;
+			exp = 1.05f;
+			first_bomb = 3;
+			base_s = 400;
+			exp_s = 3.0f;
+			break;
+		case HARD:
+			std::cout << "Hard" << std::endl;
+			base = 150;
+			exp = 1.05f;
+			first_bomb = 3;
+			base_s = 450;
+			exp_s = 2.5f;
+			break;
+		case LUNATIC:
+			std::cout << "Lunatic" << std::endl;
+			base = 320;
+			exp = 1.05f;
+			first_bomb = 5;
+			base_s = 500;
+			exp_s = 2.0f;
+			break;
+		case EXTRA:
+			std::cout << "Extra" << std::endl;
+			base = 110;
+			exp = 1.08f;
+			first_bomb = 3;
+			base_s = 450;
+			exp_s = 2.5f;
+			break;
+		}
+	}
+
+	void printShottype(char character, char type)
+	{
+		std::cout << "Shottype: ";
+
+		switch (character)
+		{
+		case REIMU:
+			switch (type)
+			{
+			case TYPE_A:
+				std::cout << "ReimuA" << std::endl;
+				break;
+			case TYPE_B:
+				std::cout << "ReimuB" << std::endl;
+				break;
+			}
+			break;
+		case MARISA:
+			switch (type)
+			{
+			case TYPE_A:
+				std::cout << "MarisaA" << std::endl;
+				break;
+			case TYPE_B:
+				std::cout << "MarisaB" << std::endl;
+				break;
+			}
+			break;
+		}
+	}
+
+	void calculate_drcp(char real_miss)
+	{
+		char n = 0;
+		n += real_miss * 2;	// 2 is rubric miss base in any difficulty
+		if (bomb > 0)
+		{
+			n += first_bomb;
+			bomb--;
+		}
+		n += bomb * 1;	// 1 is rubric bomb base in any difficulty
+
+		ull wr = getWr(difficulty, character, type);
+		drcpoints_survival = (unsigned short)(base * pow(exp, (0 - n)) * getMultiplier(character, type));
+		if (score >= wr)
+		{
+			drcpoints_score = roundf(base_s);
+		}
+		else
+		{
+			drcpoints_score = roundf(base_s * (float)pow((double)score / wr, exp_s));
+		}
+	}
+
 	void ReadMemory(HANDLE gameProc)
 	{
 		enum address
@@ -222,105 +328,23 @@ namespace np_eosd
 		
 		_miss_deathbomb = miss_deathbomb;
 		_bomb = bomb;
-		int base, base_s;
-		double exp, exp_s;
-		std::cout << "Difficulty: ";
-		switch (difficulty)
-		{
-		case EASY:
-			std::cout << "Easy" << std::endl;
-			base = 50;
-			exp = 1.05;
-			base_s = 350;
-			exp_s = 4;
-			break;
-		case NORMAL:
-			std::cout << "Normal" << std::endl;
-			base = 100;
-			exp = 1.05;
-			base_s = 400;
-			exp_s = 3;
-			break;
-		case HARD:
-			std::cout << "Hard" << std::endl;
-			base = 150;
-			exp = 1.05;
-			base_s = 450;
-			exp_s = 2.5;
-			break;
-		case LUNATIC:
-			std::cout << "Lunatic" << std::endl;
-			base = 320;
-			exp = 1.05;
-			base_s = 500;
-			exp_s = 2;
-			break;
-		case EXTRA:
-			std::cout << "Extra" << std::endl;
-			base = 110;
-			exp = 1.08;
-			base_s = 450;
-			exp_s = 2.5;
-			break;
-		}
-		std::cout << "Shottype: ";
-		switch (character)
-		{
-		case REIMU:
-			switch (type)
-			{
-			case TYPE_A:
-				std::cout << "ReimuA" << std::endl;
-				break;
-			case TYPE_B:
-				std::cout << "ReimuB" << std::endl;
-				break;
-			}
-			break;
-		case MARISA:
-			switch (type)
-			{
-			case TYPE_A:
-				std::cout << "MarisaA" << std::endl;
-				break;
-			case TYPE_B:
-				std::cout << "MarisaB" << std::endl;
-				break;
-			}
-			break;
-		}
 
-		int real_miss = miss_deathbomb - false_miss;
+		getRubrics(difficulty);
+		printShottype(character, type);
+
+		char real_miss = miss_deathbomb - false_miss;
 		setcolor(LIGHTRED);
-		std::cout << "Misses: " << real_miss << std::endl;
+		std::cout << "Misses: " << int(real_miss) << std::endl;
 		// std::cout << "Misses + Deathbomb: " << int(miss_deathbomb) << std::endl;
 		setcolor(LIGHTGREEN);
 		std::cout << "Bombs: " << int(bomb) << std::endl;
 		setcolor(WHITE);
 		std::cout << "Score: " << score << std::endl;
 
-		int n = 0;
-		n += real_miss * 2;	// 2 is rubric miss base in any difficulty
-		if (bomb > 0)
-		{
-			n += 3;	// 3 is rubric first bomb base in any difficulty
-			bomb--;
-		}
-		n += bomb * 1;	// 1 is rubric bomb base in any difficulty
-
-		ull wr = getWr(difficulty, character, type);
-		drcpoints_survival = int(base * pow(exp, (0 - n)) * getMultiplier(character, type));
-		if (score >= wr)
-		{
-			drcpoints_score = base_s;
-		}
-		else
-		{
-			drcpoints_score = int(base_s * pow(double(score) / wr, exp_s));
-		}
+		calculate_drcp(real_miss);
 
 		setcolor(LIGHTGRAY);
-		std::cout << "DRC points for survival: " << drcpoints_survival << std::endl;
-		std::cout << "DRC points for scoring: " << drcpoints_score << std::endl;
+		std::cout << "DRC points for survival: " << (int)drcpoints_survival << std::endl;
+		std::cout << "DRC points for scoring: " << (int)drcpoints_score << std::endl;
 	}
 }

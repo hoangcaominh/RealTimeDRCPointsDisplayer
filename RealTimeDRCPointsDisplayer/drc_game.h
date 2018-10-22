@@ -3,6 +3,9 @@
 #include "drc_score.h"
 #include "drc_wr.h"
 
+// Global drc points for both categories
+float drcpoints_survival, drcpoints_score;
+
 struct HRtP
 {
     // survival struct is not available
@@ -157,7 +160,7 @@ struct PCB
         375, 4, 400, 3, 450, 2.5, 500, 1.5, 450, 2.5, 450, 2.5};
 		*/
 
-struct IN
+struct INight
 {
     // survival
     drc_diff_survival survival;

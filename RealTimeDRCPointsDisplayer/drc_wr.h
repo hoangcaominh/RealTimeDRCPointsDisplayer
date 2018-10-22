@@ -1,6 +1,6 @@
 #pragma once
 
-// for convenience
+// unsigned long long for convenience
 typedef unsigned long long ull;
 
 // world record struct, base on shottype / route

@@ -6,6 +6,7 @@
 #include <TlHelp32.h>
 
 #include "eosd.h"
+#include "in.h"
 
 constexpr auto GAME_AVAILABLE = 12;
 
@@ -31,11 +32,6 @@ string GameName[GAME_AVAILABLE] = {
 };
 
 void ReadMemory_PCB()
-{
-	std::cout << "This game is currently unsupported. Please wait warmly." << std::endl;
-}
-
-void ReadMemory_IN()
 {
 	std::cout << "This game is currently unsupported. Please wait warmly." << std::endl;
 }
@@ -167,7 +163,7 @@ void ReadMemory(string title)
 {
 	// EoSD
 	if (title == GameName[0])
-		np_eosd::ReadMemory(gameProc);
+		ns_eosd::ReadMemory(gameProc);
 
 	// PCB
 	else if (title == GameName[1])
@@ -175,7 +171,7 @@ void ReadMemory(string title)
 
 		// IN
 	else if (title == GameName[2])
-		ReadMemory_IN();
+		ns_in::ReadMemory(gameProc);
 
 		// PoFV
 	else if (title == GameName[3])

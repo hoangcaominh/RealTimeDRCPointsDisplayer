@@ -121,6 +121,7 @@
     <ClInclude Include="color.h" />
     <ClInclude Include="drc_wr.h" />
     <ClInclude Include="eosd.h" />
+    <ClInclude Include="in.h" />
     <ClInclude Include="json.hpp" />
     <ClInclude Include="ProcessJSON.h" />
     <ClInclude Include="drc_game.h" />
