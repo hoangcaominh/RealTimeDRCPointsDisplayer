@@ -53,7 +53,6 @@ int main(int argc, char* args[])
 			Sleep(1000/10);	// 10 FPS
 			system("cls");
 		}
-
 		system("cls");
 	}
 	/*
