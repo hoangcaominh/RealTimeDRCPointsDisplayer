@@ -2,7 +2,7 @@
 A console application that counts DRC points for you during your run or your replay.
 
 # What's new
-IN is now supported, displaying final route and number of last spells captured.
+HSiFS is now underdevelopment. Release counter has already been added.
 
 # Installing and Recommendation
 - You just need to download the folder to whereever you want in your PC. Creating a shortcut on the desktop is recommended.
