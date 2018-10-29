@@ -123,6 +123,7 @@
     <ClInclude Include="eosd.h" />
     <ClInclude Include="in.h" />
     <ClInclude Include="json.hpp" />
+    <ClInclude Include="hsifs.h" />
     <ClInclude Include="ProcessJSON.h" />
     <ClInclude Include="drc_game.h" />
     <ClInclude Include="drc_score.h" />

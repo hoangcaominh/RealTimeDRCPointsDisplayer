@@ -7,6 +7,7 @@
 
 #include "eosd.h"
 #include "in.h"
+#include "hsifs.h"
 
 constexpr auto GAME_AVAILABLE = 12;
 
@@ -76,37 +77,6 @@ void ReadMemory_LoLK()
 	std::cout << "This game is currently unsupported. Please wait warmly." << std::endl;
 }
 
-void ReadMemory_HSiFS()
-{
-	std::cout << "This game is currently unsupported. Please wait warmly." << std::endl;
-	/*
-	// Score
-	char buffer_score[4];
-	// ull score;
-	ReadProcessMemory(gameProc, (void*)0x004A57B0, buffer_score, 1, 0);
-
-	// score = int(buffer_score[0]) + int(buffer_score[1]) * pow(16, 2) + int(buffer_score[2]) * pow(16, 4) + int(buffer_score[3]) * pow(16, 6) + 10;
-
-	// Character value (0 - 3)
-	char buffer_character[1];
-	ReadProcessMemory(gameProc, (void*)0x004A57A4, buffer_character, 1, 0);
-
-	// Season value (0 - 3)
-	char buffer_season[1];
-	ReadProcessMemory(gameProc, (void*)0x004A57AC, buffer_season, 1, 0);
-
-	// Difficulty value (0 - 4)
-	char buffer_diff[1];
-	ReadProcessMemory(gameProc, (void*)0x004A57B4, buffer_diff, 1, 0);
-	*/
-	/*
-0x004A57B4: difficulty value (0 = easy, 4 = extra)
-0x004A57F4: number of lives
-0x004A5800: number of bombs
-0x004A5808: number of release petal (each 190 petals = 1 level, LV6 = 1140 max)
-	*/
-}
-
 bool GetProcess()
 {
 	HANDLE hProcessSnap;
@@ -169,45 +139,45 @@ void ReadMemory(string title)
 	else if (title == GameName[1])
 		ReadMemory_PCB();
 
-		// IN
+	// IN
 	else if (title == GameName[2])
 		ns_in::ReadMemory(gameProc);
 
-		// PoFV
+	// PoFV
 	else if (title == GameName[3])
 		ReadMemory_PoFV();
 
-		// MoF
+	// MoF
 	else if (title == GameName[4])
 		ReadMemory_MoF();
 
-		// SA
+	// SA
 	else if (title == GameName[5])
 		ReadMemory_SA();
 
-		// UFO
+	// UFO
 	else if (title == GameName[6])
 		ReadMemory_UFO();
 
-		// GFW
+	// GFW
 	else if (title == GameName[7])
 		ReadMemory_GFW();
 
-		// TD
+	// TD
 	else if (title == GameName[8])
 		ReadMemory_TD();
 
-		// DDC
+	// DDC
 	else if (title == GameName[9])
 		ReadMemory_DDC();
 
-		// LoLK
+	// LoLK
 	else if (title == GameName[10])
 		ReadMemory_LoLK();
 
-		// HSiFS
+	// HSiFS
 	else if (title == GameName[11])
-		ReadMemory_HSiFS();
+		ns_hsifs::ReadMemory(gameProc);
 
 	else
 		return;

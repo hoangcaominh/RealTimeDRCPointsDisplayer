@@ -56,6 +56,9 @@
     <ClInclude Include="in.h">
       <Filter>Header Files\gHeader</Filter>
     </ClInclude>
+    <ClInclude Include="hsifs.h">
+      <Filter>Header Files\gHeader</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Resource.rc">
