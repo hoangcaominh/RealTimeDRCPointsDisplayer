@@ -262,4 +262,4 @@ __pycache__/
 
 # Additional files
 *.txt
-wrlist.json
+*.json
