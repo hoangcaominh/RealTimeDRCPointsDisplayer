@@ -9,7 +9,7 @@ float drcpoints_survival, drcpoints_score;
 struct HRtP
 {
 	// survival
-	drc_diff_survival survival;
+	drc_diff_survival_noextra survival;
     // scoring
     drc_diff_score score;
 	// world record
