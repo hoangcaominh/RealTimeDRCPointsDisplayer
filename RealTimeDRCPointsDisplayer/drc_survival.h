@@ -9,6 +9,15 @@ struct drc_survival
     unsigned bomb;
 };
 
+// survival struct without extra for HRtP
+struct drc_diff_survival_noextra
+{
+	drc_survival easy;
+	drc_survival normal;
+	drc_survival hard;
+	drc_survival lunatic;
+};
+
 struct drc_diff_survival
 {
     drc_survival easy;
@@ -70,4 +79,3 @@ struct last_spell_diff
     last_spell_final hard;
     last_spell_final lunatic;
 };
-//max_last_spells{ 1, 5, 6, 10, 6, 10, 6, 10 };
