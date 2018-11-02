@@ -2,12 +2,14 @@
 
 // unsigned long long for convenience
 typedef unsigned long long ull;
+// unsigned int for convenience (pc-98 only)
+typedef unsigned long ul;
 
 // world record struct, base on shottype / route
 struct HRtP_s
 {
-	ull Jigoku;
-	ull Makai;
+	ul Makai;
+	ul Jigoku;
 };
 
 struct HRtP_wr
@@ -20,9 +22,9 @@ struct HRtP_wr
 
 struct SoEW_s
 {
-	ull ReimuA;
-	ull ReimuB;
-	ull ReimuC;
+	ul ReimuA;
+	ul ReimuB;
+	ul ReimuC;
 };
 
 struct SoEW_wr
@@ -36,15 +38,15 @@ struct SoEW_wr
 
 struct PoDD_s
 {
-	ull Reimu;
-	ull Mima;
-	ull Marisa;
-	ull Ellen;
-	ull Kotohime;
-	ull Kana;
-	ull Rikako;
-	ull Chiyuri;
-	ull Yumemi;
+	ul Reimu;
+	ul Mima;
+	ul Marisa;
+	ul Ellen;
+	ul Kotohime;
+	ul Kana;
+	ul Rikako;
+	ul Chiyuri;
+	ul Yumemi;
 };
 
 struct PoDD_wr
@@ -57,10 +59,10 @@ struct PoDD_wr
 
 struct LLS_s
 {
-	ull ReimuA;
-	ull ReimuB;
-	ull MarisaA;
-	ull MarisaB;
+	ul ReimuA;
+	ul ReimuB;
+	ul MarisaA;
+	ul MarisaB;
 };
 
 struct LLS_wr
@@ -74,10 +76,10 @@ struct LLS_wr
 
 struct MS_s
 {
-	ull Reimu;
-	ull Marisa;
-	ull Mima;
-	ull Yuuka;
+	ul Reimu;
+	ul Marisa;
+	ul Mima;
+	ul Yuuka;
 };
 
 struct MS_wr
