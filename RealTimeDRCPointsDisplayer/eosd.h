@@ -55,10 +55,10 @@ namespace ns_eosd
 				switch (type)
 				{
 				case TYPE_A:
-					wr = _EoSD.wr.easy.ReimuA;
+					wr = EoSD.wrs.easy.ReimuA;
 					break;
 				case TYPE_B:
-					wr = _EoSD.wr.easy.ReimuB;
+					wr = EoSD.wrs.easy.ReimuB;
 					break;
 				}
 				break;
@@ -66,10 +66,10 @@ namespace ns_eosd
 				switch (type)
 				{
 				case TYPE_A:
-					wr = _EoSD.wr.easy.MarisaA;
+					wr = EoSD.wrs.easy.MarisaA;
 					break;
 				case TYPE_B:
-					wr = _EoSD.wr.easy.MarisaB;
+					wr = EoSD.wrs.easy.MarisaB;
 					break;
 				}
 				break;
@@ -82,10 +82,10 @@ namespace ns_eosd
 				switch (type)
 				{
 				case TYPE_A:
-					wr = _EoSD.wr.normal.ReimuA;
+					wr = EoSD.wrs.normal.ReimuA;
 					break;
 				case TYPE_B:
-					wr = _EoSD.wr.normal.ReimuB;
+					wr = EoSD.wrs.normal.ReimuB;
 					break;
 				}
 				break;
@@ -93,10 +93,10 @@ namespace ns_eosd
 				switch (type)
 				{
 				case TYPE_A:
-					wr = _EoSD.wr.normal.MarisaA;
+					wr = EoSD.wrs.normal.MarisaA;
 					break;
 				case TYPE_B:
-					wr = _EoSD.wr.normal.MarisaB;
+					wr = EoSD.wrs.normal.MarisaB;
 					break;
 				}
 				break;
@@ -109,10 +109,10 @@ namespace ns_eosd
 				switch (type)
 				{
 				case TYPE_A:
-					wr = _EoSD.wr.hard.ReimuA;
+					wr = EoSD.wrs.hard.ReimuA;
 					break;
 				case TYPE_B:
-					wr = _EoSD.wr.hard.ReimuB;
+					wr = EoSD.wrs.hard.ReimuB;
 					break;
 				}
 				break;
@@ -120,10 +120,10 @@ namespace ns_eosd
 				switch (type)
 				{
 				case TYPE_A:
-					wr = _EoSD.wr.hard.MarisaA;
+					wr = EoSD.wrs.hard.MarisaA;
 					break;
 				case TYPE_B:
-					wr = _EoSD.wr.hard.MarisaB;
+					wr = EoSD.wrs.hard.MarisaB;
 					break;
 				}
 				break;
@@ -136,10 +136,10 @@ namespace ns_eosd
 				switch (type)
 				{
 				case TYPE_A:
-					wr = _EoSD.wr.lunatic.ReimuA;
+					wr = EoSD.wrs.lunatic.ReimuA;
 					break;
 				case TYPE_B:
-					wr = _EoSD.wr.lunatic.ReimuB;
+					wr = EoSD.wrs.lunatic.ReimuB;
 					break;
 				}
 				break;
@@ -147,10 +147,10 @@ namespace ns_eosd
 				switch (type)
 				{
 				case TYPE_A:
-					wr = _EoSD.wr.lunatic.MarisaA;
+					wr = EoSD.wrs.lunatic.MarisaA;
 					break;
 				case TYPE_B:
-					wr = _EoSD.wr.lunatic.MarisaB;
+					wr = EoSD.wrs.lunatic.MarisaB;
 					break;
 				}
 				break;
@@ -163,10 +163,10 @@ namespace ns_eosd
 				switch (type)
 				{
 				case TYPE_A:
-					wr = _EoSD.wr.extra.ReimuA;
+					wr = EoSD.wrs.extra.ReimuA;
 					break;
 				case TYPE_B:
-					wr = _EoSD.wr.extra.ReimuB;
+					wr = EoSD.wrs.extra.ReimuB;
 					break;
 				}
 				break;
@@ -174,10 +174,10 @@ namespace ns_eosd
 				switch (type)
 				{
 				case TYPE_A:
-					wr = _EoSD.wr.extra.MarisaA;
+					wr = EoSD.wrs.extra.MarisaA;
 					break;
 				case TYPE_B:
-					wr = _EoSD.wr.extra.MarisaB;
+					wr = EoSD.wrs.extra.MarisaB;
 					break;
 				}
 				break;

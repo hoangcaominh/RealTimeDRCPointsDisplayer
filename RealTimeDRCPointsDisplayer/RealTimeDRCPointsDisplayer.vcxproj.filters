@@ -26,12 +26,6 @@
     <ClInclude Include="drc_game.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="drc_score.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="drc_survival.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="resource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -58,6 +52,12 @@
     </ClInclude>
     <ClInclude Include="hsifs.h">
       <Filter>Header Files\gHeader</Filter>
+    </ClInclude>
+    <ClInclude Include="drc_rubric.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="drc_template.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -119,6 +119,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="color.h" />
+    <ClInclude Include="drc_template.h" />
     <ClInclude Include="drc_wr.h" />
     <ClInclude Include="eosd.h" />
     <ClInclude Include="in.h" />
@@ -126,8 +127,7 @@
     <ClInclude Include="hsifs.h" />
     <ClInclude Include="ProcessJSON.h" />
     <ClInclude Include="drc_game.h" />
-    <ClInclude Include="drc_score.h" />
-    <ClInclude Include="drc_survival.h" />
+    <ClInclude Include="drc_rubric.h" />
     <ClInclude Include="ProcessMemory.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>

@@ -1,181 +1,33 @@
 #pragma once
-#include "drc_survival.h"
-#include "drc_score.h"
+#include "drc_rubric.h"
 #include "drc_wr.h"
 
 // Global drc points for both categories
 float drcpoints_survival, drcpoints_score;
 
-struct HRtP
+// Game template
+template <typename T_survival, typename T_scoring, typename T_wrs>
+struct game
 {
-	// survival
-	drc_diff_survival_noextra survival;
-    // scoring
-    drc_diff_score score;
-	// world record
-	HRtP_wr wr;
-} _HRtP;
+	T_survival survival;
+	T_scoring scoring;
+	T_wrs wrs;
+};
 
-struct SoEW
-{
-    // survival
-    drc_diff_survival survival;
-    // scoring
-    drc_diff_score score;
-	// world record
-	SoEW_wr wr;
-} _SoEW;
-
-struct PoDD
-{
-    // phantasmagoria
-    drc_diff_phantasmagoria phantasmagoria;
-    // scoring
-    drc_diff_score score;
-	// world record
-	PoDD_wr wr;
-} _PoDD;
-
-struct LLS
-{
-    // survival
-    drc_diff_survival survival;
-    // scoring
-    drc_diff_score score;
-	// world record
-	LLS_wr wr;
-} _LLS;
-
-struct MS
-{
-    // survival
-    drc_diff_survival survival;
-    // scoring
-    drc_diff_score score;
-	// world record
-	MS_wr wr;
-} _MS;
-
-struct EoSD
-{
-    // survival
-    drc_diff_survival survival;
-    // scoring
-    drc_diff_score score;
-	// world record
-	EoSD_wr wr;
-} _EoSD;
-
-struct PCB
-{
-    // survival + phantasm difficulty, exclusive for PCB
-    drc_diff_survival survival;
-    drc_survival phantasm_survival;
-    // scoringing + phantasm difficulty, exclusive for PCB
-    drc_diff_score score;
-    drc_score phantasm_score;
-	// world record
-	PCB_wr wr;
-} _PCB;
-
-struct INight
-{
-    // survival
-    drc_diff_survival survival;
-    // scoring
-    drc_diff_score score;
-	// world record
-	IN_wr wr;
-} _IN;
-
-struct PoFV
-{
-    // survival
-    drc_diff_phantasmagoria phantasmagoria;
-    // phantasmagoria extra, exclusive for PoFV
-    drc_phantasmagoria extra;
-    // scoring
-    drc_diff_score score;
-	// world record
-	PoFV_wr wr;
-} _PoFV;
-
-struct MoF
-{
-    // survival
-    drc_diff_survival survival;
-    // scoring
-    drc_diff_score score;
-	// world record
-	MoF_wr wr;
-} _MoF;
-
-struct SA
-{
-    // survival
-    drc_diff_survival survival;
-    // scoring
-    drc_diff_score score;
-	// world record
-	SA_wr wr;
-} _SA;
-
-struct UFO
-{
-    // survival
-    drc_diff_survival survival;
-    // scoring
-    drc_diff_score score;
-	// world record
-	UFO_wr wr;
-} _UFO;
-
-struct GFW
-{
-    // survival
-    drc_diff_survival survival;
-    // scoring
-    drc_diff_score score;
-	// world record
-	GFW_wr wr;
-} _GFW;
-
-struct TD
-{
-    // survival
-    drc_diff_survival survival;
-    // scoring
-    drc_diff_score score;
-	// world record
-	TD_wr wr;
-} _TD;
-
-struct DDC
-{
-    // survival
-    drc_diff_survival survival;
-    // scoring
-    drc_diff_score score;
-	// world record
-	DDC_wr wr;
-} _DDC;
-
-struct LoLK
-{
-    // survival
-    drc_diff_survival survival;
-    // scoring
-    drc_diff_score score;
-	// world record
-	LoLK_wr wr;
-} _LoLK;
-
-struct HSiFS
-{
-    // survival
-    drc_diff_survival_hsifs survival_hsifs;
-    // scoring
-    drc_diff_score score;
-	// world record
-	HSiFS_wr wr;
-} _HSiFS;
+game < difficulty_noextra<drc_survival>, difficulty_noextra<drc_scoring>, difficulty_noextra<HRtP_route> > HRtP;
+game < difficulty<drc_survival>, difficulty<drc_scoring>, difficulty<SoEW_shottype> > SoEW;
+game < difficulty_noextra<drc_survival_phantasmagoria>, difficulty_noextra<drc_scoring>, difficulty_noextra<PoDD_shottype> > PoDD;
+game < difficulty<drc_survival>, difficulty<drc_scoring>, difficulty<LLS_shottype> > LLS;
+game < difficulty<drc_survival>, difficulty<drc_scoring>, difficulty<MS_shottype> > MS;
+game < difficulty<drc_survival>, difficulty<drc_scoring>, difficulty<EoSD_shottype> > EoSD;
+game < difficulty_withphantasm<drc_survival>, difficulty_withphantasm<drc_scoring>, difficulty_withphantasm<PCB_shottype> > PCB;
+game < difficulty<drc_survival>, difficulty<drc_scoring>, difficulty<IN_shottype> > INight;
+game < difficulty<drc_survival_phantasmagoria>, difficulty<drc_scoring>, difficulty<PoFV_shottype> > PoFV;
+game < difficulty<drc_survival>, difficulty<drc_scoring>, difficulty<MoF_shottype> > MoF;
+game < difficulty<drc_survival>, difficulty<drc_scoring>, difficulty<SA_shottype> > SA;
+game < difficulty<drc_survival>, difficulty<drc_scoring>, difficulty<UFO_shottype> > UFO;
+game < difficulty<drc_survival>, difficulty<drc_scoring>, difficulty<GFW_shottype> > GFW;
+game < difficulty<drc_survival>, difficulty<drc_scoring>, difficulty<TD_shottype> > TD;
+game < difficulty<drc_survival>, difficulty<drc_scoring>, difficulty<DDC_shottype> > DDC;
+game < difficulty<drc_survival>, difficulty<drc_scoring>, difficulty<LoLK_shottype> > LoLK;
+game < difficulty<drc_survival_hsifs>, difficulty<drc_scoring>, difficulty<HSiFS_shottype<HSiFS_season>, HSiFS_shottype<ull>> > HSiFS;

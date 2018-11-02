@@ -103,16 +103,16 @@ namespace ns_hsifs
 				switch (season)
 				{
 				case SPRING:
-					wr = _HSiFS.wr.easy.Reimu.Spring;
+					wr = HSiFS.wrs.easy.Reimu.Spring;
 					break;
 				case SUMMER:
-					wr = _HSiFS.wr.easy.Reimu.Summer;
+					wr = HSiFS.wrs.easy.Reimu.Summer;
 					break;
 				case AUTUMN:
-					wr = _HSiFS.wr.easy.Reimu.Autumn;
+					wr = HSiFS.wrs.easy.Reimu.Autumn;
 					break;
 				case WINTER:
-					wr = _HSiFS.wr.easy.Reimu.Winter;
+					wr = HSiFS.wrs.easy.Reimu.Winter;
 					break;
 				}
 				break;
@@ -120,16 +120,16 @@ namespace ns_hsifs
 				switch (season)
 				{
 				case SPRING:
-					wr = _HSiFS.wr.easy.Cirno.Spring;
+					wr = HSiFS.wrs.easy.Cirno.Spring;
 					break;				
 				case SUMMER:			
-					wr = _HSiFS.wr.easy.Cirno.Summer;
+					wr = HSiFS.wrs.easy.Cirno.Summer;
 					break;				
 				case AUTUMN:			
-					wr = _HSiFS.wr.easy.Cirno.Autumn;
+					wr = HSiFS.wrs.easy.Cirno.Autumn;
 					break;				
 				case WINTER:			
-					wr = _HSiFS.wr.easy.Cirno.Winter;
+					wr = HSiFS.wrs.easy.Cirno.Winter;
 					break;
 				}
 				break;
@@ -137,16 +137,16 @@ namespace ns_hsifs
 				switch (season)
 				{
 				case SPRING:
-					wr = _HSiFS.wr.easy.Aya.Spring;
+					wr = HSiFS.wrs.easy.Aya.Spring;
 					break;
 				case SUMMER:
-					wr = _HSiFS.wr.easy.Aya.Summer;
+					wr = HSiFS.wrs.easy.Aya.Summer;
 					break;
 				case AUTUMN:
-					wr = _HSiFS.wr.easy.Aya.Autumn;
+					wr = HSiFS.wrs.easy.Aya.Autumn;
 					break;
 				case WINTER:
-					wr = _HSiFS.wr.easy.Aya.Winter;
+					wr = HSiFS.wrs.easy.Aya.Winter;
 					break;
 				}
 				break;
@@ -154,16 +154,16 @@ namespace ns_hsifs
 				switch (season)
 				{
 				case SPRING:
-					wr = _HSiFS.wr.easy.Marisa.Spring;
+					wr = HSiFS.wrs.easy.Marisa.Spring;
 					break;
 				case SUMMER:
-					wr = _HSiFS.wr.easy.Marisa.Summer;
+					wr = HSiFS.wrs.easy.Marisa.Summer;
 					break;
 				case AUTUMN:
-					wr = _HSiFS.wr.easy.Marisa.Autumn;
+					wr = HSiFS.wrs.easy.Marisa.Autumn;
 					break;
 				case WINTER:
-					wr = _HSiFS.wr.easy.Marisa.Winter;
+					wr = HSiFS.wrs.easy.Marisa.Winter;
 					break;
 				}
 				break;
@@ -177,16 +177,16 @@ namespace ns_hsifs
 				switch (season)
 				{
 				case SPRING:
-					wr = _HSiFS.wr.normal.Reimu.Spring;
+					wr = HSiFS.wrs.normal.Reimu.Spring;
 					break;
 				case SUMMER:
-					wr = _HSiFS.wr.normal.Reimu.Summer;
+					wr = HSiFS.wrs.normal.Reimu.Summer;
 					break;
 				case AUTUMN:
-					wr = _HSiFS.wr.normal.Reimu.Autumn;
+					wr = HSiFS.wrs.normal.Reimu.Autumn;
 					break;
 				case WINTER:
-					wr = _HSiFS.wr.normal.Reimu.Winter;
+					wr = HSiFS.wrs.normal.Reimu.Winter;
 					break;
 				}
 				break;
@@ -194,16 +194,16 @@ namespace ns_hsifs
 				switch (season)
 				{
 				case SPRING:
-					wr = _HSiFS.wr.normal.Cirno.Spring;
+					wr = HSiFS.wrs.normal.Cirno.Spring;
 					break;
 				case SUMMER:
-					wr = _HSiFS.wr.normal.Cirno.Summer;
+					wr = HSiFS.wrs.normal.Cirno.Summer;
 					break;
 				case AUTUMN:
-					wr = _HSiFS.wr.normal.Cirno.Autumn;
+					wr = HSiFS.wrs.normal.Cirno.Autumn;
 					break;
 				case WINTER:
-					wr = _HSiFS.wr.normal.Cirno.Winter;
+					wr = HSiFS.wrs.normal.Cirno.Winter;
 					break;
 				}
 				break;
@@ -211,16 +211,16 @@ namespace ns_hsifs
 				switch (season)
 				{
 				case SPRING:
-					wr = _HSiFS.wr.normal.Aya.Spring;
+					wr = HSiFS.wrs.normal.Aya.Spring;
 					break;
 				case SUMMER:
-					wr = _HSiFS.wr.normal.Aya.Summer;
+					wr = HSiFS.wrs.normal.Aya.Summer;
 					break;
 				case AUTUMN:
-					wr = _HSiFS.wr.normal.Aya.Autumn;
+					wr = HSiFS.wrs.normal.Aya.Autumn;
 					break;
 				case WINTER:
-					wr = _HSiFS.wr.normal.Aya.Winter;
+					wr = HSiFS.wrs.normal.Aya.Winter;
 					break;
 				}
 				break;
@@ -228,16 +228,16 @@ namespace ns_hsifs
 				switch (season)
 				{
 				case SPRING:
-					wr = _HSiFS.wr.normal.Marisa.Spring;
+					wr = HSiFS.wrs.normal.Marisa.Spring;
 					break;
 				case SUMMER:
-					wr = _HSiFS.wr.normal.Marisa.Summer;
+					wr = HSiFS.wrs.normal.Marisa.Summer;
 					break;
 				case AUTUMN:
-					wr = _HSiFS.wr.normal.Marisa.Autumn;
+					wr = HSiFS.wrs.normal.Marisa.Autumn;
 					break;
 				case WINTER:
-					wr = _HSiFS.wr.normal.Marisa.Winter;
+					wr = HSiFS.wrs.normal.Marisa.Winter;
 					break;
 				}
 				break;
@@ -251,16 +251,16 @@ namespace ns_hsifs
 				switch (season)
 				{
 				case SPRING:
-					wr = _HSiFS.wr.hard.Reimu.Spring;
+					wr = HSiFS.wrs.hard.Reimu.Spring;
 					break;
 				case SUMMER:
-					wr = _HSiFS.wr.hard.Reimu.Summer;
+					wr = HSiFS.wrs.hard.Reimu.Summer;
 					break;
 				case AUTUMN:
-					wr = _HSiFS.wr.hard.Reimu.Autumn;
+					wr = HSiFS.wrs.hard.Reimu.Autumn;
 					break;
 				case WINTER:
-					wr = _HSiFS.wr.hard.Reimu.Winter;
+					wr = HSiFS.wrs.hard.Reimu.Winter;
 					break;
 				}
 				break;
@@ -268,16 +268,16 @@ namespace ns_hsifs
 				switch (season)
 				{
 				case SPRING:
-					wr = _HSiFS.wr.hard.Cirno.Spring;
+					wr = HSiFS.wrs.hard.Cirno.Spring;
 					break;
 				case SUMMER:
-					wr = _HSiFS.wr.hard.Cirno.Summer;
+					wr = HSiFS.wrs.hard.Cirno.Summer;
 					break;
 				case AUTUMN:
-					wr = _HSiFS.wr.hard.Cirno.Autumn;
+					wr = HSiFS.wrs.hard.Cirno.Autumn;
 					break;
 				case WINTER:
-					wr = _HSiFS.wr.hard.Cirno.Winter;
+					wr = HSiFS.wrs.hard.Cirno.Winter;
 					break;
 				}
 				break;
@@ -285,16 +285,16 @@ namespace ns_hsifs
 				switch (season)
 				{
 				case SPRING:
-					wr = _HSiFS.wr.hard.Aya.Spring;
+					wr = HSiFS.wrs.hard.Aya.Spring;
 					break;
 				case SUMMER:
-					wr = _HSiFS.wr.hard.Aya.Summer;
+					wr = HSiFS.wrs.hard.Aya.Summer;
 					break;
 				case AUTUMN:
-					wr = _HSiFS.wr.hard.Aya.Autumn;
+					wr = HSiFS.wrs.hard.Aya.Autumn;
 					break;
 				case WINTER:
-					wr = _HSiFS.wr.hard.Aya.Winter;
+					wr = HSiFS.wrs.hard.Aya.Winter;
 					break;
 				}
 				break;
@@ -302,16 +302,16 @@ namespace ns_hsifs
 				switch (season)
 				{
 				case SPRING:
-					wr = _HSiFS.wr.hard.Marisa.Spring;
+					wr = HSiFS.wrs.hard.Marisa.Spring;
 					break;
 				case SUMMER:
-					wr = _HSiFS.wr.hard.Marisa.Summer;
+					wr = HSiFS.wrs.hard.Marisa.Summer;
 					break;
 				case AUTUMN:
-					wr = _HSiFS.wr.hard.Marisa.Autumn;
+					wr = HSiFS.wrs.hard.Marisa.Autumn;
 					break;
 				case WINTER:
-					wr = _HSiFS.wr.hard.Marisa.Winter;
+					wr = HSiFS.wrs.hard.Marisa.Winter;
 					break;
 				}
 				break;
@@ -325,16 +325,16 @@ namespace ns_hsifs
 				switch (season)
 				{
 				case SPRING:
-					wr = _HSiFS.wr.lunatic.Reimu.Spring;
+					wr = HSiFS.wrs.lunatic.Reimu.Spring;
 					break;
 				case SUMMER:
-					wr = _HSiFS.wr.lunatic.Reimu.Summer;
+					wr = HSiFS.wrs.lunatic.Reimu.Summer;
 					break;
 				case AUTUMN:
-					wr = _HSiFS.wr.lunatic.Reimu.Autumn;
+					wr = HSiFS.wrs.lunatic.Reimu.Autumn;
 					break;
 				case WINTER:
-					wr = _HSiFS.wr.lunatic.Reimu.Winter;
+					wr = HSiFS.wrs.lunatic.Reimu.Winter;
 					break;
 				}
 				break;
@@ -342,16 +342,16 @@ namespace ns_hsifs
 				switch (season)
 				{
 				case SPRING:
-					wr = _HSiFS.wr.lunatic.Cirno.Spring;
+					wr = HSiFS.wrs.lunatic.Cirno.Spring;
 					break;
 				case SUMMER:
-					wr = _HSiFS.wr.lunatic.Cirno.Summer;
+					wr = HSiFS.wrs.lunatic.Cirno.Summer;
 					break;
 				case AUTUMN:
-					wr = _HSiFS.wr.lunatic.Cirno.Autumn;
+					wr = HSiFS.wrs.lunatic.Cirno.Autumn;
 					break;
 				case WINTER:
-					wr = _HSiFS.wr.lunatic.Cirno.Winter;
+					wr = HSiFS.wrs.lunatic.Cirno.Winter;
 					break;
 				}
 				break;
@@ -359,16 +359,16 @@ namespace ns_hsifs
 				switch (season)
 				{
 				case SPRING:
-					wr = _HSiFS.wr.lunatic.Aya.Spring;
+					wr = HSiFS.wrs.lunatic.Aya.Spring;
 					break;
 				case SUMMER:
-					wr = _HSiFS.wr.lunatic.Aya.Summer;
+					wr = HSiFS.wrs.lunatic.Aya.Summer;
 					break;
 				case AUTUMN:
-					wr = _HSiFS.wr.lunatic.Aya.Autumn;
+					wr = HSiFS.wrs.lunatic.Aya.Autumn;
 					break;
 				case WINTER:
-					wr = _HSiFS.wr.lunatic.Aya.Winter;
+					wr = HSiFS.wrs.lunatic.Aya.Winter;
 					break;
 				}
 				break;
@@ -376,16 +376,16 @@ namespace ns_hsifs
 				switch (season)
 				{
 				case SPRING:
-					wr = _HSiFS.wr.lunatic.Marisa.Spring;
+					wr = HSiFS.wrs.lunatic.Marisa.Spring;
 					break;
 				case SUMMER:
-					wr = _HSiFS.wr.lunatic.Marisa.Summer;
+					wr = HSiFS.wrs.lunatic.Marisa.Summer;
 					break;
 				case AUTUMN:
-					wr = _HSiFS.wr.lunatic.Marisa.Autumn;
+					wr = HSiFS.wrs.lunatic.Marisa.Autumn;
 					break;
 				case WINTER:
-					wr = _HSiFS.wr.lunatic.Marisa.Winter;
+					wr = HSiFS.wrs.lunatic.Marisa.Winter;
 					break;
 				}
 				break;
@@ -395,13 +395,13 @@ namespace ns_hsifs
 			switch (character)
 			{
 			case REIMU:
-				wr = _HSiFS.wr.extra.Reimu;
+				wr = HSiFS.wrs.extra.Reimu;
 			case CIRNO:
-				wr = _HSiFS.wr.extra.Cirno;
+				wr = HSiFS.wrs.extra.Cirno;
 			case AYA:
-				wr = _HSiFS.wr.extra.Aya;
+				wr = HSiFS.wrs.extra.Aya;
 			case MARISA:
-				wr = _HSiFS.wr.extra.Marisa;
+				wr = HSiFS.wrs.extra.Marisa;
 			}
 			break;
 		}

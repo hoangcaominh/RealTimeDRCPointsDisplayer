@@ -1,42 +1,22 @@
 #pragma once
 
-// unsigned long long for convenience
-typedef unsigned long long ull;
-// unsigned int for convenience (pc-98 only)
-typedef unsigned long ul;
+#include "drc_template.h"
 
-// world record struct, base on shottype / route
-struct HRtP_s
+// world record struct, based on shottype / route
+struct HRtP_route
 {
-	ul Makai;
 	ul Jigoku;
+	ul Makai;
 };
 
-struct HRtP_wr
-{
-	HRtP_s easy;
-	HRtP_s normal;
-	HRtP_s hard;
-	HRtP_s lunatic;
-};
-
-struct SoEW_s
+struct SoEW_shottype
 {
 	ul ReimuA;
 	ul ReimuB;
 	ul ReimuC;
 };
 
-struct SoEW_wr
-{
-	SoEW_s easy;
-	SoEW_s normal;
-	SoEW_s hard;
-	SoEW_s lunatic;
-	SoEW_s extra;
-};
-
-struct PoDD_s
+struct PoDD_shottype
 {
 	ul Reimu;
 	ul Mima;
@@ -49,15 +29,7 @@ struct PoDD_s
 	ul Yumemi;
 };
 
-struct PoDD_wr
-{
-	PoDD_s easy;
-	PoDD_s normal;
-	PoDD_s hard;
-	PoDD_s lunatic;
-};
-
-struct LLS_s
+struct LLS_shottype
 {
 	ul ReimuA;
 	ul ReimuB;
@@ -65,16 +37,7 @@ struct LLS_s
 	ul MarisaB;
 };
 
-struct LLS_wr
-{
-	LLS_s easy;
-	LLS_s normal;
-	LLS_s hard;
-	LLS_s lunatic;
-	LLS_s extra;
-};
-
-struct MS_s
+struct MS_shottype
 {
 	ul Reimu;
 	ul Marisa;
@@ -82,16 +45,7 @@ struct MS_s
 	ul Yuuka;
 };
 
-struct MS_wr
-{
-	MS_s easy;
-	MS_s normal;
-	MS_s hard;
-	MS_s lunatic;
-	MS_s extra;
-};
-
-struct EoSD_s
+struct EoSD_shottype
 {
 	ull ReimuA;
 	ull ReimuB;
@@ -99,16 +53,7 @@ struct EoSD_s
 	ull MarisaB;
 };
 
-struct EoSD_wr
-{
-	EoSD_s easy;
-	EoSD_s normal;
-	EoSD_s hard;
-	EoSD_s lunatic;
-	EoSD_s extra;
-};
-
-struct PCB_s
+struct PCB_shottype
 {
 	ull ReimuA;
 	ull ReimuB;
@@ -118,17 +63,7 @@ struct PCB_s
 	ull SakuyaB;
 };
 
-struct PCB_wr
-{
-	PCB_s easy;
-	PCB_s normal;
-	PCB_s hard;
-	PCB_s lunatic;
-	PCB_s extra;
-	PCB_s phantasm;
-};
-
-struct IN_s
+struct IN_shottype
 {
 	ull BorderTeam;
 	ull MagicTeam;
@@ -144,16 +79,7 @@ struct IN_s
 	ull Yuyuko;
 };
 
-struct IN_wr
-{
-	IN_s easy;
-	IN_s normal;
-	IN_s hard;
-	IN_s lunatic;
-	IN_s extra;
-};
-
-struct PoFV_s
+struct PoFV_shottype
 {
 	ull Reimu;
 	ull Marisa;
@@ -171,16 +97,7 @@ struct PoFV_s
 	ull Eiki;	// Shikieiki
 };
 
-struct PoFV_wr
-{
-	PoFV_s easy;
-	PoFV_s normal;
-	PoFV_s hard;
-	PoFV_s lunatic;
-	PoFV_s extra;
-};
-
-struct MoF_s
+struct MoF_shottype
 {
 	ull ReimuA;
 	ull ReimuB;
@@ -190,16 +107,7 @@ struct MoF_s
 	ull MarisaC;
 };
 
-struct MoF_wr
-{
-	MoF_s easy;
-	MoF_s normal;
-	MoF_s hard;
-	MoF_s lunatic;
-	MoF_s extra;
-};
-
-struct SA_s
+struct SA_shottype
 {
 	ull ReimuA;
 	ull ReimuB;
@@ -209,16 +117,7 @@ struct SA_s
 	ull MarisaC;
 };
 
-struct SA_wr
-{
-	SA_s easy;
-	SA_s normal;
-	SA_s hard;
-	SA_s lunatic;
-	SA_s extra;
-};
-
-struct UFO_s
+struct UFO_shottype
 {
 	ull ReimuA;
 	ull ReimuB;
@@ -228,16 +127,7 @@ struct UFO_s
 	ull SanaeB;
 };
 
-struct UFO_wr
-{
-	UFO_s easy;
-	UFO_s normal;
-	UFO_s hard;
-	UFO_s lunatic;
-	UFO_s extra;
-};
-
-struct GFW_s
+struct GFW_shottype
 {
 	ull A1;
 	ull A2;
@@ -247,16 +137,7 @@ struct GFW_s
 	ull C2;
 };
 
-struct GFW_wr
-{
-	GFW_s easy;
-	GFW_s normal;
-	GFW_s hard;
-	GFW_s lunatic;
-	GFW_s extra;
-};
-
-struct TD_s
+struct TD_shottype
 {
 	ull Reimu;
 	ull Marisa;
@@ -264,16 +145,7 @@ struct TD_s
 	ull Youmu;
 };
 
-struct TD_wr
-{
-	TD_s easy;
-	TD_s normal;
-	TD_s hard;
-	TD_s lunatic;
-	TD_s extra;
-};
-
-struct DDC_s
+struct DDC_shottype
 {
 	ull ReimuA;
 	ull ReimuB;
@@ -283,30 +155,12 @@ struct DDC_s
 	ull SakuyaB;
 };
 
-struct DDC_wr
-{
-	DDC_s easy;
-	DDC_s normal;
-	DDC_s hard;
-	DDC_s lunatic;
-	DDC_s extra;
-};
-
-struct LoLK_s
+struct LoLK_shottype
 {
 	ull Reimu;
 	ull Marisa;
 	ull Sanae;
 	ull Reisen;
-};
-
-struct LoLK_wr
-{
-	LoLK_s easy;
-	LoLK_s normal;
-	LoLK_s hard;
-	LoLK_s lunatic;
-	LoLK_s extra;
 };
 
 // adding season struct for HSiFS (except Extra)
@@ -318,29 +172,12 @@ struct HSiFS_season
 	ull Winter;
 };
 
-struct HSiFS_s
+// template only for HSiFS shottypes, T = HSiFS_season | ull
+template <typename T>
+struct HSiFS_shottype
 {
-	HSiFS_season Reimu;
-	HSiFS_season Cirno;
-	HSiFS_season Aya;
-	HSiFS_season Marisa;
+	T Reimu;
+	T Cirno;
+	T Aya;
+	T Marisa;
 };
-
-// normal struct for Extra
-struct HSiFS_s_Ex
-{
-	ull Reimu;
-	ull Cirno;
-	ull Aya;
-	ull Marisa;
-};
-
-struct HSiFS_wr
-{
-	HSiFS_s easy;
-	HSiFS_s normal;
-	HSiFS_s hard;
-	HSiFS_s lunatic;
-	HSiFS_s_Ex extra;
-};
-

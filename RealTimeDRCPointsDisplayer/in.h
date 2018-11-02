@@ -78,40 +78,40 @@ namespace ns_in
 			switch (team)
 			{
 			case BORDER:
-				wr = _IN.wr.easy.BorderTeam;
+				wr = INight.wrs.easy.BorderTeam;
 				break;
 			case MAGIC:
-				wr = _IN.wr.easy.MagicTeam;
+				wr = INight.wrs.easy.MagicTeam;
 				break;
 			case SCARLET:
-				wr = _IN.wr.easy.ScarletTeam;
+				wr = INight.wrs.easy.ScarletTeam;
 				break;
 			case GHOST:
-				wr = _IN.wr.easy.GhostTeam;
+				wr = INight.wrs.easy.GhostTeam;
 				break;
 			case REIMU:
-				wr = _IN.wr.easy.Reimu;
+				wr = INight.wrs.easy.Reimu;
 				break;
 			case YUKARI:
-				wr = _IN.wr.easy.Yukari;
+				wr = INight.wrs.easy.Yukari;
 				break;
 			case MARISA:
-				wr = _IN.wr.easy.Marisa;
+				wr = INight.wrs.easy.Marisa;
 				break;
 			case ALICE:
-				wr = _IN.wr.easy.Alice;
+				wr = INight.wrs.easy.Alice;
 				break;
 			case SAKUYA:
-				wr = _IN.wr.easy.Sakuya;
+				wr = INight.wrs.easy.Sakuya;
 				break;
 			case REMILIA:
-				wr = _IN.wr.easy.Remilia;
+				wr = INight.wrs.easy.Remilia;
 				break;
 			case YOUMU:
-				wr = _IN.wr.easy.Youmu;
+				wr = INight.wrs.easy.Youmu;
 				break;
 			case YUYUKO:
-				wr = _IN.wr.easy.Yuyuko;
+				wr = INight.wrs.easy.Yuyuko;
 				break;
 			}
 			break;
@@ -119,40 +119,40 @@ namespace ns_in
 			switch (team)
 			{
 			case BORDER:
-				wr = _IN.wr.normal.BorderTeam;
+				wr = INight.wrs.normal.BorderTeam;
 				break;
 			case MAGIC:
-				wr = _IN.wr.normal.MagicTeam;
+				wr = INight.wrs.normal.MagicTeam;
 				break;
 			case SCARLET:
-				wr = _IN.wr.normal.ScarletTeam;
+				wr = INight.wrs.normal.ScarletTeam;
 				break;
 			case GHOST:
-				wr = _IN.wr.normal.GhostTeam;
+				wr = INight.wrs.normal.GhostTeam;
 				break;
 			case REIMU:
-				wr = _IN.wr.normal.Reimu;
+				wr = INight.wrs.normal.Reimu;
 				break;
 			case YUKARI:
-				wr = _IN.wr.normal.Yukari;
+				wr = INight.wrs.normal.Yukari;
 				break;
 			case MARISA:
-				wr = _IN.wr.normal.Marisa;
+				wr = INight.wrs.normal.Marisa;
 				break;
 			case ALICE:
-				wr = _IN.wr.normal.Alice;
+				wr = INight.wrs.normal.Alice;
 				break;
 			case SAKUYA:
-				wr = _IN.wr.normal.Sakuya;
+				wr = INight.wrs.normal.Sakuya;
 				break;
 			case REMILIA:
-				wr = _IN.wr.normal.Remilia;
+				wr = INight.wrs.normal.Remilia;
 				break;
 			case YOUMU:
-				wr = _IN.wr.normal.Youmu;
+				wr = INight.wrs.normal.Youmu;
 				break;
 			case YUYUKO:
-				wr = _IN.wr.normal.Yuyuko;
+				wr = INight.wrs.normal.Yuyuko;
 				break;
 			}
 			break;
@@ -160,40 +160,40 @@ namespace ns_in
 			switch (team)
 			{
 			case BORDER:
-				wr = _IN.wr.hard.BorderTeam;
+				wr = INight.wrs.hard.BorderTeam;
 				break;
 			case MAGIC:
-				wr = _IN.wr.hard.MagicTeam;
+				wr = INight.wrs.hard.MagicTeam;
 				break;
 			case SCARLET:
-				wr = _IN.wr.hard.ScarletTeam;
+				wr = INight.wrs.hard.ScarletTeam;
 				break;
 			case GHOST:
-				wr = _IN.wr.hard.GhostTeam;
+				wr = INight.wrs.hard.GhostTeam;
 				break;
 			case REIMU:
-				wr = _IN.wr.hard.Reimu;
+				wr = INight.wrs.hard.Reimu;
 				break;
 			case YUKARI:
-				wr = _IN.wr.hard.Yukari;
+				wr = INight.wrs.hard.Yukari;
 				break;
 			case MARISA:
-				wr = _IN.wr.hard.Marisa;
+				wr = INight.wrs.hard.Marisa;
 				break;
 			case ALICE:
-				wr = _IN.wr.hard.Alice;
+				wr = INight.wrs.hard.Alice;
 				break;
 			case SAKUYA:
-				wr = _IN.wr.hard.Sakuya;
+				wr = INight.wrs.hard.Sakuya;
 				break;
 			case REMILIA:
-				wr = _IN.wr.hard.Remilia;
+				wr = INight.wrs.hard.Remilia;
 				break;
 			case YOUMU:
-				wr = _IN.wr.hard.Youmu;
+				wr = INight.wrs.hard.Youmu;
 				break;
 			case YUYUKO:
-				wr = _IN.wr.hard.Yuyuko;
+				wr = INight.wrs.hard.Yuyuko;
 				break;
 			}
 			break;
@@ -201,40 +201,40 @@ namespace ns_in
 			switch (team)
 			{
 			case BORDER:
-				wr = _IN.wr.lunatic.BorderTeam;
+				wr = INight.wrs.lunatic.BorderTeam;
 				break;
 			case MAGIC:
-				wr = _IN.wr.lunatic.MagicTeam;
+				wr = INight.wrs.lunatic.MagicTeam;
 				break;
 			case SCARLET:
-				wr = _IN.wr.lunatic.ScarletTeam;
+				wr = INight.wrs.lunatic.ScarletTeam;
 				break;
 			case GHOST:
-				wr = _IN.wr.lunatic.GhostTeam;
+				wr = INight.wrs.lunatic.GhostTeam;
 				break;
 			case REIMU:
-				wr = _IN.wr.lunatic.Reimu;
+				wr = INight.wrs.lunatic.Reimu;
 				break;
 			case YUKARI:
-				wr = _IN.wr.lunatic.Yukari;
+				wr = INight.wrs.lunatic.Yukari;
 				break;
 			case MARISA:
-				wr = _IN.wr.lunatic.Marisa;
+				wr = INight.wrs.lunatic.Marisa;
 				break;
 			case ALICE:
-				wr = _IN.wr.lunatic.Alice;
+				wr = INight.wrs.lunatic.Alice;
 				break;
 			case SAKUYA:
-				wr = _IN.wr.lunatic.Sakuya;
+				wr = INight.wrs.lunatic.Sakuya;
 				break;
 			case REMILIA:
-				wr = _IN.wr.lunatic.Remilia;
+				wr = INight.wrs.lunatic.Remilia;
 				break;
 			case YOUMU:
-				wr = _IN.wr.lunatic.Youmu;
+				wr = INight.wrs.lunatic.Youmu;
 				break;
 			case YUYUKO:
-				wr = _IN.wr.lunatic.Yuyuko;
+				wr = INight.wrs.lunatic.Yuyuko;
 				break;
 			}
 			break;
@@ -242,40 +242,40 @@ namespace ns_in
 			switch (team)
 			{
 			case BORDER:
-				wr = _IN.wr.extra.BorderTeam;
+				wr = INight.wrs.extra.BorderTeam;
 				break;
 			case MAGIC:
-				wr = _IN.wr.extra.MagicTeam;
+				wr = INight.wrs.extra.MagicTeam;
 				break;
 			case SCARLET:
-				wr = _IN.wr.extra.ScarletTeam;
+				wr = INight.wrs.extra.ScarletTeam;
 				break;
 			case GHOST:
-				wr = _IN.wr.extra.GhostTeam;
+				wr = INight.wrs.extra.GhostTeam;
 				break;
 			case REIMU:
-				wr = _IN.wr.extra.Reimu;
+				wr = INight.wrs.extra.Reimu;
 				break;
 			case YUKARI:
-				wr = _IN.wr.extra.Yukari;
+				wr = INight.wrs.extra.Yukari;
 				break;
 			case MARISA:
-				wr = _IN.wr.extra.Marisa;
+				wr = INight.wrs.extra.Marisa;
 				break;
 			case ALICE:
-				wr = _IN.wr.extra.Alice;
+				wr = INight.wrs.extra.Alice;
 				break;
 			case SAKUYA:
-				wr = _IN.wr.extra.Sakuya;
+				wr = INight.wrs.extra.Sakuya;
 				break;
 			case REMILIA:
-				wr = _IN.wr.extra.Remilia;
+				wr = INight.wrs.extra.Remilia;
 				break;
 			case YOUMU:
-				wr = _IN.wr.extra.Youmu;
+				wr = INight.wrs.extra.Youmu;
 				break;
 			case YUYUKO:
-				wr = _IN.wr.extra.Yuyuko;
+				wr = INight.wrs.extra.Yuyuko;
 				break;
 			}
 			break;
