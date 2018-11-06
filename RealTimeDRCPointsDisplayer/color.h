@@ -33,7 +33,7 @@ void setcolor(WORD color)
 	//We use csbi for the wAttributes word.
 	if (GetConsoleScreenBufferInfo(hStdOut, &csbi))
 	{
-		//Mask out all but the background attribute, and add in the forgournd     color
+		//Mask out all but the background attribute, and add in the forgournd color
 		wColor = (csbi.wAttributes & 0xF0) + (color & 0x0F);
 		SetConsoleTextAttribute(hStdOut, wColor);
 	}

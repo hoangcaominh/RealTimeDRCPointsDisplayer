@@ -1,423 +1,64 @@
 #pragma once
 
 #include "color.h"
-#include "ProcessJSON.h"
+#include "drc_assets.h"
 
 namespace ns_in
 {
 	// Global variables
 	char stage, team, type, difficulty, misses, bombs, deathbombs, bombs_sum;
+	std::string shottype;
 	DWORD p_score;
 	ull score;
 	unsigned int spellbonus, spellID, _spellID;
 	// variables with suffix _s are for scoring
 	unsigned short base, base_s;
 	float exp, exp_s;
-	char first_bomb;
+	char firstBomb, bomb;
 	// used for counting last spell captures
 	bool checked = false, failed = false;
-	unsigned short ls_capped;
+	char ls_capped;
 
-	enum _DIFFICULTY
-	{
-		EASY,
-		NORMAL,
-		HARD,
-		LUNATIC,
-		EXTRA
-	};
-	enum _TEAM
-	{
-		BORDER,
-		MAGIC,
-		SCARLET,
-		GHOST,
-		REIMU,
-		YUKARI,
-		MARISA,
-		ALICE,
-		SAKUYA,
-		REMILIA,
-		YOUMU,
-		YUYUKO
-	};
+	// team index
+	const char* idx_team[] = { "BorderTeam", "MagicTeam", "ScarletTeam", "GhostTeam", "Reimu", "Yukari", "Marisa", "Alice", "Sakuya", "Remilia", "Youmu", "Yuyuko" };
 
-	float getMultiplier()
+	void getShottype()
 	{
-		switch (team)
-		{
-		case MAGIC:
-			return 1.05f;
-		case SCARLET:
-			return 1.05f;
-		case REIMU:
-			return 1.1f;
-		case YUKARI:
-			return 1.05f;
-		case MARISA:
-			return 1.05f;
-		case ALICE:
-			return 1.2f;
-		case SAKUYA:
-			return 1.2f;
-		case REMILIA:
-			return 1.1f;
-		case YUYUKO:
-			return 1.1f;
-		default:
-			return 1.0f;
-		}
-	}
-
-	ull getWr()
-	{
-		ull wr;
-		switch (difficulty)
-		{
-		case EASY:
-			switch (team)
-			{
-			case BORDER:
-				wr = INight.wrs.easy.BorderTeam;
-				break;
-			case MAGIC:
-				wr = INight.wrs.easy.MagicTeam;
-				break;
-			case SCARLET:
-				wr = INight.wrs.easy.ScarletTeam;
-				break;
-			case GHOST:
-				wr = INight.wrs.easy.GhostTeam;
-				break;
-			case REIMU:
-				wr = INight.wrs.easy.Reimu;
-				break;
-			case YUKARI:
-				wr = INight.wrs.easy.Yukari;
-				break;
-			case MARISA:
-				wr = INight.wrs.easy.Marisa;
-				break;
-			case ALICE:
-				wr = INight.wrs.easy.Alice;
-				break;
-			case SAKUYA:
-				wr = INight.wrs.easy.Sakuya;
-				break;
-			case REMILIA:
-				wr = INight.wrs.easy.Remilia;
-				break;
-			case YOUMU:
-				wr = INight.wrs.easy.Youmu;
-				break;
-			case YUYUKO:
-				wr = INight.wrs.easy.Yuyuko;
-				break;
-			}
-			break;
-		case NORMAL:
-			switch (team)
-			{
-			case BORDER:
-				wr = INight.wrs.normal.BorderTeam;
-				break;
-			case MAGIC:
-				wr = INight.wrs.normal.MagicTeam;
-				break;
-			case SCARLET:
-				wr = INight.wrs.normal.ScarletTeam;
-				break;
-			case GHOST:
-				wr = INight.wrs.normal.GhostTeam;
-				break;
-			case REIMU:
-				wr = INight.wrs.normal.Reimu;
-				break;
-			case YUKARI:
-				wr = INight.wrs.normal.Yukari;
-				break;
-			case MARISA:
-				wr = INight.wrs.normal.Marisa;
-				break;
-			case ALICE:
-				wr = INight.wrs.normal.Alice;
-				break;
-			case SAKUYA:
-				wr = INight.wrs.normal.Sakuya;
-				break;
-			case REMILIA:
-				wr = INight.wrs.normal.Remilia;
-				break;
-			case YOUMU:
-				wr = INight.wrs.normal.Youmu;
-				break;
-			case YUYUKO:
-				wr = INight.wrs.normal.Yuyuko;
-				break;
-			}
-			break;
-		case HARD:
-			switch (team)
-			{
-			case BORDER:
-				wr = INight.wrs.hard.BorderTeam;
-				break;
-			case MAGIC:
-				wr = INight.wrs.hard.MagicTeam;
-				break;
-			case SCARLET:
-				wr = INight.wrs.hard.ScarletTeam;
-				break;
-			case GHOST:
-				wr = INight.wrs.hard.GhostTeam;
-				break;
-			case REIMU:
-				wr = INight.wrs.hard.Reimu;
-				break;
-			case YUKARI:
-				wr = INight.wrs.hard.Yukari;
-				break;
-			case MARISA:
-				wr = INight.wrs.hard.Marisa;
-				break;
-			case ALICE:
-				wr = INight.wrs.hard.Alice;
-				break;
-			case SAKUYA:
-				wr = INight.wrs.hard.Sakuya;
-				break;
-			case REMILIA:
-				wr = INight.wrs.hard.Remilia;
-				break;
-			case YOUMU:
-				wr = INight.wrs.hard.Youmu;
-				break;
-			case YUYUKO:
-				wr = INight.wrs.hard.Yuyuko;
-				break;
-			}
-			break;
-		case LUNATIC:
-			switch (team)
-			{
-			case BORDER:
-				wr = INight.wrs.lunatic.BorderTeam;
-				break;
-			case MAGIC:
-				wr = INight.wrs.lunatic.MagicTeam;
-				break;
-			case SCARLET:
-				wr = INight.wrs.lunatic.ScarletTeam;
-				break;
-			case GHOST:
-				wr = INight.wrs.lunatic.GhostTeam;
-				break;
-			case REIMU:
-				wr = INight.wrs.lunatic.Reimu;
-				break;
-			case YUKARI:
-				wr = INight.wrs.lunatic.Yukari;
-				break;
-			case MARISA:
-				wr = INight.wrs.lunatic.Marisa;
-				break;
-			case ALICE:
-				wr = INight.wrs.lunatic.Alice;
-				break;
-			case SAKUYA:
-				wr = INight.wrs.lunatic.Sakuya;
-				break;
-			case REMILIA:
-				wr = INight.wrs.lunatic.Remilia;
-				break;
-			case YOUMU:
-				wr = INight.wrs.lunatic.Youmu;
-				break;
-			case YUYUKO:
-				wr = INight.wrs.lunatic.Yuyuko;
-				break;
-			}
-			break;
-		case EXTRA:
-			switch (team)
-			{
-			case BORDER:
-				wr = INight.wrs.extra.BorderTeam;
-				break;
-			case MAGIC:
-				wr = INight.wrs.extra.MagicTeam;
-				break;
-			case SCARLET:
-				wr = INight.wrs.extra.ScarletTeam;
-				break;
-			case GHOST:
-				wr = INight.wrs.extra.GhostTeam;
-				break;
-			case REIMU:
-				wr = INight.wrs.extra.Reimu;
-				break;
-			case YUKARI:
-				wr = INight.wrs.extra.Yukari;
-				break;
-			case MARISA:
-				wr = INight.wrs.extra.Marisa;
-				break;
-			case ALICE:
-				wr = INight.wrs.extra.Alice;
-				break;
-			case SAKUYA:
-				wr = INight.wrs.extra.Sakuya;
-				break;
-			case REMILIA:
-				wr = INight.wrs.extra.Remilia;
-				break;
-			case YOUMU:
-				wr = INight.wrs.extra.Youmu;
-				break;
-			case YUYUKO:
-				wr = INight.wrs.extra.Yuyuko;
-				break;
-			}
-			break;
-		}
-		return wr;
+		shottype = idx_team[team];
+		std::cout << "Shottype: " << shottype << std::endl;
 	}
 
 	void getRubrics()
 	{
-		std::cout << "Difficulty: ";
-		switch (difficulty)
-		{
-		case EASY:
-			std::cout << "Easy" << std::endl;
-			base = 45;
-			exp = 1.05f;
-			first_bomb = 2;
-			base_s = 375;
-			exp_s = 4.0f;
-			break;
-		case NORMAL:
-			std::cout << "Normal" << std::endl;
-			base = 90;
-			exp = 1.05f;
-			first_bomb = 3;
-			base_s = 400;
-			exp_s = 3.0f;
-			break;
-		case HARD:
-			std::cout << "Hard" << std::endl;
-			base = 140;
-			exp = 1.05f;
-			first_bomb = 3;
-			base_s = 450;
-			exp_s = 2.5f;
-			break;
-		case LUNATIC:
-			std::cout << "Lunatic" << std::endl;
-			base = 290;
-			exp = 1.05f;
-			first_bomb = 5;
-			base_s = 500;
-			exp_s = 2.7f;
-			break;
-		case EXTRA:
-			std::cout << "Extra" << std::endl;
-			base = 110;
-			exp = 1.08f;
-			first_bomb = 3;
-			base_s = 450;
-			exp_s = 3.0f;
-			break;
-		}
+		std::cout << "Difficulty: " << idx_difficulty[difficulty] << std::endl;
+		getSurvRubrics("IN", idx_difficulty[difficulty], base, exp, firstBomb, bomb);
+		getScoreRubrics("IN", idx_difficulty[difficulty], base_s, exp_s);
 	}
 
 	void getStageFinal()
 	{
-		if (difficulty == EXTRA)
+		if (idx_difficulty[difficulty] == "Extra")
 		{
 			std::cout << "Imperishable Shooting Captured: " << ((ls_capped == 1) ? "True" : "False") << std::endl;
 			//std::cout << "Last Spell Captured: " << int(ls_capped) << std::endl;
 		}
 		else
 		{
-			std::cout << "Final: ";
 			switch (stage)
 			{
-			case 6:	// 6A
-				std::cout << "A" << std::endl;
-				std::cout << "Last spells captured: " << int(ls_capped);
-				switch (difficulty)
-				{
-				case EASY:
-					std::cout << "/1" << std::endl;
-					break;
-				default:
-					std::cout << "/6" << std::endl;
-					break;
-				}
+			case 6: // 6A
+				std::cout << "Final: A" << std::endl;
+				std::cout << "Last spells captured: " << int(ls_capped) << "/" << Rubrics["MAX_LAST_SPELLS"][idx_difficulty[difficulty]]["FinalA"] << std::endl;
 				break;
 			case 7:	// 6B
-				std::cout << "B" << std::endl;
-				std::cout << "Last spells captured: " << int(ls_capped);
-				switch (difficulty)
-				{
-				case EASY:
-					std::cout << "/6" << std::endl;
-					break;
-				default:
-					std::cout << "/10" << std::endl;
-					break;
-				}
+				std::cout << "Final: B" << std::endl;
+				std::cout << "Last spells captured: " << int(ls_capped) << "/" << Rubrics["MAX_LAST_SPELLS"][idx_difficulty[difficulty]]["FinalB"] << std::endl;
 				break;
 			default:
-				std::cout << "?" << std::endl;
+				std::cout << "Final: ?" << std::endl;
 				std::cout << "Last spells captured: " << int(ls_capped) << "/?" << std::endl;
 				break;
 			}
-		}
-	}
-
-	void printShottype()
-	{
-		std::cout << "Shottype: ";
-		switch (team)
-		{
-		case BORDER:
-			std::cout << "Border team" << std::endl;
-			break;
-		case MAGIC:
-			std::cout << "Magic team" << std::endl;
-			break;
-		case SCARLET:
-			std::cout << "Scarlet team" << std::endl;
-			break;
-		case GHOST:
-			std::cout << "Ghost team" << std::endl;
-			break;
-		case REIMU:
-			std::cout << "Reimu solo" << std::endl;
-			break;
-		case YUKARI:
-			std::cout << "Yukari solo" << std::endl;
-			break;
-		case MARISA:
-			std::cout << "Marisa solo" << std::endl;
-			break;
-		case ALICE:
-			std::cout << "Alice team" << std::endl;
-			break;
-		case SAKUYA:
-			std::cout << "Sakuya team" << std::endl;
-			break;
-		case REMILIA:
-			std::cout << "Remilia team" << std::endl;
-			break;
-		case YOUMU:
-			std::cout << "Youmu team" << std::endl;
-			break;
-		case YUYUKO:
-			std::cout << "Yuyuko solo" << std::endl;
-			break;
 		}
 	}
 
@@ -468,10 +109,10 @@ namespace ns_in
 		unsigned short ls_points;
 		switch (difficulty)
 		{
-		case EASY:
+		case 0:	// easy
 			ls_points = ls_capped * 1;
 			break;
-		case EXTRA:
+		case 4:	// extra
 			ls_points = ls_capped * 5;
 			break;
 		default:
@@ -483,22 +124,14 @@ namespace ns_in
 		n += misses * 2;	// default is 2
 		if (bombs_sum > 0)
 		{
-			n += first_bomb;
+			n += firstBomb;
 			bombs_sum--;
 		}
 		n += bombs_sum * 1;	// default is 1
-		drcpoints_survival = base * pow(exp, (0 - n)) * getMultiplier() + ls_points;
+		drcpoints_survival = base * pow(exp, (0 - n)) * getMultiplier("IN", shottype.c_str()) + ls_points;
 
-		ull wr = getWr();
-		if (score >= wr)
-		{
-			drcpoints_score = roundf(base_s);
-		}
-		else
-		{
-			// drcpoints_score = (unsigned short)(base_s * pow((double)score / wr, exp_s));
-			drcpoints_score = roundf(base_s * (float)pow((long double)score / wr, exp_s));
-		}
+		ull wr = getWR<ull>("IN", idx_difficulty[difficulty], shottype.c_str());
+		drcpoints_score = (score >= wr) ? roundf(base_s) : roundf(base_s * (float)pow((long double)score / wr, exp_s));
 	}
 
 	void ReadMemory(HANDLE gameProc)
@@ -533,10 +166,11 @@ namespace ns_in
 			ls_capped = 0;	// reset last spells capped
 		}
 
+		// total bombs used
 		bombs_sum = bombs + deathbombs;
 
+		getShottype();
 		getRubrics();
-		printShottype();
 
 		countLs_capped();
 

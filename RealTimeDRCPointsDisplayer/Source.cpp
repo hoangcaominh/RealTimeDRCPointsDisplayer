@@ -1,7 +1,6 @@
 #include <tchar.h>
 
 #include "ProcessMemory.h"
-#include "drc_game.h"
 
 // Unused code
 /*

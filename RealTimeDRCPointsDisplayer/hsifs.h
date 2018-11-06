@@ -1,13 +1,14 @@
 #pragma once
 
 #include "color.h"
-#include "ProcessJSON.h"
+#include "drc_assets.h"
 
 namespace ns_hsifs
 {
 	// Global variables
 	bool reset;
 	char character, season, difficulty, lives, misses, bombs, bombs_used;
+	std::string shottype;
 	// for final spell
 	DWORD p_spellID;
 	char spellID;
@@ -17,483 +18,31 @@ namespace ns_hsifs
 	// variables with suffix _s are for scoring
 	unsigned short base, base_s;
 	float exp, exp_s;
-	char first_bomb;
+	char firstBomb, bomb, firstRelease;
 
-	enum _DIFFICULTY
-	{
-		EASY,
-		NORMAL,
-		HARD,
-		LUNATIC,
-		EXTRA
-	};
-	enum _CHARACTER
-	{
-		REIMU,
-		CIRNO,
-		AYA,
-		MARISA
-	};
-	enum _SEASON
-	{
-		SPRING,
-		SUMMER,
-		AUTUMN,
-		WINTER
-	};
+	// character index
+	const char* idx_character[] = { "Reimu", "Cirno", "Aya", "Marisa" };
+	const char* idx_season[] = { "Spring", "Summer", "Autumn", "Winter" };
 
-	float getMultiplier()
+	void getShottype()
 	{
-		switch (character)
+		shottype = idx_character[character];
+
+		if (idx_difficulty[difficulty] != "Extra")
 		{
-		case REIMU:
-			switch (season)
-			{
-			case SPRING:
-				return 1.15f;
-			case SUMMER:
-				return 1.15f;
-			}
-		case CIRNO:
-			switch (season)
-			{
-			case SPRING:
-				return 1.2f;
-			case SUMMER:
-				return 1.2f;
-			case AUTUMN:
-				return 1.1f;
-			case WINTER:
-				return 1.1f;
-			}
-		case AYA:
-			switch (season)
-			{
-			case SPRING:
-				return 1.15f;
-			case SUMMER:
-				return 1.15f;
-			case AUTUMN:
-				return 1.05f;
-			case WINTER:
-				return 1.05f;
-			}
-		case MARISA:
-			switch (season)
-			{
-			case SPRING:
-				return 1.15f;
-			case SUMMER:
-				return 1.15f;
-			}
-		default:
-			return 1.0f;
+			shottype += idx_season[season];
 		}
-	}
 
-	ull getWr()
-	{
-		ull wr;
-		switch (difficulty)
-		{
-		case EASY:
-			switch (character)
-			{
-			case REIMU:
-				switch (season)
-				{
-				case SPRING:
-					wr = HSiFS.wrs.easy.Reimu.Spring;
-					break;
-				case SUMMER:
-					wr = HSiFS.wrs.easy.Reimu.Summer;
-					break;
-				case AUTUMN:
-					wr = HSiFS.wrs.easy.Reimu.Autumn;
-					break;
-				case WINTER:
-					wr = HSiFS.wrs.easy.Reimu.Winter;
-					break;
-				}
-				break;
-			case CIRNO:
-				switch (season)
-				{
-				case SPRING:
-					wr = HSiFS.wrs.easy.Cirno.Spring;
-					break;				
-				case SUMMER:			
-					wr = HSiFS.wrs.easy.Cirno.Summer;
-					break;				
-				case AUTUMN:			
-					wr = HSiFS.wrs.easy.Cirno.Autumn;
-					break;				
-				case WINTER:			
-					wr = HSiFS.wrs.easy.Cirno.Winter;
-					break;
-				}
-				break;
-			case AYA:
-				switch (season)
-				{
-				case SPRING:
-					wr = HSiFS.wrs.easy.Aya.Spring;
-					break;
-				case SUMMER:
-					wr = HSiFS.wrs.easy.Aya.Summer;
-					break;
-				case AUTUMN:
-					wr = HSiFS.wrs.easy.Aya.Autumn;
-					break;
-				case WINTER:
-					wr = HSiFS.wrs.easy.Aya.Winter;
-					break;
-				}
-				break;
-			case MARISA:
-				switch (season)
-				{
-				case SPRING:
-					wr = HSiFS.wrs.easy.Marisa.Spring;
-					break;
-				case SUMMER:
-					wr = HSiFS.wrs.easy.Marisa.Summer;
-					break;
-				case AUTUMN:
-					wr = HSiFS.wrs.easy.Marisa.Autumn;
-					break;
-				case WINTER:
-					wr = HSiFS.wrs.easy.Marisa.Winter;
-					break;
-				}
-				break;
-			}
-			break;
-		case NORMAL:
-
-			switch (character)
-			{
-			case REIMU:
-				switch (season)
-				{
-				case SPRING:
-					wr = HSiFS.wrs.normal.Reimu.Spring;
-					break;
-				case SUMMER:
-					wr = HSiFS.wrs.normal.Reimu.Summer;
-					break;
-				case AUTUMN:
-					wr = HSiFS.wrs.normal.Reimu.Autumn;
-					break;
-				case WINTER:
-					wr = HSiFS.wrs.normal.Reimu.Winter;
-					break;
-				}
-				break;
-			case CIRNO:
-				switch (season)
-				{
-				case SPRING:
-					wr = HSiFS.wrs.normal.Cirno.Spring;
-					break;
-				case SUMMER:
-					wr = HSiFS.wrs.normal.Cirno.Summer;
-					break;
-				case AUTUMN:
-					wr = HSiFS.wrs.normal.Cirno.Autumn;
-					break;
-				case WINTER:
-					wr = HSiFS.wrs.normal.Cirno.Winter;
-					break;
-				}
-				break;
-			case AYA:
-				switch (season)
-				{
-				case SPRING:
-					wr = HSiFS.wrs.normal.Aya.Spring;
-					break;
-				case SUMMER:
-					wr = HSiFS.wrs.normal.Aya.Summer;
-					break;
-				case AUTUMN:
-					wr = HSiFS.wrs.normal.Aya.Autumn;
-					break;
-				case WINTER:
-					wr = HSiFS.wrs.normal.Aya.Winter;
-					break;
-				}
-				break;
-			case MARISA:
-				switch (season)
-				{
-				case SPRING:
-					wr = HSiFS.wrs.normal.Marisa.Spring;
-					break;
-				case SUMMER:
-					wr = HSiFS.wrs.normal.Marisa.Summer;
-					break;
-				case AUTUMN:
-					wr = HSiFS.wrs.normal.Marisa.Autumn;
-					break;
-				case WINTER:
-					wr = HSiFS.wrs.normal.Marisa.Winter;
-					break;
-				}
-				break;
-			}
-			break;
-		case HARD:
-
-			switch (character)
-			{
-			case REIMU:
-				switch (season)
-				{
-				case SPRING:
-					wr = HSiFS.wrs.hard.Reimu.Spring;
-					break;
-				case SUMMER:
-					wr = HSiFS.wrs.hard.Reimu.Summer;
-					break;
-				case AUTUMN:
-					wr = HSiFS.wrs.hard.Reimu.Autumn;
-					break;
-				case WINTER:
-					wr = HSiFS.wrs.hard.Reimu.Winter;
-					break;
-				}
-				break;
-			case CIRNO:
-				switch (season)
-				{
-				case SPRING:
-					wr = HSiFS.wrs.hard.Cirno.Spring;
-					break;
-				case SUMMER:
-					wr = HSiFS.wrs.hard.Cirno.Summer;
-					break;
-				case AUTUMN:
-					wr = HSiFS.wrs.hard.Cirno.Autumn;
-					break;
-				case WINTER:
-					wr = HSiFS.wrs.hard.Cirno.Winter;
-					break;
-				}
-				break;
-			case AYA:
-				switch (season)
-				{
-				case SPRING:
-					wr = HSiFS.wrs.hard.Aya.Spring;
-					break;
-				case SUMMER:
-					wr = HSiFS.wrs.hard.Aya.Summer;
-					break;
-				case AUTUMN:
-					wr = HSiFS.wrs.hard.Aya.Autumn;
-					break;
-				case WINTER:
-					wr = HSiFS.wrs.hard.Aya.Winter;
-					break;
-				}
-				break;
-			case MARISA:
-				switch (season)
-				{
-				case SPRING:
-					wr = HSiFS.wrs.hard.Marisa.Spring;
-					break;
-				case SUMMER:
-					wr = HSiFS.wrs.hard.Marisa.Summer;
-					break;
-				case AUTUMN:
-					wr = HSiFS.wrs.hard.Marisa.Autumn;
-					break;
-				case WINTER:
-					wr = HSiFS.wrs.hard.Marisa.Winter;
-					break;
-				}
-				break;
-			}
-			break;
-		case LUNATIC:
-
-			switch (character)
-			{
-			case REIMU:
-				switch (season)
-				{
-				case SPRING:
-					wr = HSiFS.wrs.lunatic.Reimu.Spring;
-					break;
-				case SUMMER:
-					wr = HSiFS.wrs.lunatic.Reimu.Summer;
-					break;
-				case AUTUMN:
-					wr = HSiFS.wrs.lunatic.Reimu.Autumn;
-					break;
-				case WINTER:
-					wr = HSiFS.wrs.lunatic.Reimu.Winter;
-					break;
-				}
-				break;
-			case CIRNO:
-				switch (season)
-				{
-				case SPRING:
-					wr = HSiFS.wrs.lunatic.Cirno.Spring;
-					break;
-				case SUMMER:
-					wr = HSiFS.wrs.lunatic.Cirno.Summer;
-					break;
-				case AUTUMN:
-					wr = HSiFS.wrs.lunatic.Cirno.Autumn;
-					break;
-				case WINTER:
-					wr = HSiFS.wrs.lunatic.Cirno.Winter;
-					break;
-				}
-				break;
-			case AYA:
-				switch (season)
-				{
-				case SPRING:
-					wr = HSiFS.wrs.lunatic.Aya.Spring;
-					break;
-				case SUMMER:
-					wr = HSiFS.wrs.lunatic.Aya.Summer;
-					break;
-				case AUTUMN:
-					wr = HSiFS.wrs.lunatic.Aya.Autumn;
-					break;
-				case WINTER:
-					wr = HSiFS.wrs.lunatic.Aya.Winter;
-					break;
-				}
-				break;
-			case MARISA:
-				switch (season)
-				{
-				case SPRING:
-					wr = HSiFS.wrs.lunatic.Marisa.Spring;
-					break;
-				case SUMMER:
-					wr = HSiFS.wrs.lunatic.Marisa.Summer;
-					break;
-				case AUTUMN:
-					wr = HSiFS.wrs.lunatic.Marisa.Autumn;
-					break;
-				case WINTER:
-					wr = HSiFS.wrs.lunatic.Marisa.Winter;
-					break;
-				}
-				break;
-			}
-			break;
-		case EXTRA:
-			switch (character)
-			{
-			case REIMU:
-				wr = HSiFS.wrs.extra.Reimu;
-			case CIRNO:
-				wr = HSiFS.wrs.extra.Cirno;
-			case AYA:
-				wr = HSiFS.wrs.extra.Aya;
-			case MARISA:
-				wr = HSiFS.wrs.extra.Marisa;
-			}
-			break;
-		}
-		return wr;
+		std::cout << "Shottype: " << shottype << std::endl;
 	}
 
 	void getRubrics()
 	{
-		std::cout << "Difficulty: ";
-		switch (difficulty)
-		{
-		case EASY:
-			std::cout << "Easy" << std::endl;
-			base = 50;
-			exp = 1.06f;
-			first_bomb = 2;
-			base_s = 375;
-			exp_s = 3.0f;
-			break;
-		case NORMAL:
-			std::cout << "Normal" << std::endl;
-			base = 100;
-			exp = 1.05f;
-			first_bomb = 3;
-			base_s = 400;
-			exp_s = 3.0f;
-			break;
-		case HARD:
-			std::cout << "Hard" << std::endl;
-			base = 150;
-			exp = 1.05f;
-			first_bomb = 3;
-			base_s = 450;
-			exp_s = 2.5f;
-			break;
-		case LUNATIC:
-			std::cout << "Lunatic" << std::endl;
-			base = 300;
-			exp = 1.05f;
-			first_bomb = 3;
-			base_s = 500;
-			exp_s = 2.0f;
-			break;
-		case EXTRA:
-			std::cout << "Extra" << std::endl;
-			base = 105;
-			exp = 1.07f;
-			first_bomb = 3;
-			base_s = 450;
-			exp_s = 3.0f;
-			break;
-		}
+		std::cout << "Difficulty: " << idx_difficulty[difficulty] << std::endl;
+		getSurvRubrics("HSiFS", idx_difficulty[difficulty], base, exp, firstBomb, bomb, firstRelease);
+		getScoreRubrics("HSiFS", idx_difficulty[difficulty], base_s, exp_s);
 	}
-
-	void printShottype()
-	{
-		std::cout << "Shottype: ";
-		switch (character)
-		{
-		case REIMU:
-			std::cout <<"Reimu";
-			break;
-		case CIRNO:
-			std::cout <<"Cirno";
-			break;
-		case AYA:
-			std::cout <<"Aya";
-			break;
-		case MARISA:
-			std::cout <<"Marisa";
-			break;
-		}
-		if (difficulty != EXTRA)
-			switch (season)
-			{
-			case SPRING:
-				std::cout << " Spring" << std::endl;
-				break;
-			case SUMMER:
-				std::cout << " Summer" << std::endl;
-				break;
-			case AUTUMN:
-				std::cout << " Autumn" << std::endl;
-				break;
-			case WINTER:
-				std::cout << " Winter" << std::endl;
-				break;
-			}
-		else
-			std::cout << std::endl;
-	}
-
+	
 	void countReleases()
 	{
 		if (release_petals < _release_petals && !(spellID >= 90 && spellID <= 105))
@@ -506,29 +55,51 @@ namespace ns_hsifs
 	
 	void calculate_drcp()
 	{
-		char n = 0;
+		float decrement = 0;
+		float n = 0;
 		n += misses * 2;	// default is 2
 		if (bombs_used > 0)
 		{
-			n += first_bomb;
+			n += firstBomb;
 			bombs_used--;
 		}
 		n += bombs_used * 1;	// default is 1
-		drcpoints_survival = base * pow(exp, (0 - n)) * getMultiplier();
 
-		ull wr = getWr();
+		// make a copy of release variable
+		unsigned short _releases = releases;
+
+		if (_releases > 0)
+		{
+			n += firstRelease;
+			_releases--;
+		}
+		while (_releases > 0)
+		{
+			for (int i = 0; i < 10; i++)
+			{
+				n += 0.5f - decrement;
+				_releases--;
+				if (_releases == 0)
+					break;
+			}
+			decrement += (decrement == 0.4f) ? 0 : 0.1f;
+		}
+
+		drcpoints_survival = base * pow(exp, -n) * getMultiplier("HSiFS", shottype.c_str());
+
+		ull wr;
+		// catch ReimuWinter Lunatic world record exception
+		if (idx_difficulty[difficulty] == "Lunatic" && shottype == "ReimuWinter")
+			wr = 0;
+		else
+			wr = getWR<ull>("HSiFS", idx_difficulty[difficulty], shottype.c_str());
+
 		if (wr == 0)
 		{
 			std::cout << "This difficulty with this shottype hasn't had a world record yet." << std::endl;
 		}
-		if (score >= wr)
-		{
-			drcpoints_score = roundf(base_s);
-		}
-		else
-		{
-			drcpoints_score = roundf(base_s * (float)pow((long double)score / wr, exp_s));
-		}
+
+		drcpoints_score = (score >= wr) ? roundf(base_s) : roundf(base_s * (float)pow((long double)score / wr, exp_s));
 	}
 
 	void ReadMemory(HANDLE gameProc)
@@ -558,7 +129,7 @@ namespace ns_hsifs
 		score *= 10;
 		if (score == 0 && reset)
 		{
-			// reset misses, bombs, 
+			// reset / initialize
 			misses = 0;
 			bombs_used = 0;
 			releases = 0;
@@ -570,8 +141,8 @@ namespace ns_hsifs
 		if (score > 0)
 			reset = true;
 
+		getShottype();
 		getRubrics();
-		printShottype();
 
 		countReleases();
 

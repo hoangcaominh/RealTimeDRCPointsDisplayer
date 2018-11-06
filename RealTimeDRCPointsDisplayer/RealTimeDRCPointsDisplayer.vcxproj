@@ -119,15 +119,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="color.h" />
-    <ClInclude Include="drc_template.h" />
-    <ClInclude Include="drc_wr.h" />
+    <ClInclude Include="drc_assets.h" />
     <ClInclude Include="eosd.h" />
     <ClInclude Include="in.h" />
     <ClInclude Include="json.hpp" />
     <ClInclude Include="hsifs.h" />
     <ClInclude Include="ProcessJSON.h" />
-    <ClInclude Include="drc_game.h" />
-    <ClInclude Include="drc_rubric.h" />
     <ClInclude Include="ProcessMemory.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
