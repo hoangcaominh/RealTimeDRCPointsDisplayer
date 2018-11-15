@@ -7,7 +7,10 @@ namespace ns_hsifs
 {
 	// Global variables
 	bool reset;
-	char character, season, difficulty, lives, misses, bombs, bombs_used;
+	char character, season, difficulty, misses, bombs;
+	// new variables for recording key pressed
+	DWORD p_is_bomb;
+	bool is_bomb, x_reset;
 	std::string shottype;
 	// for final spell
 	DWORD p_spellID;
@@ -42,6 +45,19 @@ namespace ns_hsifs
 		getSurvRubrics("HSiFS", idx_difficulty[difficulty], base, exp, firstBomb, bomb, firstRelease);
 		getScoreRubrics("HSiFS", idx_difficulty[difficulty], base_s, exp_s);
 	}
+
+	void countBombs()
+	{
+		if (is_bomb && x_reset)	// player is bombing
+		{
+			bombs++;
+			x_reset = false;
+		}
+		else if (!is_bomb)	// player is not bombing
+		{
+			x_reset = true;
+		}
+	}
 	
 	void countReleases()
 	{
@@ -57,13 +73,16 @@ namespace ns_hsifs
 	{
 		float decrement = 0;
 		float n = 0;
+		// make a copy if bombs used
+		char _bombs = bombs;
+
 		n += misses * 2;	// default is 2
-		if (bombs_used > 0)
+		if (bombs > 0)
 		{
 			n += firstBomb;
-			bombs_used--;
+			_bombs--;
 		}
-		n += bombs_used * 1;	// default is 1
+		n += _bombs * 1;	// default is 1
 
 		// make a copy of release variable
 		unsigned short _releases = releases;
@@ -110,8 +129,8 @@ namespace ns_hsifs
 			CHARACTER = 0x004A57A4,
 			SEASON = 0x004A57AC,
 			DIFFICULTY = 0x004A57B4,
-			LIVES = 0x004A57F4,
-			BOMBS = 0x004A5800,
+			MISSES = 0x004A57CC,
+			P_IS_BOMB = 0x004A6DA8,
 			RELEASE_PETALS = 0x004A5808,	// 190 petals = 1 level / level 6 = 1140 petals
 			P_SPELLID = 0x004A6DB0
 		};
@@ -120,8 +139,9 @@ namespace ns_hsifs
 		ReadProcessMemory(gameProc, (void*)CHARACTER, &character, sizeof(char), 0);
 		ReadProcessMemory(gameProc, (void*)SEASON, &season, sizeof(char), 0);
 		ReadProcessMemory(gameProc, (void*)DIFFICULTY, &difficulty, sizeof(char), 0);
-		ReadProcessMemory(gameProc, (void*)LIVES, &lives, sizeof(char), 0);
-		ReadProcessMemory(gameProc, (void*)BOMBS, &bombs, sizeof(char), 0);
+		ReadProcessMemory(gameProc, (void*)MISSES, &misses, sizeof(char), 0);
+		ReadProcessMemory(gameProc, (void*)P_IS_BOMB, &p_is_bomb, sizeof(int), 0);
+		ReadProcessMemory(gameProc, (void*)(p_is_bomb + 0x30), &is_bomb, sizeof(bool), 0);
 		ReadProcessMemory(gameProc, (void*)RELEASE_PETALS, &release_petals, sizeof(unsigned short), 0);
 		ReadProcessMemory(gameProc, (void*)P_SPELLID, &p_spellID, sizeof(int), 0);
 		ReadProcessMemory(gameProc, (void*)(p_spellID + 0x74), &spellID, sizeof(char), 0);
@@ -131,7 +151,7 @@ namespace ns_hsifs
 		{
 			// reset / initialize
 			misses = 0;
-			bombs_used = 0;
+			bombs = 0;
 			releases = 0;
 			_release_petals = 0;
 			spellID = 0;
@@ -144,12 +164,13 @@ namespace ns_hsifs
 		getShottype();
 		getRubrics();
 
+		countBombs();
 		countReleases();
 
 		setcolor(LIGHTRED);
 		std::cout << "Misses: " << int(misses) << std::endl;
 		setcolor(LIGHTGREEN);
-		std::cout << "Bombs: " << int(bombs_used) << std::endl;
+		std::cout << "Bombs: " << int(bombs) << std::endl;
 		setcolor(YELLOW);
 		std::cout << "Release: " << releases << std::endl;
 		setcolor(WHITE);
