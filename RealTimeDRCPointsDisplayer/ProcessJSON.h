@@ -28,7 +28,7 @@ bool Download_rubrics()
 	std::cout << "Downloading rubric file..." << std::endl;
 
 	// result of downloading rubric file
-	HRESULT hResult = URLDownloadToFile(NULL, _T("https://raw.githubusercontent.com/hoangcaominh/hoangcaominh.github.io/master/rubrics.json"), _T("rubrics.json"), 0, NULL);
+	HRESULT hResult = URLDownloadToFile(NULL, _T("https://raw.githubusercontent.com/MaribelHearn/MaribelHearn.github.io/master/json/rubrics.json"), _T("rubrics.json"), 0, NULL);
 
 	switch (hResult)
 	{
