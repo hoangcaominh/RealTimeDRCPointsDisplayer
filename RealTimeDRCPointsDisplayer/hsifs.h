@@ -5,7 +5,9 @@
 namespace ns_hsifs
 {
 	// Global variables
-	bool reset;
+	// used for resetting counters (reset to 0 when a new stage is loaded)
+	DWORD frame_count;
+
 	char character, season, difficulty, misses, bombs;
 	// new variables for recording key pressed
 	DWORD p_is_bomb;
@@ -124,6 +126,7 @@ namespace ns_hsifs
 	{
 		enum address
 		{
+			FRAME_COUNT = 0x004A57A0,
 			SCORE = 0x004A57B0,
 			CHARACTER = 0x004A57A4,
 			SEASON = 0x004A57AC,
@@ -134,6 +137,7 @@ namespace ns_hsifs
 			P_SPELLID = 0x004A6DB0
 		};
 
+		ReadProcessMemory(gameProc, (void*)FRAME_COUNT, &frame_count, sizeof(int), 0);
 		ReadProcessMemory(gameProc, (void*)SCORE, &score, sizeof(int), 0);
 		ReadProcessMemory(gameProc, (void*)CHARACTER, &character, sizeof(char), 0);
 		ReadProcessMemory(gameProc, (void*)SEASON, &season, sizeof(char), 0);
@@ -146,19 +150,15 @@ namespace ns_hsifs
 		ReadProcessMemory(gameProc, (void*)(p_spellID + 0x74), &spellID, sizeof(char), 0);
 
 		score *= 10;
-		if (score == 0 && reset)
+		if (frame_count == 0 && score == 0)
 		{
-			// reset / initialize
+			// initialize
 			misses = 0;
 			bombs = 0;
 			releases = 0;
 			_release_petals = 0;
 			spellID = 0;
-
-			reset = false;	// reset once
 		}
-		if (score > 0)
-			reset = true;
 
 		getShottype();
 		getRubrics();
