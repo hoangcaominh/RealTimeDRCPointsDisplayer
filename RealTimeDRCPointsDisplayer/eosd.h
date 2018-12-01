@@ -1,6 +1,5 @@
 #pragma once
 
-#include "color.h"
 #include "drc_assets.h"
 
 namespace ns_eosd
@@ -54,7 +53,7 @@ namespace ns_eosd
 		real_misses = misses_deathbombs - false_misses;
 	}
 
-	void calculate_drcp()
+	void calculateDRCPoints()
 	{
 		char n = 0;
 		n += real_misses * 2;	// 2 is rubric miss base in any difficulty
@@ -111,7 +110,7 @@ namespace ns_eosd
 		setcolor(WHITE);
 		std::cout << "Score: " << score << std::endl;
 
-		calculate_drcp();
+		calculateDRCPoints();
 
 		setcolor(LIGHTGRAY);
 		std::cout << "DRC points for survival: " << (int)drcpoints_survival << std::endl;

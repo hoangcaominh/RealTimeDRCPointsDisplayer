@@ -1,6 +1,5 @@
 #pragma once
 
-#include "color.h"
 #include "drc_assets.h"
 
 namespace ns_in
@@ -104,7 +103,7 @@ namespace ns_in
 		}
 	}
 
-	void calculate_drcp()
+	void calculateDRCPoints()
 	{
 		unsigned short ls_points;
 		switch (difficulty)
@@ -183,7 +182,7 @@ namespace ns_in
 		setcolor(LIGHTGRAY);
 
 		getStageFinal();
-		calculate_drcp();
+		calculateDRCPoints();
 
 		std::cout << "DRC points for survival: " << (int)drcpoints_survival << std::endl;
 		std::cout << "DRC points for scoring: " << (int)drcpoints_score << std::endl;

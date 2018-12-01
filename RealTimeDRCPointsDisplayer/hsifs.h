@@ -1,6 +1,5 @@
 #pragma once
 
-#include "color.h"
 #include "drc_assets.h"
 
 namespace ns_hsifs
@@ -69,7 +68,7 @@ namespace ns_hsifs
 		_release_petals = release_petals;
 	}
 	
-	void calculate_drcp()
+	void calculateDRCPoints()
 	{
 		float decrement = 0;
 		float n = 0;
@@ -175,11 +174,8 @@ namespace ns_hsifs
 		std::cout << "Release: " << releases << std::endl;
 		setcolor(WHITE);
 		std::cout << "Score: " << score << std::endl;
-		setcolor(LIGHTGRAY);
 
-		calculate_drcp();
-
-		std::cout << "DRC points for survival: " << (int)drcpoints_survival << std::endl;
-		std::cout << "DRC points for scoring: " << (int)drcpoints_score << std::endl;
+		calculateDRCPoints();
+		printDRCPoints();
 	}
 }

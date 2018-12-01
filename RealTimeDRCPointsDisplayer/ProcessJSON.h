@@ -1,6 +1,7 @@
 #pragma once
 // print messages
 #include <iostream>
+#include "color.h"
 
 // download preprocessors
 #include <urlmon.h>
@@ -34,18 +35,22 @@ bool Download_rubrics()
 	{
 		// successfully downloaded
 	case S_OK:
+		setcolor(LIGHTGRAY);
 		std::cout << "Successfully downloaded rubric file." << std::endl;
 		return true;
 		// out of memory
 	case E_OUTOFMEMORY:
+		setcolor(RED);
 		std::cout << "Not enough memory to download rubric file." << std::endl;
 		break;
 		// file not valid
 	case INET_E_DOWNLOAD_FAILURE:
+		setcolor(RED);
 		std::cout << "Rubric file not valid, or file name not match, download failed." << std::endl;
 		break;
 		// other errors
 	default:
+		setcolor(RED);
 		std::cout << "Failed to download rubric file." << std::endl;
 		break;
 	}
@@ -64,18 +69,22 @@ bool Download_wrs()
 	{
 		// successfully downloaded
 	case S_OK:
+		setcolor(LIGHTGRAY);
 		std::cout << "Successfully downloaded world record file." << std::endl;
 		return true;
 		// out of memory
 	case E_OUTOFMEMORY:
+		setcolor(RED);
 		std::cout << "Not enough memory to download world record file." << std::endl;
 		break;
 		// file not valid
 	case INET_E_DOWNLOAD_FAILURE:
+		setcolor(RED);
 		std::cout << "World record file not valid, or file name not match, download failed." << std::endl;
 		break;
 		// other errors
 	default:
+		setcolor(RED);
 		std::cout << "Failed to download world record file." << std::endl;
 		break;
 	}
@@ -86,12 +95,14 @@ bool Download_wrs()
 // reading part
 bool Load_rubrics()
 {
+	setcolor(LIGHTGRAY);
 	std::cout << "Loading saved rubric file..." << std::endl;
 
 	std::ifstream read("rubrics.json");
 	if (read.fail())
 	{
 		// failed to parse rubrics file
+		setcolor(RED);
 		std::cout << "Failed to load rubric file." << std::endl;
 		return false;
 	}
@@ -101,6 +112,7 @@ bool Load_rubrics()
 
 	if (Rubrics.empty())
 	{
+		setcolor(RED);
 		std::cout << "No element in the rubric file could be found." << std::endl;
 		return false;
 	}
@@ -111,12 +123,14 @@ bool Load_rubrics()
 
 bool Load_wrs()
 {
+	setcolor(LIGHTGRAY);
 	std::cout << "Loading saved world record file..." << std::endl;
 
 	std::ifstream read("wrlist.json");
 	if (read.fail())
 	{
 		// failed to parse world records file
+		setcolor(RED);
 		std::cout << "Failed to load world record file." << std::endl;
 		return false;
 	}
@@ -126,6 +140,7 @@ bool Load_wrs()
 
 	if (WRs.empty())
 	{
+		setcolor(RED);
 		std::cout << "No element in the world record file could be found." << std::endl;
 		return false;
 	}

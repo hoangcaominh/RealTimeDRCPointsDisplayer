@@ -69,3 +69,11 @@ void getScoreRubrics(const char* game, const char* difficulty, unsigned short &b
 	base = Rubrics["SCORE_RUBRICS"][game][difficulty]["base"].get<unsigned short>();
 	exp = Rubrics["SCORE_RUBRICS"][game][difficulty]["exp"].get<float>();
 }
+
+// print DRC points
+void printDRCPoints()
+{
+	setcolor(LIGHTGRAY);
+	std::cout << "DRC points for survival: " << (int)drcpoints_survival << std::endl;
+	std::cout << "DRC points for scoring: " << (int)drcpoints_score << std::endl;
+}
