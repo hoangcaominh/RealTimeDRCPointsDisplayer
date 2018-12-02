@@ -7,16 +7,16 @@ namespace ns_hsifs
 	// Global variables
 	// used for resetting counters (reset to 0 when a new stage is loaded)
 	DWORD frame_count;
-
+	
+	std::string shottype;
 	char character, season, difficulty, misses, bombs;
+	ull score;
 	// new variables for recording key pressed
 	DWORD p_is_bomb;
 	bool is_bomb, x_reset;
-	std::string shottype;
 	// for final spell
 	DWORD p_spellID;
 	char spellID;
-	ull score;
 	// variables for HSiFS
 	unsigned short release_petals, _release_petals, releases;
 	// variables with suffix _s are for scoring

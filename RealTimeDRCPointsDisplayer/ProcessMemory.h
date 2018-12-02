@@ -7,6 +7,7 @@
 
 #include "eosd.h"
 #include "in.h"
+#include "lolk.h"
 #include "hsifs.h"
 
 constexpr auto GAME_AVAILABLE = 12;
@@ -68,11 +69,6 @@ void ReadMemory_TD()
 }
 
 void ReadMemory_DDC()
-{
-	std::cout << "This game is currently unsupported. Please wait warmly." << std::endl;
-}
-
-void ReadMemory_LoLK()
 {
 	std::cout << "This game is currently unsupported. Please wait warmly." << std::endl;
 }
@@ -173,7 +169,7 @@ void ReadMemory(string title)
 
 	// LoLK
 	else if (title == GameName[10])
-		ReadMemory_LoLK();
+		ns_lolk::ReadMemory(gameProc);
 
 	// HSiFS
 	else if (title == GameName[11])

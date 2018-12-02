@@ -74,6 +74,6 @@ void getScoreRubrics(const char* game, const char* difficulty, unsigned short &b
 void printDRCPoints()
 {
 	setcolor(LIGHTGRAY);
-	std::cout << "DRC points for survival: " << (int)drcpoints_survival << std::endl;
-	std::cout << "DRC points for scoring: " << (int)drcpoints_score << std::endl;
+	std::cout << "DRC points for survival: " << drcpoints_survival << std::endl;
+	std::cout << "DRC points for scoring: " << drcpoints_score << std::endl;
 }
