@@ -40,17 +40,17 @@ bool Download_rubrics()
 		return true;
 		// out of memory
 	case E_OUTOFMEMORY:
-		setcolor(RED);
+		setcolor(LIGHTRED);
 		std::cout << "Not enough memory to download rubric file." << std::endl;
 		break;
 		// file not valid
 	case INET_E_DOWNLOAD_FAILURE:
-		setcolor(RED);
+		setcolor(LIGHTRED);
 		std::cout << "Rubric file not valid, or file name not match, download failed." << std::endl;
 		break;
 		// other errors
 	default:
-		setcolor(RED);
+		setcolor(LIGHTRED);
 		std::cout << "Failed to download rubric file." << std::endl;
 		break;
 	}
@@ -74,17 +74,17 @@ bool Download_wrs()
 		return true;
 		// out of memory
 	case E_OUTOFMEMORY:
-		setcolor(RED);
+		setcolor(LIGHTRED);
 		std::cout << "Not enough memory to download world record file." << std::endl;
 		break;
 		// file not valid
 	case INET_E_DOWNLOAD_FAILURE:
-		setcolor(RED);
+		setcolor(LIGHTRED);
 		std::cout << "World record file not valid, or file name not match, download failed." << std::endl;
 		break;
 		// other errors
 	default:
-		setcolor(RED);
+		setcolor(LIGHTRED);
 		std::cout << "Failed to download world record file." << std::endl;
 		break;
 	}
@@ -102,7 +102,7 @@ bool Load_rubrics()
 	if (read.fail())
 	{
 		// failed to parse rubrics file
-		setcolor(RED);
+		setcolor(LIGHTRED);
 		std::cout << "Failed to load rubric file." << std::endl;
 		return false;
 	}
@@ -112,7 +112,7 @@ bool Load_rubrics()
 
 	if (Rubrics.empty())
 	{
-		setcolor(RED);
+		setcolor(LIGHTRED);
 		std::cout << "No element in the rubric file could be found." << std::endl;
 		return false;
 	}
@@ -130,7 +130,7 @@ bool Load_wrs()
 	if (read.fail())
 	{
 		// failed to parse world records file
-		setcolor(RED);
+		setcolor(LIGHTRED);
 		std::cout << "Failed to load world record file." << std::endl;
 		return false;
 	}
@@ -140,7 +140,7 @@ bool Load_wrs()
 
 	if (WRs.empty())
 	{
-		setcolor(RED);
+		setcolor(LIGHTRED);
 		std::cout << "No element in the world record file could be found." << std::endl;
 		return false;
 	}

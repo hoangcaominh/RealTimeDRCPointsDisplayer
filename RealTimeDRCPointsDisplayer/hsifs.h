@@ -3,26 +3,15 @@
 #include "drc_assets.h"
 
 namespace ns_hsifs
-{
-	// Global variables
-	// used for resetting counters (reset to 0 when a new stage is loaded)
-	DWORD frame_count;
-	
-	std::string shottype;
-	char character, season, difficulty, misses, bombs;
-	ull score;
-	// new variables for recording key pressed
+{	
+	// variables for recording key pressed
 	DWORD p_is_bomb;
 	bool is_bomb, x_reset;
 	// for final spell
 	DWORD p_spellID;
 	char spellID;
 	// variables for HSiFS
-	unsigned short release_petals, _release_petals, releases;
-	// variables with suffix _s are for scoring
-	unsigned short base, base_s;
-	float exp, exp_s;
-	char firstBomb, bomb, firstRelease;
+	unsigned short release_petals, _release_petals;
 
 	// character index
 	const char* idx_character[] = { "Reimu", "Cirno", "Aya", "Marisa" };
@@ -38,13 +27,6 @@ namespace ns_hsifs
 		}
 
 		std::cout << "Shottype: " << shottype << std::endl;
-	}
-
-	void getRubrics()
-	{
-		std::cout << "Difficulty: " << idx_difficulty[difficulty] << std::endl;
-		getSurvRubrics("HSiFS", idx_difficulty[difficulty], base, exp, firstBomb, bomb, firstRelease);
-		getScoreRubrics("HSiFS", idx_difficulty[difficulty], base_s, exp_s);
 	}
 
 	void countBombs()
@@ -69,58 +51,6 @@ namespace ns_hsifs
 
 		_release_petals = release_petals;
 	}
-	
-	void calculateDRCPoints()
-	{
-		float decrement = 0;
-		float n = 0;
-		// make a copy if bombs used
-		char _bombs = bombs;
-
-		n += misses * 2;	// default is 2
-		if (bombs > 0)
-		{
-			n += firstBomb;
-			_bombs--;
-		}
-		n += _bombs * 1;	// default is 1
-
-		// make a copy of release variable
-		unsigned short _releases = releases;
-
-		if (_releases > 0)
-		{
-			n += firstRelease;
-			_releases--;
-		}
-		while (_releases > 0)
-		{
-			for (int i = 0; i < 10; i++)
-			{
-				n += 0.5f - decrement;
-				_releases--;
-				if (_releases == 0)
-					break;
-			}
-			decrement += (decrement == 0.4f) ? 0 : 0.1f;
-		}
-
-		drcpoints_survival = base * pow(exp, -n) * getMultiplier("HSiFS", shottype.c_str());
-
-		ull wr;
-		// catch ReimuWinter Lunatic world record exception
-		if (idx_difficulty[difficulty] == "Lunatic" && shottype == "ReimuWinter")
-			wr = 0;
-		else
-			wr = getWR<ull>("HSiFS", idx_difficulty[difficulty], shottype.c_str());
-
-		if (wr == 0)
-		{
-			std::cout << "This difficulty with this shottype hasn't had a world record yet." << std::endl;
-		}
-
-		drcpoints_score = (score >= wr) ? roundf(base_s) : roundf(base_s * (float)pow((long double)score / wr, exp_s));
-	}
 
 	void ReadMemory(HANDLE gameProc)
 	{
@@ -136,6 +66,9 @@ namespace ns_hsifs
 			RELEASE_PETALS = 0x004A5808,	// 190 petals = 1 level / level 6 = 1140 petals
 			P_SPELLID = 0x004A6DB0
 		};
+
+		// mark this game
+		game = 16;
 
 		ReadProcessMemory(gameProc, (void*)FRAME_COUNT, &frame_count, sizeof(int), 0);
 		ReadProcessMemory(gameProc, (void*)SCORE, &score, sizeof(int), 0);
@@ -161,7 +94,10 @@ namespace ns_hsifs
 		}
 
 		getShottype();
+
 		getRubrics();
+		firstRelease = Rubrics["SURV_RUBRICS"][idx_game[game]][idx_difficulty[difficulty]]["firstRelease"].get<char>();
+		release = Rubrics["SURV_RUBRICS"][idx_game[game]][idx_difficulty[difficulty]]["release"].get<float>();
 
 		countBombs();
 		countReleases();
