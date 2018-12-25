@@ -44,9 +44,9 @@ struct RUBRIC
 // get multiplier for shottype / route
 float getMultiplier(const char* game, const char* shottype_route)
 {
-	if (keyExist(Rubrics["SURV_RUBRICS"][game]["multiplier"], shottype_route))
+	if (keyExist(Rubrics["SURV"][game]["multiplier"], shottype_route))
 	{
-		return Rubrics["SURV_RUBRICS"][game]["multiplier"][shottype_route].get<float>();
+		return Rubrics["SURV"][game]["multiplier"][shottype_route].get<float>();
 	}
 	else
 		return 1.0f;
@@ -55,29 +55,29 @@ float getMultiplier(const char* game, const char* shottype_route)
 // get rubrics for survival
 void getSurvRubrics()
 {
-	rubric.base = Rubrics["SURV_RUBRICS"][idx_game[game]][idx_difficulty[difficulty]]["base"].get<unsigned short>();
-	rubric.exp = Rubrics["SURV_RUBRICS"][idx_game[game]][idx_difficulty[difficulty]]["exp"].get<float>();
-	rubric.miss = Rubrics["SURV_RUBRICS"][idx_game[game]][idx_difficulty[difficulty]]["miss"].get<char>();
-	rubric.firstBomb = Rubrics["SURV_RUBRICS"][idx_game[game]][idx_difficulty[difficulty]]["firstBomb"].get<char>();
-	rubric.bomb = Rubrics["SURV_RUBRICS"][idx_game[game]][idx_difficulty[difficulty]]["bomb"].get<char>();
+	rubric.base = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["base"].get<unsigned short>();
+	rubric.exp = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["exp"].get<float>();
+	rubric.miss = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["miss"].get<char>();
+	rubric.firstBomb = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["firstBomb"].get<char>();
+	rubric.bomb = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["bomb"].get<char>();
 }
 
 /*
 // get rubrics for survival, exclusively for PoDD and PoFV
 void getSurvRubrics()
 {
-	rubric.base = Rubrics["SURV_RUBRICS"][idx_game[game]][idx_difficulty[difficulty]]["base"].get<unsigned short>();
-	rubric.min = Rubrics["SURV_RUBRICS"][idx_game[game]][idx_difficulty[difficulty]]["min"].get<char>();
-	rubric.lives = Rubrics["SURV_RUBRICS"][idx_game[game]][idx_difficulty[difficulty]]["lives"].get<char>();
-	rubric.noBombBonus = Rubrics["SURV_RUBRICS"][idx_game[game]][idx_difficulty[difficulty]]["noBombBonus"].get<char>();
+	rubric.base = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["base"].get<unsigned short>();
+	rubric.min = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["min"].get<char>();
+	rubric.lives = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["lives"].get<char>();
+	rubric.noBombBonus = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["noBombBonus"].get<char>();
 }
 */
 
 // get rubrics for scoring
 void getScoreRubrics()
 {
-	rubric.base_s = Rubrics["SCORE_RUBRICS"][idx_game[game]][idx_difficulty[difficulty]]["base"].get<unsigned short>();
-	rubric.exp_s = Rubrics["SCORE_RUBRICS"][idx_game[game]][idx_difficulty[difficulty]]["exp"].get<float>();
+	rubric.base_s = Rubrics["SCORE"][idx_game[game]][idx_difficulty[difficulty]]["base"].get<unsigned short>();
+	rubric.exp_s = Rubrics["SCORE"][idx_game[game]][idx_difficulty[difficulty]]["exp"].get<float>();
 }
 
 void getRubrics()
@@ -92,7 +92,7 @@ void getRubrics()
 void survivalPoints()
 {
 	float n = 0;
-	// make a copy of bomb
+	// make a copy of bombs
 	char _bombs = bombs;
 
 	n += misses * rubric.miss;
@@ -138,21 +138,14 @@ void survivalPoints()
 
 	if (idx_game[game] == "IN")
 	{
-		unsigned short ls_points;
-		switch (difficulty)
+		if (idx_difficulty[difficulty] == "Extra")
 		{
-		case 0:	// easy
-			ls_points = ls_capped * 1;
-			break;
-		case 4:	// extra
-			ls_points = ls_capped * 5;
-			break;
-		default:
-			ls_points = ls_capped * 2;
-			break;
+			drcpoints_survival += (ls_capped == 1) ? 5 : 0;
 		}
-
-		drcpoints_survival += ls_points;
+		else
+		{
+			drcpoints_survival += ls_capped * (idx_difficulty[difficulty] == "Easy") ? 1 : 2;
+		}
 	}
 
 	if (idx_difficulty[difficulty] != "Extra" && idx_difficulty[difficulty] != "Phantasm")
@@ -161,10 +154,18 @@ void survivalPoints()
 	}
 }
 
-std::string removeSeason()
+std::string removeSeason(std::string shottype)
 {
-	const char* idx_character[] = { "Reimu", "Cirno", "Aya", "Marisa" };
-	return shottype.substr(0, strlen(idx_character[character]));
+	const char* season[] = { "Spring", "Summer", "Autumn", "Winter" };
+	for (size_t i = 0; i < 4; i++)
+	{
+		size_t pos = shottype.find(season[i]);
+		if (pos != std::string::npos)
+		{
+			shottype.erase(pos, 6);
+		}
+	}
+	return shottype;
 }
 
 std::string bestSeason()
@@ -194,28 +195,22 @@ std::string bestSeason()
 void scoringPoints()
 {
 	ull wr;
-	if (idx_game[game] == "LoLK" && idx_difficulty[difficulty] == "Lunatic")
+	if (keyExist(Rubrics["SCORE"][idx_game[game]][idx_difficulty[difficulty]], "basedOn"))
 	{
-		if (shottype == "Reimu")
-		{
-			wr = 2500000000;
-		}
-		else if (shottype == "Marisa")
-		{
-			wr = 2400000000;
-		}
-		else
-		{
-			wr = WRs[idx_game[game]][idx_difficulty[difficulty]][shottype][0].get<ull>();
-		}
+		const char* basedOn = Rubrics["SCORE"][idx_game[game]][idx_difficulty[difficulty]]["basedOn"].get<const char*>;
+		wr = WRs[idx_game[game]][idx_difficulty[difficulty]][basedOn][0].get<ull>();
 	}
-	else if (idx_game[game] == "HSiFS" && idx_difficulty[difficulty] == "Hard")
+	else if (keyExist(Rubrics["SCORE"][idx_game[game]][idx_difficulty[difficulty]], "wr"))
 	{
-		wr = WRs[idx_game[game]][idx_difficulty[difficulty]]["AyaAutumn"][0].get<ull>();
+		wr = (Rubrics["SCORE"][idx_game[game]][idx_difficulty[difficulty]]["wr"].is_object())
+			? Rubrics["SCORE"][idx_game[game]][idx_difficulty[difficulty]]["wr"][shottype].get<ull>()
+			: Rubrics["SCORE"][idx_game[game]][idx_difficulty[difficulty]]["wr"].get<ull>();
 	}
 	else
 	{
-		wr = WRs[idx_game[game]][idx_difficulty[difficulty]][removeSeason() + (idx_game[game] == "HSiFS" ? bestSeason() : "")][0].get<ull>();
+		std::string _shottype = removeSeason(shottype);
+		_shottype += (idx_game[game] == "HSiFS") ? bestSeason() : "";
+		wr = WRs[idx_game[game]][idx_difficulty[difficulty]][_shottype][0].get<ull>();
 	}
 
 	drcpoints_score = (score >= wr) ? roundf(rubric.base_s) : roundf(rubric.base_s * (float)pow((long double)score / wr, rubric.exp_s));
