@@ -17,7 +17,6 @@ namespace ns_eosd
 	{
 		shottype = idx_character[character];
 		shottype += idx_type[type];
-		std::cout << "Shottype: " << shottype << std::endl;
 	}
 
 	void countMisses()
@@ -41,6 +40,9 @@ namespace ns_eosd
 
 	void ReadMemory(HANDLE gameProc)
 	{
+		// mark this game
+		game = 5;
+
 		enum address
 		{
 			FRAME_COUNT = 0x0069BC00,
@@ -51,9 +53,6 @@ namespace ns_eosd
 			MISS_DEATHBOMB = 0x0069BCC0,
 			BOMB = 0x0069BCC4
 		};
-
-		// mark this game
-		game = 5;
 
 		ReadProcessMemory(gameProc, (void*)FRAME_COUNT, &frame_count, sizeof(int), 0);
 		ReadProcessMemory(gameProc, (void*)CHARACTER, &character, sizeof(char), 0);
@@ -73,15 +72,8 @@ namespace ns_eosd
 		getShottype();
 
 		countMisses();
-		
-		setcolor(LIGHTRED);
-		std::cout << "Misses: " << int(misses) << std::endl;
-		setcolor(LIGHTGREEN);
-		std::cout << "Bombs: " << int(bombs) << std::endl;
-		setcolor(WHITE);
-		std::cout << "Score: " << score << std::endl;
 
 		calculateDRCPoints();
-		printDRCPoints();
+		printStatus();
 	}
 }

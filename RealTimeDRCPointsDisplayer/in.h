@@ -4,7 +4,7 @@
 
 namespace ns_in
 {
-	char stage, team, type, deathbombs, bombs_sum;
+	char stage, team, type, deathbombs;
 	DWORD p_score;
 	unsigned int spellbonus, spellID, _spellID;
 	// used for counting last spell captures
@@ -16,33 +16,6 @@ namespace ns_in
 	void getShottype()
 	{
 		shottype = idx_team[team];
-		std::cout << "Shottype: " << shottype << std::endl;
-	}
-
-	void getStageFinal()
-	{
-		if (idx_difficulty[difficulty] == "Extra")
-		{
-			std::cout << "Imperishable Shooting Captured: " << ((ls_capped == 1) ? "True" : "False") << std::endl;
-		}
-		else
-		{
-			switch (stage)
-			{
-			case 6: // 6A
-				std::cout << "Final: A" << std::endl;
-				std::cout << "Last spells captured: " << int(ls_capped) << "/" << Rubrics["MAX_LAST_SPELLS"][idx_difficulty[difficulty]]["FinalA"] << std::endl;
-				break;
-			case 7:	// 6B
-				std::cout << "Final: B" << std::endl;
-				std::cout << "Last spells captured: " << int(ls_capped) << "/" << Rubrics["MAX_LAST_SPELLS"][idx_difficulty[difficulty]]["FinalB"] << std::endl;
-				break;
-			default:
-				std::cout << "Final: ?" << std::endl;
-				std::cout << "Last spells captured: " << int(ls_capped) << "/?" << std::endl;
-				break;
-			}
-		}
 	}
 
 	void countLs_capped()
@@ -89,6 +62,9 @@ namespace ns_in
 
 	void ReadMemory(HANDLE gameProc)
 	{
+		// mark this game
+		game = 7;
+
 		enum address
 		{
 			FRAME_COUNT = 0x0164D0AC,
@@ -102,9 +78,6 @@ namespace ns_in
 			BOMBS = 0x0164CFA8,
 			DEATHBOMBS = 0x0164CFAC
 		};
-
-		// mark this game
-		game = 7;
 
 		ReadProcessMemory(gameProc, (void*)FRAME_COUNT, &frame_count, sizeof(int), 0);
 		ReadProcessMemory(gameProc, (void*)STAGE, &stage, sizeof(char), 0);
@@ -126,24 +99,14 @@ namespace ns_in
 		}
 
 		// total bombs used
-		bombs_sum = bombs + deathbombs;
+		bombs += deathbombs;
 
 		getShottype();
 		getRubrics();
 
 		countLs_capped();
 
-		setcolor(LIGHTRED);
-		std::cout << "Misses: " << int(misses) << std::endl;
-		setcolor(LIGHTGREEN);
-		std::cout << "Bombs: " << int(bombs_sum) << std::endl;
-		setcolor(WHITE);
-		std::cout << "Score: " << score << std::endl;
-		setcolor(LIGHTGRAY);
-
-		getStageFinal();
-
 		calculateDRCPoints();
-		printDRCPoints();
+		printStatus(stage);
 	}
 }

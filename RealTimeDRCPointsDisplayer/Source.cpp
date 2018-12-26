@@ -45,6 +45,7 @@ int main(int argc, char* args[])
 			std::cout << "Game not found. Finding..." << std::endl;
 			Sleep(2000);
 		}
+		system("cls");
 			
 		while (GetProcess())
 		{

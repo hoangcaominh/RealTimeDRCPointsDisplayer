@@ -51,7 +51,7 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="lolk.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\gHeader</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

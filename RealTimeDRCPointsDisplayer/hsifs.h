@@ -25,8 +25,6 @@ namespace ns_hsifs
 		{
 			shottype += idx_season[season];
 		}
-
-		std::cout << "Shottype: " << shottype << std::endl;
 	}
 
 	void countBombs()
@@ -54,6 +52,9 @@ namespace ns_hsifs
 
 	void ReadMemory(HANDLE gameProc)
 	{
+		// mark this game
+		game = 16;
+
 		enum address
 		{
 			FRAME_COUNT = 0x004A57A0,
@@ -66,9 +67,6 @@ namespace ns_hsifs
 			RELEASE_PETALS = 0x004A5808,	// 190 petals = 1 level / level 6 = 1140 petals
 			P_SPELLID = 0x004A6DB0
 		};
-
-		// mark this game
-		game = 16;
 
 		ReadProcessMemory(gameProc, (void*)FRAME_COUNT, &frame_count, sizeof(int), 0);
 		ReadProcessMemory(gameProc, (void*)SCORE, &score, sizeof(int), 0);
@@ -102,16 +100,7 @@ namespace ns_hsifs
 		countBombs();
 		countReleases();
 
-		setcolor(LIGHTRED);
-		std::cout << "Misses: " << int(misses) << std::endl;
-		setcolor(LIGHTGREEN);
-		std::cout << "Bombs: " << int(bombs) << std::endl;
-		setcolor(YELLOW);
-		std::cout << "Release: " << releases << std::endl;
-		setcolor(WHITE);
-		std::cout << "Score: " << score << std::endl;
-
 		calculateDRCPoints();
-		printDRCPoints();
+		printStatus();
 	}
 }

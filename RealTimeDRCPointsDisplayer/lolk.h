@@ -16,8 +16,6 @@ namespace ns_lolk
 	void getShottype()
 	{
 		shottype = idx_character[character];
-
-		std::cout << "Shottype: " << shottype << std::endl;
 	}
 
 	void countBombs()
@@ -35,6 +33,9 @@ namespace ns_lolk
 
 	void ReadMemory(HANDLE gameProc)
 	{
+		// mark this game
+		game = 15;
+
 		enum address
 		{
 			FRAME_COUNT = 0x004E73FC,
@@ -45,9 +46,6 @@ namespace ns_lolk
 			MISSES = 0x004E742C,
 			P_IS_BOMB = 0x004E9A68,
 		};
-
-		// mark this game
-		game = 15;
 
 		ReadProcessMemory(gameProc, (void*)FRAME_COUNT, &frame_count, sizeof(int), 0);
 		ReadProcessMemory(gameProc, (void*)SCORE, &score, sizeof(int), 0);
@@ -70,14 +68,7 @@ namespace ns_lolk
 
 		countBombs();
 
-		setcolor(LIGHTRED);
-		std::cout << "Misses: " << int(misses) << std::endl;
-		setcolor(LIGHTGREEN);
-		std::cout << "Bombs: " << int(bombs) << std::endl;
-		setcolor(WHITE);
-		std::cout << "Score: " << score << std::endl;
-
 		calculateDRCPoints();
-		printDRCPoints();
+		printStatus();
 	}
 }
