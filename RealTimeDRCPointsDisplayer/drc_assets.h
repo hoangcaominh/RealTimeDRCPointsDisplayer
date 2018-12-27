@@ -199,9 +199,23 @@ void scoringPoints()
 	}
 	else if (keyExist(Rubrics["SCORE"][idx_game[game]][idx_difficulty[difficulty]], "wr"))
 	{
-		wr = (Rubrics["SCORE"][idx_game[game]][idx_difficulty[difficulty]]["wr"].is_object())
-			? Rubrics["SCORE"][idx_game[game]][idx_difficulty[difficulty]]["wr"][shottype].get<ull>()
-			: Rubrics["SCORE"][idx_game[game]][idx_difficulty[difficulty]]["wr"].get<ull>();
+		if (Rubrics["SCORE"][idx_game[game]][idx_difficulty[difficulty]]["wr"].is_object())
+		{
+			if (keyExist(Rubrics["SCORE"][idx_game[game]][idx_difficulty[difficulty]]["wr"], shottype.c_str()))
+			{
+				wr = Rubrics["SCORE"][idx_game[game]][idx_difficulty[difficulty]]["wr"][shottype].get<ull>();
+			}
+			else // consider this case as a normal one
+			{
+				std::string _shottype = removeSeason(shottype);
+				_shottype += (idx_game[game] == "HSiFS") ? bestSeason() : "";
+				wr = WRs[idx_game[game]][idx_difficulty[difficulty]][_shottype][0].get<ull>();
+			}
+		}
+		else
+		{
+			wr = Rubrics["SCORE"][idx_game[game]][idx_difficulty[difficulty]]["wr"].get<ull>();
+		}
 	}
 	else
 	{
