@@ -81,7 +81,6 @@ namespace ns_hsifs
 		if (frame_count == 0 && score == 0)
 		{
 			// initialize
-			misses = 0;
 			bombs = 0;
 			releases = 0;
 			_release_petals = 0;

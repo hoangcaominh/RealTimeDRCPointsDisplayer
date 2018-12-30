@@ -2,20 +2,33 @@
 
 #include "drc_assets.h"
 
-namespace ns_lolk
+namespace ns_sa
 {
-	// mode in LoLK
-	char mode;
+	// variables for manually counting misses
+	char lives, _lives;
+
 	// variables for recording key pressed
 	DWORD p_is_bomb;
 	bool is_bomb, x_reset;
 
 	// character index
-	const char* idx_character[] = { "Reimu", "Marisa", "Sanae", "Reisen" };
+	const char* idx_character[] = { "Reimu", "Marisa" };
+	// type index
+	const char* idx_type[] = { "A", "B", "C" };
 
 	void getShottype()
 	{
 		shottype = idx_character[character];
+		shottype += idx_type[type];
+	}
+
+	void countMisses()
+	{
+		if (lives == _lives - 1)	// miss
+		{
+			misses++;
+		}
+		_lives = lives;
 	}
 
 	void countBombs()
@@ -35,33 +48,36 @@ namespace ns_lolk
 	{
 		enum address
 		{
-			FRAME_COUNT = 0x004E73FC,
-			SCORE = 0x004E740C,
-			CHARACTER = 0x004E7404,
-			MODE = 0x004E7795,
-			DIFFICULTY = 0x004E7410,
-			MISSES = 0x004E742C,
-			P_IS_BOMB = 0x004E9A68,
+			P_IS_BOMB = 0x004A8D64,
+			SCORE = 0x004A56E4,
+			DIFFICULTY = 0x004A5720,
+			CHARACTER = 0x004A5710,
+			TYPE = 0x004A5714,
+			LIVES = 0x004A5718,
+			FRAME_COUNT = 0x004A5734
 		};
 
 		ReadProcessMemory(gameProc, (void*)FRAME_COUNT, &frame_count, sizeof(int), 0);
 		ReadProcessMemory(gameProc, (void*)SCORE, &score, sizeof(int), 0);
 		ReadProcessMemory(gameProc, (void*)CHARACTER, &character, sizeof(char), 0);
+		ReadProcessMemory(gameProc, (void*)TYPE, &type, sizeof(char), 0);
 		ReadProcessMemory(gameProc, (void*)DIFFICULTY, &difficulty, sizeof(char), 0);
-		ReadProcessMemory(gameProc, (void*)MISSES, &misses, sizeof(char), 0);
+		ReadProcessMemory(gameProc, (void*)LIVES, &lives, sizeof(char), 0);
 		ReadProcessMemory(gameProc, (void*)P_IS_BOMB, &p_is_bomb, sizeof(int), 0);
-		ReadProcessMemory(gameProc, (void*)(p_is_bomb + 0x24), &is_bomb, sizeof(bool), 0);
+		ReadProcessMemory(gameProc, (void*)(p_is_bomb + 0x3C), &is_bomb, sizeof(bool), 0);
 
 		score *= 10;
 		if (frame_count == 0 && score == 0)
 		{
 			// initialize
+			misses = 0;
 			bombs = 0;
 		}
 
 		getShottype();
 		getRubrics();
 
+		countMisses();
 		countBombs();
 
 		calculateDRCPoints();

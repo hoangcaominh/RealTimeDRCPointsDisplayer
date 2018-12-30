@@ -7,6 +7,7 @@
 
 #include "eosd.h"
 #include "in.h"
+#include "sa.h"
 #include "ddc.h"
 #include "lolk.h"
 #include "hsifs.h"
@@ -116,7 +117,10 @@ void ReadMemory(string title)
 
 	// SA
 	else if (title == GameName[5])
-		std::cout << "This game is currently unsupported. Please wait warmly." << std::endl;
+	{
+		game = 10;
+		ns_sa::ReadMemory(gameProc);
+	}
 
 	// UFO
 	else if (title == GameName[6])

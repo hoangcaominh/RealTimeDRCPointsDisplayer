@@ -13,7 +13,7 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Header Files\gHeader">
+    <Filter Include="Header Files\game">
       <UniqueIdentifier>{edc3f1ab-a67c-4d0d-a9e1-c5ef7497ff28}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -39,22 +39,25 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="eosd.h">
-      <Filter>Header Files\gHeader</Filter>
+      <Filter>Header Files\game</Filter>
     </ClInclude>
     <ClInclude Include="in.h">
-      <Filter>Header Files\gHeader</Filter>
+      <Filter>Header Files\game</Filter>
     </ClInclude>
     <ClInclude Include="hsifs.h">
-      <Filter>Header Files\gHeader</Filter>
+      <Filter>Header Files\game</Filter>
     </ClInclude>
     <ClInclude Include="drc_assets.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="lolk.h">
-      <Filter>Header Files\gHeader</Filter>
+      <Filter>Header Files\game</Filter>
     </ClInclude>
     <ClInclude Include="ddc.h">
-      <Filter>Header Files\gHeader</Filter>
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="sa.h">
+      <Filter>Header Files\game</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

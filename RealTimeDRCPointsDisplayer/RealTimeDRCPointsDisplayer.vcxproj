@@ -129,6 +129,7 @@
     <ClInclude Include="ProcessJSON.h" />
     <ClInclude Include="ProcessMemory.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="sa.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Resource.rc" />
