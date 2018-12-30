@@ -62,9 +62,6 @@ namespace ns_in
 
 	void ReadMemory(HANDLE gameProc)
 	{
-		// mark this game
-		game = 7;
-
 		enum address
 		{
 			FRAME_COUNT = 0x0164D0AC,

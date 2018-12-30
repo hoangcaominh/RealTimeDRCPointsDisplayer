@@ -7,6 +7,7 @@
 
 #include "eosd.h"
 #include "in.h"
+#include "ddc.h"
 #include "lolk.h"
 #include "hsifs.h"
 
@@ -32,46 +33,6 @@ string GameName[GAME_AVAILABLE] = {
 	"th15.exe",
 	"th16.exe"
 };
-
-void ReadMemory_PCB()
-{
-	std::cout << "This game is currently unsupported. Please wait warmly." << std::endl;
-}
-
-void ReadMemory_PoFV()
-{
-	std::cout << "This game is currently unsupported. Please wait warmly." << std::endl;
-}
-
-void ReadMemory_MoF()
-{
-	std::cout << "This game is currently unsupported. Please wait warmly." << std::endl;
-}
-
-void ReadMemory_SA()
-{
-	std::cout << "This game is currently unsupported. Please wait warmly." << std::endl;
-}
-
-void ReadMemory_UFO()
-{
-	std::cout << "This game is currently unsupported. Please wait warmly." << std::endl;
-}
-
-void ReadMemory_GFW()
-{
-	std::cout << "This game is currently unsupported. Please wait warmly." << std::endl;
-}
-
-void ReadMemory_TD()
-{
-	std::cout << "This game is currently unsupported. Please wait warmly." << std::endl;
-}
-
-void ReadMemory_DDC()
-{
-	std::cout << "This game is currently unsupported. Please wait warmly." << std::endl;
-}
 
 bool GetProcess()
 {
@@ -129,51 +90,66 @@ void ReadMemory(string title)
 {
 	// EoSD
 	if (title == GameName[0])
+	{
+		game = 5;
 		ns_eosd::ReadMemory(gameProc);
+	}
 
 	// PCB
 	else if (title == GameName[1])
-		ReadMemory_PCB();
+		std::cout << "This game is currently unsupported. Please wait warmly." << std::endl;
 
 	// IN
 	else if (title == GameName[2])
+	{
+		game = 7;
 		ns_in::ReadMemory(gameProc);
+	}
 
 	// PoFV
 	else if (title == GameName[3])
-		ReadMemory_PoFV();
+		std::cout << "This game is currently unsupported. Please wait warmly." << std::endl;
 
 	// MoF
 	else if (title == GameName[4])
-		ReadMemory_MoF();
+		std::cout << "This game is currently unsupported. Please wait warmly." << std::endl;
 
 	// SA
 	else if (title == GameName[5])
-		ReadMemory_SA();
+		std::cout << "This game is currently unsupported. Please wait warmly." << std::endl;
 
 	// UFO
 	else if (title == GameName[6])
-		ReadMemory_UFO();
+		std::cout << "This game is currently unsupported. Please wait warmly." << std::endl;
 
 	// GFW
 	else if (title == GameName[7])
-		ReadMemory_GFW();
+		std::cout << "This game is currently unsupported. Please wait warmly." << std::endl;
 
 	// TD
 	else if (title == GameName[8])
-		ReadMemory_TD();
+		std::cout << "This game is currently unsupported. Please wait warmly." << std::endl;
 
 	// DDC
 	else if (title == GameName[9])
-		ReadMemory_DDC();
+	{
+		game = 14;
+		ns_ddc::ReadMemory(gameProc);
+	}
 
 	// LoLK
 	else if (title == GameName[10])
+	{
+		game = 15;
 		ns_lolk::ReadMemory(gameProc);
+	}
 
 	// HSiFS
 	else if (title == GameName[11])
+	{
+		game = 16;
 		ns_hsifs::ReadMemory(gameProc);
+	}
 
 	else
 		return;

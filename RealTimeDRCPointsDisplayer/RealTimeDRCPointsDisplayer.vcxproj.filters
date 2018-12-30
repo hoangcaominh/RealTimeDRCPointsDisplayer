@@ -53,6 +53,9 @@
     <ClInclude Include="lolk.h">
       <Filter>Header Files\gHeader</Filter>
     </ClInclude>
+    <ClInclude Include="ddc.h">
+      <Filter>Header Files\gHeader</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Resource.rc">

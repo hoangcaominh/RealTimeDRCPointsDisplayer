@@ -119,6 +119,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="color.h" />
+    <ClInclude Include="ddc.h" />
     <ClInclude Include="drc_assets.h" />
     <ClInclude Include="eosd.h" />
     <ClInclude Include="in.h" />

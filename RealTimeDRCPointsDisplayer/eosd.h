@@ -40,9 +40,6 @@ namespace ns_eosd
 
 	void ReadMemory(HANDLE gameProc)
 	{
-		// mark this game
-		game = 5;
-
 		enum address
 		{
 			FRAME_COUNT = 0x0069BC00,

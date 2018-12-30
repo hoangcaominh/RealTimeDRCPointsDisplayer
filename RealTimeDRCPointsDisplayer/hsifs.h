@@ -52,9 +52,6 @@ namespace ns_hsifs
 
 	void ReadMemory(HANDLE gameProc)
 	{
-		// mark this game
-		game = 16;
-
 		enum address
 		{
 			FRAME_COUNT = 0x004A57A0,
