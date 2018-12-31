@@ -274,6 +274,12 @@ void printStatus(int arg0 = 0)
 	setcolor(LIGHTGREEN);
 	std::cout << "Bombs: " << int(bombs) << std::endl;
 
+	// Print UFO summons (UFO only)
+	if (idx_game[game] == "UFO")
+	{
+		setcolor(YELLOW);
+		std::cout << "UFO Summons: " << arg0 << std::endl;
+	}
 	// Print Releases (HSiFS only)
 	if (idx_game[game] == "HSiFS")
 	{

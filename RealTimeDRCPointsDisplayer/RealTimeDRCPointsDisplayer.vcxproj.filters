@@ -59,6 +59,9 @@
     <ClInclude Include="sa.h">
       <Filter>Header Files\game</Filter>
     </ClInclude>
+    <ClInclude Include="ufo.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Resource.rc">

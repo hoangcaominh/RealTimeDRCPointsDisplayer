@@ -130,6 +130,7 @@
     <ClInclude Include="ProcessMemory.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="sa.h" />
+    <ClInclude Include="ufo.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Resource.rc" />
