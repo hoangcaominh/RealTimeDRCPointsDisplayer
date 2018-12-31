@@ -75,16 +75,16 @@ namespace ns_ufo
 			P_IS_BOMB = 0x004B43C4
 		};
 
-		ReadProcessMemory(gameProc, (void*)FRAME_COUNT, &frame_count, sizeof(int), 0);
+		ReadProcessMemory(gameProc, (void*)FRAME_COUNT, &frame_count, sizeof(frame_count), 0);
 		ReadProcessMemory(gameProc, (void*)SCORE, &score, sizeof(int), 0);
 		ReadProcessMemory(gameProc, (void*)VAULT, vault, sizeof(vault), 0);
-		ReadProcessMemory(gameProc, (void*)VAULTS, &vaults, sizeof(char), 0);
-		ReadProcessMemory(gameProc, (void*)CHARACTER, &character, sizeof(char), 0);
-		ReadProcessMemory(gameProc, (void*)TYPE, &type, sizeof(char), 0);
-		ReadProcessMemory(gameProc, (void*)DIFFICULTY, &difficulty, sizeof(char), 0);
-		ReadProcessMemory(gameProc, (void*)LIVES, &lives, sizeof(char), 0);
-		ReadProcessMemory(gameProc, (void*)P_IS_BOMB, &p_is_bomb, sizeof(int), 0);
-		ReadProcessMemory(gameProc, (void*)(p_is_bomb + 0x3C), &is_bomb, sizeof(bool), 0);
+		ReadProcessMemory(gameProc, (void*)VAULTS, &vaults, sizeof(vaults), 0);
+		ReadProcessMemory(gameProc, (void*)CHARACTER, &character, sizeof(character), 0);
+		ReadProcessMemory(gameProc, (void*)TYPE, &type, sizeof(type), 0);
+		ReadProcessMemory(gameProc, (void*)DIFFICULTY, &difficulty, sizeof(difficulty), 0);
+		ReadProcessMemory(gameProc, (void*)LIVES, &lives, sizeof(lives), 0);
+		ReadProcessMemory(gameProc, (void*)P_IS_BOMB, &p_is_bomb, sizeof(p_is_bomb), 0);
+		ReadProcessMemory(gameProc, (void*)(p_is_bomb + 0x3C), &is_bomb, sizeof(is_bomb), 0);
 
 		score *= 10;
 		if (frame_count == 0 && score == 0)

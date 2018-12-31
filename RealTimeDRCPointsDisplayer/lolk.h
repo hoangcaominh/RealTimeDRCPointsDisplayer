@@ -44,13 +44,13 @@ namespace ns_lolk
 			P_IS_BOMB = 0x004E9A68,
 		};
 
-		ReadProcessMemory(gameProc, (void*)FRAME_COUNT, &frame_count, sizeof(int), 0);
+		ReadProcessMemory(gameProc, (void*)FRAME_COUNT, &frame_count, sizeof(frame_count), 0);
 		ReadProcessMemory(gameProc, (void*)SCORE, &score, sizeof(int), 0);
-		ReadProcessMemory(gameProc, (void*)CHARACTER, &character, sizeof(char), 0);
-		ReadProcessMemory(gameProc, (void*)DIFFICULTY, &difficulty, sizeof(char), 0);
-		ReadProcessMemory(gameProc, (void*)MISSES, &misses, sizeof(char), 0);
-		ReadProcessMemory(gameProc, (void*)P_IS_BOMB, &p_is_bomb, sizeof(int), 0);
-		ReadProcessMemory(gameProc, (void*)(p_is_bomb + 0x24), &is_bomb, sizeof(bool), 0);
+		ReadProcessMemory(gameProc, (void*)CHARACTER, &character, sizeof(character), 0);
+		ReadProcessMemory(gameProc, (void*)DIFFICULTY, &difficulty, sizeof(difficulty), 0);
+		ReadProcessMemory(gameProc, (void*)MISSES, &misses, sizeof(misses), 0);
+		ReadProcessMemory(gameProc, (void*)P_IS_BOMB, &p_is_bomb, sizeof(p_is_bomb), 0);
+		ReadProcessMemory(gameProc, (void*)(p_is_bomb + 0x24), &is_bomb, sizeof(is_bomb), 0);
 
 		score *= 10;
 		if (frame_count == 0 && score == 0)

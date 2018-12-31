@@ -65,17 +65,17 @@ namespace ns_hsifs
 			P_SPELLID = 0x004A6DB0
 		};
 
-		ReadProcessMemory(gameProc, (void*)FRAME_COUNT, &frame_count, sizeof(int), 0);
+		ReadProcessMemory(gameProc, (void*)FRAME_COUNT, &frame_count, sizeof(frame_count), 0);
 		ReadProcessMemory(gameProc, (void*)SCORE, &score, sizeof(int), 0);
-		ReadProcessMemory(gameProc, (void*)CHARACTER, &character, sizeof(char), 0);
+		ReadProcessMemory(gameProc, (void*)CHARACTER, &character, sizeof(character), 0);
 		ReadProcessMemory(gameProc, (void*)SEASON, &season, sizeof(char), 0);
-		ReadProcessMemory(gameProc, (void*)DIFFICULTY, &difficulty, sizeof(char), 0);
-		ReadProcessMemory(gameProc, (void*)MISSES, &misses, sizeof(char), 0);
-		ReadProcessMemory(gameProc, (void*)P_IS_BOMB, &p_is_bomb, sizeof(int), 0);
-		ReadProcessMemory(gameProc, (void*)(p_is_bomb + 0x30), &is_bomb, sizeof(bool), 0);
-		ReadProcessMemory(gameProc, (void*)RELEASE_PETALS, &release_petals, sizeof(unsigned short), 0);
-		ReadProcessMemory(gameProc, (void*)P_SPELLID, &p_spellID, sizeof(int), 0);
-		ReadProcessMemory(gameProc, (void*)(p_spellID + 0x74), &spellID, sizeof(char), 0);
+		ReadProcessMemory(gameProc, (void*)DIFFICULTY, &difficulty, sizeof(difficulty), 0);
+		ReadProcessMemory(gameProc, (void*)MISSES, &misses, sizeof(misses), 0);
+		ReadProcessMemory(gameProc, (void*)P_IS_BOMB, &p_is_bomb, sizeof(p_is_bomb), 0);
+		ReadProcessMemory(gameProc, (void*)(p_is_bomb + 0x30), &is_bomb, sizeof(is_bomb), 0);
+		ReadProcessMemory(gameProc, (void*)RELEASE_PETALS, &release_petals, sizeof(release_petals), 0);
+		ReadProcessMemory(gameProc, (void*)P_SPELLID, &p_spellID, sizeof(p_spellID), 0);
+		ReadProcessMemory(gameProc, (void*)(p_spellID + 0x74), &spellID, sizeof(spellID), 0);
 
 		score *= 10;
 		if (frame_count == 0 && score == 0)

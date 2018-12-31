@@ -47,16 +47,16 @@ namespace ns_eosd
 			TYPE = 0x0069D4BE,
 			DIFFICULTY = 0x0069BCB0,
 			SCORE = 0x0069BCA0,
-			MISS_DEATHBOMB = 0x0069BCC0,
-			BOMB = 0x0069BCC4
+			MISSES_DEATHBOMB = 0x0069BCC0,
+			BOMBS = 0x0069BCC4
 		};
 
-		ReadProcessMemory(gameProc, (void*)FRAME_COUNT, &frame_count, sizeof(int), 0);
-		ReadProcessMemory(gameProc, (void*)CHARACTER, &character, sizeof(char), 0);
-		ReadProcessMemory(gameProc, (void*)TYPE, &type, sizeof(char), 0);
-		ReadProcessMemory(gameProc, (void*)DIFFICULTY, &difficulty, sizeof(char), 0);
-		ReadProcessMemory(gameProc, (void*)MISS_DEATHBOMB, &misses_deathbombs, sizeof(char), 0);
-		ReadProcessMemory(gameProc, (void*)BOMB, &bombs, sizeof(char), 0);
+		ReadProcessMemory(gameProc, (void*)FRAME_COUNT, &frame_count, sizeof(frame_count), 0);
+		ReadProcessMemory(gameProc, (void*)CHARACTER, &character, sizeof(character), 0);
+		ReadProcessMemory(gameProc, (void*)TYPE, &type, sizeof(type), 0);
+		ReadProcessMemory(gameProc, (void*)DIFFICULTY, &difficulty, sizeof(difficulty), 0);
+		ReadProcessMemory(gameProc, (void*)MISSES_DEATHBOMB, &misses_deathbombs, sizeof(misses_deathbombs), 0);
+		ReadProcessMemory(gameProc, (void*)BOMBS, &bombs, sizeof(bombs), 0);
 		ReadProcessMemory(gameProc, (void*)SCORE, &score, sizeof(int), 0);
 
 		// reset false miss

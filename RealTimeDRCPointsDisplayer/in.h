@@ -76,16 +76,16 @@ namespace ns_in
 			DEATHBOMBS = 0x0164CFAC
 		};
 
-		ReadProcessMemory(gameProc, (void*)FRAME_COUNT, &frame_count, sizeof(int), 0);
-		ReadProcessMemory(gameProc, (void*)STAGE, &stage, sizeof(char), 0);
-		ReadProcessMemory(gameProc, (void*)SPELLID, &spellID, sizeof(int), 0);
-		ReadProcessMemory(gameProc, (void*)SPELLBONUS, &spellbonus, sizeof(int), 0);
-		ReadProcessMemory(gameProc, (void*)TEAM, &team, sizeof(char), 0);
-		ReadProcessMemory(gameProc, (void*)DIFFICULTY, &difficulty, sizeof(char), 0);
-		ReadProcessMemory(gameProc, (void*)MISSES, &misses, sizeof(char), 0);
-		ReadProcessMemory(gameProc, (void*)BOMBS, &bombs, sizeof(char), 0);
-		ReadProcessMemory(gameProc, (void*)DEATHBOMBS, &deathbombs, sizeof(char), 0);
-		ReadProcessMemory(gameProc, (void*)P_SCORE, &p_score, sizeof(int), 0);
+		ReadProcessMemory(gameProc, (void*)FRAME_COUNT, &frame_count, sizeof(frame_count), 0);
+		ReadProcessMemory(gameProc, (void*)STAGE, &stage, sizeof(stage), 0);
+		ReadProcessMemory(gameProc, (void*)SPELLID, &spellID, sizeof(spellID), 0);
+		ReadProcessMemory(gameProc, (void*)SPELLBONUS, &spellbonus, sizeof(spellbonus), 0);
+		ReadProcessMemory(gameProc, (void*)TEAM, &team, sizeof(team), 0);
+		ReadProcessMemory(gameProc, (void*)DIFFICULTY, &difficulty, sizeof(difficulty), 0);
+		ReadProcessMemory(gameProc, (void*)MISSES, &misses, sizeof(misses), 0);
+		ReadProcessMemory(gameProc, (void*)BOMBS, &bombs, sizeof(bombs), 0);
+		ReadProcessMemory(gameProc, (void*)DEATHBOMBS, &deathbombs, sizeof(deathbombs), 0);
+		ReadProcessMemory(gameProc, (void*)P_SCORE, &p_score, sizeof(p_score), 0);
 		ReadProcessMemory(gameProc, (void*)p_score, &score, sizeof(int), 0);
 
 		score *= 10;
