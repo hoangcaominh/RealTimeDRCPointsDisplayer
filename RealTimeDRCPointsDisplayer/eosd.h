@@ -60,7 +60,7 @@ namespace ns_eosd
 		ReadProcessMemory(gameProc, (void*)SCORE, &score, sizeof(int), 0);
 
 		// reset false miss
-		if (score == 0 && frame_count == 0)
+		if (reset())
 		{
 			false_misses = 0;
 		}

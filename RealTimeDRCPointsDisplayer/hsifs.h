@@ -78,7 +78,7 @@ namespace ns_hsifs
 		ReadProcessMemory(gameProc, (void*)(p_spellID + 0x74), &spellID, sizeof(spellID), 0);
 
 		score *= 10;
-		if (frame_count == 0 && score == 0)
+		if (reset())
 		{
 			// initialize
 			bombs = 0;

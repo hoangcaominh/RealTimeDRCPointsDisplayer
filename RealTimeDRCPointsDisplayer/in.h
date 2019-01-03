@@ -90,7 +90,7 @@ namespace ns_in
 
 		score *= 10;
 		// reset last spells captured
-		if (score == 0 && frame_count == 0)
+		if (reset())
 		{
 			ls_capped = 0;
 		}

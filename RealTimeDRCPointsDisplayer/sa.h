@@ -67,7 +67,7 @@ namespace ns_sa
 		ReadProcessMemory(gameProc, (void*)(p_is_bomb + 0x3C), &is_bomb, sizeof(is_bomb), 0);
 
 		score *= 10;
-		if (frame_count == 0 && score == 0)
+		if (reset())
 		{
 			// initialize
 			misses = 0;

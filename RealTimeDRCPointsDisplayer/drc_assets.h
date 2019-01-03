@@ -44,6 +44,14 @@ char season, firstRelease; float release;
 // Used for resetting information
 DWORD frame_count;
 
+// reset status
+bool reset()
+{
+	if (frame_count <= 0x0F && score == 0)
+		return true;
+	return false;
+}
+
 // get multiplier for shottype / route
 float getMultiplier(const char* game, const char* shottype_route)
 {
@@ -145,7 +153,7 @@ void survivalPoints()
 		}
 		else
 		{
-			drcpoints_survival += ls_capped * (idx_difficulty[difficulty] == "Easy") ? 1 : 2;
+			drcpoints_survival += ls_capped * ((idx_difficulty[difficulty] == "Easy") ? 1 : 2);
 		}
 	}
 
@@ -317,4 +325,7 @@ void printStatus()
 		setcolor(YELLOW);
 		std::cout << "Rainbow UFOs: " << (int)ufos_rainbow << std::endl;
 	}
+
+	// reset text color
+	setcolor(LIGHTGRAY);
 }
