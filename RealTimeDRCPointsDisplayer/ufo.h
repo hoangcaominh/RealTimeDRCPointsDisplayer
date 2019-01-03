@@ -5,7 +5,7 @@
 namespace ns_ufo
 {
 	// variables for UFO
-	int vault[3]; char vaults, ufos; bool is_ufo;
+	int vault[3]; char vaults; bool is_ufo;
 
 	// variables for manually counting misses
 	char lives, _lives;
@@ -53,6 +53,24 @@ namespace ns_ufo
 		{
 			is_ufo = true;
 			ufos++;
+
+			// specific ufo
+			if (vault[0] == 1 && vault[1] == 1)
+			{
+				ufos_red++;
+			}
+			else if (vault[0] == 2 && vault[1] == 2)
+			{
+				ufos_green++;
+			}
+			else if (vault[0] == 3 && vault[3] == 3)
+			{
+				ufos_blue++;
+			}
+			else
+			{
+				ufos_rainbow++;
+			}
 		}
 		else if (vaults != 3)
 		{
@@ -93,6 +111,10 @@ namespace ns_ufo
 			misses = 0;
 			bombs = 0;
 			ufos = 0;
+			ufos_red = 0;
+			ufos_green = 0;
+			ufos_blue = 0;
+			ufos_rainbow = 0;
 		}
 
 		getShottype();
@@ -103,6 +125,6 @@ namespace ns_ufo
 		countUFOs();
 
 		calculateDRCPoints();
-		printStatus(ufos);
+		printStatus();
 	}
 }

@@ -4,7 +4,7 @@
 
 namespace ns_in
 {
-	char stage, team, type, deathbombs;
+	char team, type, deathbombs;
 	DWORD p_score;
 	unsigned int spellbonus, spellID, _spellID;
 	// used for counting last spell captures
@@ -104,6 +104,6 @@ namespace ns_in
 		countLs_capped();
 
 		calculateDRCPoints();
-		printStatus(stage);
+		printStatus();
 	}
 }

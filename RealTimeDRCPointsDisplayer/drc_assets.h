@@ -1,5 +1,6 @@
 #pragma once
 
+#include <stdarg.h>
 #include "ProcessJSON.h"
 
 // unsigned long long for convenience
@@ -30,7 +31,10 @@ unsigned short surv_base; float surv_exp;
 unsigned short score_base; float score_exp;
 
 // Variables for IN
-char ls_capped;
+char ls_capped, stage;
+
+// Variables for UFO
+char ufos, ufos_red, ufos_green, ufos_blue, ufos_rainbow;
 
 // Variables for HSiFS
 static unsigned short releases;
@@ -235,7 +239,7 @@ void calculateDRCPoints()
 }
 
 // IN final section and last spell capture status
-inline void printFinalStage(char stage)
+inline void printFinalStage()
 {
 	if (idx_difficulty[difficulty] == "Extra")
 	{
@@ -262,7 +266,7 @@ inline void printFinalStage(char stage)
 }
 
 // print status
-void printStatus(int arg0 = 0)
+void printStatus()
 {
 	setcolor(LIGHTGRAY);
 	std::cout << "Game: " << idx_game[game] << std::endl;
@@ -278,13 +282,13 @@ void printStatus(int arg0 = 0)
 	if (idx_game[game] == "UFO")
 	{
 		setcolor(YELLOW);
-		std::cout << "UFO Summons: " << arg0 << std::endl;
+		std::cout << "UFO Summons: " << (int)ufos << std::endl;
 	}
 	// Print Releases (HSiFS only)
 	if (idx_game[game] == "HSiFS")
 	{
 		setcolor(YELLOW);
-		std::cout << "Releases: " << arg0 << std::endl;
+		std::cout << "Releases: " << (int)releases << std::endl;
 	}
 	setcolor(WHITE);
 	std::cout << "Score: " << score << std::endl;
@@ -293,10 +297,24 @@ void printStatus(int arg0 = 0)
 	if (idx_game[game] == "IN")
 	{
 		setcolor(LIGHTGRAY);
-		printFinalStage(arg0);
+		printFinalStage();
 	}
 
 	setcolor(LIGHTGRAY);
 	std::cout << "Survival points: " << drcpoints_survival << std::endl;
 	std::cout << "Scoring points: " << drcpoints_score << std::endl;
+
+	// Print UFO specific ufos
+	if (idx_game[game] == "UFO")
+	{
+		std::cout << std::endl;
+		setcolor(LIGHTRED);
+		std::cout << "Red UFOs: " << (int)ufos_red << std::endl;
+		setcolor(LIGHTGREEN);
+		std::cout << "Green UFOs: " << (int)ufos_green << std::endl;
+		setcolor(LIGHTBLUE);
+		std::cout << "Blue UFOs: " << (int)ufos_blue << std::endl;
+		setcolor(YELLOW);
+		std::cout << "Rainbow UFOs: " << (int)ufos_rainbow << std::endl;
+	}
 }
