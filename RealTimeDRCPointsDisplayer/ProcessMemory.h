@@ -7,6 +7,7 @@
 
 #include "eosd.h"
 #include "in.h"
+#include "mof.h"
 #include "sa.h"
 #include "ufo.h"
 #include "ddc.h"
@@ -114,7 +115,10 @@ void ReadMemory(string title)
 
 	// MoF
 	else if (title == GameName[4])
-		std::cout << "This game is currently unsupported. Please wait warmly." << std::endl;
+	{
+		game = 9;
+		ns_mof::ReadMemory(gameProc);
+	}
 
 	// SA
 	else if (title == GameName[5])

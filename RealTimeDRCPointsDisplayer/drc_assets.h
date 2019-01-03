@@ -94,7 +94,9 @@ void getScoreRubrics()
 void getRubrics()
 {
 	getSurvRubrics();
-	getScoreRubrics();
+	// scoring rubric for MoF is not ready yet
+	if (idx_game[game] != "MoF")
+		getScoreRubrics();
 }
 
 // calculate points for normal game format

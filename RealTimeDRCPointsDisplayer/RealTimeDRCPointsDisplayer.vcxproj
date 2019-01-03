@@ -126,6 +126,7 @@
     <ClInclude Include="json.hpp" />
     <ClInclude Include="hsifs.h" />
     <ClInclude Include="lolk.h" />
+    <ClInclude Include="mof.h" />
     <ClInclude Include="ProcessJSON.h" />
     <ClInclude Include="ProcessMemory.h" />
     <ClInclude Include="resource.h" />
