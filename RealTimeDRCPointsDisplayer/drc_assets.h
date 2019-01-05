@@ -287,7 +287,17 @@ void printStatus()
 	setcolor(LIGHTGRAY);
 	std::cout << "Game: " << idx_game[game] << std::endl;
 	std::cout << "Difficulty: " << idx_difficulty[difficulty] << std::endl;
-	std::cout << "Shottype: " << shottype << std::endl;
+
+	// print route instead of shottype if it's GFW and it's not Extra
+	if (idx_game[game] == "GFW")
+	{
+		if (idx_difficulty[difficulty] != "Extra")
+			std::cout << "Route: " << shottype << std::endl;
+	}
+	else
+	{
+		std::cout << "Shottype: " << shottype << std::endl;
+	}
 
 	setcolor(LIGHTRED);
 	std::cout << "Misses: " << int(misses) << std::endl;

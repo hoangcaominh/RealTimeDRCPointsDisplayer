@@ -10,6 +10,7 @@
 #include "mof.h"
 #include "sa.h"
 #include "ufo.h"
+#include "gfw.h"
 #include "ddc.h"
 #include "lolk.h"
 #include "hsifs.h"
@@ -136,7 +137,10 @@ void ReadMemory(string title)
 
 	// GFW
 	else if (title == GameName[7])
-		std::cout << "This game is currently unsupported. Please wait warmly." << std::endl;
+	{
+		game = 12;
+		ns_gfw::ReadMemory(gameProc);
+	}
 
 	// TD
 	else if (title == GameName[8])

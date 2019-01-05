@@ -122,6 +122,7 @@
     <ClInclude Include="ddc.h" />
     <ClInclude Include="drc_assets.h" />
     <ClInclude Include="eosd.h" />
+    <ClInclude Include="gfw.h" />
     <ClInclude Include="in.h" />
     <ClInclude Include="json.hpp" />
     <ClInclude Include="hsifs.h" />
