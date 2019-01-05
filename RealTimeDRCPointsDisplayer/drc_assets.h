@@ -239,6 +239,12 @@ void scoringPoints()
 	}
 
 	drcpoints_score = (score >= wr) ? roundf(score_base) : roundf(score_base * (float)pow((long double)score / wr, score_exp));
+
+	// not calculating MoF scoring points yet
+	if (idx_game[game] == "MoF")
+	{
+		drcpoints_score = -1.0f;
+	}
 }
 
 // calculating DRC points for survival and scoring
