@@ -34,7 +34,7 @@ unsigned short score_base; float score_exp;
 char ls_capped, stage;
 
 // Variables for Phantasmagorias
-char min, lives, noBombBonus;
+char min, lives, noBombBonus; bool noCharge;
 
 // Variables for UFO
 char ufos, ufos_red, ufos_green, ufos_blue, ufos_rainbow;
@@ -111,9 +111,6 @@ void phantasmagoria()
 	if (idx_difficulty[difficulty] == "Extra")
 		shottypeMultiplier = 1.0f;
 
-	// initializing useless boolean
-	
-	bool noCharge = false;
 	drcpoints_survival = roundf(shottypeMultiplier * ((surv_base - ((surv_base - min) / lives * misses)) + (noCharge ? noBombBonus : 0) ));
 }
 
@@ -329,7 +326,14 @@ void printStatus()
 	setcolor(LIGHTRED);
 	std::cout << "Misses: " << int(misses) << std::endl;
 	setcolor(LIGHTGREEN);
-	std::cout << "Bombs: " << int(bombs) << std::endl;
+	if (idx_game[game] != "PoDD" && idx_game[game] != "PoFV")
+	{
+		std::cout << "Bombs: " << int(bombs) << std::endl;
+	}
+	else
+	{
+		std::cout << "No Charge: " << (noCharge ? "True" : "False") << std::endl;
+	}
 	
 	// Print UFO summons (UFO only)
 	if (idx_game[game] == "UFO")

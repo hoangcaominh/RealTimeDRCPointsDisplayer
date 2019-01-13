@@ -4,7 +4,10 @@
 
 namespace ns_pofv
 {
-	DWORD p_score;
+	// Variables for measuring gauge bar
+	float charge;
+
+	DWORD p_score, p_charge;
 	// lost round variables
 	char loss, _loss;
 
@@ -29,11 +32,12 @@ namespace ns_pofv
 	{
 		enum address
 		{
+			P_CHARGE = 0x004A7D94,
+			P_SCORE = 0x004A7DAC,
 			CHARACTER = 0x004A7DB0,
-			P_SCORE = 0x004F5830,
-			DIFFICULTY = 0x004F5834,
-			LOSS = 0x004F5864,
-			FRAME_COUNT = 0x004A7EBC
+			LOSS = 0x004A7E9C,
+			FRAME_COUNT = 0x004A7EBC,
+			DIFFICULTY = 0x004B3538
 		};
 
 		ReadProcessMemory(gameProc, (void*)FRAME_COUNT, &frame_count, sizeof(frame_count), 0);
@@ -41,18 +45,26 @@ namespace ns_pofv
 		ReadProcessMemory(gameProc, (void*)DIFFICULTY, &difficulty, sizeof(difficulty), 0);
 		ReadProcessMemory(gameProc, (void*)LOSS, &loss, sizeof(loss), 0);
 		ReadProcessMemory(gameProc, (void*)P_SCORE, &p_score, sizeof(p_score), 0);
-		ReadProcessMemory(gameProc, (void*)p_score, &score, sizeof(int), 0);
+		ReadProcessMemory(gameProc, (void*)(p_score + 0x04), &score, sizeof(int), 0);
+		ReadProcessMemory(gameProc, (void*)P_CHARGE, &p_charge, sizeof(p_charge), 0);
+		ReadProcessMemory(gameProc, (void*)(p_charge + 0x30384), &charge, sizeof(charge), 0);
 
 		score *= 10;
 		if (reset())
 		{
 			misses = 0;
+			noCharge = true;
 		}
 
 		getShottype();
 		getRubrics();
 
 		countMisses();
+
+		if (charge >= 100.0f)
+		{
+			noCharge = false;
+		}
 
 		calculateDRCPoints();
 		printStatus();
