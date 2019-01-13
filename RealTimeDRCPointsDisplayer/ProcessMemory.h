@@ -7,10 +7,12 @@
 
 #include "eosd.h"
 #include "in.h"
+#include "pofv.h"
 #include "mof.h"
 #include "sa.h"
 #include "ufo.h"
 #include "gfw.h"
+#include "td.h"
 #include "ddc.h"
 #include "lolk.h"
 #include "hsifs.h"
@@ -112,7 +114,10 @@ void ReadMemory(string title)
 
 	// PoFV
 	else if (title == GameName[3])
-		std::cout << "This game is currently unsupported. Please wait warmly." << std::endl;
+	{
+		game = 8;
+		ns_pofv::ReadMemory(gameProc);
+	}
 
 	// MoF
 	else if (title == GameName[4])
@@ -144,7 +149,10 @@ void ReadMemory(string title)
 
 	// TD
 	else if (title == GameName[8])
-		std::cout << "This game is currently unsupported. Please wait warmly." << std::endl;
+	{
+		game = 13;
+		ns_td::ReadMemory(gameProc);
+	}
 
 	// DDC
 	else if (title == GameName[9])

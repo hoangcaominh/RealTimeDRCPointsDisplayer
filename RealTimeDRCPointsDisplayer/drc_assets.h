@@ -33,8 +33,14 @@ unsigned short score_base; float score_exp;
 // Variables for IN
 char ls_capped, stage;
 
+// Variables for Phantasmagorias
+char min, lives, noBombBonus;
+
 // Variables for UFO
 char ufos, ufos_red, ufos_green, ufos_blue, ufos_rainbow;
+
+// Variables for TD
+unsigned short spirits; char trances;
 
 // Variables for HSiFS
 static unsigned short releases;
@@ -66,23 +72,22 @@ float getMultiplier(const char* game, const char* shottype_route)
 // get rubrics for survival
 void getSurvRubrics()
 {
-	surv_base = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["base"].get<unsigned short>();
-	surv_exp = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["exp"].get<float>();
-	miss = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["miss"].get<float>();
-	firstBomb = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["firstBomb"].get<char>();
-	bomb = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["bomb"].get<char>();
+	if (idx_game[game] != "PoDD" && idx_game[game] != "PoFV")
+	{
+		surv_base = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["base"].get<unsigned short>();
+		surv_exp = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["exp"].get<float>();
+		miss = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["miss"].get<float>();
+		firstBomb = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["firstBomb"].get<char>();
+		bomb = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["bomb"].get<char>();
+	}
+	else
+	{
+		surv_base = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["base"].get<unsigned short>();
+		min = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["min"].get<char>();
+		lives = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["lives"].get<char>();
+		noBombBonus = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["noBombBonus"].get<char>();
+	}
 }
-
-/*
-// get rubrics for survival, exclusively for PoDD and PoFV
-void getSurvRubrics()
-{
-	surv_base = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["surv_base"].get<unsigned short>();
-	min = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["min"].get<char>();
-	lives = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["lives"].get<char>();
-	noBombBonus = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["noBombBonus"].get<char>();
-}
-*/
 
 // get rubrics for scoring
 void getScoreRubrics()
@@ -99,6 +104,19 @@ void getRubrics()
 		getScoreRubrics();
 }
 
+// calculate points for Phantasmagorias
+void phantasmagoria()
+{
+	float shottypeMultiplier = getMultiplier(idx_game[game], shottype.c_str());
+	if (idx_difficulty[difficulty] == "Extra")
+		shottypeMultiplier = 1.0f;
+
+	// initializing useless boolean
+	
+	bool noCharge = false;
+	drcpoints_survival = roundf(shottypeMultiplier * ((surv_base - ((surv_base - min) / lives * misses)) + (noCharge ? noBombBonus : 0) ));
+}
+
 // calculate points for normal game format
 void survivalPoints()
 {
@@ -113,6 +131,11 @@ void survivalPoints()
 		_bombs--;
 	}
 	n += _bombs * bomb;
+
+	if (idx_game[game] == "TD")
+	{
+		n += trances;
+	}
 
 	/* PCB is not implemented yet 
 	if (idx_game[game] == "PCB")
@@ -250,7 +273,11 @@ void scoringPoints()
 // calculating DRC points for survival and scoring
 void calculateDRCPoints()
 {
-	survivalPoints();
+	if (idx_game[game] != "PoDD" && idx_game[game] != "PoFV")
+		survivalPoints();
+	else
+		phantasmagoria();
+	
 	scoringPoints();
 }
 
@@ -303,12 +330,18 @@ void printStatus()
 	std::cout << "Misses: " << int(misses) << std::endl;
 	setcolor(LIGHTGREEN);
 	std::cout << "Bombs: " << int(bombs) << std::endl;
-
+	
 	// Print UFO summons (UFO only)
 	if (idx_game[game] == "UFO")
 	{
 		setcolor(YELLOW);
 		std::cout << "UFO Summons: " << (int)ufos << std::endl;
+	}
+	// Print Trances (TD only)
+	if (idx_game[game] == "TD")
+	{
+		setcolor(YELLOW);
+		std::cout << "Trances: " << (int)trances << std::endl;
 	}
 	// Print Releases (HSiFS only)
 	if (idx_game[game] == "HSiFS")

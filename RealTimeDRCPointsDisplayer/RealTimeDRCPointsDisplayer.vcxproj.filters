@@ -68,6 +68,12 @@
     <ClInclude Include="gfw.h">
       <Filter>Header Files\game</Filter>
     </ClInclude>
+    <ClInclude Include="pofv.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="td.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Resource.rc">

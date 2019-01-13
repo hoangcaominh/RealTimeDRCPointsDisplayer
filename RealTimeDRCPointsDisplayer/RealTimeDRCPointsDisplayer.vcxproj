@@ -128,10 +128,12 @@
     <ClInclude Include="hsifs.h" />
     <ClInclude Include="lolk.h" />
     <ClInclude Include="mof.h" />
+    <ClInclude Include="pofv.h" />
     <ClInclude Include="ProcessJSON.h" />
     <ClInclude Include="ProcessMemory.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="sa.h" />
+    <ClInclude Include="td.h" />
     <ClInclude Include="ufo.h" />
   </ItemGroup>
   <ItemGroup>
