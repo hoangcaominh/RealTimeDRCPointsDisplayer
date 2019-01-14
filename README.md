@@ -1,10 +1,11 @@
+# Note
+I don't know whether the program displays the status correctly so it is better to manually count points then compare it to the program's. If you find it show incorrectly, please tell me so I can fix it :).
+
 # RealTimeDRCPointsDisplayer
-A console application that counts DRC points for you during your run or your replay.
+A console (for now) application that counts DRC points for you during your run or your replay.
 
 # What's new
-- LoLK is now supported
-- Calculating system is updated to 12/27/2018
-- Fixed bugs
+All Windows maingames, PoFV and GFW are now supported
 
 # Installing and Recommendation
 - You just need to download the folder to whereever you want in your PC. Creating a shortcut on the desktop is recommended.
@@ -12,10 +13,7 @@ A console application that counts DRC points for you during your run or your rep
 
 # Mechanism
 - Downloading part and loading part for rubric file and world record file are operated first.
-- The application auto-detect any Windows maingame. Once it founds a game, data for that game will be displayed on the console window.
-
-# Unsolved problems
-- Cherry point variables in PCB are yet to be found.
+- The application willl auto-detect any Windows maingame + PoFV and GFW. Once it founds a game, status for that game will be displayed on the console window.
 
 # Inspiration
 - [Dodging Rain Competition](https://maribelhearn.github.io/drc)

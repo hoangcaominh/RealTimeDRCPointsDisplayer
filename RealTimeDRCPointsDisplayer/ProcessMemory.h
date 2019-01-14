@@ -6,6 +6,7 @@
 #include <TlHelp32.h>
 
 #include "eosd.h"
+#include "pcb.h"
 #include "in.h"
 #include "pofv.h"
 #include "mof.h"
@@ -103,7 +104,10 @@ void ReadMemory(string title)
 
 	// PCB
 	else if (title == GameName[1])
-		std::cout << "This game is currently unsupported. Please wait warmly." << std::endl;
+	{
+		game = 6;
+		ns_pcb::ReadMemory(gameProc);
+	}
 
 	// IN
 	else if (title == GameName[2])

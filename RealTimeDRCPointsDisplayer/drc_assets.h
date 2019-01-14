@@ -30,6 +30,9 @@ unsigned short surv_base; float surv_exp;
 // scoring variables
 unsigned short score_base; float score_exp;
 
+// Variables for PCB
+char borderBreaks;
+
 // Variables for IN
 char ls_capped, stage;
 
@@ -129,17 +132,15 @@ void survivalPoints()
 	}
 	n += _bombs * bomb;
 
-	if (idx_game[game] == "TD")
-	{
-		n += trances;
-	}
-
-	/* PCB is not implemented yet 
 	if (idx_game[game] == "PCB")
 	{
 		n += borderBreaks * bomb;
 	}
-	*/
+
+	if (idx_game[game] == "TD")
+	{
+		n += trances * bomb;
+	}
 
 	if (idx_game[game] == "HSiFS")
 	{
@@ -334,6 +335,13 @@ void printStatus()
 	{
 		std::cout << "No Charge: " << (noCharge ? "True" : "False") << std::endl;
 	}
+
+	// Print Border Breaks (PCB only)
+	if (idx_game[game] == "PCB")
+	{
+		setcolor(LIGHTMAGENTA);
+		std::cout << "Border Breaks: " << (int)borderBreaks << std::endl;
+	}
 	
 	// Print UFO summons (UFO only)
 	if (idx_game[game] == "UFO")
@@ -344,7 +352,7 @@ void printStatus()
 	// Print Trances (TD only)
 	if (idx_game[game] == "TD")
 	{
-		setcolor(YELLOW);
+		setcolor(LIGHTMAGENTA);
 		std::cout << "Trances: " << (int)trances << std::endl;
 	}
 	// Print Releases (HSiFS only)

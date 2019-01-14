@@ -128,6 +128,7 @@
     <ClInclude Include="hsifs.h" />
     <ClInclude Include="lolk.h" />
     <ClInclude Include="mof.h" />
+    <ClInclude Include="pcb.h" />
     <ClInclude Include="pofv.h" />
     <ClInclude Include="ProcessJSON.h" />
     <ClInclude Include="ProcessMemory.h" />
