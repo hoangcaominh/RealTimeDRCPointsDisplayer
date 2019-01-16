@@ -114,7 +114,7 @@ void phantasmagoria()
 	if (idx_difficulty[difficulty] == "Extra")
 		shottypeMultiplier = 1.0f;
 
-	drcpoints_survival = roundf(shottypeMultiplier * ((surv_base - ((surv_base - min) / lives * misses)) + (noCharge ? noBombBonus : 0) ));
+	drcpoints_survival = shottypeMultiplier * ((surv_base - ((surv_base - min) / lives * misses)) + (noCharge ? noBombBonus : 0) );
 }
 
 // calculate points for normal game format
@@ -166,7 +166,7 @@ void survivalPoints()
 		}
 	}
 
-	drcpoints_survival = roundf(surv_base * pow(surv_exp, -n));
+	drcpoints_survival = surv_base * pow(surv_exp, -n);
 
 	if (idx_game[game] == "IN")
 	{
@@ -182,7 +182,7 @@ void survivalPoints()
 
 	if (idx_difficulty[difficulty] != "Extra" && idx_difficulty[difficulty] != "Phantasm")
 	{
-		drcpoints_survival = roundf(drcpoints_survival * getMultiplier(idx_game[game], shottype.c_str()));
+		drcpoints_survival = drcpoints_survival * getMultiplier(idx_game[game], shottype.c_str());
 	}
 }
 
@@ -259,7 +259,7 @@ void scoringPoints()
 		wr = WRs[idx_game[game]][idx_difficulty[difficulty]][_shottype][0].get<ull>();
 	}
 
-	drcpoints_score = (score >= wr) ? roundf(score_base) : roundf(score_base * (float)pow((long double)score / wr, score_exp));
+	drcpoints_score = (score >= wr) ? score_base : score_base * (float)pow((long double)score / wr, score_exp);
 
 	// not calculating MoF scoring points yet
 	if (idx_game[game] == "MoF")
@@ -372,8 +372,8 @@ void printStatus()
 	}
 
 	setcolor(LIGHTGRAY);
-	std::cout << "Survival points: " << drcpoints_survival << std::endl;
-	std::cout << "Scoring points: " << drcpoints_score << std::endl;
+	std::cout << "Survival points: " << roundf(drcpoints_survival) << std::endl;
+	std::cout << "Scoring points: " << roundf(drcpoints_score) << std::endl;
 
 	// Print UFO specific ufos
 	if (idx_game[game] == "UFO")
