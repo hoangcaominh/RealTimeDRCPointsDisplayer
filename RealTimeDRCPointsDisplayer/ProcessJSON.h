@@ -26,6 +26,7 @@ bool keyExist(json outer_object, const char* key)
 // downloading part
 bool Download_rubrics()
 {
+	setcolor(LIGHTGRAY);
 	std::cout << "Downloading rubric file..." << std::endl;
 
 	// result of downloading rubric file
@@ -60,6 +61,7 @@ bool Download_rubrics()
 
 bool Download_wrs()
 {
+	setcolor(LIGHTGRAY);
 	std::cout << "Downloading world record file..." << std::endl;
 	
 	// result of downloading world record file (temporary url)

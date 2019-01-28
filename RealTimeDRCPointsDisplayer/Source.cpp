@@ -49,7 +49,7 @@ int main(int argc, char* args[])
 			
 		while (GetProcess())
 		{
-			ReadMemory(gameProcname);
+			ReadMemory();
 			Sleep(1000/10);	// 10 FPS
 			system("cls");
 		}
