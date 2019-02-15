@@ -24,10 +24,10 @@ namespace RealTimeDRCPointsDisplayerGUI {
 
 		GUI(void)
 		{
-			// LoadConfig();
-			// CheckNewVersion();
+			LoadConfig();
+			CheckNewVersion();
 			InitializeComponent();
-			Update();
+			UpdateLog();
 			RealTimeDRCPointsDisplayerGUI::GUI::Width = 299;
 		}
 
@@ -68,6 +68,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 	private: System::Windows::Forms::Label^  extraLabel1;
 	private: System::Windows::Forms::Label^  extraLabel3;
 	private: System::Windows::Forms::Label^  extraLabel2;
+	private: System::ComponentModel::BackgroundWorker^  UpdateNewVersion;
 
 
 	private:
@@ -102,6 +103,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->settings = (gcnew System::Windows::Forms::Button());
 			this->about = (gcnew System::Windows::Forms::Button());
 			this->bkgWorker = (gcnew System::ComponentModel::BackgroundWorker());
+			this->UpdateNewVersion = (gcnew System::ComponentModel::BackgroundWorker());
 			this->panel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -330,6 +332,13 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->bkgWorker->ProgressChanged += gcnew System::ComponentModel::ProgressChangedEventHandler(this, &GUI::bkgWorker_ReportProgress);
 			this->bkgWorker->RunWorkerCompleted += gcnew System::ComponentModel::RunWorkerCompletedEventHandler(this, &GUI::bkgWorker_RunWorkerCompleted);
 			// 
+			// UpdateNewVersion
+			// 
+			this->UpdateNewVersion->WorkerReportsProgress = true;
+			this->UpdateNewVersion->DoWork += gcnew System::ComponentModel::DoWorkEventHandler(this, &GUI::UpdateNewVersion_DoWork);
+			this->UpdateNewVersion->ProgressChanged += gcnew System::ComponentModel::ProgressChangedEventHandler(this, &GUI::UpdateNewVersion_ProgressChanged);
+			this->UpdateNewVersion->RunWorkerCompleted += gcnew System::ComponentModel::RunWorkerCompletedEventHandler(this, &GUI::UpdateNewVersion_RunWorkerCompleted);
+			// 
 			// GUI
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -364,7 +373,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 
 	private: System::Void update_Click(System::Object^  sender, System::EventArgs^  e)
 	{
-		Update();
+		UpdateLog();
 	}
 
 	private: System::Void clearHistory_Click(System::Object^  sender, System::EventArgs^  e)
@@ -395,7 +404,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		json temp_config;
 
 		BOOL fail = Download_config();
-		if (fail)
+		if (!fail)
 		{
 			std::ifstream readNewVersion("_config.json");
 			if (!readNewVersion.fail())
@@ -410,14 +419,14 @@ namespace RealTimeDRCPointsDisplayerGUI {
 					if (MessageBox::Show("New version detected. Do you want to update?", "Update", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes)
 					{
 						std::string url = temp_config["url"].get<std::string>();
-						// Start updating, do it later :P
+						System::Diagnostics::Process::Start(convertToStringClass(url));
 					}
 				}
 			}
 		}
 	}
 
-	private: System::Void Update()
+	private: System::Void UpdateLog()
 	{
 		SYSTEMTIME sysTime;
 		GetLocalTime(&sysTime);
@@ -747,6 +756,22 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			MessageBoxButtons::OK,
 			MessageBoxIcon::Information);
 	}
+
+	private: System::Void UpdateNewVersion_DoWork(System::Object^  sender, System::ComponentModel::DoWorkEventArgs^  e)
+	{
+
+	}
+
+	private: System::Void UpdateNewVersion_ProgressChanged(System::Object^  sender, System::ComponentModel::ProgressChangedEventArgs^  e)
+	{
+
+	}
+
+	private: System::Void UpdateNewVersion_RunWorkerCompleted(System::Object^  sender, System::ComponentModel::RunWorkerCompletedEventArgs^  e)
+	{
+
+	}
+
 
 	};
 }

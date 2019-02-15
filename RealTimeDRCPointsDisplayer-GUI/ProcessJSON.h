@@ -110,7 +110,7 @@ bool Load_wrs()
 BOOL Download_config()
 {
 	// result of downloading world record file (temporary url)
-	HRESULT hResult = URLDownloadToFile(NULL, _T("https://raw.githubusercontent.com/hoangcaominh/RealTimeDRCPointsDisplayer/master/RealTimeDRCPointsDisplayer/config.json"), _T("_config.json"), 0, NULL);
+	HRESULT hResult = URLDownloadToFile(NULL, _T("https://raw.githubusercontent.com/hoangcaominh/RealTimeDRCPointsDisplayer/master/RealTimeDRCPointsDisplayer-GUI/config.json"), _T("_config.json"), 0, NULL);
 
 	switch (hResult)
 	{
