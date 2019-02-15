@@ -260,6 +260,7 @@ paket-files/
 __pycache__/
 *.pyc
 
-# Additional files
+# Additional files, except configuration files
 *.txt
 *.json
+!config.json
