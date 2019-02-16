@@ -410,6 +410,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			if (!readNewVersion.fail())
 			{
 				readNewVersion >> temp_config;
+				readNewVersion.close();
 				String^ newVersion = convertToStringClass(temp_config["version"].get<std::string>());
 				String^ curVersion = convertToStringClass(config["version"].get<std::string>());
 
@@ -423,6 +424,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 					}
 				}
 			}
+			System::IO::File::Delete("_config.json");
 		}
 	}
 
