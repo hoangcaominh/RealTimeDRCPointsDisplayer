@@ -161,12 +161,18 @@
     <ClInclude Include="ProcessMemory.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="sa.h" />
+    <ClInclude Include="settings.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="td.h" />
     <ClInclude Include="ufo.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="GUI.resx">
       <DependentUpon>GUI.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="settings.resx">
+      <DependentUpon>settings.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

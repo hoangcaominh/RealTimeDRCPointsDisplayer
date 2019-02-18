@@ -46,7 +46,7 @@ char ufos, ufos_red, ufos_green, ufos_blue, ufos_rainbow;
 unsigned short spirits; char trances;
 
 // Variables for HSiFS
-unsigned short releases;
+short releases;
 // Rubric variables
 char season, firstRelease; float release;
 

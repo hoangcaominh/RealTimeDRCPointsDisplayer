@@ -142,8 +142,21 @@ bool Load_config()
 		return false;
 	}
 
-	// successfully parsed rubrics file
+	// successfully parsed config file
 	read >> config;
 
+	return true;
+}
+
+bool Save_config()
+{
+	std::ofstream write("config.json");
+	if (write.fail())
+	{
+		return false;
+	}
+
+	// successfully saved config file
+	write << config;
 	return true;
 }

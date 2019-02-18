@@ -2,6 +2,7 @@
 
 #include "ProcessJSON.h"
 #include "ProcessMemory.h"
+#include "settings.h"
 
 DWORD procStatus;
 DWORD GetExitCodeReturn;
@@ -24,7 +25,8 @@ namespace RealTimeDRCPointsDisplayerGUI {
 
 		GUI(void)
 		{
-			LoadConfig();
+			RealTimeDRCPointsDisplayerGUI::settings S;
+			S.LoadConfig();
 			CheckNewVersion();
 			InitializeComponent();
 			UpdateLog();
@@ -46,10 +48,8 @@ namespace RealTimeDRCPointsDisplayerGUI {
 	private: System::Windows::Forms::Button^  updateInfo;
 	private: System::Windows::Forms::ListBox^  infoBox;
 
-	protected:
-
 	private: System::Windows::Forms::Button^  clear;
-	private: System::Windows::Forms::Button^  detectGame;
+	private: System::Windows::Forms::Button^  findGame;
 
 	private: System::Windows::Forms::Panel^  panel1;
 	private: System::Windows::Forms::Label^  bombsLabel;
@@ -88,7 +88,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->updateInfo = (gcnew System::Windows::Forms::Button());
 			this->infoBox = (gcnew System::Windows::Forms::ListBox());
 			this->clear = (gcnew System::Windows::Forms::Button());
-			this->detectGame = (gcnew System::Windows::Forms::Button());
+			this->findGame = (gcnew System::Windows::Forms::Button());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->extraLabel3 = (gcnew System::Windows::Forms::Label());
 			this->extraLabel2 = (gcnew System::Windows::Forms::Label());
@@ -136,15 +136,15 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->clear->UseVisualStyleBackColor = true;
 			this->clear->Click += gcnew System::EventHandler(this, &GUI::clearHistory_Click);
 			// 
-			// detectGame
+			// findGame
 			// 
-			this->detectGame->Location = System::Drawing::Point(12, 314);
-			this->detectGame->Name = L"detectGame";
-			this->detectGame->Size = System::Drawing::Size(266, 23);
-			this->detectGame->TabIndex = 3;
-			this->detectGame->Text = L"Find Game";
-			this->detectGame->UseVisualStyleBackColor = true;
-			this->detectGame->Click += gcnew System::EventHandler(this, &GUI::button1_Click);
+			this->findGame->Location = System::Drawing::Point(12, 314);
+			this->findGame->Name = L"findGame";
+			this->findGame->Size = System::Drawing::Size(266, 23);
+			this->findGame->TabIndex = 3;
+			this->findGame->Text = L"Find Game";
+			this->findGame->UseVisualStyleBackColor = true;
+			this->findGame->Click += gcnew System::EventHandler(this, &GUI::findGame_Click);
 			// 
 			// panel1
 			// 
@@ -313,6 +313,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->settings->TabIndex = 4;
 			this->settings->Text = L"Settings";
 			this->settings->UseVisualStyleBackColor = true;
+			this->settings->Click += gcnew System::EventHandler(this, &GUI::settings_Click);
 			// 
 			// about
 			// 
@@ -347,12 +348,13 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->Controls->Add(this->about);
 			this->Controls->Add(this->settings);
 			this->Controls->Add(this->panel1);
-			this->Controls->Add(this->detectGame);
+			this->Controls->Add(this->findGame);
 			this->Controls->Add(this->clear);
 			this->Controls->Add(this->infoBox);
 			this->Controls->Add(this->updateInfo);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+			this->MaximizeBox = false;
 			this->Name = L"GUI";
 			this->Text = L"Live DRC Points Calculator";
 			this->Load += gcnew System::EventHandler(this, &GUI::GUI_Load);
@@ -366,19 +368,10 @@ namespace RealTimeDRCPointsDisplayerGUI {
 	{
 
 	}
+
 	private: System::Void listBox1_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e)
 	{
 
-	}
-
-	private: System::Void update_Click(System::Object^  sender, System::EventArgs^  e)
-	{
-		UpdateLog();
-	}
-
-	private: System::Void clearHistory_Click(System::Object^  sender, System::EventArgs^  e)
-	{
-		this->infoBox->Items->Clear();
 	}
 
 	private: System::Void label1_Click(System::Object^  sender, System::EventArgs^  e)
@@ -391,16 +384,134 @@ namespace RealTimeDRCPointsDisplayerGUI {
 
 	}
 
-	private: System::Void LoadConfig()
+	// convert to String from const char*
+	private: String^ convertToStringClass(const char* &str)
 	{
-		if (!Load_config())
+		String^ newString = gcnew String(str);
+		return newString;
+	}
+
+	// convert to String from std::string
+	private: String^ convertToStringClass(std::string &str)
+	{
+		String^ newString = gcnew String(str.c_str());
+		return newString;
+	}
+
+	 // IN stage final andl ast spells captured
+	private: System::Void printFinalStage()
+	{
+		if (strcmp(idx_difficulty[difficulty], "Extra") == 0)
 		{
-			MessageBox::Show("Error loading config file!", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			this->extraLabel0->Text = (L"Last Spells: " + ls_capped + L"/1");
+		}
+		else
+		{
+			switch (stage)
+			{
+			case 6: // 6A
+			{
+				char maxLastSpells = Rubrics["MAX_LAST_SPELLS"][idx_difficulty[difficulty]]["FinalA"].get<char>();
+				this->extraLabel0->Text = (L"LS: " + ls_capped + L"/" + maxLastSpells);
+				this->extraLabel2->Text = L"Final: A";
+				break;
+			}
+			case 7:	// 6B
+			{
+				char maxLastSpells = Rubrics["MAX_LAST_SPELLS"][idx_difficulty[difficulty]]["FinalB"].get<char>();
+				this->extraLabel0->Text = (L"LS: " + ls_capped + L"/" + maxLastSpells);
+				this->extraLabel2->Text = L"Final: B";
+				break;
+			}
+			default:
+				this->extraLabel0->Text = (L"LS: " + ls_capped + L"/?");
+				this->extraLabel2->Text = L"Final: ?";
+				break;
+			}
 		}
 	}
 
+	//
+	// Buttons
+	//
+
+	private: System::Void about_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		MessageBox::Show(
+			"Live DRC Points Calculator\n" +
+			"(formerly Real-time DRC Points Displayer)\n\n" +
+			"A small tool that helps players with in-game information such as misses, bombs, etc..\n\n" +
+			"Author: Cao Minh\n" +
+			"Version: 1.0",
+			"About",
+			MessageBoxButtons::OK,
+			MessageBoxIcon::Information);
+	}
+
+	private: System::Void update_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		UpdateLog();
+	}
+
+	private: System::Void clearHistory_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		this->infoBox->Items->Clear();
+	}
+
+	private: System::Void settings_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		// this->Hide();
+		RealTimeDRCPointsDisplayerGUI::settings^ settingsForm = gcnew RealTimeDRCPointsDisplayerGUI::settings();
+		settingsForm->ShowDialog();
+		
+	}
+
+	private: System::Void findGame_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		SYSTEMTIME sysTime;
+		GetLocalTime(&sysTime);
+
+		this->infoBox->Items->Add("[" + sysTime.wHour + ":" + sysTime.wMinute + ":" + sysTime.wSecond + "]");
+
+		BOOL fail = GetProcess();
+		// Successfully get the process
+		if (!fail)
+		{
+			this->infoBox->Items->Add(L"Found " + convertToStringClass(idx_game[game]));
+			// this->gameLabel->Text = (L"Game: " + convertToStringClass(idx_game[game]));
+
+			// Disable Find Game button
+			findGame->Enabled = false;
+
+			// Expand window
+			RealTimeDRCPointsDisplayerGUI::GUI::Width = 661;
+
+			if (!GetExitCodeProcess(gameProc, &procStatus))
+			{
+				this->infoBox->Items->Add(L"Get Exit Code Failed. Error: " + GetLastError());
+			}
+
+			// Inititalize UI
+			ReadMemory();
+			initLabel();
+
+			bkgWorker->RunWorkerAsync();
+		}
+		else
+		{
+			this->infoBox->Items->Add(L"Game not found. ID Returned: " + fail);
+		}
+
+		infoBox->SelectedIndex = infoBox->Items->Count - 1;
+	}
+
+	
+	//
+	// Background functions
+	//
+
 	private: System::Void CheckNewVersion()
-	{ 
+	{
 		json temp_config;
 
 		BOOL fail = Download_config();
@@ -417,15 +528,15 @@ namespace RealTimeDRCPointsDisplayerGUI {
 				// check if there is a new upadte
 				if (curVersion->CompareTo(newVersion) < 0)
 				{
-					if (MessageBox::Show("New version detected. Do you want to update?", "Update", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes)
+					if (MessageBox::Show("New version detected. Proceed to download page?", "Update", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == Windows::Forms::DialogResult::Yes)
 					{
 						std::string url = temp_config["url"].get<std::string>();
-						System::Diagnostics::Process::Start(convertToStringClass(url));
+						Diagnostics::Process::Start(convertToStringClass(url));
 					}
 				}
 			}
-			System::IO::File::Delete("_config.json");
 		}
+		IO::File::Delete("_config.json");
 	}
 
 	private: System::Void UpdateLog()
@@ -483,55 +594,8 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			flag = false;
 		}
 
-		this->detectGame->Enabled = flag;
+		this->findGame->Enabled = flag;
 		infoBox->SelectedIndex = infoBox->Items->Count - 1;
-	}
-
-	// convert to String from const char*
-	private: String^ convertToStringClass(const char* &str)
-	{
-		String^ newString = gcnew String(str);
-		return newString;
-	}
-
-	// convert to String from std::string
-	private: String^ convertToStringClass(std::string &str)
-	{
-		String^ newString = gcnew String(str.c_str());
-		return newString;
-	}
-
-	// IN stage final andl ast spells captured
-	private: System::Void printFinalStage()
-	{
-		if (strcmp(idx_difficulty[difficulty], "Extra") == 0)
-		{
-			this->extraLabel0->Text = (L"Last Spells: " + ls_capped + L"/1");
-		}
-		else
-		{
-			switch (stage)
-			{
-			case 6: // 6A
-			{
-				char maxLastSpells = Rubrics["MAX_LAST_SPELLS"][idx_difficulty[difficulty]]["FinalA"].get<char>();
-				this->extraLabel0->Text = (L"LS: " + ls_capped + L"/" + maxLastSpells);
-				this->extraLabel2->Text = L"Final: A";
-				break;
-			}
-			case 7:	// 6B
-			{
-				char maxLastSpells = Rubrics["MAX_LAST_SPELLS"][idx_difficulty[difficulty]]["FinalB"].get<char>();
-				this->extraLabel0->Text = (L"LS: " + ls_capped + L"/" + maxLastSpells);
-				this->extraLabel2->Text = L"Final: B";
-				break; 
-			}
-			default:
-				this->extraLabel0->Text = (L"LS: " + ls_capped + L"/?");
-				this->extraLabel2->Text = L"Final: ?";
-				break;
-			}
-		}
 	}
 
 	private: System::Void initLabel()
@@ -598,44 +662,45 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		}
 	}
 
-	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e)
+	// Apply offsets from config file
+	private: System::Void ApplyOffsets()
 	{
-		SYSTEMTIME sysTime;
-		GetLocalTime(&sysTime);
+		// General offset
+		misses += config["InitialMisses"].get<short>();
+		bombs += config["InitialBombs"].get<short>();
 
-		this->infoBox->Items->Add("[" + sysTime.wHour + ":" + sysTime.wMinute + ":" + sysTime.wSecond + "]");
-
-		BOOL fail = GetProcess();
-		// Successfully get the process
-		if (!fail)
-		{
-			this->infoBox->Items->Add(L"Found " + convertToStringClass(idx_game[game]));
-			// this->gameLabel->Text = (L"Game: " + convertToStringClass(idx_game[game]));
-
-			// Disable Find Game button
-			detectGame->Enabled = false;
-			
-			// Expand window
-			RealTimeDRCPointsDisplayerGUI::GUI::Width = 661;
-
-			if (!GetExitCodeProcess(gameProc, &procStatus))
-			{
-				this->infoBox->Items->Add(L"Get Exit Code Failed. Error: " + GetLastError());
-			}
-
-			// Inititalize UI
-			ReadMemory();
-			initLabel();
-
-			bkgWorker->RunWorkerAsync();
-		}
-		else
-		{
-			this->infoBox->Items->Add(L"Game not found. ID Returned: " + fail);
-		}
-
-		infoBox->SelectedIndex = infoBox->Items->Count - 1;
+		// Other offsets
+		borderBreaks += config["InitialBorderBreaks"].get<short>();
+		ls_capped += config["InitialLastSpellsCaptured"].get<short>();
+		trances += config["InitialTrances"].get<short>();
+		releases += config["InitialReleases"].get<short>();
+		ufos_red += config["InitialRedUFOs"].get<short>();
+		ufos_green += config["InitialGreenUFOs"].get<short>();
+		ufos_blue += config["InitialBlueUFOs"].get<short>();
+		ufos_rainbow += config["InitialRainbowUFOs"].get<short>();
 	}
+
+	// Remove offsets before applying offsets again
+	private: System::Void RemoveOffsets()
+	{
+		// General offset
+		misses -= config["InitialMisses"].get<short>();
+		bombs -= config["InitialBombs"].get<short>();
+
+		// Other offsets
+		borderBreaks -= config["InitialBorderBreaks"].get<short>();
+		ls_capped -= config["InitialLastSpellsCaptured"].get<short>();
+		trances -= config["InitialTrances"].get<short>();
+		releases -= config["InitialReleases"].get<short>();
+		ufos_red -= config["InitialRedUFOs"].get<short>();
+		ufos_green -= config["InitialGreenUFOs"].get<short>();
+		ufos_blue -= config["InitialBlueUFOs"].get<short>();
+		ufos_rainbow -= config["InitialRainbowUFOs"].get<short>();
+	}
+
+	//
+	// Background Worker
+	//
 
 	private: System::Void bkgWorker_DoWork(System::Object^  sender, System::ComponentModel::DoWorkEventArgs^  e)
 	{
@@ -648,11 +713,11 @@ namespace RealTimeDRCPointsDisplayerGUI {
 				if (procStatus == STILL_ACTIVE)
 				{
 					ReadMemory();
-					calculateDRCPoints();
 				}
 			}
 
 			bkgWorker->ReportProgress(100);
+			System::Threading::Thread::Sleep(10);
 		}
 		bkgWorker->CancelAsync();
 	}
@@ -666,6 +731,9 @@ namespace RealTimeDRCPointsDisplayerGUI {
 
 		if (procStatus == STILL_ACTIVE)
 		{
+			ApplyOffsets();
+			calculateDRCPoints();
+
 			this->diffLabel->Text = (L"Difficulty: " + convertToStringClass(idx_difficulty[difficulty]));
 
 			switch (game)
@@ -686,18 +754,18 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			{
 				if (noCharge)
 				{
-					this->bombsLabel->ForeColor = System::Drawing::Color::Lime;
+					this->bombsLabel->ForeColor = Drawing::Color::Lime;
 					this->bombsLabel->Text = L"NoCharge";
 				}
 				else
 				{
-					this->bombsLabel->ForeColor = System::Drawing::Color::Red;
+					this->bombsLabel->ForeColor = Drawing::Color::Red;
 					this->bombsLabel->Text = L"Charged";
 				}
 			}
 			else
 			{
-				this->bombsLabel->ForeColor = System::Drawing::Color::Lime;
+				this->bombsLabel->ForeColor = Drawing::Color::Lime;
 				this->bombsLabel->Text = (L"Bombs: " + bombs);
 			}
 			// this->scoreLabel->Text = (L"Score: " + score);
@@ -727,8 +795,10 @@ namespace RealTimeDRCPointsDisplayerGUI {
 				break;
 			}
 
-			this->survivalLabel->Text = (L"Survival Points: " + roundf(drcpoints_survival));
-			this->scoringLabel->Text = (L"Scoring Points: " + roundf(drcpoints_scoring));
+			this->survivalLabel->Text = (config["ShowSurvivalPoint"].get<bool>()) ? (L"Survival Points: " + roundf(drcpoints_survival)) : L"";
+			this->scoringLabel->Text = (config["ShowScoringPoint"].get<bool>()) ? (L"Scoring Points: " + roundf(drcpoints_scoring)) : L"";
+
+			RemoveOffsets();
 		}
 		else
 		{
@@ -737,26 +807,13 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->infoBox->Items->Add(L"Game not found, stopped reading");
 
 			// Enable Find Game button
-			detectGame->Enabled = true;
+			findGame->Enabled = true;
 		}
 	}
 
 	private: System::Void bkgWorker_RunWorkerCompleted(System::Object^  sender, System::ComponentModel::RunWorkerCompletedEventArgs^  e)
 	{
 
-	}
-
-	private: System::Void about_Click(System::Object^  sender, System::EventArgs^  e)
-	{
-		MessageBox::Show(
-			"Live DRC Points Calculator\n" +
-			"(formerly Real-time DRC Points Displayer)\n\n" +
-			"A small tool that helps players with in-game information such as misses, bombs, etc..\n\n" +
-			"Author: Cao Minh\n" + 
-			"Version: 1.0",
-			"About",
-			MessageBoxButtons::OK,
-			MessageBoxIcon::Information);
 	}
 
 	private: System::Void UpdateNewVersion_DoWork(System::Object^  sender, System::ComponentModel::DoWorkEventArgs^  e)
@@ -773,7 +830,6 @@ namespace RealTimeDRCPointsDisplayerGUI {
 	{
 
 	}
-
 
 	};
 }
