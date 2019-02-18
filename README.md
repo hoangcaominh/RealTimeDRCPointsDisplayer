@@ -7,7 +7,7 @@ By the way, the "Settings" button is not working yet, but it will be included in
 An user interface application that displays in-game information and calculates DRC points for you during your run or your replay.
 
 # What's new
-It's not a text window anymore, it's a real window!
+Settings button works now, project completed. Yay
 
 # Installing and Recommendation
 - You just need to download the folder to whereever you want in your PC. Creating a shortcut on the desktop is recommended.
