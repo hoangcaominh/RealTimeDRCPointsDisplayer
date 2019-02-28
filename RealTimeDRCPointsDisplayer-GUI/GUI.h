@@ -25,11 +25,11 @@ namespace RealTimeDRCPointsDisplayerGUI {
 
 		GUI(void)
 		{
-			RealTimeDRCPointsDisplayerGUI::settings S;
-			S.LoadConfig();
+			if (!Load_config()) { MessageBox::Show("Error loading config file!", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error); }
 			CheckNewVersion();
 			InitializeComponent();
 			UpdateLog();
+			checkOffsetsOn->RunWorkerAsync();
 			RealTimeDRCPointsDisplayerGUI::GUI::Width = 299;
 		}
 
@@ -56,12 +56,10 @@ namespace RealTimeDRCPointsDisplayerGUI {
 	private: System::Windows::Forms::Label^  missesLabel;
 	private: System::Windows::Forms::Label^  shottypeLabel;
 	private: System::Windows::Forms::Label^  diffLabel;
-	// private: System::Windows::Forms::Label^  gameLabel;
 	private: System::Windows::Forms::Label^  scoringLabel;
 	private: System::Windows::Forms::Label^  survivalLabel;
 	private: System::Windows::Forms::Button^  settings;
 	private: System::Windows::Forms::Button^  about;
-	// private: System::Windows::Forms::Label^  scoreLabel;
 
 	private: System::ComponentModel::BackgroundWorker^  bkgWorker;
 	private: System::Windows::Forms::Label^  extraLabel0;
@@ -69,6 +67,9 @@ namespace RealTimeDRCPointsDisplayerGUI {
 	private: System::Windows::Forms::Label^  extraLabel3;
 	private: System::Windows::Forms::Label^  extraLabel2;
 	private: System::ComponentModel::BackgroundWorker^  UpdateNewVersion;
+	private: System::Windows::Forms::Label^  warningLabel;
+	private: System::ComponentModel::BackgroundWorker^  checkOffsetsOn;
+
 
 
 	private:
@@ -104,6 +105,8 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->about = (gcnew System::Windows::Forms::Button());
 			this->bkgWorker = (gcnew System::ComponentModel::BackgroundWorker());
 			this->UpdateNewVersion = (gcnew System::ComponentModel::BackgroundWorker());
+			this->warningLabel = (gcnew System::Windows::Forms::Label());
+			this->checkOffsetsOn = (gcnew System::ComponentModel::BackgroundWorker());
 			this->panel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -340,11 +343,29 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->UpdateNewVersion->ProgressChanged += gcnew System::ComponentModel::ProgressChangedEventHandler(this, &GUI::UpdateNewVersion_ProgressChanged);
 			this->UpdateNewVersion->RunWorkerCompleted += gcnew System::ComponentModel::RunWorkerCompletedEventHandler(this, &GUI::UpdateNewVersion_RunWorkerCompleted);
 			// 
+			// warningLabel
+			// 
+			this->warningLabel->BackColor = System::Drawing::Color::Transparent;
+			this->warningLabel->ForeColor = System::Drawing::Color::Red;
+			this->warningLabel->Location = System::Drawing::Point(12, 339);
+			this->warningLabel->Name = L"warningLabel";
+			this->warningLabel->Size = System::Drawing::Size(266, 18);
+			this->warningLabel->TabIndex = 8;
+			this->warningLabel->Text = L"Warning: Offsets on!";
+			this->warningLabel->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// checkOffsetsOn
+			// 
+			this->checkOffsetsOn->WorkerReportsProgress = true;
+			this->checkOffsetsOn->DoWork += gcnew System::ComponentModel::DoWorkEventHandler(this, &GUI::checkOffsetsOn_DoWork);
+			this->checkOffsetsOn->ProgressChanged += gcnew System::ComponentModel::ProgressChangedEventHandler(this, &GUI::checkOffsetsOn_ProgressChanged);
+			// 
 			// GUI
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(645, 349);
+			this->ClientSize = System::Drawing::Size(645, 360);
+			this->Controls->Add(this->warningLabel);
 			this->Controls->Add(this->about);
 			this->Controls->Add(this->settings);
 			this->Controls->Add(this->panel1);
@@ -440,9 +461,11 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		MessageBox::Show(
 			"Live DRC Points Calculator\n" +
 			"(formerly Real-time DRC Points Displayer)\n\n" +
-			"A small tool that helps players with in-game information such as misses, bombs, etc..\n\n" +
+			"A tool that tracks in-game data such as misses, bombs, etc, " +
+			"thus calculating DRC points for both survival and scoring during a Touhou run.\n\n" +
 			"Author: Cao Minh\n" +
-			"Version: 1.0",
+			"Version: " + convertToStringClass(config["version"].get<std::string>()) + "\n" + 
+			"GitHub reository name: RealTimeDRCPointsDisplayer",
 			"About",
 			MessageBoxButtons::OK,
 			MessageBoxIcon::Information);
@@ -460,10 +483,8 @@ namespace RealTimeDRCPointsDisplayerGUI {
 
 	private: System::Void settings_Click(System::Object^  sender, System::EventArgs^  e)
 	{
-		// this->Hide();
 		RealTimeDRCPointsDisplayerGUI::settings^ settingsForm = gcnew RealTimeDRCPointsDisplayerGUI::settings();
-		settingsForm->ShowDialog();
-		
+		settingsForm->ShowDialog();		
 	}
 
 	private: System::Void findGame_Click(System::Object^  sender, System::EventArgs^  e)
@@ -478,7 +499,6 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		if (!fail)
 		{
 			this->infoBox->Items->Add(L"Found " + convertToStringClass(idx_game[game]));
-			// this->gameLabel->Text = (L"Game: " + convertToStringClass(idx_game[game]));
 
 			// Disable Find Game button
 			findGame->Enabled = false;
@@ -530,8 +550,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 				{
 					if (MessageBox::Show("New version detected. Proceed to download page?", "Update", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == Windows::Forms::DialogResult::Yes)
 					{
-						std::string url = temp_config["url"].get<std::string>();
-						Diagnostics::Process::Start(convertToStringClass(url));
+						Diagnostics::Process::Start("https://github.com/hoangcaominh/RealTimeDRCPointsDisplayer/releases/tag/latest");
 					}
 				}
 			}
@@ -698,6 +717,33 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		ufos_rainbow -= config["InitialRainbowUFOs"].get<short>();
 	}
 
+	// Display warning when there are offsets applied
+	private: System::Void ToggleWarning()
+	{
+		if (
+			config["InitialMisses"] == 0 &&
+			config["InitialBombs"] == 0 &&
+			config["InitialBorderBreaks"] == 0 &&
+			config["InitialLastSpellsCaptured"] == 0 &&
+			config["InitialTrances"] == 0 &&
+			config["InitialReleases"] == 0 &&
+			config["InitialRedUFOs"] == 0 &&
+			config["InitialGreenUFOs"] == 0 &&
+			config["InitialBlueUFOs"] == 0 &&
+			config["InitialRainbowUFOs"] == 0 // &&
+			// config["NoChargeAttacks"]
+			)
+		{
+			warningLabel->Text = L"";
+			this->Height = 388;
+		}
+		else
+		{
+			warningLabel->Text = L"Warning: Offsets on!";
+			this->Height = 399;
+		}
+	}
+
 	//
 	// Background Worker
 	//
@@ -768,7 +814,6 @@ namespace RealTimeDRCPointsDisplayerGUI {
 				this->bombsLabel->ForeColor = Drawing::Color::Lime;
 				this->bombsLabel->Text = (L"Bombs: " + bombs);
 			}
-			// this->scoreLabel->Text = (L"Score: " + score);
 
 			switch (game)
 			{
@@ -830,6 +875,21 @@ namespace RealTimeDRCPointsDisplayerGUI {
 	{
 
 	}
+
+	private: System::Void checkOffsetsOn_DoWork(System::Object^  sender, System::ComponentModel::DoWorkEventArgs^  e)
+	{
+		while (true)
+		{
+			checkOffsetsOn->ReportProgress(100);
+			System::Threading::Thread::Sleep(10);
+		}
+	}
+
+	private: System::Void checkOffsetsOn_ProgressChanged(System::Object^  sender, System::ComponentModel::ProgressChangedEventArgs^  e)
+	{
+		ToggleWarning();
+	}
+
 
 	};
 }

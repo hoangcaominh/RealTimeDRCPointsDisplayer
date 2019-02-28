@@ -23,7 +23,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			//
 			//TODO: Add the constructor code here
 			//
-			LoadConfig();
+			ShowConfig();
 		}
 
 	protected:
@@ -37,40 +37,40 @@ namespace RealTimeDRCPointsDisplayerGUI {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::GroupBox^  pointsBox;
-	private: System::Windows::Forms::CheckBox^  showScoringCB;
-	private: System::Windows::Forms::CheckBox^  showSurvivalCB;
-	private: System::Windows::Forms::GroupBox^  generalBox;
-	private: System::Windows::Forms::Label^  label1;
-	private: System::Windows::Forms::NumericUpDown^  missesOffset;
-	private: System::Windows::Forms::NumericUpDown^  bombsOffset;
 
 
-	private: System::Windows::Forms::Label^  label2;
-	private: System::Windows::Forms::GroupBox^  groupBox1;
-	private: System::Windows::Forms::Label^  label4;
-	private: System::Windows::Forms::NumericUpDown^  LSOffset;
 
-	private: System::Windows::Forms::Label^  label3;
-	private: System::Windows::Forms::NumericUpDown^  BBOffset;
-
-	private: System::Windows::Forms::CheckBox^  noChargeCB;
-	private: System::Windows::Forms::Label^  label5;
-	private: System::Windows::Forms::NumericUpDown^  redOffset;
-	private: System::Windows::Forms::Label^  label6;
-	private: System::Windows::Forms::NumericUpDown^  greenOffset;
-	private: System::Windows::Forms::Label^  label8;
-	private: System::Windows::Forms::NumericUpDown^  rainbowOffset;
-	private: System::Windows::Forms::Label^  label7;
-	private: System::Windows::Forms::NumericUpDown^  blueOffset;
-	private: System::Windows::Forms::Label^  label10;
-	private: System::Windows::Forms::NumericUpDown^  releasesOffset;
-	private: System::Windows::Forms::Label^  label9;
-	private: System::Windows::Forms::NumericUpDown^  trancesOffset;
 	private: System::Windows::Forms::Button^  cancelButton;
 	private: System::Windows::Forms::Button^  saveButton;
 	private: System::Windows::Forms::Button^  defaultButton;
 
+
+	private: System::Windows::Forms::GroupBox^  generalBox;
+	private: System::Windows::Forms::NumericUpDown^  bombsOffset;
+	private: System::Windows::Forms::Label^  label2;
+	private: System::Windows::Forms::Label^  label1;
+	private: System::Windows::Forms::NumericUpDown^  missesOffset;
+	private: System::Windows::Forms::GroupBox^  groupBox1;
+	private: System::Windows::Forms::Label^  label10;
+	private: System::Windows::Forms::NumericUpDown^  releasesOffset;
+	private: System::Windows::Forms::Label^  label9;
+	private: System::Windows::Forms::NumericUpDown^  trancesOffset;
+	private: System::Windows::Forms::Label^  label8;
+	private: System::Windows::Forms::NumericUpDown^  rainbowOffset;
+	private: System::Windows::Forms::Label^  label7;
+	private: System::Windows::Forms::NumericUpDown^  blueOffset;
+	private: System::Windows::Forms::Label^  label6;
+	private: System::Windows::Forms::NumericUpDown^  greenOffset;
+	private: System::Windows::Forms::Label^  label5;
+	private: System::Windows::Forms::NumericUpDown^  redOffset;
+	private: System::Windows::Forms::CheckBox^  noChargeCB;
+	private: System::Windows::Forms::Label^  label4;
+	private: System::Windows::Forms::NumericUpDown^  LSOffset;
+	private: System::Windows::Forms::Label^  label3;
+	private: System::Windows::Forms::NumericUpDown^  BBOffset;
+	private: System::Windows::Forms::GroupBox^  pointsBox;
+	private: System::Windows::Forms::CheckBox^  showScoringCB;
+	private: System::Windows::Forms::CheckBox^  showSurvivalCB;
 
 	protected:
 
@@ -90,9 +90,9 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(settings::typeid));
-			this->pointsBox = (gcnew System::Windows::Forms::GroupBox());
-			this->showScoringCB = (gcnew System::Windows::Forms::CheckBox());
-			this->showSurvivalCB = (gcnew System::Windows::Forms::CheckBox());
+			this->cancelButton = (gcnew System::Windows::Forms::Button());
+			this->saveButton = (gcnew System::Windows::Forms::Button());
+			this->defaultButton = (gcnew System::Windows::Forms::Button());
 			this->generalBox = (gcnew System::Windows::Forms::GroupBox());
 			this->bombsOffset = (gcnew System::Windows::Forms::NumericUpDown());
 			this->label2 = (gcnew System::Windows::Forms::Label());
@@ -116,10 +116,9 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->LSOffset = (gcnew System::Windows::Forms::NumericUpDown());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->BBOffset = (gcnew System::Windows::Forms::NumericUpDown());
-			this->cancelButton = (gcnew System::Windows::Forms::Button());
-			this->saveButton = (gcnew System::Windows::Forms::Button());
-			this->defaultButton = (gcnew System::Windows::Forms::Button());
-			this->pointsBox->SuspendLayout();
+			this->pointsBox = (gcnew System::Windows::Forms::GroupBox());
+			this->showScoringCB = (gcnew System::Windows::Forms::CheckBox());
+			this->showSurvivalCB = (gcnew System::Windows::Forms::CheckBox());
 			this->generalBox->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bombsOffset))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->missesOffset))->BeginInit();
@@ -132,46 +131,38 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->redOffset))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->LSOffset))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->BBOffset))->BeginInit();
+			this->pointsBox->SuspendLayout();
 			this->SuspendLayout();
 			// 
-			// pointsBox
+			// cancelButton
 			// 
-			this->pointsBox->Controls->Add(this->showScoringCB);
-			this->pointsBox->Controls->Add(this->showSurvivalCB);
-			this->pointsBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(163)));
-			this->pointsBox->Location = System::Drawing::Point(195, 13);
-			this->pointsBox->Margin = System::Windows::Forms::Padding(4);
-			this->pointsBox->Name = L"pointsBox";
-			this->pointsBox->Padding = System::Windows::Forms::Padding(4);
-			this->pointsBox->Size = System::Drawing::Size(200, 83);
-			this->pointsBox->TabIndex = 0;
-			this->pointsBox->TabStop = false;
-			this->pointsBox->Text = L"DRC Points";
+			this->cancelButton->DialogResult = System::Windows::Forms::DialogResult::Cancel;
+			this->cancelButton->Location = System::Drawing::Point(328, 265);
+			this->cancelButton->Name = L"cancelButton";
+			this->cancelButton->Size = System::Drawing::Size(75, 23);
+			this->cancelButton->TabIndex = 16;
+			this->cancelButton->Text = L"Cancel";
+			this->cancelButton->UseVisualStyleBackColor = true;
 			// 
-			// showScoringCB
+			// saveButton
 			// 
-			this->showScoringCB->AutoSize = true;
-			this->showScoringCB->Checked = true;
-			this->showScoringCB->CheckState = System::Windows::Forms::CheckState::Checked;
-			this->showScoringCB->Location = System::Drawing::Point(7, 50);
-			this->showScoringCB->Name = L"showScoringCB";
-			this->showScoringCB->Size = System::Drawing::Size(155, 20);
-			this->showScoringCB->TabIndex = 4;
-			this->showScoringCB->Text = L"Display Scoring Point";
-			this->showScoringCB->UseVisualStyleBackColor = true;
+			this->saveButton->Location = System::Drawing::Point(247, 265);
+			this->saveButton->Name = L"saveButton";
+			this->saveButton->Size = System::Drawing::Size(75, 23);
+			this->saveButton->TabIndex = 15;
+			this->saveButton->Text = L"Save";
+			this->saveButton->UseVisualStyleBackColor = true;
+			this->saveButton->Click += gcnew System::EventHandler(this, &settings::saveButton_Click);
 			// 
-			// showSurvivalCB
+			// defaultButton
 			// 
-			this->showSurvivalCB->AutoSize = true;
-			this->showSurvivalCB->Checked = true;
-			this->showSurvivalCB->CheckState = System::Windows::Forms::CheckState::Checked;
-			this->showSurvivalCB->Location = System::Drawing::Point(7, 22);
-			this->showSurvivalCB->Name = L"showSurvivalCB";
-			this->showSurvivalCB->Size = System::Drawing::Size(157, 20);
-			this->showSurvivalCB->TabIndex = 3;
-			this->showSurvivalCB->Text = L"Display Survival Point";
-			this->showSurvivalCB->UseVisualStyleBackColor = true;
+			this->defaultButton->Location = System::Drawing::Point(166, 265);
+			this->defaultButton->Name = L"defaultButton";
+			this->defaultButton->Size = System::Drawing::Size(75, 23);
+			this->defaultButton->TabIndex = 14;
+			this->defaultButton->Text = L"Default";
+			this->defaultButton->UseVisualStyleBackColor = true;
+			this->defaultButton->Click += gcnew System::EventHandler(this, &settings::defaultButton_Click);
 			// 
 			// generalBox
 			// 
@@ -245,7 +236,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->groupBox1->Controls->Add(this->BBOffset);
 			this->groupBox1->Location = System::Drawing::Point(12, 101);
 			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Size = System::Drawing::Size(383, 158);
+			this->groupBox1->Size = System::Drawing::Size(391, 158);
 			this->groupBox1->TabIndex = 2;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Other Offsets";
@@ -415,35 +406,44 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->BBOffset->TabIndex = 5;
 			this->BBOffset->TextAlign = System::Windows::Forms::HorizontalAlignment::Right;
 			// 
-			// cancelButton
+			// pointsBox
 			// 
-			this->cancelButton->DialogResult = System::Windows::Forms::DialogResult::Cancel;
-			this->cancelButton->Location = System::Drawing::Point(320, 266);
-			this->cancelButton->Name = L"cancelButton";
-			this->cancelButton->Size = System::Drawing::Size(75, 23);
-			this->cancelButton->TabIndex = 16;
-			this->cancelButton->Text = L"Cancel";
-			this->cancelButton->UseVisualStyleBackColor = true;
+			this->pointsBox->Controls->Add(this->showScoringCB);
+			this->pointsBox->Controls->Add(this->showSurvivalCB);
+			this->pointsBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(163)));
+			this->pointsBox->Location = System::Drawing::Point(203, 12);
+			this->pointsBox->Margin = System::Windows::Forms::Padding(4);
+			this->pointsBox->Name = L"pointsBox";
+			this->pointsBox->Padding = System::Windows::Forms::Padding(4);
+			this->pointsBox->Size = System::Drawing::Size(200, 83);
+			this->pointsBox->TabIndex = 0;
+			this->pointsBox->TabStop = false;
+			this->pointsBox->Text = L"DRC Points";
 			// 
-			// saveButton
+			// showScoringCB
 			// 
-			this->saveButton->Location = System::Drawing::Point(239, 266);
-			this->saveButton->Name = L"saveButton";
-			this->saveButton->Size = System::Drawing::Size(75, 23);
-			this->saveButton->TabIndex = 15;
-			this->saveButton->Text = L"Save";
-			this->saveButton->UseVisualStyleBackColor = true;
-			this->saveButton->Click += gcnew System::EventHandler(this, &settings::saveButton_Click);
+			this->showScoringCB->AutoSize = true;
+			this->showScoringCB->Checked = true;
+			this->showScoringCB->CheckState = System::Windows::Forms::CheckState::Checked;
+			this->showScoringCB->Location = System::Drawing::Point(7, 50);
+			this->showScoringCB->Name = L"showScoringCB";
+			this->showScoringCB->Size = System::Drawing::Size(155, 20);
+			this->showScoringCB->TabIndex = 4;
+			this->showScoringCB->Text = L"Display Scoring Point";
+			this->showScoringCB->UseVisualStyleBackColor = true;
 			// 
-			// defaultButton
+			// showSurvivalCB
 			// 
-			this->defaultButton->Location = System::Drawing::Point(158, 265);
-			this->defaultButton->Name = L"defaultButton";
-			this->defaultButton->Size = System::Drawing::Size(75, 23);
-			this->defaultButton->TabIndex = 14;
-			this->defaultButton->Text = L"Default";
-			this->defaultButton->UseVisualStyleBackColor = true;
-			this->defaultButton->Click += gcnew System::EventHandler(this, &settings::defaultButton_Click);
+			this->showSurvivalCB->AutoSize = true;
+			this->showSurvivalCB->Checked = true;
+			this->showSurvivalCB->CheckState = System::Windows::Forms::CheckState::Checked;
+			this->showSurvivalCB->Location = System::Drawing::Point(7, 22);
+			this->showSurvivalCB->Name = L"showSurvivalCB";
+			this->showSurvivalCB->Size = System::Drawing::Size(157, 20);
+			this->showSurvivalCB->TabIndex = 3;
+			this->showSurvivalCB->Text = L"Display Survival Point";
+			this->showSurvivalCB->UseVisualStyleBackColor = true;
 			// 
 			// settings
 			// 
@@ -451,13 +451,13 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSize = true;
 			this->CancelButton = this->cancelButton;
-			this->ClientSize = System::Drawing::Size(407, 301);
+			this->ClientSize = System::Drawing::Size(415, 300);
+			this->Controls->Add(this->generalBox);
+			this->Controls->Add(this->groupBox1);
+			this->Controls->Add(this->pointsBox);
 			this->Controls->Add(this->defaultButton);
 			this->Controls->Add(this->saveButton);
 			this->Controls->Add(this->cancelButton);
-			this->Controls->Add(this->groupBox1);
-			this->Controls->Add(this->generalBox);
-			this->Controls->Add(this->pointsBox);
 			this->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(163)));
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
@@ -468,8 +468,6 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->Name = L"settings";
 			this->ShowIcon = false;
 			this->Text = L"Settings";
-			this->pointsBox->ResumeLayout(false);
-			this->pointsBox->PerformLayout();
 			this->generalBox->ResumeLayout(false);
 			this->generalBox->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bombsOffset))->EndInit();
@@ -484,18 +482,15 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->redOffset))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->LSOffset))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->BBOffset))->EndInit();
+			this->pointsBox->ResumeLayout(false);
+			this->pointsBox->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
 
-	public: System::Void LoadConfig()
+	private: System::Void ShowConfig()
 	{
-		if (!Load_config())
-		{
-			MessageBox::Show("Error loading config file!", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
-		}
-
 		// General offset
 		missesOffset->Value = config["InitialMisses"].get<short>();
 		bombsOffset->Value = config["InitialBombs"].get<short>();
@@ -537,12 +532,12 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		config["InitialBlueUFOs"] = Convert::ToInt16(blueOffset->Value);
 		config["InitialRainbowUFOs"] = Convert::ToInt16(rainbowOffset->Value);
 
-		if (!Save_config())
-		{
-			MessageBox::Show("Error saving config file!", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
-		}
+		// must be done here
+		noCharge = noChargeCB->Checked;
 
-		this->LoadConfig();
+		if (!Save_config())	{ MessageBox::Show("Error saving config file!", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error); }		
+		if (!Load_config()) { MessageBox::Show("Error loading config file!", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error); }
+
 		this->Close();
 	}
 
@@ -575,5 +570,6 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		this->SaveConfig();
 		this->Close();
 	}
-};
+
+	};
 }
