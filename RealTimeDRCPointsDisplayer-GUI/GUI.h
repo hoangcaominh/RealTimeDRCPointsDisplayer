@@ -550,7 +550,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 				{
 					if (MessageBox::Show("New version detected. Proceed to download page?", "Update", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == Windows::Forms::DialogResult::Yes)
 					{
-						Diagnostics::Process::Start("https://github.com/hoangcaominh/RealTimeDRCPointsDisplayer/releases/tag/latest");
+						Diagnostics::Process::Start("https://github.com/hoangcaominh/RealTimeDRCPointsDisplayer/releases/latest");
 					}
 				}
 			}
