@@ -102,7 +102,7 @@ void getScoreRubrics()
 void getRubrics()
 {
 	getSurvRubrics();
-	// scoring rubric for MoF is not ready yet
+	// scoring rubric for MoF is in mofFormula
 	if (strcmp(idx_game[game], "MoF") != 0)
 		getScoreRubrics();
 }
@@ -260,12 +260,49 @@ void scoringPoints()
 	}
 
 	drcpoints_scoring = (score >= wr) ? score_base : score_base * (float)pow((long double)score / wr, score_exp);
+}
 
-	// not calculating MoF scoring points yet
-	if (strcmp(idx_game[game], "MoF") == 0)
+void mofFormula()
+{
+	// Set point to 0 for increment
+	drcpoints_scoring = 0;
+
+	// rubric currently only determined for Easy, Lunatic ReimuB and Lunatic MarisaC
+	if (strcmp(idx_difficulty[difficulty], "Easy") != 0 && strcmp(idx_difficulty[difficulty], "Lunatic") != 0)
 	{
 		drcpoints_scoring = -1.0f;
+		return;
 	}
+	else if (strcmp(idx_difficulty[difficulty], "Lunatic") == 0 && shottype != "ReimuB" && shottype != "MarisaC")
+	{
+		drcpoints_scoring = -1.0f;
+		return;
+	}
+
+	// Get scoring rubric
+	json thresholds = Rubrics["MOF_THRESHOLDS"][idx_difficulty[difficulty]][shottype];
+
+	if (score < thresholds["score"][0])
+	{
+		drcpoints_scoring = (float)pow(((long double)score / thresholds["score"][0].get<ull>()), 2) * ((strcmp(idx_difficulty[difficulty], "Easy") == 0) ? 220 : 200);
+		return;
+	}
+
+	drcpoints_scoring = thresholds["base"][0].get<float>();
+
+	for (int i = thresholds["increment"].size() - 1; i >= 0; i--)
+	{
+		float increment = thresholds["increment"][i].get<float>();
+		int step = thresholds["step"][i].get<int>();
+
+		while (score - step >= thresholds["score"][i])
+		{
+			drcpoints_scoring += increment;
+			score -= step;
+		}
+	}
+	
+	drcpoints_scoring = min(drcpoints_scoring, ((strcmp(idx_difficulty[difficulty], "Easy") != 0) ? 375 : 500));
 }
 
 // calculating DRC points for survival and scoring
@@ -276,7 +313,10 @@ void calculateDRCPoints()
 	else
 		phantasmagoria();
 	
-	scoringPoints();
+	if (strcmp(idx_game[game], "MoF") == 0)
+		mofFormula();
+	else
+		scoringPoints();
 }
 
 /*
