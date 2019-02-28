@@ -7,7 +7,9 @@ By the way, the "Settings" button is not working yet, but it will be included in
 An user interface application that displays in-game information and calculates DRC points for you during your run or your replay.
 
 # What's new
-Settings button works now, project completed. Yay
+- 1.2: Add warning and MoF scoring formula
+- 1.1: Add Settings button
+- 1.0: Finish console version, move to GUI version
 
 # Installing and Recommendation
 - You just need to download the folder to whereever you want in your PC. Creating a shortcut on the desktop is recommended.
