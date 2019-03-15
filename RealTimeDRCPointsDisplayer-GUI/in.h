@@ -74,6 +74,8 @@ namespace ns_in
 			MISSES = 0x0164CFA4,
 			BOMBS = 0x0164CFA8,
 			DEATHBOMBS = 0x0164CFAC
+
+			// TIMER = 0x004EA780
 		};
 
 		ReadProcessMemory(gameProc, (void*)FRAME_COUNT, &frame_count, sizeof(frame_count), 0);
@@ -87,6 +89,8 @@ namespace ns_in
 		ReadProcessMemory(gameProc, (void*)DEATHBOMBS, &deathbombs, sizeof(deathbombs), 0);
 		ReadProcessMemory(gameProc, (void*)P_SCORE, &p_score, sizeof(p_score), 0);
 		ReadProcessMemory(gameProc, (void*)p_score, &score, sizeof(int), 0);
+
+		// ReadProcessMemory(gameProc, (void*)TIMER, &timer, sizeof(timer), 0);
 
 		score *= 10;
 		// reset last spells captured

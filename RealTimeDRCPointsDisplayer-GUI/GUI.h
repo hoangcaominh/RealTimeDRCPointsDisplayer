@@ -28,6 +28,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			if (!Load_config()) { MessageBox::Show("Error loading config file!", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error); }
 			CheckNewVersion();
 			InitializeComponent();
+			// InitWAV();
 			UpdateLog();
 			checkOffsetsOn->RunWorkerAsync();
 			RealTimeDRCPointsDisplayerGUI::GUI::Width = 299;
@@ -69,6 +70,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 	private: System::ComponentModel::BackgroundWorker^  UpdateNewVersion;
 	private: System::Windows::Forms::Label^  warningLabel;
 	private: System::ComponentModel::BackgroundWorker^  checkOffsetsOn;
+	// private: System::Media::SoundPlayer^ player = gcnew System::Media::SoundPlayer();
 
 
 
@@ -458,6 +460,8 @@ namespace RealTimeDRCPointsDisplayerGUI {
 
 	private: System::Void about_Click(System::Object^  sender, System::EventArgs^  e)
 	{
+		// player->PlayLooping();
+
 		MessageBox::Show(
 			"Live DRC Points Calculator\n" +
 			"(formerly Real-time DRC Points Displayer)\n\n" +
@@ -469,6 +473,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			"About",
 			MessageBoxButtons::OK,
 			MessageBoxIcon::Information);
+		// player->Stop();
 	}
 
 	private: System::Void update_Click(System::Object^  sender, System::EventArgs^  e)
@@ -842,7 +847,12 @@ namespace RealTimeDRCPointsDisplayerGUI {
 
 			this->survivalLabel->Text = (config["ShowSurvivalPoint"].get<bool>()) ? (L"Survival Points: " + roundf(drcpoints_survival)) : L"";
 			this->scoringLabel->Text = (config["ShowScoringPoint"].get<bool>()) ? (L"Scoring Points: " + roundf(drcpoints_scoring)) : L"";
-
+			/*
+			if (misses == 0 && bombs == 0 && ls_capped == 10 && timer == 0)
+			{
+				player->PlayLooping();
+			}
+			*/
 			RemoveOffsets();
 		}
 		else
@@ -855,7 +865,13 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			findGame->Enabled = true;
 		}
 	}
-
+	/*
+	private: System::Void InitWAV()
+	{
+		String^ path = convertToStringClass(config["WAV"].get<std::string>());
+		player->SoundLocation = path;
+	}
+	*/
 	private: System::Void bkgWorker_RunWorkerCompleted(System::Object^  sender, System::ComponentModel::RunWorkerCompletedEventArgs^  e)
 	{
 

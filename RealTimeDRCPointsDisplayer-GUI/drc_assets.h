@@ -35,6 +35,7 @@ char borderBreaks;
 
 // Variables for IN
 char ls_capped, stage;
+// unsigned int timer;
 
 // Variables for Phantasmagorias
 char min, lives, noBombBonus; bool noCharge;
