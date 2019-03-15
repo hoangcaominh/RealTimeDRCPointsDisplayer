@@ -46,7 +46,9 @@ namespace RealTimeDRCPointsDisplayerGUI {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Button^  updateInfo;
+	private: System::Windows::Forms::Button^  updateRubrics;
+	protected:
+
 	private: System::Windows::Forms::ListBox^  infoBox;
 
 	private: System::Windows::Forms::Button^  clear;
@@ -70,7 +72,8 @@ namespace RealTimeDRCPointsDisplayerGUI {
 	private: System::ComponentModel::BackgroundWorker^  UpdateNewVersion;
 	private: System::Windows::Forms::Label^  warningLabel;
 	private: System::ComponentModel::BackgroundWorker^  checkOffsetsOn;
-	// private: System::Media::SoundPlayer^ player = gcnew System::Media::SoundPlayer();
+
+			 // private: System::Media::SoundPlayer^ player = gcnew System::Media::SoundPlayer();
 
 
 
@@ -88,7 +91,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(GUI::typeid));
-			this->updateInfo = (gcnew System::Windows::Forms::Button());
+			this->updateRubrics = (gcnew System::Windows::Forms::Button());
 			this->infoBox = (gcnew System::Windows::Forms::ListBox());
 			this->clear = (gcnew System::Windows::Forms::Button());
 			this->findGame = (gcnew System::Windows::Forms::Button());
@@ -112,15 +115,15 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->panel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
-			// updateInfo
+			// updateRubrics
 			// 
-			this->updateInfo->Location = System::Drawing::Point(12, 256);
-			this->updateInfo->Name = L"updateInfo";
-			this->updateInfo->Size = System::Drawing::Size(130, 23);
-			this->updateInfo->TabIndex = 1;
-			this->updateInfo->Text = L"Update Files";
-			this->updateInfo->UseVisualStyleBackColor = true;
-			this->updateInfo->Click += gcnew System::EventHandler(this, &GUI::update_Click);
+			this->updateRubrics->Location = System::Drawing::Point(12, 256);
+			this->updateRubrics->Name = L"updateRubrics";
+			this->updateRubrics->Size = System::Drawing::Size(130, 23);
+			this->updateRubrics->TabIndex = 1;
+			this->updateRubrics->Text = L"Update Rubrics";
+			this->updateRubrics->UseVisualStyleBackColor = true;
+			this->updateRubrics->Click += gcnew System::EventHandler(this, &GUI::update_Click);
 			// 
 			// infoBox
 			// 
@@ -336,7 +339,6 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->bkgWorker->WorkerSupportsCancellation = true;
 			this->bkgWorker->DoWork += gcnew System::ComponentModel::DoWorkEventHandler(this, &GUI::bkgWorker_DoWork);
 			this->bkgWorker->ProgressChanged += gcnew System::ComponentModel::ProgressChangedEventHandler(this, &GUI::bkgWorker_ReportProgress);
-			this->bkgWorker->RunWorkerCompleted += gcnew System::ComponentModel::RunWorkerCompletedEventHandler(this, &GUI::bkgWorker_RunWorkerCompleted);
 			// 
 			// UpdateNewVersion
 			// 
@@ -374,7 +376,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->Controls->Add(this->findGame);
 			this->Controls->Add(this->clear);
 			this->Controls->Add(this->infoBox);
-			this->Controls->Add(this->updateInfo);
+			this->Controls->Add(this->updateRubrics);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MaximizeBox = false;
@@ -506,7 +508,8 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->infoBox->Items->Add(L"Found " + convertToStringClass(idx_game[game]));
 
 			// Disable Find Game button
-			findGame->Enabled = false;
+			this->updateRubrics->Enabled = false;
+			this->findGame->Enabled = false;
 
 			// Expand window
 			RealTimeDRCPointsDisplayerGUI::GUI::Width = 661;
@@ -520,14 +523,14 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			ReadMemory();
 			initLabel();
 
-			bkgWorker->RunWorkerAsync();
+			this->bkgWorker->RunWorkerAsync();
 		}
 		else
 		{
 			this->infoBox->Items->Add(L"Game not found. ID Returned: " + fail);
 		}
 
-		infoBox->SelectedIndex = infoBox->Items->Count - 1;
+		this->infoBox->SelectedIndex = infoBox->Items->Count - 1;
 	}
 
 	
@@ -619,7 +622,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		}
 
 		this->findGame->Enabled = flag;
-		infoBox->SelectedIndex = infoBox->Items->Count - 1;
+		this->infoBox->SelectedIndex = infoBox->Items->Count - 1;
 	}
 
 	private: System::Void initLabel()
@@ -739,12 +742,12 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			// config["NoChargeAttacks"]
 			)
 		{
-			warningLabel->Text = L"";
+			this->warningLabel->Text = L"";
 			this->Height = 388;
 		}
 		else
 		{
-			warningLabel->Text = L"Warning: Offsets on!";
+			this->warningLabel->Text = L"Warning: Offsets on!";
 			this->Height = 399;
 		}
 	}
@@ -767,10 +770,10 @@ namespace RealTimeDRCPointsDisplayerGUI {
 				}
 			}
 
-			bkgWorker->ReportProgress(100);
+			this->bkgWorker->ReportProgress(100);
 			System::Threading::Thread::Sleep(10);
 		}
-		bkgWorker->CancelAsync();
+		this->bkgWorker->CancelAsync();
 	}
 
 	private: System::Void bkgWorker_ReportProgress(System::Object^  sender, System::ComponentModel::ProgressChangedEventArgs^  e)
@@ -861,8 +864,9 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			RealTimeDRCPointsDisplayerGUI::GUI::Width = 299;
 			this->infoBox->Items->Add(L"Game not found, stopped reading");
 
-			// Enable Find Game button
-			findGame->Enabled = true;
+			// Enable buttons
+			this->updateRubrics->Enabled = true;
+			this->findGame->Enabled = true;
 		}
 	}
 	/*
@@ -872,11 +876,22 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		player->SoundLocation = path;
 	}
 	*/
-	private: System::Void bkgWorker_RunWorkerCompleted(System::Object^  sender, System::ComponentModel::RunWorkerCompletedEventArgs^  e)
-	{
 
+	private: System::Void checkOffsetsOn_DoWork(System::Object^  sender, System::ComponentModel::DoWorkEventArgs^  e)
+	{
+		while (true)
+		{
+			this->checkOffsetsOn->ReportProgress(100);
+			System::Threading::Thread::Sleep(10);
+		}
 	}
 
+	private: System::Void checkOffsetsOn_ProgressChanged(System::Object^  sender, System::ComponentModel::ProgressChangedEventArgs^  e)
+	{
+		ToggleWarning();
+	}
+
+	// updateNewVersion: not done yet
 	private: System::Void UpdateNewVersion_DoWork(System::Object^  sender, System::ComponentModel::DoWorkEventArgs^  e)
 	{
 
@@ -890,20 +905,6 @@ namespace RealTimeDRCPointsDisplayerGUI {
 	private: System::Void UpdateNewVersion_RunWorkerCompleted(System::Object^  sender, System::ComponentModel::RunWorkerCompletedEventArgs^  e)
 	{
 
-	}
-
-	private: System::Void checkOffsetsOn_DoWork(System::Object^  sender, System::ComponentModel::DoWorkEventArgs^  e)
-	{
-		while (true)
-		{
-			checkOffsetsOn->ReportProgress(100);
-			System::Threading::Thread::Sleep(10);
-		}
-	}
-
-	private: System::Void checkOffsetsOn_ProgressChanged(System::Object^  sender, System::ComponentModel::ProgressChangedEventArgs^  e)
-	{
-		ToggleWarning();
 	}
 
 
