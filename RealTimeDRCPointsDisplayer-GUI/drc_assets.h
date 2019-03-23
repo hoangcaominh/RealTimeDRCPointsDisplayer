@@ -181,7 +181,7 @@ void survivalPoints()
 		}
 	}
 
-	if (strcmp(idx_difficulty[difficulty], "Extra") != 0 && strcmp(idx_difficulty[difficulty], "Phantasm") != 0)
+	if (strcmp(idx_difficulty[difficulty], "Extra") != 0 && strcmp(idx_difficulty[difficulty], "Phantasm") != 0 && !(strcmp(idx_game[game], "LoLK") == 0 && bombs > 0)) 
 	{
 		drcpoints_survival = drcpoints_survival * getMultiplier(idx_game[game], shottype.c_str());
 	}
