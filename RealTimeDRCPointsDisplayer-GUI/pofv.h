@@ -53,7 +53,7 @@ namespace ns_pofv
 		if (reset())
 		{
 			misses = 0;
-			noCharge = true;
+			no_charge = true;
 		}
 
 		getShottype();
@@ -63,7 +63,7 @@ namespace ns_pofv
 
 		if (charge >= 100.0f)
 		{
-			noCharge = false;
+			no_charge = false;
 		}
 
 		

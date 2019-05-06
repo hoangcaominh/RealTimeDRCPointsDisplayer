@@ -6,6 +6,7 @@ namespace ns_lolk
 {
 	// mode in LoLK
 	char mode;
+
 	// variables for recording key pressed
 	DWORD p_is_bomb;
 	bool is_bomb, x_reset;

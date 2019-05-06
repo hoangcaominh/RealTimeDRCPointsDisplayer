@@ -7,14 +7,18 @@ namespace ns_hsifs
 	// variables for recording key pressed
 	DWORD p_is_bomb;
 	bool is_bomb, x_reset;
+
 	// for final spell
-	DWORD p_spellID;
-	char spellID;
+	DWORD p_spell_id;
+	char spell_id;
+
 	// variables for HSiFS
 	unsigned short release_petals, _release_petals;
 
 	// character index
 	const char* idx_character[] = { "Reimu", "Cirno", "Aya", "Marisa" };
+
+	// season index
 	const char* idx_season[] = { "Spring", "Summer", "Autumn", "Winter" };
 
 	void getShottype()
@@ -42,7 +46,7 @@ namespace ns_hsifs
 	
 	void countReleases()
 	{
-		if (release_petals < _release_petals && !(spellID >= 90 && spellID <= 105))
+		if (release_petals < _release_petals && !(spell_id >= 90 && spell_id <= 105))
 		{
 			releases++;
 		}
@@ -62,7 +66,7 @@ namespace ns_hsifs
 			MISSES = 0x004A57CC,
 			P_IS_BOMB = 0x004A6DA8,
 			RELEASE_PETALS = 0x004A5808,	// 190 petals = 1 level / level 6 = 1140 petals
-			P_SPELLID = 0x004A6DB0
+			P_SPELL_ID = 0x004A6DB0
 		};
 
 		ReadProcessMemory(gameProc, (void*)FRAME_COUNT, &frame_count, sizeof(frame_count), 0);
@@ -74,23 +78,22 @@ namespace ns_hsifs
 		ReadProcessMemory(gameProc, (void*)P_IS_BOMB, &p_is_bomb, sizeof(p_is_bomb), 0);
 		ReadProcessMemory(gameProc, (void*)(p_is_bomb + 0x30), &is_bomb, sizeof(is_bomb), 0);
 		ReadProcessMemory(gameProc, (void*)RELEASE_PETALS, &release_petals, sizeof(release_petals), 0);
-		ReadProcessMemory(gameProc, (void*)P_SPELLID, &p_spellID, sizeof(p_spellID), 0);
-		ReadProcessMemory(gameProc, (void*)(p_spellID + 0x74), &spellID, sizeof(spellID), 0);
+		ReadProcessMemory(gameProc, (void*)P_SPELL_ID, &p_spell_id, sizeof(p_spell_id), 0);
+		ReadProcessMemory(gameProc, (void*)(p_spell_id + 0x74), &spell_id, sizeof(spell_id), 0);
 
 		score *= 10;
 		if (reset())
 		{
 			// initialize
 			bombs = 0;
-			releases = 0;
-			_release_petals = 0;
-			spellID = 0;
+			releases = _release_petals = 0;
+			spell_id = 0;
 		}
 
 		getShottype();
 
 		getRubrics();
-		firstRelease = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["firstRelease"].get<char>();
+		first_release = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["firstRelease"].get<char>();
 		release = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["release"].get<float>();
 
 		countBombs();

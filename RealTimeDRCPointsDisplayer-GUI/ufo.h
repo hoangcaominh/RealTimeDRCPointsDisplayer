@@ -5,7 +5,7 @@
 namespace ns_ufo
 {
 	// variables for UFO
-	int vault[3]; char vaults; bool is_ufo;
+	int vault_array[3]; char vaults; bool is_ufo;
 
 	// variables for manually counting misses
 	char lives, _lives;
@@ -55,15 +55,15 @@ namespace ns_ufo
 			ufos++;
 
 			// specific ufo
-			if (vault[0] == 1 && vault[1] == 1)
+			if (vault_array[0] == 1 && vault_array[1] == 1)
 			{
 				ufos_red++;
 			}
-			else if (vault[0] == 2 && vault[1] == 2)
+			else if (vault_array[0] == 2 && vault_array[1] == 2)
 			{
 				ufos_blue++;
 			}
-			else if (vault[0] == 3 && vault[1] == 3)
+			else if (vault_array[0] == 3 && vault_array[1] == 3)
 			{
 				ufos_green++;
 			}
@@ -83,7 +83,7 @@ namespace ns_ufo
 		enum address
 		{
 			SCORE = 0x004B0C44,
-			VAULT = 0x004B0C4C,		// vault type is 4-byte int in ZUN's code
+			VAULT_ARRAY = 0x004B0C4C,		// vault_array type is 4-byte int in ZUN's code
 			VAULTS = 0x004B0C58,	// number of vaults collected
 			CHARACTER = 0x004B0C90,
 			TYPE = 0x004B0C94,
@@ -95,7 +95,7 @@ namespace ns_ufo
 
 		ReadProcessMemory(gameProc, (void*)FRAME_COUNT, &frame_count, sizeof(frame_count), 0);
 		ReadProcessMemory(gameProc, (void*)SCORE, &score, sizeof(int), 0);
-		ReadProcessMemory(gameProc, (void*)VAULT, vault, sizeof(vault), 0);
+		ReadProcessMemory(gameProc, (void*)VAULT_ARRAY, vault_array, sizeof(vault_array), 0);
 		ReadProcessMemory(gameProc, (void*)VAULTS, &vaults, sizeof(vaults), 0);
 		ReadProcessMemory(gameProc, (void*)CHARACTER, &character, sizeof(character), 0);
 		ReadProcessMemory(gameProc, (void*)TYPE, &type, sizeof(type), 0);
@@ -108,13 +108,8 @@ namespace ns_ufo
 		if (reset())
 		{
 			// initialize
-			misses = 0;
-			bombs = 0;
-			ufos = 0;
-			ufos_red = 0;
-			ufos_green = 0;
-			ufos_blue = 0;
-			ufos_rainbow = 0;
+			misses = bombs = 0;
+			ufos = ufos_red = ufos_green = ufos_blue = ufos_rainbow = 0;
 		}
 
 		getShottype();

@@ -68,8 +68,7 @@ namespace ns_gfw
 		if (reset())
 		{
 			// initialize
-			misses = 0;
-			bombs = 0;
+			misses = bombs = 0;
 		}
 
 		getShottype();

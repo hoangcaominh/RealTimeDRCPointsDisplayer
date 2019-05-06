@@ -81,9 +81,7 @@ namespace ns_td
 		score *= 10;
 		if (reset())
 		{
-			misses = 0;
-			bombs = 0;
-			trances = 0;
+			misses = bombs = trances = 0;
 		}
 
 		getShottype();

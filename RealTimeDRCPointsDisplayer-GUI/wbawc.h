@@ -4,13 +4,11 @@
 
 namespace ns_wbawc
 {
-	// Array for storing items in WBaWC
-	int item_array[11], items;
+	// Array for storing tokens in WBaWC
+	int token_array[11], tokens;
 
-	// Don't know how to call this
+	// Variable for checking whether the player is in hyper mode
 	bool is_hyper;
-
-	// Don't know how to call this either
 	unsigned int hyper_bar[2], prev_hyper_bar[2];
 
 	// Array for counting occurrences of goasts
@@ -44,13 +42,13 @@ namespace ns_wbawc
 
 	void countGoasts()
 	{
-		if (items == 5 && !is_hyper)
+		if (tokens == 5 && !is_hyper)
 		{
 			is_hyper = true;
 
-			for (int i : item_array)
+			for (int i : token_array)
 			{
-				occurrence[item_array[i]]++;
+				occurrence[token_array[i]]++;
 			}
 
 			// occurrence from wolves to eagles
@@ -73,17 +71,17 @@ namespace ns_wbawc
 				}
 			}
 		}
-		else if (items != 5)
+		else if (tokens != 5)
 		{
 			is_hyper = false;
 			memset(occurrence, 0, sizeof(occurrence));
 		}
 
-		if (items == 5 && 
+		if (tokens == 5 && 
 			(prev_hyper_bar[0] - hyper_bar[0] > 5 || prev_hyper_bar[1] - hyper_bar[1] > 5) &&	// Seems that the "hyper_bar" value keeps decreasing by 2, so I set this to 5
 			(hyper_bar[0] < 42 || hyper_bar[1] < 42))	// If the player breaks the "hype" both value will be set to either 38 or 39, so I set to 42
 		{
-			breaks++;
+			roar_breaks++;
 		}
 
 		prev_hyper_bar[0] = hyper_bar[0];
@@ -99,8 +97,8 @@ namespace ns_wbawc
 			DIFFICULTY = 0x004B1658,
 			CHARACTER = 0x004B164C,
 			TYPE = 0x004B1650,
-			ITEM_ARRAY = 0x004B16BC,
-			ITEMS = 0x004B16B8,
+			TOKEN_ARRAY = 0x004B16BC,
+			TOKENS = 0x004B16B8,
 			P_IS_BOMB = 0x004B32A8,
 			MISSES = 0x004B1670,
 			HYPER_BAR = 0x004B16FC
@@ -112,8 +110,8 @@ namespace ns_wbawc
 		ReadProcessMemory(gameProc, (void*)TYPE, &type, sizeof(type), 0);
 		ReadProcessMemory(gameProc, (void*)DIFFICULTY, &difficulty, sizeof(difficulty), 0);
 		ReadProcessMemory(gameProc, (void*)MISSES, &misses, sizeof(misses), 0);
-		ReadProcessMemory(gameProc, (void*)ITEM_ARRAY, &item_array, sizeof(item_array), 0);
-		ReadProcessMemory(gameProc, (void*)ITEMS, &items, sizeof(items), 0);
+		ReadProcessMemory(gameProc, (void*)TOKEN_ARRAY, &token_array, sizeof(token_array), 0);
+		ReadProcessMemory(gameProc, (void*)TOKENS, &tokens, sizeof(tokens), 0);
 		ReadProcessMemory(gameProc, (void*)P_IS_BOMB, &p_is_bomb, sizeof(p_is_bomb), 0);
 		ReadProcessMemory(gameProc, (void*)(p_is_bomb + 0x30), &is_bomb, sizeof(is_bomb), 0);
 		ReadProcessMemory(gameProc, (void*)HYPER_BAR, &hyper_bar, sizeof(hyper_bar), 0);
@@ -123,7 +121,7 @@ namespace ns_wbawc
 		{
 			// initialize
 			bombs = 0;
-			wolves = otters = eagles = breaks = 0;
+			wolves = otters = eagles = roar_breaks = 0;
 		}
 
 		getShottype();

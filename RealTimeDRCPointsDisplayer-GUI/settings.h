@@ -533,7 +533,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		config["InitialRainbowUFOs"] = Convert::ToInt16(rainbowOffset->Value);
 
 		// must be done here
-		noCharge = noChargeCB->Checked;
+		no_charge = noChargeCB->Checked;
 
 		if (!Save_config())	{ MessageBox::Show("Error saving config file!", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error); }		
 		if (!Load_config()) { MessageBox::Show("Error loading config file!", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error); }

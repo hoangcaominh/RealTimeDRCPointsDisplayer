@@ -13,6 +13,7 @@ namespace ns_mof
 
 	// character index
 	const char* idx_character[] = { "Reimu", "Marisa" };
+
 	// type index
 	const char* idx_type[] = { "A", "B", "C" };
 
@@ -70,8 +71,7 @@ namespace ns_mof
 		if (reset())
 		{
 			// initialize
-			misses = 0;
-			bombs = 0;
+			misses = bombs = 0;
 		}
 
 		getShottype();

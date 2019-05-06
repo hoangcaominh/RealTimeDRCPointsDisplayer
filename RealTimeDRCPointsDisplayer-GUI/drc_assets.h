@@ -31,14 +31,14 @@ unsigned short surv_base; float surv_exp;
 unsigned short score_base; float score_exp;
 
 // Variables for PCB
-char borderBreaks;
+char border_breaks;
 
 // Variables for IN
-char ls_capped, stage;
+char last_spells_captured, stage;
 // unsigned int timer;
 
 // Variables for Phantasmagorias
-char min, lives, noBombBonus; bool noCharge;
+char min, lives, no_bomb_bonus; bool no_charge;
 
 // Variables for UFO
 char ufos, ufos_red, ufos_green, ufos_blue, ufos_rainbow;
@@ -50,10 +50,10 @@ unsigned short spirits; char trances;
 short releases;
 
 // Variables for WBaWC
-unsigned short wolves, otters, eagles, breaks;
+unsigned short wolves, otters, eagles, roar_breaks;
 
 // Rubric variables
-char season, firstRelease; float release;
+char season, first_release; float release;
 
 // Used for resetting information
 DWORD frame_count;
@@ -93,7 +93,7 @@ void getSurvRubrics()
 		surv_base = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["base"].get<unsigned short>();
 		min = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["min"].get<char>();
 		lives = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["lives"].get<char>();
-		noBombBonus = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["noBombBonus"].get<char>();
+		no_bomb_bonus = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["noBombBonus"].get<char>();
 	}
 }
 
@@ -119,7 +119,7 @@ void phantasmagoria()
 	if (strcmp(idx_difficulty[difficulty], "Extra") == 0)
 		shottypeMultiplier = 1.0f;
 
-	drcpoints_survival = roundf(shottypeMultiplier * ((surv_base - ((surv_base - min) / lives * misses)) + (noCharge ? noBombBonus : 0) ));
+	drcpoints_survival = roundf(shottypeMultiplier * ((surv_base - ((surv_base - min) / lives * misses)) + (no_charge ? no_bomb_bonus : 0) ));
 }
 
 // calculate points for normal game format
@@ -139,7 +139,7 @@ void survivalPoints()
 
 	if (strcmp(idx_game[game], "PCB") == 0)
 	{
-		n += borderBreaks * bomb;
+		n += border_breaks * bomb;
 	}
 
 	if (strcmp(idx_game[game], "TD") == 0)
@@ -155,7 +155,7 @@ void survivalPoints()
 
 		if (releases > 0)
 		{
-			n += firstRelease;
+			n += first_release;
 			_releases--;
 		}
 		while (_releases > 0)
@@ -177,11 +177,11 @@ void survivalPoints()
 	{
 		if (strcmp(idx_difficulty[difficulty], "Extra") == 0)
 		{
-			drcpoints_survival += (ls_capped == 1) ? 5 : 0;
+			drcpoints_survival += (last_spells_captured == 1) ? 5 : 0;
 		}
 		else
 		{
-			drcpoints_survival += ls_capped * ((strcmp(idx_difficulty[difficulty], "Easy") == 0) ? 1 : 2);
+			drcpoints_survival += last_spells_captured * ((strcmp(idx_difficulty[difficulty], "Easy") == 0) ? 1 : 2);
 		}
 	}
 

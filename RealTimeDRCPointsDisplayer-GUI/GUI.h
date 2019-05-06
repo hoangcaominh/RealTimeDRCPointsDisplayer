@@ -428,7 +428,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 	{
 		if (strcmp(idx_difficulty[difficulty], "Extra") == 0)
 		{
-			this->extraLabel0->Text = (L"Last Spells: " + ls_capped + L"/1");
+			this->extraLabel0->Text = (L"Last Spells: " + last_spells_captured + L"/1");
 		}
 		else
 		{
@@ -437,19 +437,19 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			case 6: // 6A
 			{
 				char maxLastSpells = Rubrics["MAX_LAST_SPELLS"][idx_difficulty[difficulty]]["FinalA"].get<char>();
-				this->extraLabel0->Text = (L"LS: " + ls_capped + L"/" + maxLastSpells);
+				this->extraLabel0->Text = (L"LS: " + last_spells_captured + L"/" + maxLastSpells);
 				this->extraLabel2->Text = L"Final: A";
 				break;
 			}
 			case 7:	// 6B
 			{
 				char maxLastSpells = Rubrics["MAX_LAST_SPELLS"][idx_difficulty[difficulty]]["FinalB"].get<char>();
-				this->extraLabel0->Text = (L"LS: " + ls_capped + L"/" + maxLastSpells);
+				this->extraLabel0->Text = (L"LS: " + last_spells_captured + L"/" + maxLastSpells);
 				this->extraLabel2->Text = L"Final: B";
 				break;
 			}
 			default:
-				this->extraLabel0->Text = (L"LS: " + ls_capped + L"/?");
+				this->extraLabel0->Text = (L"LS: " + last_spells_captured + L"/?");
 				this->extraLabel2->Text = L"Final: ?";
 				break;
 			}
@@ -698,8 +698,8 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		bombs += config["InitialBombs"].get<short>();
 
 		// Other offsets
-		borderBreaks += config["InitialBorderBreaks"].get<short>();
-		ls_capped += config["InitialLastSpellsCaptured"].get<short>();
+		border_breaks += config["InitialBorderBreaks"].get<short>();
+		last_spells_captured += config["InitialLastSpellsCaptured"].get<short>();
 		trances += config["InitialTrances"].get<short>();
 		releases += config["InitialReleases"].get<short>();
 		ufos_red += config["InitialRedUFOs"].get<short>();
@@ -716,8 +716,8 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		bombs -= config["InitialBombs"].get<short>();
 
 		// Other offsets
-		borderBreaks -= config["InitialBorderBreaks"].get<short>();
-		ls_capped -= config["InitialLastSpellsCaptured"].get<short>();
+		border_breaks -= config["InitialBorderBreaks"].get<short>();
+		last_spells_captured -= config["InitialLastSpellsCaptured"].get<short>();
 		trances -= config["InitialTrances"].get<short>();
 		releases -= config["InitialReleases"].get<short>();
 		ufos_red -= config["InitialRedUFOs"].get<short>();
@@ -811,7 +811,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->missesLabel->Text = (L"Misses: " + misses);
 			if (strcmp(idx_game[game], "PoDD") == 0 || strcmp(idx_game[game], "PoFV") == 0)	// Phantasmagoria
 			{
-				if (noCharge)
+				if (no_charge)
 				{
 					this->bombsLabel->ForeColor = Drawing::Color::Lime;
 					this->bombsLabel->Text = L"NoCharge";
@@ -831,7 +831,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			switch (game)
 			{
 			case 6:		// PCB
-				this->extraLabel0->Text = (L"Border Breaks: " + borderBreaks);
+				this->extraLabel0->Text = (L"Border Breaks: " + border_breaks);
 				break;
 			case 7:		// IN
 				printFinalStage();
@@ -852,7 +852,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 				this->extraLabel0->Text = (L"" + wolves);
 				this->extraLabel1->Text = (L"" + otters);
 				this->extraLabel2->Text = (L"" + eagles);
-				this->extraLabel3->Text = (L"" + breaks);
+				this->extraLabel3->Text = (L"" + roar_breaks);
 				this->survivalLabel->Text = L"";
 				this->scoringLabel->Text = L"";
 				break;
