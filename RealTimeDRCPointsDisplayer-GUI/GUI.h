@@ -657,6 +657,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			}
 			break;
 		case 11:	// UFO
+		case 17:	// WBaWC
 			this->extraLabel0->Width = 87;
 			this->extraLabel0->ForeColor = System::Drawing::Color::Red;
 			this->extraLabel1->Visible = true;
@@ -785,8 +786,12 @@ namespace RealTimeDRCPointsDisplayerGUI {
 
 		if (procStatus == STILL_ACTIVE)
 		{
-			ApplyOffsets();
-			calculateDRCPoints();
+			// Do not apply settings for WBaWC
+			if (strcmp(idx_game[game], "WBaWC") != 0)
+			{
+				ApplyOffsets();
+				calculateDRCPoints();
+			}
 
 			this->diffLabel->Text = (L"Difficulty: " + convertToStringClass(idx_difficulty[difficulty]));
 
@@ -843,20 +848,32 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			case 16:	// HSiFS
 				this->extraLabel0->Text = (L"Releases: " + releases);
 				break;
+			case 17:	// WBaWC
+				this->extraLabel0->Text = (L"" + wolves);
+				this->extraLabel1->Text = (L"" + otters);
+				this->extraLabel2->Text = (L"" + eagles);
+				this->extraLabel3->Text = (L"" + breaks);
+				this->survivalLabel->Text = L"";
+				this->scoringLabel->Text = L"";
+				break;
 			default:
 				this->extraLabel0->Text = (L"");
 				break;
 			}
 
-			this->survivalLabel->Text = (config["ShowSurvivalPoint"].get<bool>()) ? (L"Survival Points: " + roundf(drcpoints_survival)) : L"";
-			this->scoringLabel->Text = (config["ShowScoringPoint"].get<bool>()) ? (L"Scoring Points: " + roundf(drcpoints_scoring)) : L"";
+			// Do not apply settings for WBaWC
+			if (strcmp(idx_game[game], "WBaWC") != 0)
+			{
+				this->survivalLabel->Text = (config["ShowSurvivalPoint"].get<bool>()) ? (L"Survival Points: " + roundf(drcpoints_survival)) : L"";
+				this->scoringLabel->Text = (config["ShowScoringPoint"].get<bool>()) ? (L"Scoring Points: " + roundf(drcpoints_scoring)) : L"";
+				RemoveOffsets();
+			}
 			/*
 			if (misses == 0 && bombs == 0 && ls_capped == 10 && timer == 0)
 			{
 				player->PlayLooping();
 			}
 			*/
-			RemoveOffsets();
 		}
 		else
 		{

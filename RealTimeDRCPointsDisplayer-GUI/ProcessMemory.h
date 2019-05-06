@@ -17,8 +17,9 @@
 #include "ddc.h"
 #include "lolk.h"
 #include "hsifs.h"
+#include "wbawc.h"
 
-constexpr auto GAME_AVAILABLE = 17;
+constexpr auto GAME_AVAILABLE = 18;
 
 // a handle for found game
 HANDLE gameProc;
@@ -40,7 +41,8 @@ std::wstring gameList[GAME_AVAILABLE] = {
 	L"th13.exe",
 	L"th14.exe",
 	L"th15.exe",
-	L"th16.exe"
+	L"th16.exe",
+	L"th17.exe"
 };
 
 BOOL GetProcess()
@@ -150,6 +152,9 @@ void ReadMemory()
 		break;
 	case 16:	// HSiFS
 		ns_hsifs::ReadMemory(gameProc);
+		break;
+	case 17:	// WBaWC
+		ns_wbawc::ReadMemory(gameProc);
 		break;
 	}
 	return;

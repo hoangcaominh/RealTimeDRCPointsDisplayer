@@ -13,7 +13,7 @@ typedef unsigned long ul;
 float drcpoints_survival, drcpoints_scoring;
 
 // game index (global)
-const char* idx_game[] = { "HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS" };
+const char* idx_game[] = { "HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS", "WBaWC" };
 
 // difficulty index (global)
 const char* idx_difficulty[] = { "Easy", "Normal", "Hard", "Lunatic", "Extra", "Phantasm" };
@@ -48,6 +48,10 @@ unsigned short spirits; char trances;
 
 // Variables for HSiFS
 short releases;
+
+// Variables for WBaWC
+unsigned short wolves, otters, eagles, breaks;
+
 // Rubric variables
 char season, firstRelease; float release;
 
