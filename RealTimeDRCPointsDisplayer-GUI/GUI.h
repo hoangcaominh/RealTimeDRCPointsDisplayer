@@ -707,6 +707,9 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		ufos_green += config["InitialGreenUFOs"].get<int16_t>();
 		ufos_blue += config["InitialBlueUFOs"].get<int16_t>();
 		ufos_rainbow += config["InitialRainbowUFOs"].get<int16_t>();
+		wolves += config["InitialWolves"].get<int16_t>();
+		otters += config["InitialOtters"].get<int16_t>();
+		eagles += config["InitialEagles"].get<int16_t>();
 	}
 
 	// Remove offsets before applying offsets again
@@ -723,8 +726,11 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		releases -= config["InitialReleases"].get<int16_t>();
 		ufos_red -= config["InitialRedUFOs"].get<int16_t>();
 		ufos_green -= config["InitialGreenUFOs"].get<int16_t>();
-		ufos_blue -= config["InitialBlueUFOs"].get<short>();
-		ufos_rainbow -= config["InitialRainbowUFOs"].get<short>();
+		ufos_blue -= config["InitialBlueUFOs"].get<int16_t>();
+		ufos_rainbow -= config["InitialRainbowUFOs"].get<int16_t>();
+		wolves -= config["InitialWolves"].get<int16_t>();
+		otters -= config["InitialOtters"].get<int16_t>();
+		eagles -= config["InitialEagles"].get<int16_t>();
 	}
 
 	// Display warning when there are offsets applied
@@ -740,7 +746,10 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			config["InitialRedUFOs"] == 0 &&
 			config["InitialGreenUFOs"] == 0 &&
 			config["InitialBlueUFOs"] == 0 &&
-			config["InitialRainbowUFOs"] == 0 // &&
+			config["InitialRainbowUFOs"] == 0 &&
+			config["InitialWolves"] == 0 &&
+			config["InitialOtters"] == 0 &&
+			config["InitialEagles"] == 0 // &&
 			// config["NoChargeAttacks"]
 			)
 		{
@@ -787,10 +796,10 @@ namespace RealTimeDRCPointsDisplayerGUI {
 
 		if (procStatus == STILL_ACTIVE)
 		{
-			// Do not apply settings for WBaWC
+			ApplyOffsets();
+			// Do not apply DRC Points for WBaWC
 			if (strcmp(idx_game[game], "WBaWC") != 0)
 			{
-				ApplyOffsets();
 				calculateDRCPoints();
 			}
 
@@ -862,13 +871,13 @@ namespace RealTimeDRCPointsDisplayerGUI {
 				break;
 			}
 
-			// Do not apply settings for WBaWC
+			// Do not apply DRC Points for WBaWC
 			if (strcmp(idx_game[game], "WBaWC") != 0)
 			{
 				this->survivalLabel->Text = (config["ShowSurvivalPoint"].get<bool>()) ? (L"Survival Points: " + roundf(drcpoints_survival)) : L"";
 				this->scoringLabel->Text = (config["ShowScoringPoint"].get<bool>()) ? (L"Scoring Points: " + roundf(drcpoints_scoring)) : L"";
-				RemoveOffsets();
 			}
+			RemoveOffsets();
 			/*
 			if (misses == 0 && bombs == 0 && ls_capped == 10 && timer == 0)
 			{
