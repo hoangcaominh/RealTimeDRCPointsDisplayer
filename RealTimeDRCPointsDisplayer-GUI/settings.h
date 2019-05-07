@@ -490,7 +490,8 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			// releasesOffset
 			// 
 			this->releasesOffset->Location = System::Drawing::Point(6, 6);
-			this->releasesOffset->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100, 0, 0, System::Int32::MinValue });
+			this->releasesOffset->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 200, 0, 0, 0 });
+			this->releasesOffset->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 200, 0, 0, System::Int32::MinValue });
 			this->releasesOffset->Name = L"releasesOffset";
 			this->releasesOffset->Size = System::Drawing::Size(54, 22);
 			this->releasesOffset->TabIndex = 8;
@@ -711,51 +712,51 @@ namespace RealTimeDRCPointsDisplayerGUI {
 	private: System::Void ShowConfig()
 	{
 		// General offset
-		this->missesOffset->Value = config["InitialMisses"].get<int16_t>();
-		this->bombsOffset->Value = config["InitialBombs"].get<int16_t>();
+		this->missesOffset->Value = config["InitialMisses"].get<int8_t>();
+		this->bombsOffset->Value = config["InitialBombs"].get<int8_t>();
 
 		// DRC Points
 		this->showSurvivalCB->Checked = config["ShowSurvivalPoint"].get<bool>();
 		this->showScoringCB->Checked = config["ShowScoringPoint"].get<bool>();
 
 		// Other offsets
-		this->BBOffset->Value = config["InitialBorderBreaks"].get<int16_t>();
-		this->LSOffset->Value = config["InitialLastSpellsCaptured"].get<int16_t>();
-		this->trancesOffset->Value = config["InitialTrances"].get<int16_t>();
+		this->BBOffset->Value = config["InitialBorderBreaks"].get<int8_t>();
+		this->LSOffset->Value = config["InitialLastSpellsCaptured"].get<int8_t>();
+		this->trancesOffset->Value = config["InitialTrances"].get<int8_t>();
 		this->releasesOffset->Value = config["InitialReleases"].get<int16_t>();
 		this->noChargeCB->Checked = config["NoChargeAttacks"].get<bool>();
-		this->redOffset->Value = config["InitialRedUFOs"].get<int16_t>();
-		this->greenOffset->Value = config["InitialGreenUFOs"].get<int16_t>();
-		this->blueOffset->Value = config["InitialBlueUFOs"].get<int16_t>();
-		this->rainbowOffset->Value = config["InitialRainbowUFOs"].get<int16_t>();
-		this->wolvesOffset->Value = config["InitialWolves"].get<int16_t>();
-		this->ottersOffset->Value = config["InitialOtters"].get<int16_t>();
-		this->eaglesOffset->Value = config["InitialEagles"].get<int16_t>();
+		this->redOffset->Value = config["InitialRedUFOs"].get<int8_t>();
+		this->greenOffset->Value = config["InitialGreenUFOs"].get<int8_t>();
+		this->blueOffset->Value = config["InitialBlueUFOs"].get<int8_t>();
+		this->rainbowOffset->Value = config["InitialRainbowUFOs"].get<int8_t>();
+		this->wolvesOffset->Value = config["InitialWolves"].get<int8_t>();
+		this->ottersOffset->Value = config["InitialOtters"].get<int8_t>();
+		this->eaglesOffset->Value = config["InitialEagles"].get<int8_t>();
 	}
 
 	private: System::Void SaveConfig()
 	{
 		// General offset
-		config["InitialMisses"] = Convert::ToInt16(this->missesOffset->Value);
-		config["InitialBombs"] = Convert::ToInt16(this->bombsOffset->Value);
+		config["InitialMisses"] = Convert::ToSByte(this->missesOffset->Value);
+		config["InitialBombs"] = Convert::ToSByte(this->bombsOffset->Value);
 
 		// DRC Points
 		config["ShowSurvivalPoint"] = this->showSurvivalCB->Checked;
 		config["ShowScoringPoint"] = this->showScoringCB->Checked;
 
 		// Other offsets
-		config["InitialBorderBreaks"] = Convert::ToInt16(this->BBOffset->Value);
-		config["InitialLastSpellsCaptured"] = Convert::ToInt16(this->LSOffset->Value);
-		config["InitialTrances"] = Convert::ToInt16(this->trancesOffset->Value);
+		config["InitialBorderBreaks"] = Convert::ToSByte(this->BBOffset->Value);
+		config["InitialLastSpellsCaptured"] = Convert::ToSByte(this->LSOffset->Value);
+		config["InitialTrances"] = Convert::ToSByte(this->trancesOffset->Value);
 		config["InitialReleases"] = Convert::ToInt16(this->releasesOffset->Value);
 		config["NoChargeAttacks"] = this->noChargeCB->Checked;
-		config["InitialRedUFOs"] = Convert::ToInt16(this->redOffset->Value);
-		config["InitialGreenUFOs"] = Convert::ToInt16(this->greenOffset->Value);
-		config["InitialBlueUFOs"] = Convert::ToInt16(this->blueOffset->Value);
-		config["InitialRainbowUFOs"] = Convert::ToInt16(this->rainbowOffset->Value);
-		config["InitialWolves"] = Convert::ToInt16(this->wolvesOffset->Value);
-		config["InitialOtters"] = Convert::ToInt16(this->ottersOffset->Value);
-		config["InitialEagles"] = Convert::ToInt16(this->eaglesOffset->Value);
+		config["InitialRedUFOs"] = Convert::ToSByte(this->redOffset->Value);
+		config["InitialGreenUFOs"] = Convert::ToSByte(this->greenOffset->Value);
+		config["InitialBlueUFOs"] = Convert::ToSByte(this->blueOffset->Value);
+		config["InitialRainbowUFOs"] = Convert::ToSByte(this->rainbowOffset->Value);
+		config["InitialWolves"] = Convert::ToSByte(this->wolvesOffset->Value);
+		config["InitialOtters"] = Convert::ToSByte(this->ottersOffset->Value);
+		config["InitialEagles"] = Convert::ToSByte(this->eaglesOffset->Value);
 
 		// must be done here
 		no_charge = this->noChargeCB->Checked;

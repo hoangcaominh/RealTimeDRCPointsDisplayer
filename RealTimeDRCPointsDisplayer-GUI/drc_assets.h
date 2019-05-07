@@ -26,26 +26,26 @@ uint16_t surv_base; float surv_exp;
 uint16_t score_base; float score_exp;
 
 // Variables for PCB
-uint8_t border_breaks;
+int8_t border_breaks;
 
 // Variables for IN
-uint8_t last_spells_captured, stage;
+int8_t last_spells_captured, stage;
 // unsigned int timer;
 
 // Variables for Phantasmagorias
 uint8_t min, lives, no_bomb_bonus; bool no_charge;
 
 // Variables for UFO
-uint8_t ufos, ufos_red, ufos_green, ufos_blue, ufos_rainbow;
+int8_t ufos, ufos_red, ufos_green, ufos_blue, ufos_rainbow;
 
 // Variables for TD
-uint16_t spirits; uint8_t trances;
+uint16_t spirits; int8_t trances;
 
 // Variables for HSiFS
-uint16_t releases;
+int16_t releases;
 
 // Variables for WBaWC
-uint16_t wolves, otters, eagles, roar_breaks;
+int8_t wolves, otters, eagles, roar_breaks;
 
 // Rubric variables
 uint8_t season, first_release; float release;

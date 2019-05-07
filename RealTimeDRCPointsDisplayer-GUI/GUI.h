@@ -695,42 +695,42 @@ namespace RealTimeDRCPointsDisplayerGUI {
 	private: System::Void ApplyOffsets()
 	{
 		// General offset
-		misses += config["InitialMisses"].get<int16_t>();
-		bombs += config["InitialBombs"].get<int16_t>();
+		misses += config["InitialMisses"].get<int8_t>();
+		bombs += config["InitialBombs"].get<int8_t>();
 
 		// Other offsets
-		border_breaks += config["InitialBorderBreaks"].get<int16_t>();
-		last_spells_captured += config["InitialLastSpellsCaptured"].get<int16_t>();
-		trances += config["InitialTrances"].get<int16_t>();
+		border_breaks += config["InitialBorderBreaks"].get<int8_t>();
+		last_spells_captured += config["InitialLastSpellsCaptured"].get<int8_t>();
+		trances += config["InitialTrances"].get<int8_t>();
 		releases += config["InitialReleases"].get<int16_t>();
-		ufos_red += config["InitialRedUFOs"].get<int16_t>();
-		ufos_green += config["InitialGreenUFOs"].get<int16_t>();
-		ufos_blue += config["InitialBlueUFOs"].get<int16_t>();
-		ufos_rainbow += config["InitialRainbowUFOs"].get<int16_t>();
-		wolves += config["InitialWolves"].get<int16_t>();
-		otters += config["InitialOtters"].get<int16_t>();
-		eagles += config["InitialEagles"].get<int16_t>();
+		ufos_red += config["InitialRedUFOs"].get<int8_t>();
+		ufos_green += config["InitialGreenUFOs"].get<int8_t>();
+		ufos_blue += config["InitialBlueUFOs"].get<int8_t>();
+		ufos_rainbow += config["InitialRainbowUFOs"].get<int8_t>();
+		wolves += config["InitialWolves"].get<int8_t>();
+		otters += config["InitialOtters"].get<int8_t>();
+		eagles += config["InitialEagles"].get<int8_t>();
 	}
 
 	// Remove offsets before applying offsets again
 	private: System::Void RemoveOffsets()
 	{
 		// General offset
-		misses -= config["InitialMisses"].get<int16_t>();
-		bombs -= config["InitialBombs"].get<int16_t>();
+		misses -= config["InitialMisses"].get<int8_t>();
+		bombs -= config["InitialBombs"].get<int8_t>();
 
 		// Other offsets
-		border_breaks -= config["InitialBorderBreaks"].get<int16_t>();
-		last_spells_captured -= config["InitialLastSpellsCaptured"].get<int16_t>();
-		trances -= config["InitialTrances"].get<int16_t>();
+		border_breaks -= config["InitialBorderBreaks"].get<int8_t>();
+		last_spells_captured -= config["InitialLastSpellsCaptured"].get<int8_t>();
+		trances -= config["InitialTrances"].get<int8_t>();
 		releases -= config["InitialReleases"].get<int16_t>();
-		ufos_red -= config["InitialRedUFOs"].get<int16_t>();
-		ufos_green -= config["InitialGreenUFOs"].get<int16_t>();
-		ufos_blue -= config["InitialBlueUFOs"].get<int16_t>();
-		ufos_rainbow -= config["InitialRainbowUFOs"].get<int16_t>();
-		wolves -= config["InitialWolves"].get<int16_t>();
-		otters -= config["InitialOtters"].get<int16_t>();
-		eagles -= config["InitialEagles"].get<int16_t>();
+		ufos_red -= config["InitialRedUFOs"].get<int8_t>();
+		ufos_green -= config["InitialGreenUFOs"].get<int8_t>();
+		ufos_blue -= config["InitialBlueUFOs"].get<int8_t>();
+		ufos_rainbow -= config["InitialRainbowUFOs"].get<int8_t>();
+		wolves -= config["InitialWolves"].get<int8_t>();
+		otters -= config["InitialOtters"].get<int8_t>();
+		eagles -= config["InitialEagles"].get<int8_t>();
 	}
 
 	// Display warning when there are offsets applied
