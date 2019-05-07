@@ -11,7 +11,7 @@ An user interface application that displays in-game information and calculates D
 - 1.0: Finish console version, move to GUI version
 
 # Installation and Recommendation
-- You just need to download the folder to whereever you want in your PC. Creating a shortcut on the desktop is recommended.
+- You just need to download the zip file and extract it wherever you want in your PC. Optionally, you can create a shortcut to the execution on the desktop.
 - It is required to have Internet connection to download files when booting the application, otherwise it will read the existing ones.
 
 # Mechanism
