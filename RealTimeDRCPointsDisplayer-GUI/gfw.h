@@ -5,14 +5,14 @@
 namespace ns_gfw
 {
 	// variables for manually counting misses (2 byte int)
-	unsigned short lives, _lives;
+	uint16_t lives, _lives;
 
 	// variables for recording key pressed
 	DWORD p_is_bomb;
 	bool is_bomb, x_reset;
 
 	// use route instead of character
-	char &route = character;
+	uint8_t &route = character;
 
 	// route index
 	const char* idx_route[] = { "A1", "A1", "A1", "A1", "A2", "A2", "B1", "B1", "B1", "B2", "B2", "C1", "C1", "C1", "C2", "C2", "-" };
@@ -57,7 +57,7 @@ namespace ns_gfw
 		};
 
 		ReadProcessMemory(gameProc, (void*)FRAME_COUNT, &frame_count, sizeof(frame_count), 0);
-		ReadProcessMemory(gameProc, (void*)SCORE, &score, sizeof(int), 0);
+		ReadProcessMemory(gameProc, (void*)SCORE, &score, sizeof(uint32_t), 0);
 		ReadProcessMemory(gameProc, (void*)DIFFICULTY, &difficulty, sizeof(difficulty), 0);
 		ReadProcessMemory(gameProc, (void*)ROUTE, &route, sizeof(route), 0);
 		ReadProcessMemory(gameProc, (void*)LIVES, &lives, sizeof(lives), 0);

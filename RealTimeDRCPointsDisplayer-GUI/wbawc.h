@@ -5,14 +5,14 @@
 namespace ns_wbawc
 {
 	// Array for storing tokens in WBaWC
-	int token_array[11], tokens;
+	uint32_t token_array[11], tokens;
 
 	// Variable for checking whether the player is in hyper mode
 	bool is_hyper;
-	unsigned int hyper_bar[2], prev_hyper_bar[2];
+	uint32_t hyper_bar[2], prev_hyper_bar[2];
 
 	// Array for counting occurrences of goasts
-	int occurrence[11];
+	uint8_t occurrence[11];
 
 	// variables for recording key pressed
 	DWORD p_is_bomb;
@@ -46,13 +46,13 @@ namespace ns_wbawc
 		{
 			is_hyper = true;
 
-			for (int i : token_array)
+			for (uint32_t i : token_array)
 			{
 				occurrence[token_array[i]]++;
 			}
 
 			// occurrence from wolves to eagles
-			for (int i = 1; i <= 3; i++)
+			for (uint8_t i = 1; i <= 3; i++)
 			{
 				if (occurrence[i] >= 3)
 				{
@@ -105,7 +105,7 @@ namespace ns_wbawc
 		};
 
 		ReadProcessMemory(gameProc, (void*)FRAME_COUNT, &frame_count, sizeof(frame_count), 0);
-		ReadProcessMemory(gameProc, (void*)SCORE, &score, sizeof(int), 0);
+		ReadProcessMemory(gameProc, (void*)SCORE, &score, sizeof(uint32_t), 0);
 		ReadProcessMemory(gameProc, (void*)CHARACTER, &character, sizeof(character), 0);
 		ReadProcessMemory(gameProc, (void*)TYPE, &type, sizeof(type), 0);
 		ReadProcessMemory(gameProc, (void*)DIFFICULTY, &difficulty, sizeof(difficulty), 0);

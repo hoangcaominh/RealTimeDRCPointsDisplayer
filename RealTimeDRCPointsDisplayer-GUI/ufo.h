@@ -5,10 +5,10 @@
 namespace ns_ufo
 {
 	// variables for UFO
-	int vault_array[3]; char vaults; bool is_ufo;
+	uint32_t vault_array[3]; uint8_t vaults; bool is_ufo;
 
 	// variables for manually counting misses
-	char lives, _lives;
+	uint8_t lives, _lives;
 
 	// variables for recording key pressed
 	DWORD p_is_bomb;
@@ -94,7 +94,7 @@ namespace ns_ufo
 		};
 
 		ReadProcessMemory(gameProc, (void*)FRAME_COUNT, &frame_count, sizeof(frame_count), 0);
-		ReadProcessMemory(gameProc, (void*)SCORE, &score, sizeof(int), 0);
+		ReadProcessMemory(gameProc, (void*)SCORE, &score, sizeof(uint32_t), 0);
 		ReadProcessMemory(gameProc, (void*)VAULT_ARRAY, vault_array, sizeof(vault_array), 0);
 		ReadProcessMemory(gameProc, (void*)VAULTS, &vaults, sizeof(vaults), 0);
 		ReadProcessMemory(gameProc, (void*)CHARACTER, &character, sizeof(character), 0);

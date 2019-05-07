@@ -4,9 +4,9 @@
 
 namespace ns_in
 {
-	char team, type, deathbombs;
+	uint8_t team, type, deathbombs;
 	DWORD p_score;
-	unsigned int spell_bonus, spell_id, _spell_id;
+	uint32_t spell_bonus, spell_id, _spell_id;
 
 	// used for counting last spell captures
 	bool checked = false, failed = false;
@@ -21,7 +21,7 @@ namespace ns_in
 
 	void countLastSpellsCaptured()
 	{
-		auto compare = [](unsigned short a, unsigned short val, unsigned short b) { return a <= val && val <= b; };
+		auto compare = [](uint16_t a, uint16_t val, uint16_t b) { return a <= val && val <= b; };
 		// Last spells (enum), default is Normal
 		enum LASTSPELLS
 		{
@@ -89,7 +89,7 @@ namespace ns_in
 		ReadProcessMemory(gameProc, (void*)BOMBS, &bombs, sizeof(bombs), 0);
 		ReadProcessMemory(gameProc, (void*)DEATHBOMBS, &deathbombs, sizeof(deathbombs), 0);
 		ReadProcessMemory(gameProc, (void*)P_SCORE, &p_score, sizeof(p_score), 0);
-		ReadProcessMemory(gameProc, (void*)p_score, &score, sizeof(int), 0);
+		ReadProcessMemory(gameProc, (void*)p_score, &score, sizeof(uint32_t), 0);
 
 		// ReadProcessMemory(gameProc, (void*)TIMER, &timer, sizeof(timer), 0);
 

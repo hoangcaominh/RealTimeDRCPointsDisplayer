@@ -10,10 +10,10 @@ namespace ns_hsifs
 
 	// for final spell
 	DWORD p_spell_id;
-	char spell_id;
+	uint8_t spell_id;
 
 	// variables for HSiFS
-	unsigned short release_petals, _release_petals;
+	uint16_t release_petals, _release_petals;
 
 	// character index
 	const char* idx_character[] = { "Reimu", "Cirno", "Aya", "Marisa" };
@@ -70,7 +70,7 @@ namespace ns_hsifs
 		};
 
 		ReadProcessMemory(gameProc, (void*)FRAME_COUNT, &frame_count, sizeof(frame_count), 0);
-		ReadProcessMemory(gameProc, (void*)SCORE, &score, sizeof(int), 0);
+		ReadProcessMemory(gameProc, (void*)SCORE, &score, sizeof(uint32_t), 0);
 		ReadProcessMemory(gameProc, (void*)CHARACTER, &character, sizeof(character), 0);
 		ReadProcessMemory(gameProc, (void*)SEASON, &season, sizeof(char), 0);
 		ReadProcessMemory(gameProc, (void*)DIFFICULTY, &difficulty, sizeof(difficulty), 0);
@@ -93,7 +93,7 @@ namespace ns_hsifs
 		getShottype();
 
 		getRubrics();
-		first_release = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["firstRelease"].get<char>();
+		first_release = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["firstRelease"].get<uint8_t>();
 		release = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["release"].get<float>();
 
 		countBombs();

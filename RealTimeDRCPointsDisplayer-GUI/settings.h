@@ -492,23 +492,23 @@ namespace RealTimeDRCPointsDisplayerGUI {
 	private: System::Void ShowConfig()
 	{
 		// General offset
-		missesOffset->Value = config["InitialMisses"].get<short>();
-		bombsOffset->Value = config["InitialBombs"].get<short>();
+		missesOffset->Value = config["InitialMisses"].get<int16_t>();
+		bombsOffset->Value = config["InitialBombs"].get<int16_t>();
 
 		// DRC Points
 		showSurvivalCB->Checked = config["ShowSurvivalPoint"].get<bool>();
 		showScoringCB->Checked = config["ShowScoringPoint"].get<bool>();
 
 		// Other offsets
-		BBOffset->Value = config["InitialBorderBreaks"].get<short>();
-		LSOffset->Value = config["InitialLastSpellsCaptured"].get<short>();
-		trancesOffset->Value = config["InitialTrances"].get<short>();
-		releasesOffset->Value = config["InitialReleases"].get<short>();
+		BBOffset->Value = config["InitialBorderBreaks"].get<int16_t>();
+		LSOffset->Value = config["InitialLastSpellsCaptured"].get<int16_t>();
+		trancesOffset->Value = config["InitialTrances"].get<int16_t>();
+		releasesOffset->Value = config["InitialReleases"].get<int16_t>();
 		noChargeCB->Checked = config["NoChargeAttacks"].get<bool>();
-		redOffset->Value = config["InitialRedUFOs"].get<short>();
-		greenOffset->Value = config["InitialGreenUFOs"].get<short>();
-		blueOffset->Value = config["InitialBlueUFOs"].get<short>();
-		rainbowOffset->Value = config["InitialRainbowUFOs"].get<short>();
+		redOffset->Value = config["InitialRedUFOs"].get<int16_t>();
+		greenOffset->Value = config["InitialGreenUFOs"].get<int16_t>();
+		blueOffset->Value = config["InitialBlueUFOs"].get<int16_t>();
+		rainbowOffset->Value = config["InitialRainbowUFOs"].get<int16_t>();
 	}
 
 	private: System::Void SaveConfig()

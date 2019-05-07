@@ -10,7 +10,7 @@ namespace ns_pcb
 
 	// Pointer to dynamic variables
 	DWORD ptr;
-	unsigned int cherry, cherry_max, cherry_plus, _cherry_max;
+	uint32_t cherry, cherry_max, cherry_plus, _cherry_max;
 
 	// For dealing with awkward random value in cherry variables
 	unsigned int cherry_off;
@@ -56,7 +56,7 @@ namespace ns_pcb
 		ReadProcessMemory(gameProc, (void*)IN_GAME, &in_game, sizeof(in_game), 0);
 		ReadProcessMemory(gameProc, (void*)BORDERON, &border_on, sizeof(border_on), 0);
 		ReadProcessMemory(gameProc, (void*)PTR, &ptr, sizeof(ptr), 0);
-		ReadProcessMemory(gameProc, (void*)ptr, &score, sizeof(int), 0);
+		ReadProcessMemory(gameProc, (void*)ptr, &score, sizeof(uint32_t), 0);
 		ReadProcessMemory(gameProc, (void*)(ptr + 0x50), &_misses, sizeof(_misses), 0);
 		ReadProcessMemory(gameProc, (void*)(ptr + 0x6C), &_bombs, sizeof(_misses), 0);
 		ReadProcessMemory(gameProc, (void*)CHERRY, &cherry, sizeof(cherry), 0);
@@ -79,8 +79,8 @@ namespace ns_pcb
 		getShottype();
 		getRubrics();
 
-		misses = (char)_misses;
-		bombs = (char)_bombs;
+		misses = (int8_t)_misses;
+		bombs = (int8_t)_bombs;
 		cherry -= cherry_off;
 		cherry_max -= cherry_off;
 		cherry_plus -= cherry_off;

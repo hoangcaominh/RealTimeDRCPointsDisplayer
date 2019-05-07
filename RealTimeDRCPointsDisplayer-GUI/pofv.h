@@ -9,7 +9,7 @@ namespace ns_pofv
 
 	DWORD p_score, p_charge;
 	// lost round variables
-	char loss, _loss;
+	uint8_t loss, _loss;
 
 	// character index
 	const char* idx_character[] = { "Reimu", "Marisa", "Sakuya", "Youmu", "Reisen", "Cirno", "Lyrica", "Mystia", "Tewi", "Yuuka", "Aya", "Medicine", "Komachi", "Eiki", "Merlin", "Lunasa" };
@@ -45,7 +45,7 @@ namespace ns_pofv
 		ReadProcessMemory(gameProc, (void*)DIFFICULTY, &difficulty, sizeof(difficulty), 0);
 		ReadProcessMemory(gameProc, (void*)LOSS, &loss, sizeof(loss), 0);
 		ReadProcessMemory(gameProc, (void*)P_SCORE, &p_score, sizeof(p_score), 0);
-		ReadProcessMemory(gameProc, (void*)(p_score + 0x04), &score, sizeof(int), 0);
+		ReadProcessMemory(gameProc, (void*)(p_score + 0x04), &score, sizeof(uint32_t), 0);
 		ReadProcessMemory(gameProc, (void*)P_CHARGE, &p_charge, sizeof(p_charge), 0);
 		ReadProcessMemory(gameProc, (void*)(p_charge + 0x30384), &charge, sizeof(charge), 0);
 

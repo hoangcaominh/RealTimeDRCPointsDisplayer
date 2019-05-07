@@ -426,6 +426,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 	 // IN stage final andl ast spells captured
 	private: System::Void printFinalStage()
 	{
+		initLabel();
 		if (strcmp(idx_difficulty[difficulty], "Extra") == 0)
 		{
 			this->extraLabel0->Text = (L"Last Spells: " + last_spells_captured + L"/1");
@@ -694,34 +695,34 @@ namespace RealTimeDRCPointsDisplayerGUI {
 	private: System::Void ApplyOffsets()
 	{
 		// General offset
-		misses += config["InitialMisses"].get<short>();
-		bombs += config["InitialBombs"].get<short>();
+		misses += config["InitialMisses"].get<int16_t>();
+		bombs += config["InitialBombs"].get<int16_t>();
 
 		// Other offsets
-		border_breaks += config["InitialBorderBreaks"].get<short>();
-		last_spells_captured += config["InitialLastSpellsCaptured"].get<short>();
-		trances += config["InitialTrances"].get<short>();
-		releases += config["InitialReleases"].get<short>();
-		ufos_red += config["InitialRedUFOs"].get<short>();
-		ufos_green += config["InitialGreenUFOs"].get<short>();
-		ufos_blue += config["InitialBlueUFOs"].get<short>();
-		ufos_rainbow += config["InitialRainbowUFOs"].get<short>();
+		border_breaks += config["InitialBorderBreaks"].get<int16_t>();
+		last_spells_captured += config["InitialLastSpellsCaptured"].get<int16_t>();
+		trances += config["InitialTrances"].get<int16_t>();
+		releases += config["InitialReleases"].get<int16_t>();
+		ufos_red += config["InitialRedUFOs"].get<int16_t>();
+		ufos_green += config["InitialGreenUFOs"].get<int16_t>();
+		ufos_blue += config["InitialBlueUFOs"].get<int16_t>();
+		ufos_rainbow += config["InitialRainbowUFOs"].get<int16_t>();
 	}
 
 	// Remove offsets before applying offsets again
 	private: System::Void RemoveOffsets()
 	{
 		// General offset
-		misses -= config["InitialMisses"].get<short>();
-		bombs -= config["InitialBombs"].get<short>();
+		misses -= config["InitialMisses"].get<int16_t>();
+		bombs -= config["InitialBombs"].get<int16_t>();
 
 		// Other offsets
-		border_breaks -= config["InitialBorderBreaks"].get<short>();
-		last_spells_captured -= config["InitialLastSpellsCaptured"].get<short>();
-		trances -= config["InitialTrances"].get<short>();
-		releases -= config["InitialReleases"].get<short>();
-		ufos_red -= config["InitialRedUFOs"].get<short>();
-		ufos_green -= config["InitialGreenUFOs"].get<short>();
+		border_breaks -= config["InitialBorderBreaks"].get<int16_t>();
+		last_spells_captured -= config["InitialLastSpellsCaptured"].get<int16_t>();
+		trances -= config["InitialTrances"].get<int16_t>();
+		releases -= config["InitialReleases"].get<int16_t>();
+		ufos_red -= config["InitialRedUFOs"].get<int16_t>();
+		ufos_green -= config["InitialGreenUFOs"].get<int16_t>();
 		ufos_blue -= config["InitialBlueUFOs"].get<short>();
 		ufos_rainbow -= config["InitialRainbowUFOs"].get<short>();
 	}
