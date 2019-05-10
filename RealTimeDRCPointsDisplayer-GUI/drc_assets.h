@@ -51,7 +51,7 @@ int8_t wolves, otters, eagles, roar_breaks;
 uint8_t season, first_release; float release;
 
 // Used for resetting information
-DWORD frame_count;
+uint32_t frame_count;
 
 // reset status
 bool reset()

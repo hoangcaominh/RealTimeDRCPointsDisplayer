@@ -9,7 +9,7 @@ namespace ns_pcb
 	bool border_on, _border_on, in_game, reset;
 
 	// Pointer to dynamic variables
-	DWORD ptr;
+	uint32_t ptr;
 	uint32_t cherry, cherry_max, cherry_plus, _cherry_max;
 
 	// For dealing with awkward random value in cherry variables

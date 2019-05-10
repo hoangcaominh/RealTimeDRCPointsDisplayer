@@ -5,11 +5,11 @@
 namespace ns_hsifs
 {	
 	// variables for recording key pressed
-	DWORD p_is_bomb;
+	uint32_t p_is_bomb;
 	bool is_bomb, x_reset;
 
 	// for final spell
-	DWORD p_spell_id;
+	uint32_t p_spell_id;
 	uint8_t spell_id;
 
 	// variables for HSiFS

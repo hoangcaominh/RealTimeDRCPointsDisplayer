@@ -8,7 +8,7 @@ namespace ns_lolk
 	uint8_t mode;
 
 	// variables for recording key pressed
-	DWORD p_is_bomb;
+	uint32_t p_is_bomb;
 	bool is_bomb, x_reset;
 
 	// character index

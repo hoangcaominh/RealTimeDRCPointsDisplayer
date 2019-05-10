@@ -15,7 +15,7 @@ namespace ns_wbawc
 	uint8_t occurrence[11];
 
 	// variables for recording key pressed
-	DWORD p_is_bomb;
+	uint32_t p_is_bomb;
 	bool is_bomb, x_reset;
 
 	const char* idx_character[] = { "Reimu", "Marisa", "Youmu" };

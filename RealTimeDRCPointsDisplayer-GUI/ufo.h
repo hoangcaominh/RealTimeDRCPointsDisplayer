@@ -11,7 +11,7 @@ namespace ns_ufo
 	uint8_t lives, _lives;
 
 	// variables for recording key pressed
-	DWORD p_is_bomb;
+	uint32_t p_is_bomb;
 	bool is_bomb, x_reset;
 
 	// character index

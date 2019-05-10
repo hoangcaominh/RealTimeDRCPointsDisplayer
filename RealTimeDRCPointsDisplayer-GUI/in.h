@@ -5,7 +5,7 @@
 namespace ns_in
 {
 	uint8_t team, type, deathbombs;
-	DWORD p_score;
+	uint32_t p_score;
 	uint32_t spell_bonus, spell_id, _spell_id;
 
 	// used for counting last spell captures

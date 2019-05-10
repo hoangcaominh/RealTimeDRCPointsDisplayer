@@ -7,7 +7,7 @@ namespace ns_pofv
 	// Variables for measuring gauge bar
 	float charge;
 
-	DWORD p_score, p_charge;
+	uint32_t p_score, p_charge;
 	// lost round variables
 	uint8_t loss, _loss;
 
