@@ -426,9 +426,10 @@ namespace RealTimeDRCPointsDisplayerGUI {
 	 // IN stage final andl ast spells captured
 	private: System::Void printFinalStage()
 	{
+		initLabel();
 		if (strcmp(idx_difficulty[difficulty], "Extra") == 0)
 		{
-			this->extraLabel0->Text = (L"Last Spells: " + ls_capped + L"/1");
+			this->extraLabel0->Text = (L"Last Spells: " + last_spells_captured + L"/1");
 		}
 		else
 		{
@@ -437,19 +438,19 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			case 6: // 6A
 			{
 				char maxLastSpells = Rubrics["MAX_LAST_SPELLS"][idx_difficulty[difficulty]]["FinalA"].get<char>();
-				this->extraLabel0->Text = (L"LS: " + ls_capped + L"/" + maxLastSpells);
+				this->extraLabel0->Text = (L"LS: " + last_spells_captured + L"/" + maxLastSpells);
 				this->extraLabel2->Text = L"Final: A";
 				break;
 			}
 			case 7:	// 6B
 			{
 				char maxLastSpells = Rubrics["MAX_LAST_SPELLS"][idx_difficulty[difficulty]]["FinalB"].get<char>();
-				this->extraLabel0->Text = (L"LS: " + ls_capped + L"/" + maxLastSpells);
+				this->extraLabel0->Text = (L"LS: " + last_spells_captured + L"/" + maxLastSpells);
 				this->extraLabel2->Text = L"Final: B";
 				break;
 			}
 			default:
-				this->extraLabel0->Text = (L"LS: " + ls_capped + L"/?");
+				this->extraLabel0->Text = (L"LS: " + last_spells_captured + L"/?");
 				this->extraLabel2->Text = L"Final: ?";
 				break;
 			}
@@ -657,6 +658,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			}
 			break;
 		case 11:	// UFO
+		case 17:	// WBaWC
 			this->extraLabel0->Width = 87;
 			this->extraLabel0->ForeColor = System::Drawing::Color::Red;
 			this->extraLabel1->Visible = true;
@@ -693,36 +695,42 @@ namespace RealTimeDRCPointsDisplayerGUI {
 	private: System::Void ApplyOffsets()
 	{
 		// General offset
-		misses += config["InitialMisses"].get<short>();
-		bombs += config["InitialBombs"].get<short>();
+		misses += config["InitialMisses"].get<int8_t>();
+		bombs += config["InitialBombs"].get<int8_t>();
 
 		// Other offsets
-		borderBreaks += config["InitialBorderBreaks"].get<short>();
-		ls_capped += config["InitialLastSpellsCaptured"].get<short>();
-		trances += config["InitialTrances"].get<short>();
-		releases += config["InitialReleases"].get<short>();
-		ufos_red += config["InitialRedUFOs"].get<short>();
-		ufos_green += config["InitialGreenUFOs"].get<short>();
-		ufos_blue += config["InitialBlueUFOs"].get<short>();
-		ufos_rainbow += config["InitialRainbowUFOs"].get<short>();
+		border_breaks += config["InitialBorderBreaks"].get<int8_t>();
+		last_spells_captured += config["InitialLastSpellsCaptured"].get<int8_t>();
+		trances += config["InitialTrances"].get<int8_t>();
+		releases += config["InitialReleases"].get<int16_t>();
+		ufos_red += config["InitialRedUFOs"].get<int8_t>();
+		ufos_green += config["InitialGreenUFOs"].get<int8_t>();
+		ufos_blue += config["InitialBlueUFOs"].get<int8_t>();
+		ufos_rainbow += config["InitialRainbowUFOs"].get<int8_t>();
+		wolves += config["InitialWolves"].get<int8_t>();
+		otters += config["InitialOtters"].get<int8_t>();
+		eagles += config["InitialEagles"].get<int8_t>();
 	}
 
 	// Remove offsets before applying offsets again
 	private: System::Void RemoveOffsets()
 	{
 		// General offset
-		misses -= config["InitialMisses"].get<short>();
-		bombs -= config["InitialBombs"].get<short>();
+		misses -= config["InitialMisses"].get<int8_t>();
+		bombs -= config["InitialBombs"].get<int8_t>();
 
 		// Other offsets
-		borderBreaks -= config["InitialBorderBreaks"].get<short>();
-		ls_capped -= config["InitialLastSpellsCaptured"].get<short>();
-		trances -= config["InitialTrances"].get<short>();
-		releases -= config["InitialReleases"].get<short>();
-		ufos_red -= config["InitialRedUFOs"].get<short>();
-		ufos_green -= config["InitialGreenUFOs"].get<short>();
-		ufos_blue -= config["InitialBlueUFOs"].get<short>();
-		ufos_rainbow -= config["InitialRainbowUFOs"].get<short>();
+		border_breaks -= config["InitialBorderBreaks"].get<int8_t>();
+		last_spells_captured -= config["InitialLastSpellsCaptured"].get<int8_t>();
+		trances -= config["InitialTrances"].get<int8_t>();
+		releases -= config["InitialReleases"].get<int16_t>();
+		ufos_red -= config["InitialRedUFOs"].get<int8_t>();
+		ufos_green -= config["InitialGreenUFOs"].get<int8_t>();
+		ufos_blue -= config["InitialBlueUFOs"].get<int8_t>();
+		ufos_rainbow -= config["InitialRainbowUFOs"].get<int8_t>();
+		wolves -= config["InitialWolves"].get<int8_t>();
+		otters -= config["InitialOtters"].get<int8_t>();
+		eagles -= config["InitialEagles"].get<int8_t>();
 	}
 
 	// Display warning when there are offsets applied
@@ -738,7 +746,10 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			config["InitialRedUFOs"] == 0 &&
 			config["InitialGreenUFOs"] == 0 &&
 			config["InitialBlueUFOs"] == 0 &&
-			config["InitialRainbowUFOs"] == 0 // &&
+			config["InitialRainbowUFOs"] == 0 &&
+			config["InitialWolves"] == 0 &&
+			config["InitialOtters"] == 0 &&
+			config["InitialEagles"] == 0 // &&
 			// config["NoChargeAttacks"]
 			)
 		{
@@ -786,7 +797,11 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		if (procStatus == STILL_ACTIVE)
 		{
 			ApplyOffsets();
-			calculateDRCPoints();
+			// Do not apply DRC Points for WBaWC
+			if (strcmp(idx_game[game], "WBaWC") != 0)
+			{
+				calculateDRCPoints();
+			}
 
 			this->diffLabel->Text = (L"Difficulty: " + convertToStringClass(idx_difficulty[difficulty]));
 
@@ -806,7 +821,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->missesLabel->Text = (L"Misses: " + misses);
 			if (strcmp(idx_game[game], "PoDD") == 0 || strcmp(idx_game[game], "PoFV") == 0)	// Phantasmagoria
 			{
-				if (noCharge)
+				if (no_charge)
 				{
 					this->bombsLabel->ForeColor = Drawing::Color::Lime;
 					this->bombsLabel->Text = L"NoCharge";
@@ -826,7 +841,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			switch (game)
 			{
 			case 6:		// PCB
-				this->extraLabel0->Text = (L"Border Breaks: " + borderBreaks);
+				this->extraLabel0->Text = (L"Border Breaks: " + border_breaks);
 				break;
 			case 7:		// IN
 				printFinalStage();
@@ -843,20 +858,32 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			case 16:	// HSiFS
 				this->extraLabel0->Text = (L"Releases: " + releases);
 				break;
+			case 17:	// WBaWC
+				this->extraLabel0->Text = (L"" + wolves);
+				this->extraLabel1->Text = (L"" + otters);
+				this->extraLabel2->Text = (L"" + eagles);
+				this->extraLabel3->Text = (L"" + roar_breaks);
+				this->survivalLabel->Text = L"";
+				this->scoringLabel->Text = L"";
+				break;
 			default:
 				this->extraLabel0->Text = (L"");
 				break;
 			}
 
-			this->survivalLabel->Text = (config["ShowSurvivalPoint"].get<bool>()) ? (L"Survival Points: " + roundf(drcpoints_survival)) : L"";
-			this->scoringLabel->Text = (config["ShowScoringPoint"].get<bool>()) ? (L"Scoring Points: " + roundf(drcpoints_scoring)) : L"";
+			// Do not apply DRC Points for WBaWC
+			if (strcmp(idx_game[game], "WBaWC") != 0)
+			{
+				this->survivalLabel->Text = (config["ShowSurvivalPoint"].get<bool>()) ? (L"Survival Points: " + roundf(drcpoints_survival)) : L"";
+				this->scoringLabel->Text = (config["ShowScoringPoint"].get<bool>()) ? (L"Scoring Points: " + roundf(drcpoints_scoring)) : L"";
+			}
+			RemoveOffsets();
 			/*
 			if (misses == 0 && bombs == 0 && ls_capped == 10 && timer == 0)
 			{
 				player->PlayLooping();
 			}
 			*/
-			RemoveOffsets();
 		}
 		else
 		{

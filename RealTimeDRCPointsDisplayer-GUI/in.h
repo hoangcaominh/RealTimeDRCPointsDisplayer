@@ -4,9 +4,10 @@
 
 namespace ns_in
 {
-	char team, type, deathbombs;
-	DWORD p_score;
-	unsigned int spellbonus, spellID, _spellID;
+	uint8_t team, type, deathbombs;
+	uint32_t p_score;
+	uint32_t spell_bonus, spell_id, _spell_id;
+
 	// used for counting last spell captures
 	bool checked = false, failed = false;
 
@@ -18,9 +19,9 @@ namespace ns_in
 		shottype = idx_team[team];
 	}
 
-	void countLs_capped()
+	void countLastSpellsCaptured()
 	{
-		auto compare = [](unsigned short a, unsigned short val, unsigned short b) { return a <= val && val <= b; };
+		auto compare = [](uint16_t a, uint16_t val, uint16_t b) { return a <= val && val <= b; };
 		// Last spells (enum), default is Normal
 		enum LASTSPELLS
 		{
@@ -37,24 +38,24 @@ namespace ns_in
 		};
 
 		// reset checkers when another spellcard is declared
-		if (spellID != _spellID)
+		if (spell_id != _spell_id)
 		{
 			checked = false;
 			failed = false;
-			_spellID = spellID;
+			_spell_id = spell_id;
 		}
-		if (compare(STAGE1, spellID, STAGE1 + 2) || compare(STAGE2, spellID, STAGE2 + 2) || compare(STAGE3, spellID, STAGE3 + 2) ||
-			compare(STAGE4A, spellID, STAGE4A + 2) || compare(STAGE4B, spellID, STAGE4B + 2) || compare(STAGE5, spellID, STAGE5 + 2) ||
-			compare(STAGE6A - 1, spellID, STAGE6A + 2) || compare(STAGE6B1 - 1, spellID, STAGE6B5 + 2) || spellID == STAGEEX)
+		if (compare(STAGE1, spell_id, STAGE1 + 2) || compare(STAGE2, spell_id, STAGE2 + 2) || compare(STAGE3, spell_id, STAGE3 + 2) ||
+			compare(STAGE4A, spell_id, STAGE4A + 2) || compare(STAGE4B, spell_id, STAGE4B + 2) || compare(STAGE5, spell_id, STAGE5 + 2) ||
+			compare(STAGE6A - 1, spell_id, STAGE6A + 2) || compare(STAGE6B1 - 1, spell_id, STAGE6B5 + 2) || spell_id == STAGEEX)
 		{
 			if (!checked)
 			{
-				ls_capped++;
+				last_spells_captured++;
 				checked = true;
 			}
-			if (spellbonus < (0 + 100 * 8000) && !failed)	// assuming that a player can get the maximum number of time orbs in 0.1s is 100
+			if (spell_bonus < (0 + 100 * 8000) && !failed)	// assuming that a player can get the maximum number of time orbs in 0.1s is 100
 			{
-				ls_capped--;
+				last_spells_captured--;
 				failed = true;
 			}
 		}
@@ -66,8 +67,8 @@ namespace ns_in
 		{
 			FRAME_COUNT = 0x0164D0AC,
 			STAGE = 0x004E4850,
-			SPELLID = 0x004EA678,
-			SPELLBONUS = 0x004EA76C,
+			SPELL_ID = 0x004EA678,
+			SPELL_BONUS = 0x004EA76C,
 			TEAM = 0x0164D0B1,
 			DIFFICULTY = 0x0160F538,
 			P_SCORE = 0x0160F510,
@@ -80,15 +81,15 @@ namespace ns_in
 
 		ReadProcessMemory(gameProc, (void*)FRAME_COUNT, &frame_count, sizeof(frame_count), 0);
 		ReadProcessMemory(gameProc, (void*)STAGE, &stage, sizeof(stage), 0);
-		ReadProcessMemory(gameProc, (void*)SPELLID, &spellID, sizeof(spellID), 0);
-		ReadProcessMemory(gameProc, (void*)SPELLBONUS, &spellbonus, sizeof(spellbonus), 0);
+		ReadProcessMemory(gameProc, (void*)SPELL_ID, &spell_id, sizeof(spell_id), 0);
+		ReadProcessMemory(gameProc, (void*)SPELL_BONUS, &spell_bonus, sizeof(spell_bonus), 0);
 		ReadProcessMemory(gameProc, (void*)TEAM, &team, sizeof(team), 0);
 		ReadProcessMemory(gameProc, (void*)DIFFICULTY, &difficulty, sizeof(difficulty), 0);
 		ReadProcessMemory(gameProc, (void*)MISSES, &misses, sizeof(misses), 0);
 		ReadProcessMemory(gameProc, (void*)BOMBS, &bombs, sizeof(bombs), 0);
 		ReadProcessMemory(gameProc, (void*)DEATHBOMBS, &deathbombs, sizeof(deathbombs), 0);
 		ReadProcessMemory(gameProc, (void*)P_SCORE, &p_score, sizeof(p_score), 0);
-		ReadProcessMemory(gameProc, (void*)p_score, &score, sizeof(int), 0);
+		ReadProcessMemory(gameProc, (void*)p_score, &score, sizeof(uint32_t), 0);
 
 		// ReadProcessMemory(gameProc, (void*)TIMER, &timer, sizeof(timer), 0);
 
@@ -96,7 +97,7 @@ namespace ns_in
 		// reset last spells captured
 		if (reset())
 		{
-			ls_capped = 0;
+			last_spells_captured = 0;
 		}
 
 		// total bombs used
@@ -105,7 +106,7 @@ namespace ns_in
 		getShottype();
 		getRubrics();
 
-		countLs_capped();
+		countLastSpellsCaptured();
 
 		
 	}

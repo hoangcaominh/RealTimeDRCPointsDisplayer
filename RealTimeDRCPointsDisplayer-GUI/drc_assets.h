@@ -3,56 +3,55 @@
 #include "ProcessJSON.h"
 #include <iostream>
 
-// unsigned long long for convenience
-typedef unsigned long long ull;
-
-// unsigned long for convenience (PC-98 only)
-typedef unsigned long ul;
-
 // Global drc points for both categories
 float drcpoints_survival, drcpoints_scoring;
 
 // game index (global)
-const char* idx_game[] = { "HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS" };
+const char* idx_game[] = { "HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS", "WBaWC" };
 
 // difficulty index (global)
 const char* idx_difficulty[] = { "Easy", "Normal", "Hard", "Lunatic", "Extra", "Phantasm" };
 
 // Global variables
-char game, character, type, difficulty, misses, bombs;
+uint8_t game, character, type, difficulty;
+int8_t misses, bombs;
 std::string shottype;
-ull score;
+uint64_t score;
 
 // misses and bombs variables
-float miss; char firstBomb, bomb;
+float miss; uint8_t firstBomb, bomb;
 // survival variables
-unsigned short surv_base; float surv_exp;
+uint16_t surv_base; float surv_exp;
 // scoring variables
-unsigned short score_base; float score_exp;
+uint16_t score_base; float score_exp;
 
 // Variables for PCB
-char borderBreaks;
+int8_t border_breaks;
 
 // Variables for IN
-char ls_capped, stage;
+int8_t last_spells_captured, stage;
 // unsigned int timer;
 
 // Variables for Phantasmagorias
-char min, lives, noBombBonus; bool noCharge;
+uint8_t min, lives, no_bomb_bonus; bool no_charge;
 
 // Variables for UFO
-char ufos, ufos_red, ufos_green, ufos_blue, ufos_rainbow;
+int8_t ufos, ufos_red, ufos_green, ufos_blue, ufos_rainbow;
 
 // Variables for TD
-unsigned short spirits; char trances;
+uint16_t spirits; int8_t trances;
 
 // Variables for HSiFS
-short releases;
+int16_t releases;
+
+// Variables for WBaWC
+int8_t wolves, otters, eagles, roar_breaks;
+
 // Rubric variables
-char season, firstRelease; float release;
+uint8_t season, first_release; float release;
 
 // Used for resetting information
-DWORD frame_count;
+uint32_t frame_count;
 
 // reset status
 bool reset()
@@ -78,25 +77,25 @@ void getSurvRubrics()
 {
 	if (strcmp(idx_game[game], "PoDD") != 0 && strcmp(idx_game[game], "PoFV") != 0)
 	{
-		surv_base = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["base"].get<unsigned short>();
+		surv_base = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["base"].get<uint16_t>();
 		surv_exp = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["exp"].get<float>();
 		miss = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["miss"].get<float>();
-		firstBomb = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["firstBomb"].get<char>();
-		bomb = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["bomb"].get<char>();
+		firstBomb = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["firstBomb"].get<uint8_t>();
+		bomb = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["bomb"].get<uint8_t>();
 	}
 	else
 	{
-		surv_base = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["base"].get<unsigned short>();
-		min = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["min"].get<char>();
-		lives = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["lives"].get<char>();
-		noBombBonus = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["noBombBonus"].get<char>();
+		surv_base = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["base"].get<uint16_t>();
+		min = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["min"].get<uint8_t>();
+		lives = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["lives"].get<uint8_t>();
+		no_bomb_bonus = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["noBombBonus"].get<uint8_t>();
 	}
 }
 
 // get rubrics for scoring
 void getScoreRubrics()
 {
-	score_base = Rubrics["SCORE"][idx_game[game]][idx_difficulty[difficulty]]["base"].get<unsigned short>();
+	score_base = Rubrics["SCORE"][idx_game[game]][idx_difficulty[difficulty]]["base"].get<uint16_t>();
 	score_exp = Rubrics["SCORE"][idx_game[game]][idx_difficulty[difficulty]]["exp"].get<float>();
 }
 
@@ -115,7 +114,7 @@ void phantasmagoria()
 	if (strcmp(idx_difficulty[difficulty], "Extra") == 0)
 		shottypeMultiplier = 1.0f;
 
-	drcpoints_survival = roundf(shottypeMultiplier * ((surv_base - ((surv_base - min) / lives * misses)) + (noCharge ? noBombBonus : 0) ));
+	drcpoints_survival = roundf(shottypeMultiplier * ((surv_base - ((surv_base - min) / lives * misses)) + (no_charge ? no_bomb_bonus : 0) ));
 }
 
 // calculate points for normal game format
@@ -123,7 +122,7 @@ void survivalPoints()
 {
 	float n = 0;
 	// make a copy of bombs
-	char _bombs = bombs;
+	uint8_t _bombs = bombs;
 
 	n += misses * miss;
 	if (bombs > 0)
@@ -135,7 +134,7 @@ void survivalPoints()
 
 	if (strcmp(idx_game[game], "PCB") == 0)
 	{
-		n += borderBreaks * bomb;
+		n += border_breaks * bomb;
 	}
 
 	if (strcmp(idx_game[game], "TD") == 0)
@@ -147,16 +146,16 @@ void survivalPoints()
 	{
 		float decrement = 0;
 		// make a copy of releases
-		unsigned short _releases = releases;
+		uint16_t _releases = releases;
 
 		if (releases > 0)
 		{
-			n += firstRelease;
+			n += first_release;
 			_releases--;
 		}
 		while (_releases > 0)
 		{
-			for (int i = 0; i < 10; i++)
+			for (uint8_t i = 0; i < 10; i++)
 			{
 				n += release - decrement;
 				_releases--;
@@ -173,11 +172,11 @@ void survivalPoints()
 	{
 		if (strcmp(idx_difficulty[difficulty], "Extra") == 0)
 		{
-			drcpoints_survival += (ls_capped == 1) ? 5 : 0;
+			drcpoints_survival += (last_spells_captured == 1) ? 5 : 0;
 		}
 		else
 		{
-			drcpoints_survival += ls_capped * ((strcmp(idx_difficulty[difficulty], "Easy") == 0) ? 1 : 2);
+			drcpoints_survival += last_spells_captured * ((strcmp(idx_difficulty[difficulty], "Easy") == 0) ? 1 : 2);
 		}
 	}
 
@@ -190,7 +189,7 @@ void survivalPoints()
 std::string removeSeason(std::string shottype)
 {
 	const char* season[] = { "Spring", "Summer", "Autumn", "Winter" };
-	for (size_t i = 0; i < 4; i++)
+	for (uint8_t i = 0; i < 4; i++)
 	{
 		size_t pos = shottype.find(season[i]);
 		if (pos != std::string::npos)
@@ -205,7 +204,7 @@ std::string bestSeason()
 {
 	const char* idx_character[] = { "Reimu", "Cirno", "Aya", "Marisa" };
 	std::string season;
-	ull _wr_max = 0;
+	uint64_t _wr_max = 0;
 	for (json::iterator it = WRs["HSiFS"][idx_difficulty[difficulty]].begin(); it != WRs["HSiFS"][idx_difficulty[difficulty]].end(); it++)
 	{
 		std::string _shottype = it.key();
@@ -214,7 +213,7 @@ std::string bestSeason()
 			continue;
 		}
 
-		ull _wr = WRs["HSiFS"][idx_difficulty[difficulty]][_shottype][0].get<ull>();
+		uint64_t _wr = WRs["HSiFS"][idx_difficulty[difficulty]][_shottype][0].get<uint64_t>();
 		if (_wr > _wr_max)
 		{
 			season = _shottype.substr(strlen(idx_character[character]));
@@ -227,11 +226,11 @@ std::string bestSeason()
 
 void scoringPoints()
 {
-	ull wr;
+	uint64_t wr;
 	if (keyExist(Rubrics["SCORE"][idx_game[game]][idx_difficulty[difficulty]], "basedOn"))
 	{
 		std::string basedOn = Rubrics["SCORE"][idx_game[game]][idx_difficulty[difficulty]]["basedOn"].get<std::string>();
-		wr = WRs[idx_game[game]][idx_difficulty[difficulty]][basedOn][0].get<ull>();
+		wr = WRs[idx_game[game]][idx_difficulty[difficulty]][basedOn][0].get<uint64_t>();
 	}
 	else if (keyExist(Rubrics["SCORE"][idx_game[game]][idx_difficulty[difficulty]], "wr"))
 	{
@@ -239,25 +238,25 @@ void scoringPoints()
 		{
 			if (keyExist(Rubrics["SCORE"][idx_game[game]][idx_difficulty[difficulty]]["wr"], shottype.c_str()))
 			{
-				wr = Rubrics["SCORE"][idx_game[game]][idx_difficulty[difficulty]]["wr"][shottype].get<ull>();
+				wr = Rubrics["SCORE"][idx_game[game]][idx_difficulty[difficulty]]["wr"][shottype].get<uint64_t>();
 			}
 			else // consider this case as a normal one
 			{
 				std::string _shottype = removeSeason(shottype);
 				_shottype += (strcmp(idx_game[game], "HSiFS") == 0) ? bestSeason() : "";
-				wr = WRs[idx_game[game]][idx_difficulty[difficulty]][_shottype][0].get<ull>();
+				wr = WRs[idx_game[game]][idx_difficulty[difficulty]][_shottype][0].get<uint64_t>();
 			}
 		}
 		else
 		{
-			wr = Rubrics["SCORE"][idx_game[game]][idx_difficulty[difficulty]]["wr"].get<ull>();
+			wr = Rubrics["SCORE"][idx_game[game]][idx_difficulty[difficulty]]["wr"].get<uint64_t>();
 		}
 	}
 	else
 	{
 		std::string _shottype = removeSeason(shottype);
 		_shottype += (strcmp(idx_game[game], "HSiFS") == 0) ? bestSeason() : "";
-		wr = WRs[idx_game[game]][idx_difficulty[difficulty]][_shottype][0].get<ull>();
+		wr = WRs[idx_game[game]][idx_difficulty[difficulty]][_shottype][0].get<uint64_t>();
 	}
 
 	drcpoints_scoring = (score >= wr) ? score_base : score_base * (float)pow((long double)score / wr, score_exp);
@@ -285,7 +284,7 @@ void mofFormula()
 
 	if (score < thresholds["score"][0])
 	{
-		drcpoints_scoring = (float)pow(((long double)score / thresholds["score"][0].get<ull>()), 2) * ((strcmp(idx_difficulty[difficulty], "Easy") == 0) ? 220 : 200);
+		drcpoints_scoring = (float)pow(((long double)score / thresholds["score"][0].get<uint64_t>()), 2) * ((strcmp(idx_difficulty[difficulty], "Easy") == 0) ? 220 : 200);
 		return;
 	}
 
@@ -294,7 +293,7 @@ void mofFormula()
 	for (int i = thresholds["increment"].size() - 1; i >= 0; i--)
 	{
 		float increment = thresholds["increment"][i].get<float>();
-		int step = thresholds["step"][i].get<int>();
+		uint32_t step = thresholds["step"][i].get<uint32_t>();
 
 		while (score - step >= thresholds["score"][i])
 		{

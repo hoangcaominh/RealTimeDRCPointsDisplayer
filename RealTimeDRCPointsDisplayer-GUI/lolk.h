@@ -5,9 +5,10 @@
 namespace ns_lolk
 {
 	// mode in LoLK
-	char mode;
+	uint8_t mode;
+
 	// variables for recording key pressed
-	DWORD p_is_bomb;
+	uint32_t p_is_bomb;
 	bool is_bomb, x_reset;
 
 	// character index
@@ -45,7 +46,7 @@ namespace ns_lolk
 		};
 
 		ReadProcessMemory(gameProc, (void*)FRAME_COUNT, &frame_count, sizeof(frame_count), 0);
-		ReadProcessMemory(gameProc, (void*)SCORE, &score, sizeof(int), 0);
+		ReadProcessMemory(gameProc, (void*)SCORE, &score, sizeof(uint32_t), 0);
 		ReadProcessMemory(gameProc, (void*)CHARACTER, &character, sizeof(character), 0);
 		ReadProcessMemory(gameProc, (void*)DIFFICULTY, &difficulty, sizeof(difficulty), 0);
 		ReadProcessMemory(gameProc, (void*)MISSES, &misses, sizeof(misses), 0);

@@ -4,9 +4,9 @@
 
 namespace ns_eosd
 {
-	char misses_deathbombs, false_misses = 0, _misses_deathbombs, _bombs;
+	uint8_t misses_deathbombs, false_misses = 0, _misses_deathbombs, _bombs;
 	// used when a deathbomb is performed
-	char count;
+	uint8_t count;
 
 	// character index
 	const char* idx_character[] = { "Reimu", "Marisa" };
@@ -47,7 +47,7 @@ namespace ns_eosd
 			TYPE = 0x0069D4BE,
 			DIFFICULTY = 0x0069BCB0,
 			SCORE = 0x0069BCA0,
-			MISSES_DEATHBOMB = 0x0069BCC0,
+			MISSES_DEATHBOMBS = 0x0069BCC0,
 			BOMBS = 0x0069BCC4
 		};
 
@@ -55,9 +55,9 @@ namespace ns_eosd
 		ReadProcessMemory(gameProc, (void*)CHARACTER, &character, sizeof(character), 0);
 		ReadProcessMemory(gameProc, (void*)TYPE, &type, sizeof(type), 0);
 		ReadProcessMemory(gameProc, (void*)DIFFICULTY, &difficulty, sizeof(difficulty), 0);
-		ReadProcessMemory(gameProc, (void*)MISSES_DEATHBOMB, &misses_deathbombs, sizeof(misses_deathbombs), 0);
+		ReadProcessMemory(gameProc, (void*)MISSES_DEATHBOMBS, &misses_deathbombs, sizeof(misses_deathbombs), 0);
 		ReadProcessMemory(gameProc, (void*)BOMBS, &bombs, sizeof(bombs), 0);
-		ReadProcessMemory(gameProc, (void*)SCORE, &score, sizeof(int), 0);
+		ReadProcessMemory(gameProc, (void*)SCORE, &score, sizeof(uint32_t), 0);
 
 		// reset false miss
 		if (reset())
