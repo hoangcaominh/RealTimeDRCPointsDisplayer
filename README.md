@@ -6,6 +6,7 @@ I don't know whether the program displays the status correctly so it is better t
 An user interface application that displays in-game information and calculates DRC points for you during your run or your replay.
 
 # What's new
+- 1.2.1: Add WBaWC demo and fix some bugs
 - 1.2: Add warning and MoF scoring formula
 - 1.1: Add Settings button
 - 1.0: Finish console version, move to GUI version
@@ -16,7 +17,7 @@ An user interface application that displays in-game information and calculates D
 
 # Mechanism
 - Downloading part and loading part for rubric file and world record file are operated first.
-- When the application is ready for reading the game's memory, hit "Find Game" button. It will start doing its job and the button will be greyed out until the game is closed.
+- When the application is ready for reading the game's memory, hit "Find Game" button. It will start doing its job and the button will be greyed out until the game is closed. This also works for replays.
 
 # Inspiration
 - [Dodging Rain Competition](https://maribelhearn.github.io/drc)
