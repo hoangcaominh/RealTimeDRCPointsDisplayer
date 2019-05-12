@@ -8,7 +8,7 @@ namespace ns_wbawc
 	uint32_t token_array[5], tokens;
 
 	// Variable for checking whether the player is in hyper mode
-	bool is_hyper;
+	bool is_hyper, roar_break_counted;
 	uint32_t hyper_bar[2], prev_hyper_bar[2];
 
 	// Array for counting occurrences of goasts
@@ -49,7 +49,7 @@ namespace ns_wbawc
 
 			for (uint32_t i : token_array)
 			{
-				occurrence[token_array[i]]++;
+				occurrence[i]++;
 			}
 
 			// occurrence from wolves to eagles
@@ -74,15 +74,16 @@ namespace ns_wbawc
 		}
 		else if (tokens != 5)
 		{
-			is_hyper = false;
+			is_hyper = roar_break_counted = false;
 			memset(occurrence, 0, sizeof(occurrence));
 		}
 
-		if (tokens == 5 && 
-			(prev_hyper_bar[0] - hyper_bar[0] > 5 || prev_hyper_bar[1] - hyper_bar[1] > 5) &&	// Seems that the "hyper_bar" value keeps decreasing by 2, so I set this to 5
+		if (tokens == 5 && !roar_break_counted &&
+			(prev_hyper_bar[0] - hyper_bar[0] > 18 || prev_hyper_bar[1] - hyper_bar[1] > 18) &&	// Seems that the "hyper_bar" value keeps decreasing by 2, so I set this to 18
 			(hyper_bar[0] < 42 || hyper_bar[1] < 42))	// If the player breaks the "hype" both value will be set to either 38 or 39, so I set to 42
 		{
 			roar_breaks++;
+			roar_break_counted = true;
 		}
 
 		prev_hyper_bar[0] = hyper_bar[0];
