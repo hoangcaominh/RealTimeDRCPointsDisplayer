@@ -29,7 +29,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			CheckNewVersion();
 			InitializeComponent();
 			// InitWAV();
-			UpdateLog();
+			UpdateRubrics();
 			checkOffsetsOn->RunWorkerAsync();
 			RealTimeDRCPointsDisplayerGUI::GUI::Width = 299;
 		}
@@ -481,7 +481,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 
 	private: System::Void update_Click(System::Object^  sender, System::EventArgs^  e)
 	{
-		UpdateLog();
+		UpdateRubrics();
 	}
 
 	private: System::Void clearHistory_Click(System::Object^  sender, System::EventArgs^  e)
@@ -567,7 +567,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		IO::File::Delete("_config.json");
 	}
 
-	private: System::Void UpdateLog()
+	private: System::Void UpdateRubrics()
 	{
 		SYSTEMTIME sysTime;
 		GetLocalTime(&sysTime);

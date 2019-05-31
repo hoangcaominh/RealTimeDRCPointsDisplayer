@@ -242,9 +242,8 @@ void scoringPoints()
 			}
 			else // consider this case as a normal one
 			{
-				std::string _shottype = removeSeason(shottype);
-				_shottype += (strcmp(idx_game[game], "HSiFS") == 0) ? bestSeason() : "";
-				wr = WRs[idx_game[game]][idx_difficulty[difficulty]][_shottype][0].get<uint64_t>();
+				std::string wrshottype = ((strcmp(idx_game[game], "HSiFS") == 0 && strcmp(idx_difficulty[difficulty], "Easy") != 0) ? (removeSeason(shottype) + bestSeason()) : shottype);
+				wr = WRs[idx_game[game]][idx_difficulty[difficulty]][wrshottype][0].get<uint64_t>();
 			}
 		}
 		else
@@ -254,10 +253,12 @@ void scoringPoints()
 	}
 	else
 	{
-		std::string _shottype = removeSeason(shottype);
-		_shottype += (strcmp(idx_game[game], "HSiFS") == 0) ? bestSeason() : "";
-		wr = WRs[idx_game[game]][idx_difficulty[difficulty]][_shottype][0].get<uint64_t>();
+		std::string wrshottype = ((strcmp(idx_game[game], "HSiFS") == 0 && strcmp(idx_difficulty[difficulty], "Easy") != 0) ? (removeSeason(shottype) + bestSeason()) : shottype);
+		wr = WRs[idx_game[game]][idx_difficulty[difficulty]][wrshottype][0].get<uint64_t>();
 	}
+
+	// Change scoring exp value to 7 if game == DDC and difficulty == Extra and shottype == MarisaB
+	score_exp = (strcmp(idx_game[game], "DDC") == 0 && strcmp(idx_difficulty[difficulty], "Extra") == 0 && shottype == "MarisaB") ? 7 : score_exp;
 
 	drcpoints_scoring = (score >= wr) ? score_base : score_base * (float)pow((long double)score / wr, score_exp);
 }
