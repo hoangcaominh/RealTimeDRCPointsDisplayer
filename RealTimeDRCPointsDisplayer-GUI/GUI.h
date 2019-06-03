@@ -46,6 +46,8 @@ namespace RealTimeDRCPointsDisplayerGUI {
 				delete components;
 			}
 		}
+	private: System::DateTime^ sysTime = gcnew System::DateTime();
+
 	private: System::Windows::Forms::Button^  updateRubrics;
 	protected:
 
@@ -72,6 +74,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 	private: System::ComponentModel::BackgroundWorker^  UpdateNewVersion;
 	private: System::Windows::Forms::Label^  warningLabel;
 	private: System::ComponentModel::BackgroundWorker^  checkOffsetsOn;
+	private: System::ComponentModel::BackgroundWorker^ findGameThread;
 
 			 // private: System::Media::SoundPlayer^ player = gcnew System::Media::SoundPlayer();
 
@@ -90,7 +93,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(GUI::typeid));
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(GUI::typeid));
 			this->updateRubrics = (gcnew System::Windows::Forms::Button());
 			this->infoBox = (gcnew System::Windows::Forms::ListBox());
 			this->clear = (gcnew System::Windows::Forms::Button());
@@ -112,6 +115,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->UpdateNewVersion = (gcnew System::ComponentModel::BackgroundWorker());
 			this->warningLabel = (gcnew System::Windows::Forms::Label());
 			this->checkOffsetsOn = (gcnew System::ComponentModel::BackgroundWorker());
+			this->findGameThread = (gcnew System::ComponentModel::BackgroundWorker());
 			this->panel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -364,6 +368,12 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->checkOffsetsOn->DoWork += gcnew System::ComponentModel::DoWorkEventHandler(this, &GUI::checkOffsetsOn_DoWork);
 			this->checkOffsetsOn->ProgressChanged += gcnew System::ComponentModel::ProgressChangedEventHandler(this, &GUI::checkOffsetsOn_ProgressChanged);
 			// 
+			// findGameThread
+			// 
+			this->findGameThread->WorkerSupportsCancellation = true;
+			this->findGameThread->DoWork += gcnew System::ComponentModel::DoWorkEventHandler(this, &GUI::findGameThread_DoWork);
+			this->findGameThread->RunWorkerCompleted += gcnew System::ComponentModel::RunWorkerCompletedEventHandler(this, &GUI::findGameThread_RunWorkerCompleted);
+			// 
 			// GUI
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -481,7 +491,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 
 	private: System::Void update_Click(System::Object^  sender, System::EventArgs^  e)
 	{
-		UpdateRubrics();
+		this->UpdateRubrics();
 	}
 
 	private: System::Void clearHistory_Click(System::Object^  sender, System::EventArgs^  e)
@@ -497,43 +507,22 @@ namespace RealTimeDRCPointsDisplayerGUI {
 
 	private: System::Void findGame_Click(System::Object^  sender, System::EventArgs^  e)
 	{
-		SYSTEMTIME sysTime;
-		GetLocalTime(&sysTime);
+		this->infoBox->Items->Add(this->sysTime->Now.ToString("[h:mm:ss]"));
 
-		this->infoBox->Items->Add("[" + sysTime.wHour + ":" + sysTime.wMinute + ":" + sysTime.wSecond + "]");
-
-		BOOL fail = GetProcess();
-		// Successfully get the process
-		if (!fail)
+		// Cancellation
+		if (this->findGameThread->IsBusy)
 		{
-			this->infoBox->Items->Add(L"Found " + convertToStringClass(idx_game[game]));
-
-			// Disable Find Game button
-			this->updateRubrics->Enabled = false;
-			this->findGame->Enabled = false;
-
-			// Expand window
-			RealTimeDRCPointsDisplayerGUI::GUI::Width = 661;
-
-			if (!GetExitCodeProcess(gameProc, &procStatus))
-			{
-				this->infoBox->Items->Add(L"Get Exit Code Failed. Error: " + GetLastError());
-			}
-
-			// Inititalize UI
-			ReadMemory();
-			initLabel();
-
-			this->bkgWorker->RunWorkerAsync();
+			this->findGameThread->CancelAsync();
 		}
 		else
 		{
-			this->infoBox->Items->Add(L"Game not found. ID Returned: " + fail);
+			this->infoBox->Items->Add("Finding game, please wait warmly...");
+			this->infoBox->SelectedIndex = this->infoBox->Items->Count - 1;
+			this->findGame->Text = L"Stop Finding Game";
+
+			this->findGameThread->RunWorkerAsync();
 		}
-
-		this->infoBox->SelectedIndex = infoBox->Items->Count - 1;
 	}
-
 	
 	//
 	// Background functions
@@ -569,10 +558,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 
 	private: System::Void UpdateRubrics()
 	{
-		SYSTEMTIME sysTime;
-		GetLocalTime(&sysTime);
-
-		this->infoBox->Items->Add("[" + sysTime.wHour + ":" + sysTime.wMinute + ":" + sysTime.wSecond + "]");
+		this->infoBox->Items->Add(this->sysTime->Now.ToString("[h:mm:ss]"));
 
 		this->infoBox->Items->Add(L"Downloading rubric file...");
 		BOOL fail = Download_rubrics();
@@ -623,7 +609,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		}
 
 		this->findGame->Enabled = flag;
-		this->infoBox->SelectedIndex = infoBox->Items->Count - 1;
+		this->infoBox->SelectedIndex = this->infoBox->Items->Count - 1;
 	}
 
 	private: System::Void initLabel()
@@ -767,6 +753,61 @@ namespace RealTimeDRCPointsDisplayerGUI {
 	// Background Worker
 	//
 
+	private: System::Void findGameThread_DoWork(System::Object^ sender, System::ComponentModel::DoWorkEventArgs^ e)
+	{
+		BOOL find = GetProcess();
+		while (find)
+		{
+			if (this->findGameThread->CancellationPending)
+			{
+				e->Cancel = true;
+				break;
+			}
+
+			find = GetProcess();
+			System::Threading::Thread::Sleep(100);
+		}
+	}
+
+	private: System::Void findGameThread_RunWorkerCompleted(System::Object^ sender, System::ComponentModel::RunWorkerCompletedEventArgs^ e)
+	{
+		if (e->Error != nullptr)
+		{
+			MessageBox::Show(e->Error->Message);
+		}
+		else if (e->Cancelled)
+		{
+			this->infoBox->Items->Add(L"Stopped finding game");
+			this->infoBox->SelectedIndex = this->infoBox->Items->Count - 1;
+			this->findGame->Text = L"Find Game";
+		}
+		else
+		{
+			this->infoBox->Items->Add(this->sysTime->Now.ToString("[h:mm:ss]"));
+			this->infoBox->Items->Add(L"Found " + convertToStringClass(idx_game[game]));
+
+			// Disable buttons
+			this->updateRubrics->Enabled = false;
+			this->findGame->Text = L"Find Game";
+			this->findGame->Enabled = false;
+
+			// Expand window
+			RealTimeDRCPointsDisplayerGUI::GUI::Width = 661;
+
+			if (!GetExitCodeProcess(gameProc, &procStatus))
+			{
+				this->infoBox->Items->Add(L"Get Exit Code Failed. Error: " + GetLastError());
+			}
+			this->infoBox->SelectedIndex = this->infoBox->Items->Count - 1;
+
+			// Inititalize UI
+			ReadMemory();
+			this->initLabel();
+
+			this->bkgWorker->RunWorkerAsync();
+		}
+	}
+
 	private: System::Void bkgWorker_DoWork(System::Object^  sender, System::ComponentModel::DoWorkEventArgs^  e)
 	{
 		while (procStatus == STILL_ACTIVE)
@@ -791,12 +832,14 @@ namespace RealTimeDRCPointsDisplayerGUI {
 	{
 		if (!GetExitCodeReturn)
 		{
+			this->infoBox->Items->Add(this->sysTime->Now.ToString("[h:mm:ss]"));
 			this->infoBox->Items->Add(L"Get Exit Code Failed. Error: " + GetLastError());
+			this->infoBox->SelectedIndex = this->infoBox->Items->Count - 1;
 		}
 
 		if (procStatus == STILL_ACTIVE)
 		{
-			ApplyOffsets();
+			this->ApplyOffsets();
 			// Do not apply DRC Points for WBaWC
 			if (strcmp(idx_game[game], "WBaWC") != 0)
 			{
@@ -889,7 +932,9 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		{
 			// Set the window to default
 			RealTimeDRCPointsDisplayerGUI::GUI::Width = 299;
+			this->infoBox->Items->Add(this->sysTime->Now.ToString("[h:mm:ss]"));
 			this->infoBox->Items->Add(L"Game not found, stopped reading");
+			this->infoBox->SelectedIndex = this->infoBox->Items->Count - 1;
 
 			// Enable buttons
 			this->updateRubrics->Enabled = true;
@@ -909,31 +954,30 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		while (true)
 		{
 			this->checkOffsetsOn->ReportProgress(100);
-			System::Threading::Thread::Sleep(10);
+			System::Threading::Thread::Sleep(100);
 		}
 	}
 
 	private: System::Void checkOffsetsOn_ProgressChanged(System::Object^  sender, System::ComponentModel::ProgressChangedEventArgs^  e)
 	{
-		ToggleWarning();
+		this->ToggleWarning();
 	}
 
 	// updateNewVersion: not done yet
-	private: System::Void UpdateNewVersion_DoWork(System::Object^  sender, System::ComponentModel::DoWorkEventArgs^  e)
+	private: System::Void UpdateNewVersion_DoWork(System::Object^ sender, System::ComponentModel::DoWorkEventArgs^ e)
 	{
 
 	}
 
-	private: System::Void UpdateNewVersion_ProgressChanged(System::Object^  sender, System::ComponentModel::ProgressChangedEventArgs^  e)
+	private: System::Void UpdateNewVersion_ProgressChanged(System::Object^ sender, System::ComponentModel::ProgressChangedEventArgs^ e)
 	{
 
 	}
 
-	private: System::Void UpdateNewVersion_RunWorkerCompleted(System::Object^  sender, System::ComponentModel::RunWorkerCompletedEventArgs^  e)
+	private: System::Void UpdateNewVersion_RunWorkerCompleted(System::Object^ sender, System::ComponentModel::RunWorkerCompletedEventArgs^ e)
 	{
 
 	}
-
 
 	};
 }
