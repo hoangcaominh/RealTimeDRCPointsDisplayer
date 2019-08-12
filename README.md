@@ -1,16 +1,21 @@
 ## Note
-I don't know whether the program displays the status correctly so it is better to manually count points then compare it to the program's. If you find it show incorrectly, please tell me so I can fix it :).
+If you find any bugs, create a new issue on Github or DM me in Discord.
 
 ## Live DRC Points Calculator
-(formaerly known as RealTimeDRCPointsDisplayer)
+(formerly known as RealTimeDRCPointsDisplayer)
 An user interface application that displays in-game information and calculates DRC points for you during your run or your replay.
 
 ## What's new
+- 1.4: Update WBaWC header to work with version 1.00b.
 - 1.3: Update MoF formula as of June 1st, 2019 and update find game function
 - 1.2.2: Add WBaWC Demo and update Settings window
 - 1.2: Add warning and MoF scoring formula
 - 1.1: Add Settings button
 - 1.0: Finish console version, move to GUI version
+
+## Requirements
+- OS: Windows 7/8/Vista/10
+- Visual C++ Redistributable for Visual Studio 2015
 
 ## Installation and Recommendation
 - Extract the zip file into your desired folder and run the execution. Optionally you can create a shortcut to the execution on the desktop.
@@ -24,7 +29,7 @@ An user interface application that displays in-game information and calculates D
 - "Misses": The number of times you lose a life
 - "Bombs": The number of times you use a bomb
 - "Survival Points": Current points you have in survival challenge
-- "Scoring Points": Current points you have in scoring challenge
+- "Scoring Points": Current points you have in scoring challenge. For WBaWC this will display your current score instead.
 
 ## Extra Box (between the Misses/Bombs box and the Survival Points box)
 

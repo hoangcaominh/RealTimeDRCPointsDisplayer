@@ -920,6 +920,10 @@ namespace RealTimeDRCPointsDisplayerGUI {
 				this->survivalLabel->Text = (config["ShowSurvivalPoint"].get<bool>()) ? (L"Survival Points: " + roundf(drcpoints_survival)) : L"";
 				this->scoringLabel->Text = (config["ShowScoringPoint"].get<bool>()) ? (L"Scoring Points: " + roundf(drcpoints_scoring)) : L"";
 			}
+			else
+			{
+				this->scoringLabel->Text = (config["ShowScoringPoint"].get<bool>()) ? (System::String::Format("{0:n0}", score)) : L"";
+			}
 			RemoveOffsets();
 			/*
 			if (misses == 0 && bombs == 0 && ls_capped == 10 && timer == 0)
