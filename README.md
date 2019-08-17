@@ -7,25 +7,25 @@ An user interface application that displays in-game information and calculates D
 
 ## What's new
 #### 1.5
-- Add options for displaying information (see "Game Information" for more detail).
+- Added options for displaying information (see "Game Information" for more detail), updated WBaWC.
 
 #### 1.4
-- Update WBaWC header to work with version 1.00b.
+- Updated WBaWC to work with version 1.00b.
 
 #### 1.3
-- Update MoF formula as of June 1st, 2019 and update find game function.
+- Updated MoF formula as of June 1st, 2019 and updated find game function.
 
 #### 1.2.2
-- Add WBaWC Demo and update Settings window.
+- Added WBaWC Demo and updated Settings window.
 
 #### 1.2
-- Add warning and MoF scoring formula.
+- Added warning and MoF scoring formula.
 
 #### 1.1
-- Add Settings button.
+- Added Settings button.
 
 #### 1.0
-- Finish console version, move to GUI version.
+- Finished console version, moving to GUI version.
 
 ## Requirements
 - OS: Windows 7/8/Vista/10
@@ -72,7 +72,7 @@ A group of one or more boxes for displaying certain information of specific game
 - Box 4: The number of times you have performed a Roar Break
 
 ### Optional Boxes (under the Extra Box)
-Two individual boxes for displaying one of the following: score, world record, survival points, scoring points. You can change the output type of these boxes in "Optinal Display" in Settings.
+Two individual boxes for displaying one of the following: score, world record (of the same shottype), survival points, scoring points. You can change the output type of these boxes in "Optinal Display" in Settings.
 
 ## Settings
 Settings for adjusting output values (misses, bombs, data displayed in Extra Box), mainly for calculating DRC points.
