@@ -20,7 +20,7 @@ namespace ns_wbawc
 	bool is_bomb, x_reset;
 
 	const char* idx_character[] = { "Reimu", "Marisa", "Youmu" };
-	const char* idx_type[] = { "W", "O", "E" };
+	const char* idx_type[] = { "Wolf", "Otter", "Eagle" };
 
 	void getShottype()
 	{

@@ -61,8 +61,10 @@ namespace RealTimeDRCPointsDisplayerGUI {
 	private: System::Windows::Forms::Label^  missesLabel;
 	private: System::Windows::Forms::Label^  shottypeLabel;
 	private: System::Windows::Forms::Label^  diffLabel;
-	private: System::Windows::Forms::Label^  scoringLabel;
-	private: System::Windows::Forms::Label^  survivalLabel;
+	private: System::Windows::Forms::Label^ optionalLabel1;
+	private: System::Windows::Forms::Label^ optionalLabel2;
+
+
 	private: System::Windows::Forms::Button^  settings;
 	private: System::Windows::Forms::Button^  about;
 
@@ -102,8 +104,8 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->extraLabel3 = (gcnew System::Windows::Forms::Label());
 			this->extraLabel2 = (gcnew System::Windows::Forms::Label());
 			this->extraLabel1 = (gcnew System::Windows::Forms::Label());
-			this->scoringLabel = (gcnew System::Windows::Forms::Label());
-			this->survivalLabel = (gcnew System::Windows::Forms::Label());
+			this->optionalLabel2 = (gcnew System::Windows::Forms::Label());
+			this->optionalLabel1 = (gcnew System::Windows::Forms::Label());
 			this->bombsLabel = (gcnew System::Windows::Forms::Label());
 			this->missesLabel = (gcnew System::Windows::Forms::Label());
 			this->shottypeLabel = (gcnew System::Windows::Forms::Label());
@@ -164,8 +166,8 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->panel1->Controls->Add(this->extraLabel3);
 			this->panel1->Controls->Add(this->extraLabel2);
 			this->panel1->Controls->Add(this->extraLabel1);
-			this->panel1->Controls->Add(this->scoringLabel);
-			this->panel1->Controls->Add(this->survivalLabel);
+			this->panel1->Controls->Add(this->optionalLabel2);
+			this->panel1->Controls->Add(this->optionalLabel1);
 			this->panel1->Controls->Add(this->bombsLabel);
 			this->panel1->Controls->Add(this->missesLabel);
 			this->panel1->Controls->Add(this->shottypeLabel);
@@ -220,33 +222,33 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->extraLabel1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			this->extraLabel1->Visible = false;
 			// 
-			// scoringLabel
+			// optionalLabel2
 			// 
-			this->scoringLabel->BackColor = System::Drawing::Color::Transparent;
-			this->scoringLabel->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->scoringLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->optionalLabel2->BackColor = System::Drawing::Color::Transparent;
+			this->optionalLabel2->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->optionalLabel2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(163)));
-			this->scoringLabel->ForeColor = System::Drawing::Color::White;
-			this->scoringLabel->Location = System::Drawing::Point(0, 270);
-			this->scoringLabel->Name = L"scoringLabel";
-			this->scoringLabel->Size = System::Drawing::Size(348, 54);
-			this->scoringLabel->TabIndex = 6;
-			this->scoringLabel->Text = L"Scoring point";
-			this->scoringLabel->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->optionalLabel2->ForeColor = System::Drawing::Color::White;
+			this->optionalLabel2->Location = System::Drawing::Point(0, 270);
+			this->optionalLabel2->Name = L"optionalLabel2";
+			this->optionalLabel2->Size = System::Drawing::Size(348, 54);
+			this->optionalLabel2->TabIndex = 6;
+			this->optionalLabel2->Text = L"Optional 2";
+			this->optionalLabel2->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
-			// survivalLabel
+			// optionalLabel1
 			// 
-			this->survivalLabel->BackColor = System::Drawing::Color::Transparent;
-			this->survivalLabel->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->survivalLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->optionalLabel1->BackColor = System::Drawing::Color::Transparent;
+			this->optionalLabel1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->optionalLabel1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(163)));
-			this->survivalLabel->ForeColor = System::Drawing::Color::White;
-			this->survivalLabel->Location = System::Drawing::Point(0, 216);
-			this->survivalLabel->Name = L"survivalLabel";
-			this->survivalLabel->Size = System::Drawing::Size(348, 54);
-			this->survivalLabel->TabIndex = 5;
-			this->survivalLabel->Text = L"Survival point";
-			this->survivalLabel->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->optionalLabel1->ForeColor = System::Drawing::Color::White;
+			this->optionalLabel1->Location = System::Drawing::Point(0, 216);
+			this->optionalLabel1->Name = L"optionalLabel1";
+			this->optionalLabel1->Size = System::Drawing::Size(348, 54);
+			this->optionalLabel1->TabIndex = 5;
+			this->optionalLabel1->Text = L"Optional 1";
+			this->optionalLabel1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// bombsLabel
 			// 
@@ -693,9 +695,10 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		ufos_green += config["InitialGreenUFOs"].get<int8_t>();
 		ufos_blue += config["InitialBlueUFOs"].get<int8_t>();
 		ufos_rainbow += config["InitialRainbowUFOs"].get<int8_t>();
-		wolves += config["InitialWolves"].get<int8_t>();
-		otters += config["InitialOtters"].get<int8_t>();
-		eagles += config["InitialEagles"].get<int8_t>();
+		wolves += config["InitialWolves"].get<int16_t>();
+		otters += config["InitialOtters"].get<int16_t>();
+		eagles += config["InitialEagles"].get<int16_t>();
+		roar_breaks += config["InitialRoarBreaks"].get<int16_t>();
 	}
 
 	// Remove offsets before applying offsets again
@@ -714,9 +717,10 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		ufos_green -= config["InitialGreenUFOs"].get<int8_t>();
 		ufos_blue -= config["InitialBlueUFOs"].get<int8_t>();
 		ufos_rainbow -= config["InitialRainbowUFOs"].get<int8_t>();
-		wolves -= config["InitialWolves"].get<int8_t>();
-		otters -= config["InitialOtters"].get<int8_t>();
-		eagles -= config["InitialEagles"].get<int8_t>();
+		wolves -= config["InitialWolves"].get<int16_t>();
+		otters -= config["InitialOtters"].get<int16_t>();
+		eagles -= config["InitialEagles"].get<int16_t>();
+		roar_breaks -= config["InitialRoarBreaks"].get<int16_t>();
 	}
 
 	// Display warning when there are offsets applied
@@ -735,7 +739,8 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			config["InitialRainbowUFOs"] == 0 &&
 			config["InitialWolves"] == 0 &&
 			config["InitialOtters"] == 0 &&
-			config["InitialEagles"] == 0 // &&
+			config["InitialEagles"] == 0 &&
+			config["InitialRoarBreaks"] == 0// &&
 			// config["NoChargeAttacks"]
 			)
 		{
@@ -840,11 +845,8 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		if (procStatus == STILL_ACTIVE)
 		{
 			this->ApplyOffsets();
-			// Do not apply DRC Points for WBaWC
-			if (strcmp(idx_game[game], "WBaWC") != 0)
-			{
-				calculateDRCPoints();
-			}
+			
+			calculateDRCPoints();
 
 			this->diffLabel->Text = (L"Difficulty: " + convertToStringClass(idx_difficulty[difficulty]));
 
@@ -906,24 +908,15 @@ namespace RealTimeDRCPointsDisplayerGUI {
 				this->extraLabel1->Text = (L"" + otters);
 				this->extraLabel2->Text = (L"" + eagles);
 				this->extraLabel3->Text = (L"" + roar_breaks);
-				this->survivalLabel->Text = L"";
-				this->scoringLabel->Text = L"";
 				break;
 			default:
 				this->extraLabel0->Text = (L"");
 				break;
 			}
 
-			// Do not apply DRC Points for WBaWC
-			if (strcmp(idx_game[game], "WBaWC") != 0)
-			{
-				this->survivalLabel->Text = (config["ShowSurvivalPoint"].get<bool>()) ? (L"Survival Points: " + roundf(drcpoints_survival)) : L"";
-				this->scoringLabel->Text = (config["ShowScoringPoint"].get<bool>()) ? (L"Scoring Points: " + roundf(drcpoints_scoring)) : L"";
-			}
-			else
-			{
-				this->scoringLabel->Text = (config["ShowScoringPoint"].get<bool>()) ? (System::String::Format("{0:n0}", score)) : L"";
-			}
+			ShowOptionalBox(optionalLabel1, config["OptionalBox1"].get<uint8_t>());
+			ShowOptionalBox(optionalLabel2, config["OptionalBox2"].get<uint8_t>());
+
 			RemoveOffsets();
 			/*
 			if (misses == 0 && bombs == 0 && ls_capped == 10 && timer == 0)
@@ -945,6 +938,31 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->findGame->Enabled = true;
 		}
 	}
+
+	private: void ShowOptionalBox(System::Windows::Forms::Label^% optionalLabel, uint8_t value)
+	{
+		switch (value)
+		{
+		case 0:
+			optionalLabel->Text = L"";
+			break;
+		case 1:
+			optionalLabel->Text = System::String::Format("{0:n0}", score);
+			break;
+		case 2:
+			optionalLabel->Text = System::String::Format("{0:n0}", wr);
+			break;
+		case 3:
+			optionalLabel->Text = L"Survival Points: " + roundf(drcpoints_survival);
+			break;
+		case 4:
+			optionalLabel->Text = L"Survival Points: " + roundf(drcpoints_scoring);
+			break;
+		default:
+			break;
+		}
+	}
+
 	/*
 	private: System::Void InitWAV()
 	{

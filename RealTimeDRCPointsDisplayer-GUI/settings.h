@@ -68,9 +68,10 @@ namespace RealTimeDRCPointsDisplayerGUI {
 	private: System::Windows::Forms::NumericUpDown^  LSOffset;
 	private: System::Windows::Forms::Label^  label3;
 	private: System::Windows::Forms::NumericUpDown^  BBOffset;
-	private: System::Windows::Forms::GroupBox^  pointsBox;
-	private: System::Windows::Forms::CheckBox^  showScoringCB;
-	private: System::Windows::Forms::CheckBox^  showSurvivalCB;
+
+
+
+
 	private: System::Windows::Forms::TabControl^ otherOffsetsTab;
 	private: System::Windows::Forms::TabPage^ tab_PCB;
 	private: System::Windows::Forms::TabPage^ tab_IN;
@@ -88,6 +89,19 @@ namespace RealTimeDRCPointsDisplayerGUI {
 	private: System::Windows::Forms::Button^ defaultButton;
 	private: System::Windows::Forms::Button^ saveButton;
 	private: System::Windows::Forms::Button^ cancelButton;
+
+	private: System::Windows::Forms::GroupBox^ optinalBox;
+	private: System::Windows::Forms::TabControl^ optionalOffsetsTab;
+	private: System::Windows::Forms::TabPage^ tab_Box1;
+	private: System::Windows::Forms::RadioButton^ scoringRB1;
+	private: System::Windows::Forms::RadioButton^ survivalRB1;
+	private: System::Windows::Forms::RadioButton^ wrRB1;
+	private: System::Windows::Forms::RadioButton^ scoreRB1;
+	private: System::Windows::Forms::TabPage^ tab_Box2;
+	private: System::Windows::Forms::RadioButton^ scoringRB2;
+	private: System::Windows::Forms::RadioButton^ survivalRB2;
+	private: System::Windows::Forms::RadioButton^ wrRB2;
+	private: System::Windows::Forms::RadioButton^ scoreRB2;
 
 
 
@@ -108,6 +122,14 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		/// Required designer variable.
 		/// </summary>
 		System::ComponentModel::Container ^components;
+
+private: System::Windows::Forms::Label^ label14;
+private: System::Windows::Forms::RadioButton^ noneRB1;
+private: System::Windows::Forms::RadioButton^ noneRB2;
+
+private: System::Windows::Forms::NumericUpDown^ roar_breaksOffset;
+
+
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -148,18 +170,31 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->releasesOffset = (gcnew System::Windows::Forms::NumericUpDown());
 			this->label10 = (gcnew System::Windows::Forms::Label());
 			this->tab_WBaWC = (gcnew System::Windows::Forms::TabPage());
+			this->label14 = (gcnew System::Windows::Forms::Label());
+			this->roar_breaksOffset = (gcnew System::Windows::Forms::NumericUpDown());
 			this->wolvesOffset = (gcnew System::Windows::Forms::NumericUpDown());
 			this->label11 = (gcnew System::Windows::Forms::Label());
 			this->ottersOffset = (gcnew System::Windows::Forms::NumericUpDown());
 			this->label12 = (gcnew System::Windows::Forms::Label());
 			this->label13 = (gcnew System::Windows::Forms::Label());
 			this->eaglesOffset = (gcnew System::Windows::Forms::NumericUpDown());
-			this->pointsBox = (gcnew System::Windows::Forms::GroupBox());
-			this->showScoringCB = (gcnew System::Windows::Forms::CheckBox());
-			this->showSurvivalCB = (gcnew System::Windows::Forms::CheckBox());
 			this->defaultButton = (gcnew System::Windows::Forms::Button());
 			this->saveButton = (gcnew System::Windows::Forms::Button());
 			this->cancelButton = (gcnew System::Windows::Forms::Button());
+			this->optinalBox = (gcnew System::Windows::Forms::GroupBox());
+			this->optionalOffsetsTab = (gcnew System::Windows::Forms::TabControl());
+			this->tab_Box1 = (gcnew System::Windows::Forms::TabPage());
+			this->noneRB1 = (gcnew System::Windows::Forms::RadioButton());
+			this->scoringRB1 = (gcnew System::Windows::Forms::RadioButton());
+			this->survivalRB1 = (gcnew System::Windows::Forms::RadioButton());
+			this->wrRB1 = (gcnew System::Windows::Forms::RadioButton());
+			this->scoreRB1 = (gcnew System::Windows::Forms::RadioButton());
+			this->tab_Box2 = (gcnew System::Windows::Forms::TabPage());
+			this->noneRB2 = (gcnew System::Windows::Forms::RadioButton());
+			this->scoringRB2 = (gcnew System::Windows::Forms::RadioButton());
+			this->survivalRB2 = (gcnew System::Windows::Forms::RadioButton());
+			this->wrRB2 = (gcnew System::Windows::Forms::RadioButton());
+			this->scoreRB2 = (gcnew System::Windows::Forms::RadioButton());
 			this->generalBox->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bombsOffset))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->missesOffset))->BeginInit();
@@ -180,10 +215,14 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->tab_HSiFS->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->releasesOffset))->BeginInit();
 			this->tab_WBaWC->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->roar_breaksOffset))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->wolvesOffset))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ottersOffset))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->eaglesOffset))->BeginInit();
-			this->pointsBox->SuspendLayout();
+			this->optinalBox->SuspendLayout();
+			this->optionalOffsetsTab->SuspendLayout();
+			this->tab_Box1->SuspendLayout();
+			this->tab_Box2->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// generalBox
@@ -194,7 +233,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->generalBox->Controls->Add(this->missesOffset);
 			this->generalBox->Location = System::Drawing::Point(12, 12);
 			this->generalBox->Name = L"generalBox";
-			this->generalBox->Size = System::Drawing::Size(176, 83);
+			this->generalBox->Size = System::Drawing::Size(176, 195);
 			this->generalBox->TabIndex = 1;
 			this->generalBox->TabStop = false;
 			this->generalBox->Text = L"General Offset";
@@ -240,7 +279,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			// groupBox1
 			// 
 			this->groupBox1->Controls->Add(this->otherOffsetsTab);
-			this->groupBox1->Location = System::Drawing::Point(12, 101);
+			this->groupBox1->Location = System::Drawing::Point(12, 214);
 			this->groupBox1->Name = L"groupBox1";
 			this->groupBox1->Size = System::Drawing::Size(391, 176);
 			this->groupBox1->TabIndex = 2;
@@ -258,9 +297,10 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->otherOffsetsTab->Controls->Add(this->tab_WBaWC);
 			this->otherOffsetsTab->Cursor = System::Windows::Forms::Cursors::Default;
 			this->otherOffsetsTab->Location = System::Drawing::Point(6, 21);
+			this->otherOffsetsTab->Multiline = true;
 			this->otherOffsetsTab->Name = L"otherOffsetsTab";
 			this->otherOffsetsTab->SelectedIndex = 0;
-			this->otherOffsetsTab->Size = System::Drawing::Size(379, 148);
+			this->otherOffsetsTab->Size = System::Drawing::Size(379, 149);
 			this->otherOffsetsTab->TabIndex = 5;
 			// 
 			// tab_PCB
@@ -270,7 +310,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->tab_PCB->Location = System::Drawing::Point(4, 25);
 			this->tab_PCB->Name = L"tab_PCB";
 			this->tab_PCB->Padding = System::Windows::Forms::Padding(3);
-			this->tab_PCB->Size = System::Drawing::Size(371, 119);
+			this->tab_PCB->Size = System::Drawing::Size(371, 120);
 			this->tab_PCB->TabIndex = 0;
 			this->tab_PCB->Text = L"PCB";
 			this->tab_PCB->UseVisualStyleBackColor = true;
@@ -301,7 +341,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->tab_IN->Location = System::Drawing::Point(4, 25);
 			this->tab_IN->Name = L"tab_IN";
 			this->tab_IN->Padding = System::Windows::Forms::Padding(3);
-			this->tab_IN->Size = System::Drawing::Size(371, 119);
+			this->tab_IN->Size = System::Drawing::Size(371, 120);
 			this->tab_IN->TabIndex = 1;
 			this->tab_IN->Text = L"IN";
 			this->tab_IN->UseVisualStyleBackColor = true;
@@ -331,7 +371,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->tab_PoFV->Location = System::Drawing::Point(4, 25);
 			this->tab_PoFV->Name = L"tab_PoFV";
 			this->tab_PoFV->Padding = System::Windows::Forms::Padding(3);
-			this->tab_PoFV->Size = System::Drawing::Size(371, 119);
+			this->tab_PoFV->Size = System::Drawing::Size(371, 120);
 			this->tab_PoFV->TabIndex = 2;
 			this->tab_PoFV->Text = L"PoFV";
 			this->tab_PoFV->UseVisualStyleBackColor = true;
@@ -363,7 +403,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->tab_UFO->Location = System::Drawing::Point(4, 25);
 			this->tab_UFO->Name = L"tab_UFO";
 			this->tab_UFO->Padding = System::Windows::Forms::Padding(3);
-			this->tab_UFO->Size = System::Drawing::Size(371, 119);
+			this->tab_UFO->Size = System::Drawing::Size(371, 120);
 			this->tab_UFO->TabIndex = 3;
 			this->tab_UFO->Text = L"UFO";
 			this->tab_UFO->UseVisualStyleBackColor = true;
@@ -451,7 +491,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->tab_TD->Location = System::Drawing::Point(4, 25);
 			this->tab_TD->Name = L"tab_TD";
 			this->tab_TD->Padding = System::Windows::Forms::Padding(3);
-			this->tab_TD->Size = System::Drawing::Size(371, 119);
+			this->tab_TD->Size = System::Drawing::Size(371, 120);
 			this->tab_TD->TabIndex = 4;
 			this->tab_TD->Text = L"TD";
 			this->tab_TD->UseVisualStyleBackColor = true;
@@ -482,7 +522,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->tab_HSiFS->Location = System::Drawing::Point(4, 25);
 			this->tab_HSiFS->Name = L"tab_HSiFS";
 			this->tab_HSiFS->Padding = System::Windows::Forms::Padding(3);
-			this->tab_HSiFS->Size = System::Drawing::Size(371, 119);
+			this->tab_HSiFS->Size = System::Drawing::Size(371, 120);
 			this->tab_HSiFS->TabIndex = 5;
 			this->tab_HSiFS->Text = L"HSiFS";
 			this->tab_HSiFS->UseVisualStyleBackColor = true;
@@ -508,6 +548,8 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			// 
 			// tab_WBaWC
 			// 
+			this->tab_WBaWC->Controls->Add(this->label14);
+			this->tab_WBaWC->Controls->Add(this->roar_breaksOffset);
 			this->tab_WBaWC->Controls->Add(this->wolvesOffset);
 			this->tab_WBaWC->Controls->Add(this->label11);
 			this->tab_WBaWC->Controls->Add(this->ottersOffset);
@@ -517,10 +559,29 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->tab_WBaWC->Location = System::Drawing::Point(4, 25);
 			this->tab_WBaWC->Name = L"tab_WBaWC";
 			this->tab_WBaWC->Padding = System::Windows::Forms::Padding(3);
-			this->tab_WBaWC->Size = System::Drawing::Size(371, 119);
+			this->tab_WBaWC->Size = System::Drawing::Size(371, 120);
 			this->tab_WBaWC->TabIndex = 6;
 			this->tab_WBaWC->Text = L"WBaWC";
 			this->tab_WBaWC->UseVisualStyleBackColor = true;
+			// 
+			// label14
+			// 
+			this->label14->AutoSize = true;
+			this->label14->Location = System::Drawing::Point(66, 92);
+			this->label14->Name = L"label14";
+			this->label14->Size = System::Drawing::Size(84, 16);
+			this->label14->TabIndex = 19;
+			this->label14->Text = L"Roar Breaks";
+			// 
+			// roar_breaksOffset
+			// 
+			this->roar_breaksOffset->Location = System::Drawing::Point(6, 90);
+			this->roar_breaksOffset->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 50, 0, 0, 0 });
+			this->roar_breaksOffset->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 50, 0, 0, System::Int32::MinValue });
+			this->roar_breaksOffset->Name = L"roar_breaksOffset";
+			this->roar_breaksOffset->Size = System::Drawing::Size(54, 22);
+			this->roar_breaksOffset->TabIndex = 20;
+			this->roar_breaksOffset->TextAlign = System::Windows::Forms::HorizontalAlignment::Right;
 			// 
 			// wolvesOffset
 			// 
@@ -579,48 +640,9 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->eaglesOffset->TabIndex = 18;
 			this->eaglesOffset->TextAlign = System::Windows::Forms::HorizontalAlignment::Right;
 			// 
-			// pointsBox
-			// 
-			this->pointsBox->Controls->Add(this->showScoringCB);
-			this->pointsBox->Controls->Add(this->showSurvivalCB);
-			this->pointsBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(163)));
-			this->pointsBox->Location = System::Drawing::Point(203, 12);
-			this->pointsBox->Margin = System::Windows::Forms::Padding(4);
-			this->pointsBox->Name = L"pointsBox";
-			this->pointsBox->Padding = System::Windows::Forms::Padding(4);
-			this->pointsBox->Size = System::Drawing::Size(200, 83);
-			this->pointsBox->TabIndex = 0;
-			this->pointsBox->TabStop = false;
-			this->pointsBox->Text = L"DRC Points";
-			// 
-			// showScoringCB
-			// 
-			this->showScoringCB->AutoSize = true;
-			this->showScoringCB->Checked = true;
-			this->showScoringCB->CheckState = System::Windows::Forms::CheckState::Checked;
-			this->showScoringCB->Location = System::Drawing::Point(7, 50);
-			this->showScoringCB->Name = L"showScoringCB";
-			this->showScoringCB->Size = System::Drawing::Size(155, 20);
-			this->showScoringCB->TabIndex = 4;
-			this->showScoringCB->Text = L"Display Scoring Point";
-			this->showScoringCB->UseVisualStyleBackColor = true;
-			// 
-			// showSurvivalCB
-			// 
-			this->showSurvivalCB->AutoSize = true;
-			this->showSurvivalCB->Checked = true;
-			this->showSurvivalCB->CheckState = System::Windows::Forms::CheckState::Checked;
-			this->showSurvivalCB->Location = System::Drawing::Point(7, 22);
-			this->showSurvivalCB->Name = L"showSurvivalCB";
-			this->showSurvivalCB->Size = System::Drawing::Size(157, 20);
-			this->showSurvivalCB->TabIndex = 3;
-			this->showSurvivalCB->Text = L"Display Survival Point";
-			this->showSurvivalCB->UseVisualStyleBackColor = true;
-			// 
 			// defaultButton
 			// 
-			this->defaultButton->Location = System::Drawing::Point(166, 283);
+			this->defaultButton->Location = System::Drawing::Point(166, 396);
 			this->defaultButton->Name = L"defaultButton";
 			this->defaultButton->Size = System::Drawing::Size(75, 23);
 			this->defaultButton->TabIndex = 17;
@@ -630,7 +652,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			// 
 			// saveButton
 			// 
-			this->saveButton->Location = System::Drawing::Point(247, 283);
+			this->saveButton->Location = System::Drawing::Point(247, 396);
 			this->saveButton->Name = L"saveButton";
 			this->saveButton->Size = System::Drawing::Size(75, 23);
 			this->saveButton->TabIndex = 18;
@@ -641,12 +663,172 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			// cancelButton
 			// 
 			this->cancelButton->DialogResult = System::Windows::Forms::DialogResult::Cancel;
-			this->cancelButton->Location = System::Drawing::Point(328, 283);
+			this->cancelButton->Location = System::Drawing::Point(328, 396);
 			this->cancelButton->Name = L"cancelButton";
 			this->cancelButton->Size = System::Drawing::Size(75, 23);
 			this->cancelButton->TabIndex = 19;
 			this->cancelButton->Text = L"Cancel";
 			this->cancelButton->UseVisualStyleBackColor = true;
+			// 
+			// optinalBox
+			// 
+			this->optinalBox->Controls->Add(this->optionalOffsetsTab);
+			this->optinalBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(163)));
+			this->optinalBox->Location = System::Drawing::Point(195, 13);
+			this->optinalBox->Margin = System::Windows::Forms::Padding(4);
+			this->optinalBox->Name = L"optinalBox";
+			this->optinalBox->Padding = System::Windows::Forms::Padding(4);
+			this->optinalBox->Size = System::Drawing::Size(208, 194);
+			this->optinalBox->TabIndex = 20;
+			this->optinalBox->TabStop = false;
+			this->optinalBox->Text = L"Optional Offsets";
+			// 
+			// optionalOffsetsTab
+			// 
+			this->optionalOffsetsTab->Controls->Add(this->tab_Box1);
+			this->optionalOffsetsTab->Controls->Add(this->tab_Box2);
+			this->optionalOffsetsTab->Location = System::Drawing::Point(7, 22);
+			this->optionalOffsetsTab->Name = L"optionalOffsetsTab";
+			this->optionalOffsetsTab->SelectedIndex = 0;
+			this->optionalOffsetsTab->Size = System::Drawing::Size(194, 165);
+			this->optionalOffsetsTab->TabIndex = 5;
+			// 
+			// tab_Box1
+			// 
+			this->tab_Box1->Controls->Add(this->noneRB1);
+			this->tab_Box1->Controls->Add(this->scoringRB1);
+			this->tab_Box1->Controls->Add(this->survivalRB1);
+			this->tab_Box1->Controls->Add(this->wrRB1);
+			this->tab_Box1->Controls->Add(this->scoreRB1);
+			this->tab_Box1->Location = System::Drawing::Point(4, 25);
+			this->tab_Box1->Name = L"tab_Box1";
+			this->tab_Box1->Padding = System::Windows::Forms::Padding(3);
+			this->tab_Box1->Size = System::Drawing::Size(186, 136);
+			this->tab_Box1->TabIndex = 0;
+			this->tab_Box1->Text = L"Box 1";
+			this->tab_Box1->UseVisualStyleBackColor = true;
+			// 
+			// noneRB1
+			// 
+			this->noneRB1->AutoSize = true;
+			this->noneRB1->Location = System::Drawing::Point(6, 6);
+			this->noneRB1->Name = L"noneRB1";
+			this->noneRB1->Size = System::Drawing::Size(59, 20);
+			this->noneRB1->TabIndex = 12;
+			this->noneRB1->TabStop = true;
+			this->noneRB1->Text = L"None";
+			this->noneRB1->UseVisualStyleBackColor = true;
+			// 
+			// scoringRB1
+			// 
+			this->scoringRB1->AutoSize = true;
+			this->scoringRB1->Location = System::Drawing::Point(6, 110);
+			this->scoringRB1->Name = L"scoringRB1";
+			this->scoringRB1->Size = System::Drawing::Size(112, 20);
+			this->scoringRB1->TabIndex = 11;
+			this->scoringRB1->Text = L"Scoring Points";
+			this->scoringRB1->UseVisualStyleBackColor = true;
+			// 
+			// survivalRB1
+			// 
+			this->survivalRB1->AutoSize = true;
+			this->survivalRB1->Checked = true;
+			this->survivalRB1->Location = System::Drawing::Point(6, 84);
+			this->survivalRB1->Name = L"survivalRB1";
+			this->survivalRB1->Size = System::Drawing::Size(114, 20);
+			this->survivalRB1->TabIndex = 10;
+			this->survivalRB1->TabStop = true;
+			this->survivalRB1->Text = L"Survival Points";
+			this->survivalRB1->UseVisualStyleBackColor = true;
+			// 
+			// wrRB1
+			// 
+			this->wrRB1->AutoSize = true;
+			this->wrRB1->Location = System::Drawing::Point(6, 58);
+			this->wrRB1->Name = L"wrRB1";
+			this->wrRB1->Size = System::Drawing::Size(110, 20);
+			this->wrRB1->TabIndex = 9;
+			this->wrRB1->Text = L"World Record";
+			this->wrRB1->UseVisualStyleBackColor = true;
+			// 
+			// scoreRB1
+			// 
+			this->scoreRB1->AutoSize = true;
+			this->scoreRB1->Location = System::Drawing::Point(6, 32);
+			this->scoreRB1->Name = L"scoreRB1";
+			this->scoreRB1->Size = System::Drawing::Size(62, 20);
+			this->scoreRB1->TabIndex = 8;
+			this->scoreRB1->Text = L"Score";
+			this->scoreRB1->UseVisualStyleBackColor = true;
+			// 
+			// tab_Box2
+			// 
+			this->tab_Box2->Controls->Add(this->noneRB2);
+			this->tab_Box2->Controls->Add(this->scoringRB2);
+			this->tab_Box2->Controls->Add(this->survivalRB2);
+			this->tab_Box2->Controls->Add(this->wrRB2);
+			this->tab_Box2->Controls->Add(this->scoreRB2);
+			this->tab_Box2->Location = System::Drawing::Point(4, 25);
+			this->tab_Box2->Name = L"tab_Box2";
+			this->tab_Box2->Padding = System::Windows::Forms::Padding(3);
+			this->tab_Box2->Size = System::Drawing::Size(186, 136);
+			this->tab_Box2->TabIndex = 1;
+			this->tab_Box2->Text = L"Box 2";
+			this->tab_Box2->UseVisualStyleBackColor = true;
+			// 
+			// noneRB2
+			// 
+			this->noneRB2->AutoSize = true;
+			this->noneRB2->Location = System::Drawing::Point(6, 6);
+			this->noneRB2->Name = L"noneRB2";
+			this->noneRB2->Size = System::Drawing::Size(59, 20);
+			this->noneRB2->TabIndex = 13;
+			this->noneRB2->TabStop = true;
+			this->noneRB2->Text = L"None";
+			this->noneRB2->UseVisualStyleBackColor = true;
+			// 
+			// scoringRB2
+			// 
+			this->scoringRB2->AutoSize = true;
+			this->scoringRB2->Checked = true;
+			this->scoringRB2->Location = System::Drawing::Point(6, 110);
+			this->scoringRB2->Name = L"scoringRB2";
+			this->scoringRB2->Size = System::Drawing::Size(112, 20);
+			this->scoringRB2->TabIndex = 11;
+			this->scoringRB2->TabStop = true;
+			this->scoringRB2->Text = L"Scoring Points";
+			this->scoringRB2->UseVisualStyleBackColor = true;
+			// 
+			// survivalRB2
+			// 
+			this->survivalRB2->AutoSize = true;
+			this->survivalRB2->Location = System::Drawing::Point(6, 84);
+			this->survivalRB2->Name = L"survivalRB2";
+			this->survivalRB2->Size = System::Drawing::Size(114, 20);
+			this->survivalRB2->TabIndex = 10;
+			this->survivalRB2->Text = L"Survival Points";
+			this->survivalRB2->UseVisualStyleBackColor = true;
+			// 
+			// wrRB2
+			// 
+			this->wrRB2->AutoSize = true;
+			this->wrRB2->Location = System::Drawing::Point(6, 58);
+			this->wrRB2->Name = L"wrRB2";
+			this->wrRB2->Size = System::Drawing::Size(110, 20);
+			this->wrRB2->TabIndex = 9;
+			this->wrRB2->Text = L"World Record";
+			this->wrRB2->UseVisualStyleBackColor = true;
+			// 
+			// scoreRB2
+			// 
+			this->scoreRB2->AutoSize = true;
+			this->scoreRB2->Location = System::Drawing::Point(6, 32);
+			this->scoreRB2->Name = L"scoreRB2";
+			this->scoreRB2->Size = System::Drawing::Size(62, 20);
+			this->scoreRB2->TabIndex = 8;
+			this->scoreRB2->Text = L"Score";
+			this->scoreRB2->UseVisualStyleBackColor = true;
 			// 
 			// settings
 			// 
@@ -654,13 +836,13 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSize = true;
 			this->CancelButton = this->cancelButton;
-			this->ClientSize = System::Drawing::Size(415, 318);
+			this->ClientSize = System::Drawing::Size(415, 431);
+			this->Controls->Add(this->optinalBox);
 			this->Controls->Add(this->defaultButton);
 			this->Controls->Add(this->saveButton);
 			this->Controls->Add(this->cancelButton);
 			this->Controls->Add(this->generalBox);
 			this->Controls->Add(this->groupBox1);
-			this->Controls->Add(this->pointsBox);
 			this->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(163)));
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
@@ -699,11 +881,16 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->releasesOffset))->EndInit();
 			this->tab_WBaWC->ResumeLayout(false);
 			this->tab_WBaWC->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->roar_breaksOffset))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->wolvesOffset))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ottersOffset))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->eaglesOffset))->EndInit();
-			this->pointsBox->ResumeLayout(false);
-			this->pointsBox->PerformLayout();
+			this->optinalBox->ResumeLayout(false);
+			this->optionalOffsetsTab->ResumeLayout(false);
+			this->tab_Box1->ResumeLayout(false);
+			this->tab_Box1->PerformLayout();
+			this->tab_Box2->ResumeLayout(false);
+			this->tab_Box2->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
@@ -715,9 +902,9 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		this->missesOffset->Value = config["InitialMisses"].get<int8_t>();
 		this->bombsOffset->Value = config["InitialBombs"].get<int8_t>();
 
-		// DRC Points
-		this->showSurvivalCB->Checked = config["ShowSurvivalPoint"].get<bool>();
-		this->showScoringCB->Checked = config["ShowScoringPoint"].get<bool>();
+		// Optional offsets
+		SetOptionalBoxValue(config["OptionalBox1"].get<uint8_t>(), this->noneRB1, this->scoreRB1, this->wrRB1, this->survivalRB1, this->scoringRB1);
+		SetOptionalBoxValue(config["OptionalBox2"].get<uint8_t>(), this->noneRB2, this->scoreRB2, this->wrRB2, this->survivalRB2, this->scoringRB2);
 
 		// Other offsets
 		this->BBOffset->Value = config["InitialBorderBreaks"].get<int8_t>();
@@ -729,9 +916,10 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		this->greenOffset->Value = config["InitialGreenUFOs"].get<int8_t>();
 		this->blueOffset->Value = config["InitialBlueUFOs"].get<int8_t>();
 		this->rainbowOffset->Value = config["InitialRainbowUFOs"].get<int8_t>();
-		this->wolvesOffset->Value = config["InitialWolves"].get<int8_t>();
-		this->ottersOffset->Value = config["InitialOtters"].get<int8_t>();
-		this->eaglesOffset->Value = config["InitialEagles"].get<int8_t>();
+		this->wolvesOffset->Value = config["InitialWolves"].get<int16_t>();
+		this->ottersOffset->Value = config["InitialOtters"].get<int16_t>();
+		this->eaglesOffset->Value = config["InitialEagles"].get<int16_t>();
+		this->roar_breaksOffset->Value = config["InitialRoarBreaks"].get<int16_t>();
 	}
 
 	private: System::Void SaveConfig()
@@ -740,9 +928,9 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		config["InitialMisses"] = Convert::ToSByte(this->missesOffset->Value);
 		config["InitialBombs"] = Convert::ToSByte(this->bombsOffset->Value);
 
-		// DRC Points
-		config["ShowSurvivalPoint"] = this->showSurvivalCB->Checked;
-		config["ShowScoringPoint"] = this->showScoringCB->Checked;
+		// Optional offsets
+		config["OptionalBox1"] = Convert::ToByte(GetOptionalBoxValue(this->noneRB1->Checked, this->scoreRB1->Checked, this->wrRB1->Checked, this->survivalRB1->Checked, this->scoringRB1->Checked));
+		config["OptionalBox2"] = Convert::ToByte(GetOptionalBoxValue(this->noneRB2->Checked, this->scoreRB2->Checked, this->wrRB2->Checked, this->survivalRB2->Checked, this->scoringRB2->Checked));
 
 		// Other offsets
 		config["InitialBorderBreaks"] = Convert::ToSByte(this->BBOffset->Value);
@@ -754,9 +942,10 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		config["InitialGreenUFOs"] = Convert::ToSByte(this->greenOffset->Value);
 		config["InitialBlueUFOs"] = Convert::ToSByte(this->blueOffset->Value);
 		config["InitialRainbowUFOs"] = Convert::ToSByte(this->rainbowOffset->Value);
-		config["InitialWolves"] = Convert::ToSByte(this->wolvesOffset->Value);
-		config["InitialOtters"] = Convert::ToSByte(this->ottersOffset->Value);
-		config["InitialEagles"] = Convert::ToSByte(this->eaglesOffset->Value);
+		config["InitialWolves"] = Convert::ToInt16(this->wolvesOffset->Value);
+		config["InitialOtters"] = Convert::ToInt16(this->ottersOffset->Value);
+		config["InitialEagles"] = Convert::ToInt16(this->eaglesOffset->Value);
+		config["InitialRoarBreaks"] = Convert::ToInt16(this->roar_breaksOffset->Value);
 
 		// must be done here
 		no_charge = this->noChargeCB->Checked;
@@ -773,9 +962,9 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		this->missesOffset->Value = 0;
 		this->bombsOffset->Value = 0;
 
-		// DRC Points
-		this->showSurvivalCB->Checked = true;
-		this->showScoringCB->Checked = true;
+		// Optional offsets
+		SetOptionalBoxValue(2, this->noneRB1, this->scoreRB1, this->wrRB1, this->survivalRB1, this->scoringRB1);
+		SetOptionalBoxValue(3, this->noneRB2, this->scoreRB2, this->wrRB2, this->survivalRB2, this->scoringRB2);
 
 		// Other offsets
 		this->BBOffset->Value = 0;
@@ -790,6 +979,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		this->wolvesOffset->Value = 0;
 		this->ottersOffset->Value = 0;
 		this->eaglesOffset->Value = 0;
+		this->roar_breaksOffset->Value = 0;
 
 		this->SaveConfig();
 	}
@@ -799,5 +989,51 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		this->SaveConfig();
 		this->Close();
 	}
-};
+
+	private: uint8_t GetOptionalBoxValue(bool a, bool b, bool c, bool d, bool e)
+	{
+		if (a)
+			return 0;
+		else if (b)
+			return 1;
+		else if (c)
+			return 2;
+		else if (d)
+			return 3;
+		else if (e)
+			return 4;
+		else
+			return -1;
+	}
+
+	private: void SetOptionalBoxValue(uint8_t value, 
+		System::Windows::Forms::RadioButton^ % a, 
+		System::Windows::Forms::RadioButton^% b, 
+		System::Windows::Forms::RadioButton^% c, 
+		System::Windows::Forms::RadioButton^% d, 
+		System::Windows::Forms::RadioButton^% e)
+	{
+		switch (value)
+		{
+		case 0:
+			a->Checked = true;
+			break;
+		case 1:
+			b->Checked = true;
+			break;
+		case 2:
+			c->Checked = true;
+			break;
+		case 3:
+			d->Checked = true;
+			break;
+		case 4:
+			e->Checked = true;
+			break;
+		default:
+			break;
+		}
+	}
+	
+	};
 }
