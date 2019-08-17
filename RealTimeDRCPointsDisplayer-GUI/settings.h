@@ -682,7 +682,7 @@ private: System::Windows::Forms::NumericUpDown^ roar_breaksOffset;
 			this->optinalBox->Size = System::Drawing::Size(208, 194);
 			this->optinalBox->TabIndex = 20;
 			this->optinalBox->TabStop = false;
-			this->optinalBox->Text = L"Optional Offsets";
+			this->optinalBox->Text = L"Optional Display";
 			// 
 			// optionalOffsetsTab
 			// 
