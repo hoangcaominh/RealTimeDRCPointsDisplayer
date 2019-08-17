@@ -956,7 +956,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			optionalLabel->Text = L"Survival Points: " + roundf(drcpoints_survival);
 			break;
 		case 4:
-			optionalLabel->Text = L"Survival Points: " + roundf(drcpoints_scoring);
+			optionalLabel->Text = L"Scoring Points: " + roundf(drcpoints_scoring);
 			break;
 		default:
 			break;
