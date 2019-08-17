@@ -6,6 +6,10 @@ If you find any bugs, create a new issue on Github or DM me in Discord.
 An user interface application that displays in-game information and calculates DRC points for you during your run or your replay.
 
 ## What's new
+
+#### 1.5.1
+- Fix typo
+
 #### 1.5
 - Added options for displaying information (see "Game Information" for more detail), updated WBaWC.
 
