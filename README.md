@@ -7,8 +7,11 @@ An user interface application that displays in-game information and calculates D
 
 ## What's new
 
+#### 1.6
+- Updated files' download link and improved game searching funciton.
+
 #### 1.5.1
-- Fix typo
+- Fixed typo
 
 #### 1.5
 - Added options for displaying information (see "Game Information" for more detail), updated WBaWC.

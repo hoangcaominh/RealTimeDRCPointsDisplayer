@@ -31,8 +31,8 @@ std::wstring gameList[GAME_AVAILABLE] = {
 	L"(PoDD)",
 	L"(LLS)",
 	L"(MS)",
-	L"東方紅魔郷.exe",
-	L"Th07.exe",
+	L"th06.exe",
+	L"th07.exe",
 	L"th08.exe",
 	L"th09.exe",
 	L"th10.exe",
@@ -69,7 +69,13 @@ BOOL GetProcess()
 	{
 		while (Process32Next(hProcessSnap, &pe32))
 		{
-			std::wstring *found = std::find(gameList, gameList + GAME_AVAILABLE, pe32.szExeFile);
+			std::wstring processName = pe32.szExeFile;
+			// lowercase all letters
+			std::transform(processName.begin(), processName.end(), processName.begin(), ::tolower);
+			std::wstring *found = std::find(gameList, gameList + GAME_AVAILABLE, processName);
+			if (found == gameList + GAME_AVAILABLE && processName == L"東方紅魔郷.exe")	// EoSD exception
+				found = gameList + 5;
+
 			if (found != gameList + GAME_AVAILABLE)
 			{
 				// Open game process
