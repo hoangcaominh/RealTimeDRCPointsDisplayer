@@ -34,6 +34,9 @@ An user interface application that displays in-game information and calculates D
 #### 1.0
 - Finished console version, moving to GUI version.
 
+## Supports
+This tool works for native (not modified or patched except for [THCrap](https://www.thpatch.net/wiki/Touhou_Patch_Center) ) maingames and GFW.
+
 ## Requirements
 - OS: Windows 7/8/Vista/10
 - Visual C++ Redistributable for Visual Studio 2015
@@ -85,6 +88,6 @@ Two individual boxes for displaying one of the following: score, world record (o
 Settings for adjusting output values (misses, bombs, data displayed in Extra Box), mainly for calculating DRC points.
 
 ## Inspiration
-- [Dodging Rain Competition](https://maribelhearn.github.io/drc)
+- [Dodging Rain Competition](https://maribelhearn.com/drc)
 - [RealTimePPDisplayer](https://github.com/OsuSync/RealTimePPDisplayer)
 - The entire Touhou community
