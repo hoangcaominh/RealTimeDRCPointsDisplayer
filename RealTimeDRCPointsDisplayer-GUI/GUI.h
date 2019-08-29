@@ -585,7 +585,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		}
 		else
 		{
-			this->infoBox->Items->Add(L"Failed to download rubric file. ID returned: " + fail);
+			this->infoBox->Items->Add(L"Failed to download rubric file. Returned: " + fail);
 			this->IndexedColor->Add(System::Drawing::Brushes::Red);
 		}
 
@@ -599,7 +599,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		}
 		else
 		{
-			this->infoBox->Items->Add(L"Failed to download world record file. ID returned: " + fail);
+			this->infoBox->Items->Add(L"Failed to download world record file. Returned: " + fail);
 			this->IndexedColor->Add(System::Drawing::Brushes::Red);
 		}
 
@@ -815,7 +815,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		else
 		{
 			this->infoBox->Items->Add(L"Found " + convertToStringClass(idx_game[game]));
-			this->IndexedColor->Add(System::Drawing::Brushes::White);
+			this->IndexedColor->Add(System::Drawing::Brushes::Lime);
 
 			// Disable buttons
 			this->updateRubrics->Enabled = false;
@@ -981,7 +981,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			optionalLabel->Text = System::String::Format("{0:n0}", score);
 			break;
 		case 2:
-			optionalLabel->Text = System::String::Format("{0:n0}", wr);
+			optionalLabel->Text = System::String::Format("{0:n0}", getWR());
 			break;
 		case 3:
 			optionalLabel->Text = L"Survival Points: " + roundf(drcpoints_survival);

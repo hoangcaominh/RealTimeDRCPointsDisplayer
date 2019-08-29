@@ -72,6 +72,12 @@ float getMultiplier(const char* game, const char* shottype_route)
 		return 1.0f;
 }
 
+// get wr
+uint64_t getWR()
+{
+	return WRs[idx_game[game]][idx_difficulty[difficulty]][shottype][0].get<uint64_t>();
+}
+
 // get rubrics for survival
 void getSurvRubrics()
 {
