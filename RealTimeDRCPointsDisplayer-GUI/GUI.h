@@ -4,8 +4,6 @@
 #include "ProcessMemory.h"
 #include "settings.h"
 
-#include <vector>
-
 DWORD procStatus;
 DWORD GetExitCodeReturn;
 

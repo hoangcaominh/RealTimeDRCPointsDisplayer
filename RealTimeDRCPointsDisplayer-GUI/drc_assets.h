@@ -16,7 +16,7 @@ const char* idx_difficulty[] = { "Easy", "Normal", "Hard", "Lunatic", "Extra", "
 uint8_t game, character, type, difficulty;
 int8_t misses, bombs;
 std::string shottype;
-uint64_t score, wr;
+uint64_t score;
 
 // misses and bombs variables
 float miss; uint8_t firstBomb, bomb;
@@ -232,6 +232,8 @@ std::string bestSeason()
 
 void scoringPoints()
 {
+	uint64_t wr;
+
 	if (keyExist(Rubrics["SCORE"][idx_game[game]][idx_difficulty[difficulty]], "basedOn"))
 	{
 		std::string basedOn = Rubrics["SCORE"][idx_game[game]][idx_difficulty[difficulty]]["basedOn"].get<std::string>();
