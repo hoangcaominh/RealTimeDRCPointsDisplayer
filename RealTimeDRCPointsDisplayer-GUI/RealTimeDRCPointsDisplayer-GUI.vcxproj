@@ -170,12 +170,17 @@
     <ClInclude Include="wbawc.h" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GUI.ja.resx">
+      <DependentUpon>GUI.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI.resx">
       <DependentUpon>GUI.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="settings.resx">
       <DependentUpon>settings.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GlobalStrings.ja.resx" />
+    <EmbeddedResource Include="GlobalStrings.resx" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="RealTimeDRCPointsDisplayer-GUI.rc" />

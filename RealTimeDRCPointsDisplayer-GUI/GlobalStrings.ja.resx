@@ -1,0 +1,414 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Alice" xml:space="preserve">
+    <value>アリス</value>
+  </data>
+  <data name="Autumn" xml:space="preserve">
+    <value>秋</value>
+  </data>
+  <data name="Aya" xml:space="preserve">
+    <value>文</value>
+  </data>
+  <data name="AyaAutumn" xml:space="preserve">
+    <value>文秋</value>
+  </data>
+  <data name="AyaSpring" xml:space="preserve">
+    <value>文春</value>
+  </data>
+  <data name="AyaSummer" xml:space="preserve">
+    <value>文夏</value>
+  </data>
+  <data name="AyaWinter" xml:space="preserve">
+    <value>文冬</value>
+  </data>
+  <data name="Bombs" xml:space="preserve">
+    <value>ボム</value>
+  </data>
+  <data name="BorderBreaks" xml:space="preserve">
+    <value>霊撃</value>
+  </data>
+  <data name="BorderTeam" xml:space="preserve">
+    <value>霊夢＆紫</value>
+  </data>
+  <data name="Cirno" xml:space="preserve">
+    <value>チルノ</value>
+  </data>
+  <data name="CirnoAutumn" xml:space="preserve">
+    <value>チルノ秋</value>
+  </data>
+  <data name="CirnoSpring" xml:space="preserve">
+    <value>チルノ春</value>
+  </data>
+  <data name="CirnoSummer" xml:space="preserve">
+    <value>チルノ夏</value>
+  </data>
+  <data name="CirnoWinter" xml:space="preserve">
+    <value>チルノ冬</value>
+  </data>
+  <data name="DDC" xml:space="preserve">
+    <value>東方輝針城</value>
+  </data>
+  <data name="Difficulty" xml:space="preserve">
+    <value>難易度</value>
+  </data>
+  <data name="Eiki" xml:space="preserve">
+    <value>映姫</value>
+  </data>
+  <data name="EoSD" xml:space="preserve">
+    <value>東方紅魔郷</value>
+  </data>
+  <data name="Final" xml:space="preserve">
+    <value>ルート</value>
+  </data>
+  <data name="GFW" xml:space="preserve">
+    <value>妖精大戦争</value>
+  </data>
+  <data name="GhostTeam" xml:space="preserve">
+    <value>妖夢＆幽々子</value>
+  </data>
+  <data name="HRtP" xml:space="preserve">
+    <value>東方靈異伝</value>
+  </data>
+  <data name="HSiFS" xml:space="preserve">
+    <value>東方天空璋</value>
+  </data>
+  <data name="HSiFS_Shottype" xml:space="preserve">
+    <value>キャラ</value>
+  </data>
+  <data name="IN" xml:space="preserve">
+    <value>東方永夜抄</value>
+  </data>
+  <data name="Jigoku" xml:space="preserve">
+    <value>地獄</value>
+  </data>
+  <data name="Komachi" xml:space="preserve">
+    <value>小町</value>
+  </data>
+  <data name="LastSpells" xml:space="preserve">
+    <value>ラストスペル</value>
+  </data>
+  <data name="LLS" xml:space="preserve">
+    <value>東方幻想郷</value>
+  </data>
+  <data name="LoLK" xml:space="preserve">
+    <value>東方紺珠伝</value>
+  </data>
+  <data name="Lunasa" xml:space="preserve">
+    <value>ルナサ</value>
+  </data>
+  <data name="Lyrica" xml:space="preserve">
+    <value>リリカ</value>
+  </data>
+  <data name="MagicTeam" xml:space="preserve">
+    <value>魔理沙＆アリス</value>
+  </data>
+  <data name="Makai" xml:space="preserve">
+    <value>魔界</value>
+  </data>
+  <data name="Marisa" xml:space="preserve">
+    <value>魔理沙</value>
+  </data>
+  <data name="MarisaA" xml:space="preserve">
+    <value>魔理沙A</value>
+  </data>
+  <data name="MarisaAutumn" xml:space="preserve">
+    <value>魔理沙秋</value>
+  </data>
+  <data name="MarisaB" xml:space="preserve">
+    <value>魔理沙B</value>
+  </data>
+  <data name="MarisaC" xml:space="preserve">
+    <value>魔理沙C</value>
+  </data>
+  <data name="MarisaEagle" xml:space="preserve">
+    <value>魔理沙鷲</value>
+  </data>
+  <data name="MarisaOtter" xml:space="preserve">
+    <value>魔理沙獺</value>
+  </data>
+  <data name="MarisaSpring" xml:space="preserve">
+    <value>魔理沙春</value>
+  </data>
+  <data name="MarisaSummer" xml:space="preserve">
+    <value>魔理沙夏</value>
+  </data>
+  <data name="MarisaWinter" xml:space="preserve">
+    <value>魔理沙冬</value>
+  </data>
+  <data name="MarisaWolf" xml:space="preserve">
+    <value>魔理沙狼</value>
+  </data>
+  <data name="Medicine" xml:space="preserve">
+    <value>メディスン</value>
+  </data>
+  <data name="Merlin" xml:space="preserve">
+    <value>メルラン</value>
+  </data>
+  <data name="Misses" xml:space="preserve">
+    <value>ミス</value>
+  </data>
+  <data name="MoF" xml:space="preserve">
+    <value>東方風神録</value>
+  </data>
+  <data name="MS" xml:space="preserve">
+    <value>東方怪綺談</value>
+  </data>
+  <data name="Mystia" xml:space="preserve">
+    <value>ミスティア</value>
+  </data>
+  <data name="NoCharge" xml:space="preserve">
+    <value>ノーチャージ</value>
+  </data>
+  <data name="PCB" xml:space="preserve">
+    <value>東方妖々夢</value>
+  </data>
+  <data name="PoDD" xml:space="preserve">
+    <value>東方夢時空</value>
+  </data>
+  <data name="PoFV" xml:space="preserve">
+    <value>東方花映塚</value>
+  </data>
+  <data name="Reimu" xml:space="preserve">
+    <value>霊夢</value>
+  </data>
+  <data name="ReimuA" xml:space="preserve">
+    <value>霊夢A</value>
+  </data>
+  <data name="ReimuAutumn" xml:space="preserve">
+    <value>霊夢秋</value>
+  </data>
+  <data name="ReimuB" xml:space="preserve">
+    <value>霊夢B</value>
+  </data>
+  <data name="ReimuC" xml:space="preserve">
+    <value>霊夢C</value>
+  </data>
+  <data name="ReimuEagle" xml:space="preserve">
+    <value>霊夢鷲</value>
+  </data>
+  <data name="ReimuOtter" xml:space="preserve">
+    <value>霊夢獺</value>
+  </data>
+  <data name="ReimuSpring" xml:space="preserve">
+    <value>霊夢春</value>
+  </data>
+  <data name="ReimuSummer" xml:space="preserve">
+    <value>霊夢夏</value>
+  </data>
+  <data name="ReimuWinter" xml:space="preserve">
+    <value>霊夢冬</value>
+  </data>
+  <data name="ReimuWolf" xml:space="preserve">
+    <value>霊夢狼</value>
+  </data>
+  <data name="Reisen" xml:space="preserve">
+    <value>鈴仙</value>
+  </data>
+  <data name="Releases" xml:space="preserve">
+    <value>解放</value>
+  </data>
+  <data name="Remilia" xml:space="preserve">
+    <value>レミリア</value>
+  </data>
+  <data name="Route" xml:space="preserve">
+    <value>ルート</value>
+  </data>
+  <data name="SA" xml:space="preserve">
+    <value>東方地霊殿</value>
+  </data>
+  <data name="Sakuya" xml:space="preserve">
+    <value>咲夜</value>
+  </data>
+  <data name="SakuyaA" xml:space="preserve">
+    <value>咲夜A</value>
+  </data>
+  <data name="SakuyaB" xml:space="preserve">
+    <value>咲夜B</value>
+  </data>
+  <data name="Sanae" xml:space="preserve">
+    <value>早苗</value>
+  </data>
+  <data name="SanaeA" xml:space="preserve">
+    <value>早苗A</value>
+  </data>
+  <data name="SanaeB" xml:space="preserve">
+    <value>早苗B</value>
+  </data>
+  <data name="ScarletTeam" xml:space="preserve">
+    <value>咲夜＆レミリア</value>
+  </data>
+  <data name="ScoringPoints" xml:space="preserve">
+    <value>稼ぎポイント</value>
+  </data>
+  <data name="Shottype" xml:space="preserve">
+    <value>キャラ</value>
+  </data>
+  <data name="SoEW" xml:space="preserve">
+    <value>東方封魔録</value>
+  </data>
+  <data name="Spring" xml:space="preserve">
+    <value>春</value>
+  </data>
+  <data name="Summer" xml:space="preserve">
+    <value>夏</value>
+  </data>
+  <data name="SurvivalPoints" xml:space="preserve">
+    <value>クリア重視ポイント</value>
+  </data>
+  <data name="TD" xml:space="preserve">
+    <value>東方神霊廟</value>
+  </data>
+  <data name="Tewi" xml:space="preserve">
+    <value>てゐ</value>
+  </data>
+  <data name="Trances" xml:space="preserve">
+    <value>トランス</value>
+  </data>
+  <data name="UFO" xml:space="preserve">
+    <value>東方星蓮船</value>
+  </data>
+  <data name="WBaWC" xml:space="preserve">
+    <value>東方鬼形獣</value>
+  </data>
+  <data name="Winter" xml:space="preserve">
+    <value>冬</value>
+  </data>
+  <data name="Youmu" xml:space="preserve">
+    <value>妖夢</value>
+  </data>
+  <data name="YoumuEagle" xml:space="preserve">
+    <value>妖夢鷲</value>
+  </data>
+  <data name="YoumuOtter" xml:space="preserve">
+    <value>妖夢獺</value>
+  </data>
+  <data name="YoumuWolf" xml:space="preserve">
+    <value>妖夢狼</value>
+  </data>
+  <data name="Yukari" xml:space="preserve">
+    <value>紫</value>
+  </data>
+  <data name="Yuuka" xml:space="preserve">
+    <value>幽香</value>
+  </data>
+  <data name="Yuyuko" xml:space="preserve">
+    <value>幽々子</value>
+  </data>
+</root>

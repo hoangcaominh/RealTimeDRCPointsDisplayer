@@ -1,0 +1,414 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Alice" xml:space="preserve">
+    <value>Alice</value>
+  </data>
+  <data name="Autumn" xml:space="preserve">
+    <value>Autumn</value>
+  </data>
+  <data name="Aya" xml:space="preserve">
+    <value>Aya</value>
+  </data>
+  <data name="AyaAutumn" xml:space="preserve">
+    <value>AyaAutumn</value>
+  </data>
+  <data name="AyaSpring" xml:space="preserve">
+    <value>AyaSpring</value>
+  </data>
+  <data name="AyaSummer" xml:space="preserve">
+    <value>AyaSummer</value>
+  </data>
+  <data name="AyaWinter" xml:space="preserve">
+    <value>AyaWinter</value>
+  </data>
+  <data name="Bombs" xml:space="preserve">
+    <value>Bombs</value>
+  </data>
+  <data name="BorderBreaks" xml:space="preserve">
+    <value>Border Breaks</value>
+  </data>
+  <data name="BorderTeam" xml:space="preserve">
+    <value>BorderTeam</value>
+  </data>
+  <data name="Cirno" xml:space="preserve">
+    <value>Cirno</value>
+  </data>
+  <data name="CirnoAutumn" xml:space="preserve">
+    <value>CirnoAutumn</value>
+  </data>
+  <data name="CirnoSpring" xml:space="preserve">
+    <value>CirnoSpring</value>
+  </data>
+  <data name="CirnoSummer" xml:space="preserve">
+    <value>CirnoSummer</value>
+  </data>
+  <data name="CirnoWinter" xml:space="preserve">
+    <value>CirnoWinter</value>
+  </data>
+  <data name="DDC" xml:space="preserve">
+    <value>DDC</value>
+  </data>
+  <data name="Difficulty" xml:space="preserve">
+    <value>Difficulty</value>
+  </data>
+  <data name="Eiki" xml:space="preserve">
+    <value>Eiki</value>
+  </data>
+  <data name="EoSD" xml:space="preserve">
+    <value>EoSD</value>
+  </data>
+  <data name="Final" xml:space="preserve">
+    <value>Final</value>
+  </data>
+  <data name="GFW" xml:space="preserve">
+    <value>GFW</value>
+  </data>
+  <data name="GhostTeam" xml:space="preserve">
+    <value>GhostTeam</value>
+  </data>
+  <data name="HRtP" xml:space="preserve">
+    <value>HRtP</value>
+  </data>
+  <data name="HSiFS" xml:space="preserve">
+    <value>HSiFS</value>
+  </data>
+  <data name="HSiFS_Shottype" xml:space="preserve">
+    <value>Shot</value>
+  </data>
+  <data name="IN" xml:space="preserve">
+    <value>IN</value>
+  </data>
+  <data name="Jigoku" xml:space="preserve">
+    <value>Jigoku</value>
+  </data>
+  <data name="Komachi" xml:space="preserve">
+    <value>Komachi</value>
+  </data>
+  <data name="LastSpells" xml:space="preserve">
+    <value>Last Spells</value>
+  </data>
+  <data name="LLS" xml:space="preserve">
+    <value>LLS</value>
+  </data>
+  <data name="LoLK" xml:space="preserve">
+    <value>LoLK</value>
+  </data>
+  <data name="Lunasa" xml:space="preserve">
+    <value>Lunasa</value>
+  </data>
+  <data name="Lyrica" xml:space="preserve">
+    <value>Lyrica</value>
+  </data>
+  <data name="MagicTeam" xml:space="preserve">
+    <value>MagicTeam</value>
+  </data>
+  <data name="Makai" xml:space="preserve">
+    <value>Makai</value>
+  </data>
+  <data name="Marisa" xml:space="preserve">
+    <value>Marisa</value>
+  </data>
+  <data name="MarisaA" xml:space="preserve">
+    <value>MarisaA</value>
+  </data>
+  <data name="MarisaAutumn" xml:space="preserve">
+    <value>MarisaAutumn</value>
+  </data>
+  <data name="MarisaB" xml:space="preserve">
+    <value>MarisaB</value>
+  </data>
+  <data name="MarisaC" xml:space="preserve">
+    <value>MarisaC</value>
+  </data>
+  <data name="MarisaEagle" xml:space="preserve">
+    <value>MarisaEagle</value>
+  </data>
+  <data name="MarisaOtter" xml:space="preserve">
+    <value>MarisaOtter</value>
+  </data>
+  <data name="MarisaSpring" xml:space="preserve">
+    <value>MarisaSpring</value>
+  </data>
+  <data name="MarisaSummer" xml:space="preserve">
+    <value>MarisaSummer</value>
+  </data>
+  <data name="MarisaWinter" xml:space="preserve">
+    <value>MarisaWinter</value>
+  </data>
+  <data name="MarisaWolf" xml:space="preserve">
+    <value>MarisaWolf</value>
+  </data>
+  <data name="Medicine" xml:space="preserve">
+    <value>Medicine</value>
+  </data>
+  <data name="Merlin" xml:space="preserve">
+    <value>Merlin</value>
+  </data>
+  <data name="Misses" xml:space="preserve">
+    <value>Misses</value>
+  </data>
+  <data name="MoF" xml:space="preserve">
+    <value>MoF</value>
+  </data>
+  <data name="MS" xml:space="preserve">
+    <value>MS</value>
+  </data>
+  <data name="Mystia" xml:space="preserve">
+    <value>Mystia</value>
+  </data>
+  <data name="NoCharge" xml:space="preserve">
+    <value>No Charge</value>
+  </data>
+  <data name="PCB" xml:space="preserve">
+    <value>PCB</value>
+  </data>
+  <data name="PoDD" xml:space="preserve">
+    <value>PoDD</value>
+  </data>
+  <data name="PoFV" xml:space="preserve">
+    <value>PoFV</value>
+  </data>
+  <data name="Reimu" xml:space="preserve">
+    <value>Reimu</value>
+  </data>
+  <data name="ReimuA" xml:space="preserve">
+    <value>ReimuA</value>
+  </data>
+  <data name="ReimuAutumn" xml:space="preserve">
+    <value>ReimuAutumn</value>
+  </data>
+  <data name="ReimuB" xml:space="preserve">
+    <value>ReimuB</value>
+  </data>
+  <data name="ReimuC" xml:space="preserve">
+    <value>ReimuC</value>
+  </data>
+  <data name="ReimuEagle" xml:space="preserve">
+    <value>ReimuEagle</value>
+  </data>
+  <data name="ReimuOtter" xml:space="preserve">
+    <value>ReimuOtter</value>
+  </data>
+  <data name="ReimuSpring" xml:space="preserve">
+    <value>ReimuSpring</value>
+  </data>
+  <data name="ReimuSummer" xml:space="preserve">
+    <value>ReimuSummer</value>
+  </data>
+  <data name="ReimuWinter" xml:space="preserve">
+    <value>ReimuWinter</value>
+  </data>
+  <data name="ReimuWolf" xml:space="preserve">
+    <value>ReimuWolf</value>
+  </data>
+  <data name="Reisen" xml:space="preserve">
+    <value>Reisen</value>
+  </data>
+  <data name="Releases" xml:space="preserve">
+    <value>Releases</value>
+  </data>
+  <data name="Remilia" xml:space="preserve">
+    <value>Remilia</value>
+  </data>
+  <data name="Route" xml:space="preserve">
+    <value>Route</value>
+  </data>
+  <data name="SA" xml:space="preserve">
+    <value>SA</value>
+  </data>
+  <data name="Sakuya" xml:space="preserve">
+    <value>Sakuya</value>
+  </data>
+  <data name="SakuyaA" xml:space="preserve">
+    <value>SakuyaA</value>
+  </data>
+  <data name="SakuyaB" xml:space="preserve">
+    <value>SakuyaB</value>
+  </data>
+  <data name="Sanae" xml:space="preserve">
+    <value>Sanae</value>
+  </data>
+  <data name="SanaeA" xml:space="preserve">
+    <value>SanaeA</value>
+  </data>
+  <data name="SanaeB" xml:space="preserve">
+    <value>SanaeB</value>
+  </data>
+  <data name="ScarletTeam" xml:space="preserve">
+    <value>ScarletTeam</value>
+  </data>
+  <data name="ScoringPoints" xml:space="preserve">
+    <value>Scoring Points</value>
+  </data>
+  <data name="Shottype" xml:space="preserve">
+    <value>Shottype</value>
+  </data>
+  <data name="SoEW" xml:space="preserve">
+    <value>SoEW</value>
+  </data>
+  <data name="Spring" xml:space="preserve">
+    <value>Spring</value>
+  </data>
+  <data name="Summer" xml:space="preserve">
+    <value>Summer</value>
+  </data>
+  <data name="SurvivalPoints" xml:space="preserve">
+    <value>Survival Points</value>
+  </data>
+  <data name="TD" xml:space="preserve">
+    <value>TD</value>
+  </data>
+  <data name="Tewi" xml:space="preserve">
+    <value>Tewi</value>
+  </data>
+  <data name="Trances" xml:space="preserve">
+    <value>Trances</value>
+  </data>
+  <data name="UFO" xml:space="preserve">
+    <value>UFO</value>
+  </data>
+  <data name="WBaWC" xml:space="preserve">
+    <value>WBaWC</value>
+  </data>
+  <data name="Winter" xml:space="preserve">
+    <value>Winter</value>
+  </data>
+  <data name="Youmu" xml:space="preserve">
+    <value>Youmu</value>
+  </data>
+  <data name="YoumuEagle" xml:space="preserve">
+    <value>YoumuEagle</value>
+  </data>
+  <data name="YoumuOtter" xml:space="preserve">
+    <value>YoumuOtter</value>
+  </data>
+  <data name="YoumuWolf" xml:space="preserve">
+    <value>YoumuWolf</value>
+  </data>
+  <data name="Yukari" xml:space="preserve">
+    <value>Yukari</value>
+  </data>
+  <data name="Yuuka" xml:space="preserve">
+    <value>Yuuka</value>
+  </data>
+  <data name="Yuyuko" xml:space="preserve">
+    <value>Yuyuko</value>
+  </data>
+</root>

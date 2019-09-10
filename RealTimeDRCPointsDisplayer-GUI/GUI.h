@@ -80,6 +80,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 
 	private: System::Collections::Generic::List<System::Drawing::Brush^>^ IndexedColor = gcnew System::Collections::Generic::List<System::Drawing::Brush^>();
 
+	private: Resources::ResourceManager^ globalStrings = gcnew Resources::ResourceManager(L"RealTimeDRCPointsDisplayerGUI.GlobalStrings", this->GetType()->Assembly);
 			 // private: System::Media::SoundPlayer^ player = gcnew System::Media::SoundPlayer();
 
 
@@ -125,49 +126,39 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			// 
 			// updateRubrics
 			// 
-			this->updateRubrics->Location = System::Drawing::Point(12, 256);
+			resources->ApplyResources(this->updateRubrics, L"updateRubrics");
 			this->updateRubrics->Name = L"updateRubrics";
-			this->updateRubrics->Size = System::Drawing::Size(130, 23);
-			this->updateRubrics->TabIndex = 1;
-			this->updateRubrics->Text = L"Update Rubrics";
 			this->updateRubrics->UseVisualStyleBackColor = true;
 			this->updateRubrics->Click += gcnew System::EventHandler(this, &GUI::update_Click);
 			// 
 			// infoBox
 			// 
+			resources->ApplyResources(this->infoBox, L"infoBox");
 			this->infoBox->BackColor = System::Drawing::Color::Black;
 			this->infoBox->DrawMode = System::Windows::Forms::DrawMode::OwnerDrawFixed;
 			this->infoBox->ForeColor = System::Drawing::Color::White;
 			this->infoBox->FormattingEnabled = true;
-			this->infoBox->Location = System::Drawing::Point(12, 12);
 			this->infoBox->Name = L"infoBox";
-			this->infoBox->Size = System::Drawing::Size(266, 238);
-			this->infoBox->TabIndex = 0;
 			this->infoBox->DrawItem += gcnew System::Windows::Forms::DrawItemEventHandler(this, &GUI::DrawItem);
 			this->infoBox->SelectedIndexChanged += gcnew System::EventHandler(this, &GUI::listBox1_SelectedIndexChanged);
 			// 
 			// clear
 			// 
-			this->clear->Location = System::Drawing::Point(12, 285);
+			resources->ApplyResources(this->clear, L"clear");
 			this->clear->Name = L"clear";
-			this->clear->Size = System::Drawing::Size(130, 23);
-			this->clear->TabIndex = 2;
-			this->clear->Text = L"Clear History";
 			this->clear->UseVisualStyleBackColor = true;
 			this->clear->Click += gcnew System::EventHandler(this, &GUI::clearHistory_Click);
 			// 
 			// findGame
 			// 
-			this->findGame->Location = System::Drawing::Point(12, 314);
+			resources->ApplyResources(this->findGame, L"findGame");
 			this->findGame->Name = L"findGame";
-			this->findGame->Size = System::Drawing::Size(266, 23);
-			this->findGame->TabIndex = 3;
-			this->findGame->Text = L"Find Game";
 			this->findGame->UseVisualStyleBackColor = true;
 			this->findGame->Click += gcnew System::EventHandler(this, &GUI::findGame_Click);
 			// 
 			// panel1
 			// 
+			resources->ApplyResources(this->panel1, L"panel1");
 			this->panel1->BackColor = System::Drawing::Color::Black;
 			this->panel1->Controls->Add(this->extraLabel3);
 			this->panel1->Controls->Add(this->extraLabel2);
@@ -180,168 +171,100 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->panel1->Controls->Add(this->diffLabel);
 			this->panel1->Controls->Add(this->extraLabel0);
 			this->panel1->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->panel1->Location = System::Drawing::Point(284, 12);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(348, 324);
-			this->panel1->TabIndex = 5;
 			this->panel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GUI::panel1_Paint);
 			// 
 			// extraLabel3
 			// 
+			resources->ApplyResources(this->extraLabel3, L"extraLabel3");
 			this->extraLabel3->BackColor = System::Drawing::Color::Transparent;
 			this->extraLabel3->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->extraLabel3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(163)));
 			this->extraLabel3->ForeColor = System::Drawing::Color::Yellow;
-			this->extraLabel3->Location = System::Drawing::Point(261, 162);
 			this->extraLabel3->Name = L"extraLabel3";
-			this->extraLabel3->Size = System::Drawing::Size(87, 54);
-			this->extraLabel3->TabIndex = 10;
-			this->extraLabel3->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			this->extraLabel3->Visible = false;
 			// 
 			// extraLabel2
 			// 
+			resources->ApplyResources(this->extraLabel2, L"extraLabel2");
 			this->extraLabel2->BackColor = System::Drawing::Color::Transparent;
 			this->extraLabel2->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->extraLabel2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(163)));
 			this->extraLabel2->ForeColor = System::Drawing::Color::Lime;
-			this->extraLabel2->Location = System::Drawing::Point(174, 162);
 			this->extraLabel2->Name = L"extraLabel2";
-			this->extraLabel2->Size = System::Drawing::Size(174, 54);
-			this->extraLabel2->TabIndex = 9;
-			this->extraLabel2->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			this->extraLabel2->Visible = false;
 			// 
 			// extraLabel1
 			// 
+			resources->ApplyResources(this->extraLabel1, L"extraLabel1");
 			this->extraLabel1->BackColor = System::Drawing::Color::Transparent;
 			this->extraLabel1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->extraLabel1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(163)));
 			this->extraLabel1->ForeColor = System::Drawing::Color::Lime;
-			this->extraLabel1->Location = System::Drawing::Point(87, 162);
 			this->extraLabel1->Name = L"extraLabel1";
-			this->extraLabel1->Size = System::Drawing::Size(87, 54);
-			this->extraLabel1->TabIndex = 8;
-			this->extraLabel1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			this->extraLabel1->Visible = false;
 			// 
 			// optionalLabel2
 			// 
+			resources->ApplyResources(this->optionalLabel2, L"optionalLabel2");
 			this->optionalLabel2->BackColor = System::Drawing::Color::Transparent;
 			this->optionalLabel2->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->optionalLabel2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(163)));
 			this->optionalLabel2->ForeColor = System::Drawing::Color::White;
-			this->optionalLabel2->Location = System::Drawing::Point(0, 270);
 			this->optionalLabel2->Name = L"optionalLabel2";
-			this->optionalLabel2->Size = System::Drawing::Size(348, 54);
-			this->optionalLabel2->TabIndex = 6;
-			this->optionalLabel2->Text = L"Optional 2";
-			this->optionalLabel2->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// optionalLabel1
 			// 
+			resources->ApplyResources(this->optionalLabel1, L"optionalLabel1");
 			this->optionalLabel1->BackColor = System::Drawing::Color::Transparent;
 			this->optionalLabel1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->optionalLabel1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(163)));
 			this->optionalLabel1->ForeColor = System::Drawing::Color::White;
-			this->optionalLabel1->Location = System::Drawing::Point(0, 216);
 			this->optionalLabel1->Name = L"optionalLabel1";
-			this->optionalLabel1->Size = System::Drawing::Size(348, 54);
-			this->optionalLabel1->TabIndex = 5;
-			this->optionalLabel1->Text = L"Optional 1";
-			this->optionalLabel1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// bombsLabel
 			// 
+			resources->ApplyResources(this->bombsLabel, L"bombsLabel");
 			this->bombsLabel->BackColor = System::Drawing::Color::Transparent;
 			this->bombsLabel->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->bombsLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(163)));
 			this->bombsLabel->ForeColor = System::Drawing::Color::Lime;
-			this->bombsLabel->Location = System::Drawing::Point(174, 108);
 			this->bombsLabel->Name = L"bombsLabel";
-			this->bombsLabel->Size = System::Drawing::Size(174, 54);
-			this->bombsLabel->TabIndex = 3;
-			this->bombsLabel->Text = L"Bombs";
-			this->bombsLabel->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// missesLabel
 			// 
+			resources->ApplyResources(this->missesLabel, L"missesLabel");
 			this->missesLabel->BackColor = System::Drawing::Color::Transparent;
 			this->missesLabel->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->missesLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(163)));
 			this->missesLabel->ForeColor = System::Drawing::Color::Red;
-			this->missesLabel->Location = System::Drawing::Point(0, 108);
 			this->missesLabel->Name = L"missesLabel";
-			this->missesLabel->Size = System::Drawing::Size(174, 54);
-			this->missesLabel->TabIndex = 2;
-			this->missesLabel->Text = L"Misses";
-			this->missesLabel->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// shottypeLabel
 			// 
+			resources->ApplyResources(this->shottypeLabel, L"shottypeLabel");
 			this->shottypeLabel->BackColor = System::Drawing::Color::Transparent;
 			this->shottypeLabel->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->shottypeLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(163)));
 			this->shottypeLabel->ForeColor = System::Drawing::Color::White;
-			this->shottypeLabel->Location = System::Drawing::Point(0, 54);
 			this->shottypeLabel->Name = L"shottypeLabel";
-			this->shottypeLabel->Size = System::Drawing::Size(348, 54);
-			this->shottypeLabel->TabIndex = 4;
-			this->shottypeLabel->Text = L"Shottype";
-			this->shottypeLabel->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// diffLabel
 			// 
+			resources->ApplyResources(this->diffLabel, L"diffLabel");
 			this->diffLabel->BackColor = System::Drawing::Color::Transparent;
 			this->diffLabel->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->diffLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(163)));
 			this->diffLabel->ForeColor = System::Drawing::Color::White;
-			this->diffLabel->Location = System::Drawing::Point(0, 0);
 			this->diffLabel->Name = L"diffLabel";
-			this->diffLabel->Size = System::Drawing::Size(348, 54);
-			this->diffLabel->TabIndex = 1;
-			this->diffLabel->Text = L"Difficulty";
-			this->diffLabel->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// extraLabel0
 			// 
+			resources->ApplyResources(this->extraLabel0, L"extraLabel0");
 			this->extraLabel0->BackColor = System::Drawing::Color::Transparent;
 			this->extraLabel0->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->extraLabel0->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(163)));
 			this->extraLabel0->ForeColor = System::Drawing::Color::White;
-			this->extraLabel0->Location = System::Drawing::Point(0, 162);
 			this->extraLabel0->Name = L"extraLabel0";
-			this->extraLabel0->Size = System::Drawing::Size(348, 54);
-			this->extraLabel0->TabIndex = 7;
-			this->extraLabel0->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// settings
 			// 
-			this->settings->Location = System::Drawing::Point(148, 256);
+			resources->ApplyResources(this->settings, L"settings");
 			this->settings->Name = L"settings";
-			this->settings->Size = System::Drawing::Size(130, 23);
-			this->settings->TabIndex = 4;
-			this->settings->Text = L"Settings";
 			this->settings->UseVisualStyleBackColor = true;
 			this->settings->Click += gcnew System::EventHandler(this, &GUI::settings_Click);
 			// 
 			// about
 			// 
-			this->about->Location = System::Drawing::Point(148, 285);
+			resources->ApplyResources(this->about, L"about");
 			this->about->Name = L"about";
-			this->about->Size = System::Drawing::Size(130, 23);
-			this->about->TabIndex = 5;
-			this->about->Text = L"About";
 			this->about->UseVisualStyleBackColor = true;
 			this->about->Click += gcnew System::EventHandler(this, &GUI::about_Click);
 			// 
@@ -361,14 +284,10 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			// 
 			// warningLabel
 			// 
+			resources->ApplyResources(this->warningLabel, L"warningLabel");
 			this->warningLabel->BackColor = System::Drawing::Color::Transparent;
 			this->warningLabel->ForeColor = System::Drawing::Color::Red;
-			this->warningLabel->Location = System::Drawing::Point(12, 339);
 			this->warningLabel->Name = L"warningLabel";
-			this->warningLabel->Size = System::Drawing::Size(266, 18);
-			this->warningLabel->TabIndex = 8;
-			this->warningLabel->Text = L"Warning: Offsets on!";
-			this->warningLabel->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// checkOffsetsOn
 			// 
@@ -384,10 +303,9 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			// 
 			// GUI
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			resources->ApplyResources(this, L"$this");
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::Control;
-			this->ClientSize = System::Drawing::Size(645, 360);
 			this->Controls->Add(this->warningLabel);
 			this->Controls->Add(this->about);
 			this->Controls->Add(this->settings);
@@ -397,10 +315,8 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->Controls->Add(this->infoBox);
 			this->Controls->Add(this->updateRubrics);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
-			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MaximizeBox = false;
 			this->Name = L"GUI";
-			this->Text = L"Live DRC Points Calculator";
 			this->Load += gcnew System::EventHandler(this, &GUI::GUI_Load);
 			this->panel1->ResumeLayout(false);
 			this->ResumeLayout(false);
@@ -431,15 +347,13 @@ namespace RealTimeDRCPointsDisplayerGUI {
 	// convert to String from const char*
 	private: String^ convertToStringClass(const char* &str)
 	{
-		String^ newString = gcnew String(str);
-		return newString;
+		return gcnew String(str);
 	}
 
 	// convert to String from std::string
 	private: String^ convertToStringClass(std::string &str)
 	{
-		String^ newString = gcnew String(str.c_str());
-		return newString;
+		return gcnew String(str.c_str());
 	}
 
 	 // IN stage final andl ast spells captured
@@ -448,7 +362,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		initLabel();
 		if (strcmp(idx_difficulty[difficulty], "Extra") == 0)
 		{
-			this->extraLabel0->Text = (L"Last Spells: " + last_spells_captured + L"/1");
+			this->extraLabel0->Text = (globalStrings->GetString(L"LastSpells") + L": " + last_spells_captured + L"/1");
 		}
 		else
 		{
@@ -458,19 +372,19 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			{
 				char maxLastSpells = Rubrics["MAX_LAST_SPELLS"][idx_difficulty[difficulty]]["FinalA"].get<char>();
 				this->extraLabel0->Text = (L"LS: " + last_spells_captured + L"/" + maxLastSpells);
-				this->extraLabel2->Text = L"Final: A";
+				this->extraLabel2->Text = globalStrings->GetString(L"Final") + L": A";
 				break;
 			}
 			case 7:	// 6B
 			{
 				char maxLastSpells = Rubrics["MAX_LAST_SPELLS"][idx_difficulty[difficulty]]["FinalB"].get<char>();
 				this->extraLabel0->Text = (L"LS: " + last_spells_captured + L"/" + maxLastSpells);
-				this->extraLabel2->Text = L"Final: B";
+				this->extraLabel2->Text = globalStrings->GetString(L"Final") + L": B";
 				break;
 			}
 			default:
 				this->extraLabel0->Text = (L"LS: " + last_spells_captured + L"/?");
-				this->extraLabel2->Text = L"Final: ?";
+				this->extraLabel2->Text = globalStrings->GetString(L"Final") + L": ?";
 				break;
 			}
 		}
@@ -812,7 +726,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		}
 		else
 		{
-			this->infoBox->Items->Add(L"Found " + convertToStringClass(idx_game[game]));
+			this->infoBox->Items->Add(L"Found " + globalStrings->GetString(convertToStringClass(idx_game[game])));
 			this->IndexedColor->Add(System::Drawing::Brushes::Lime);
 
 			// Disable buttons
@@ -875,22 +789,22 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			
 			calculateDRCPoints();
 
-			this->diffLabel->Text = (L"Difficulty: " + convertToStringClass(idx_difficulty[difficulty]));
+			this->diffLabel->Text = (globalStrings->GetString(L"Difficulty") + L": " + convertToStringClass(idx_difficulty[difficulty]));
 
 			switch (game)
 			{
 			case 12:	// GFW
-				this->shottypeLabel->Text = (L"Route: " + convertToStringClass(shottype));
+				this->shottypeLabel->Text = (globalStrings->GetString(L"Route") + L": " + globalStrings->GetString(convertToStringClass(shottype)));
 				break;
 			case 16:	// HSiFS
-				this->shottypeLabel->Text = (L"Shot: " + convertToStringClass(shottype));	// Shottype is too long!
+				this->shottypeLabel->Text = (globalStrings->GetString(L"HSiFS_Shottype") + L": " + globalStrings->GetString(convertToStringClass(shottype)));	// Shottype is too long!
 				break;
 			default:
-				this->shottypeLabel->Text = (L"Shottype: " + convertToStringClass(shottype));
+				this->shottypeLabel->Text = (globalStrings->GetString(L"Shottype") + L": " + globalStrings->GetString(convertToStringClass(shottype)));
 				break;
 			}
 
-			this->missesLabel->Text = (L"Misses: " + misses);
+			this->missesLabel->Text = (globalStrings->GetString(L"Misses") + L": " + misses);
 			if (strcmp(idx_game[game], "PoDD") == 0 || strcmp(idx_game[game], "PoFV") == 0)	// Phantasmagoria
 			{
 				if (no_charge)
@@ -907,13 +821,13 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			else
 			{
 				this->bombsLabel->ForeColor = Drawing::Color::Lime;
-				this->bombsLabel->Text = (L"Bombs: " + bombs);
+				this->bombsLabel->Text = (globalStrings->GetString(L"Bombs") + L": " + bombs);
 			}
 
 			switch (game)
 			{
 			case 6:		// PCB
-				this->extraLabel0->Text = (L"Border Breaks: " + border_breaks);
+				this->extraLabel0->Text = (globalStrings->GetString(L"BorderBreaks") + L": " + border_breaks);
 				break;
 			case 7:		// IN
 				printFinalStage();
@@ -925,10 +839,10 @@ namespace RealTimeDRCPointsDisplayerGUI {
 				this->extraLabel3->Text = (L"" + ufos_rainbow);
 				break;
 			case 13:	// TD
-				this->extraLabel0->Text = (L"Trances: " + trances);
+				this->extraLabel0->Text = (globalStrings->GetString(L"Trances") + L": " + trances);
 				break;
 			case 16:	// HSiFS
-				this->extraLabel0->Text = (L"Releases: " + releases);
+				this->extraLabel0->Text = (globalStrings->GetString(L"Releases") + L": " + releases);
 				break;
 			case 17:	// WBaWC
 				this->extraLabel0->Text = (L"" + wolves);
@@ -982,10 +896,10 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			optionalLabel->Text = System::String::Format("{0:n0}", getWR());
 			break;
 		case 3:
-			optionalLabel->Text = L"Survival Points: " + roundf(drcpoints_survival);
+			optionalLabel->Text = globalStrings->GetString(L"Survival Points") + L": " + roundf(drcpoints_survival);
 			break;
 		case 4:
-			optionalLabel->Text = L"Scoring Points: " + roundf(drcpoints_scoring);
+			optionalLabel->Text = globalStrings->GetString(L"Scoring Points") + L": " + roundf(drcpoints_scoring);
 			break;
 		default:
 			break;
