@@ -126,8 +126,9 @@ namespace RealTimeDRCPointsDisplayerGUI {
 private: System::Windows::Forms::Label^ label14;
 private: System::Windows::Forms::RadioButton^ noneRB1;
 private: System::Windows::Forms::RadioButton^ noneRB2;
+private: System::Windows::Forms::NumericUpDown^ RBOffset;
 
-private: System::Windows::Forms::NumericUpDown^ roar_breaksOffset;
+
 
 
 
@@ -171,7 +172,7 @@ private: System::Windows::Forms::NumericUpDown^ roar_breaksOffset;
 			this->label10 = (gcnew System::Windows::Forms::Label());
 			this->tab_WBaWC = (gcnew System::Windows::Forms::TabPage());
 			this->label14 = (gcnew System::Windows::Forms::Label());
-			this->roar_breaksOffset = (gcnew System::Windows::Forms::NumericUpDown());
+			this->RBOffset = (gcnew System::Windows::Forms::NumericUpDown());
 			this->wolvesOffset = (gcnew System::Windows::Forms::NumericUpDown());
 			this->label11 = (gcnew System::Windows::Forms::Label());
 			this->ottersOffset = (gcnew System::Windows::Forms::NumericUpDown());
@@ -215,7 +216,7 @@ private: System::Windows::Forms::NumericUpDown^ roar_breaksOffset;
 			this->tab_HSiFS->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->releasesOffset))->BeginInit();
 			this->tab_WBaWC->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->roar_breaksOffset))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->RBOffset))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->wolvesOffset))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ottersOffset))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->eaglesOffset))->BeginInit();
@@ -549,7 +550,7 @@ private: System::Windows::Forms::NumericUpDown^ roar_breaksOffset;
 			// tab_WBaWC
 			// 
 			this->tab_WBaWC->Controls->Add(this->label14);
-			this->tab_WBaWC->Controls->Add(this->roar_breaksOffset);
+			this->tab_WBaWC->Controls->Add(this->RBOffset);
 			this->tab_WBaWC->Controls->Add(this->wolvesOffset);
 			this->tab_WBaWC->Controls->Add(this->label11);
 			this->tab_WBaWC->Controls->Add(this->ottersOffset);
@@ -573,15 +574,15 @@ private: System::Windows::Forms::NumericUpDown^ roar_breaksOffset;
 			this->label14->TabIndex = 19;
 			this->label14->Text = L"Roar Breaks";
 			// 
-			// roar_breaksOffset
+			// RBOffset
 			// 
-			this->roar_breaksOffset->Location = System::Drawing::Point(6, 90);
-			this->roar_breaksOffset->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 50, 0, 0, 0 });
-			this->roar_breaksOffset->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 50, 0, 0, System::Int32::MinValue });
-			this->roar_breaksOffset->Name = L"roar_breaksOffset";
-			this->roar_breaksOffset->Size = System::Drawing::Size(54, 22);
-			this->roar_breaksOffset->TabIndex = 20;
-			this->roar_breaksOffset->TextAlign = System::Windows::Forms::HorizontalAlignment::Right;
+			this->RBOffset->Location = System::Drawing::Point(6, 90);
+			this->RBOffset->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 50, 0, 0, 0 });
+			this->RBOffset->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 50, 0, 0, System::Int32::MinValue });
+			this->RBOffset->Name = L"RBOffset";
+			this->RBOffset->Size = System::Drawing::Size(54, 22);
+			this->RBOffset->TabIndex = 20;
+			this->RBOffset->TextAlign = System::Windows::Forms::HorizontalAlignment::Right;
 			// 
 			// wolvesOffset
 			// 
@@ -881,7 +882,7 @@ private: System::Windows::Forms::NumericUpDown^ roar_breaksOffset;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->releasesOffset))->EndInit();
 			this->tab_WBaWC->ResumeLayout(false);
 			this->tab_WBaWC->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->roar_breaksOffset))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->RBOffset))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->wolvesOffset))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ottersOffset))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->eaglesOffset))->EndInit();
@@ -919,7 +920,7 @@ private: System::Windows::Forms::NumericUpDown^ roar_breaksOffset;
 		this->wolvesOffset->Value = config["InitialWolves"].get<int16_t>();
 		this->ottersOffset->Value = config["InitialOtters"].get<int16_t>();
 		this->eaglesOffset->Value = config["InitialEagles"].get<int16_t>();
-		this->roar_breaksOffset->Value = config["InitialRoarBreaks"].get<int16_t>();
+		this->RBOffset->Value = config["InitialRoarBreaks"].get<int16_t>();
 	}
 
 	private: System::Void SaveConfig()
@@ -945,7 +946,7 @@ private: System::Windows::Forms::NumericUpDown^ roar_breaksOffset;
 		config["InitialWolves"] = Convert::ToInt16(this->wolvesOffset->Value);
 		config["InitialOtters"] = Convert::ToInt16(this->ottersOffset->Value);
 		config["InitialEagles"] = Convert::ToInt16(this->eaglesOffset->Value);
-		config["InitialRoarBreaks"] = Convert::ToInt16(this->roar_breaksOffset->Value);
+		config["InitialRoarBreaks"] = Convert::ToInt16(this->RBOffset->Value);
 
 		// must be done here
 		no_charge = this->noChargeCB->Checked;
@@ -979,7 +980,7 @@ private: System::Windows::Forms::NumericUpDown^ roar_breaksOffset;
 		this->wolvesOffset->Value = 0;
 		this->ottersOffset->Value = 0;
 		this->eaglesOffset->Value = 0;
-		this->roar_breaksOffset->Value = 0;
+		this->RBOffset->Value = 0;
 
 		this->SaveConfig();
 	}

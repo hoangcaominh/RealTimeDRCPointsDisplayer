@@ -25,6 +25,9 @@ constexpr auto GAME_AVAILABLE = 18;
 // a handle for found game
 HANDLE gameProc;
 
+DWORD procStatus;
+DWORD GetExitCodeReturn;
+
 std::wstring gameList[GAME_AVAILABLE] = {
 	L"(HRtP)",
 	L"(SoEW)",

@@ -4,9 +4,6 @@
 #include "ProcessMemory.h"
 #include "settings.h"
 
-DWORD procStatus;
-DWORD GetExitCodeReturn;
-
 namespace RealTimeDRCPointsDisplayerGUI {
 
 	using namespace System;
@@ -472,7 +469,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 				// check if there is a new upadte
 				if (curVersion->CompareTo(newVersion) < 0)
 				{
-					if (MessageBox::Show("New version detected. Proceed to download page?", "Update", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == Windows::Forms::DialogResult::Yes)
+					if (MessageBox::Show("Version " + newVersion + " is available. Proceed to download page?", "Update", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == Windows::Forms::DialogResult::Yes)
 					{
 						Diagnostics::Process::Start("https://github.com/hoangcaominh/RealTimeDRCPointsDisplayer/releases/latest");
 					}
