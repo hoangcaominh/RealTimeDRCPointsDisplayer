@@ -964,8 +964,8 @@ private: System::Windows::Forms::NumericUpDown^ RBOffset;
 		this->bombsOffset->Value = 0;
 
 		// Optional offsets
-		SetOptionalBoxValue(2, this->noneRB1, this->scoreRB1, this->wrRB1, this->survivalRB1, this->scoringRB1);
-		SetOptionalBoxValue(3, this->noneRB2, this->scoreRB2, this->wrRB2, this->survivalRB2, this->scoringRB2);
+		SetOptionalBoxValue(3, this->noneRB1, this->scoreRB1, this->wrRB1, this->survivalRB1, this->scoringRB1);
+		SetOptionalBoxValue(4, this->noneRB2, this->scoreRB2, this->wrRB2, this->survivalRB2, this->scoringRB2);
 
 		// Other offsets
 		this->BBOffset->Value = 0;

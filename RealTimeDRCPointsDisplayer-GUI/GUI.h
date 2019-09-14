@@ -893,10 +893,10 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			optionalLabel->Text = System::String::Format("{0:n0}", getWR());
 			break;
 		case 3:
-			optionalLabel->Text = globalStrings->GetString(L"Survival Points") + L": " + roundf(drcpoints_survival);
+			optionalLabel->Text = globalStrings->GetString(L"SurvivalPoints") + L": " + roundf(drcpoints_survival);
 			break;
 		case 4:
-			optionalLabel->Text = globalStrings->GetString(L"Scoring Points") + L": " + roundf(drcpoints_scoring);
+			optionalLabel->Text = globalStrings->GetString(L"ScoringPoints") + L": " + roundf(drcpoints_scoring);
 			break;
 		default:
 			break;
