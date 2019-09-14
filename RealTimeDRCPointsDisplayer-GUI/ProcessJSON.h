@@ -48,7 +48,7 @@ bool keyExist(json outer_object, const char* key)
 BOOL Download_rubrics()
 {
 	// result of downloading rubric file
-	HRESULT hResult = URLDownloadToFile(NULL, _T("https://raw.githubusercontent.com/MaribelHearn/MaribelHearn.com/master/json/rubrics.json"), _T("rubrics.json"), 0, NULL);
+	HRESULT hResult = URLDownloadToFile(NULL, _T("https://maribelhearn.com/json/rubrics.json"), _T("rubrics.json"), 0, NULL);
 
 	switch (hResult)
 	{
@@ -75,7 +75,7 @@ BOOL Download_rubrics()
 BOOL Download_wrs()
 {
 	// result of downloading world record file (temporary url)
-	HRESULT hResult = URLDownloadToFile(NULL, _T("https://raw.githubusercontent.com/MaribelHearn/MaribelHearn.com/master/json/wrlist.json"), _T("wrlist.json"), 0, NULL);
+	HRESULT hResult = URLDownloadToFile(NULL, _T("https://maribelhearn.com/json/wrlist.json"), _T("wrlist.json"), 0, NULL);
 
 	switch (hResult)
 	{
