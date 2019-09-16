@@ -1008,7 +1008,7 @@ private: System::Windows::Forms::NumericUpDown^ RBOffset;
 	}
 
 	private: void SetOptionalBoxValue(uint8_t value, 
-		System::Windows::Forms::RadioButton^ % a, 
+		System::Windows::Forms::RadioButton^% a, 
 		System::Windows::Forms::RadioButton^% b, 
 		System::Windows::Forms::RadioButton^% c, 
 		System::Windows::Forms::RadioButton^% d, 
