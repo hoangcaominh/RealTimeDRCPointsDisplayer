@@ -418,8 +418,8 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		}
 		else
 		{
-			InfoBoxAddMessage(L"Finding game, please wait warmly...", System::Drawing::Brushes::White);
-			this->findButton->Text = L"Cancel";
+			InfoBoxAddMessage(globalStrings->GetString(L"Find_Start"), System::Drawing::Brushes::White);
+			this->findButton->Text = globalStrings->GetString(L"FindButtonTextCancel");
 
 			this->findGameThread->RunWorkerAsync();
 		}
@@ -626,7 +626,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		}
 		else
 		{
-			this->warningLabel->Text = L"Warning: Offsets on!";
+			this->warningLabel->Text = globalStrings->GetString(L"OffsetWarning");
 			this->Height = 399;
 		}
 	}
@@ -705,53 +705,53 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->updateRubrics->Enabled = false;
 			this->findButton->Enabled = false;
 			InfoBoxAddMessage(this->sysTime->Now.ToString("[h:mm:ss]"), System::Drawing::Brushes::White);
-			InfoBoxAddMessage(L"Downloading rubric file...", System::Drawing::Brushes::White);
+			InfoBoxAddMessage(globalStrings->GetString(L"DownloadRubrics"), System::Drawing::Brushes::White);
 		}
 		else if (e->ProgressPercentage <= 25)
 		{
 			if (e->ProgressPercentage == 25)
 			{
-				InfoBoxAddMessage(L"Successfully downloaded rubric file.", System::Drawing::Brushes::Lime);
+				InfoBoxAddMessage(globalStrings->GetString(L"DownloadRubricsSuccess"), System::Drawing::Brushes::Lime);
 			}
 			else
 			{
-				InfoBoxAddMessage(L"Failed to download rubric file. Returned: " + updateRubricsFailed, System::Drawing::Brushes::Red);
+				InfoBoxAddMessage(globalStrings->GetString(L"DownloadRubricsFail") + updateRubricsFailed, System::Drawing::Brushes::Red);
 			}
-			InfoBoxAddMessage(L"Downloading world record file...", System::Drawing::Brushes::White);
+			InfoBoxAddMessage(globalStrings->GetString(L"DownloadWRs"), System::Drawing::Brushes::White);
 		}
 		else if (e->ProgressPercentage <= 50)
 		{
 			if (e->ProgressPercentage == 50)
 			{
-				InfoBoxAddMessage(L"Successfully downloaded world record file.", System::Drawing::Brushes::Lime);
+				InfoBoxAddMessage(globalStrings->GetString(L"DownloadWRsSuccess"), System::Drawing::Brushes::Lime);
 			}
 			else
 			{
-				InfoBoxAddMessage(L"Failed to download world record file. Returned: " + updateRubricsFailed, System::Drawing::Brushes::Red);
+				InfoBoxAddMessage(globalStrings->GetString(L"DownloadWRsFail") + updateRubricsFailed, System::Drawing::Brushes::Red);
 			}
-			InfoBoxAddMessage(L"Parsing rubric file...", System::Drawing::Brushes::White);
+			InfoBoxAddMessage(globalStrings->GetString(L"ParseRubrics"), System::Drawing::Brushes::White);
 		}
 		else if (e->ProgressPercentage <= 75)
 		{
 			if (e->ProgressPercentage == 75)
 			{
-				InfoBoxAddMessage(L"Successfully parsed rubric file.", System::Drawing::Brushes::Lime);
+				InfoBoxAddMessage(globalStrings->GetString(L"ParseRubricsSuccess"), System::Drawing::Brushes::Lime);
 			}
 			else
 			{
-				InfoBoxAddMessage(L"Failed to parse rubric file.", System::Drawing::Brushes::Red);
+				InfoBoxAddMessage(globalStrings->GetString(L"ParseRubricsFail"), System::Drawing::Brushes::Red);
 			}
-			InfoBoxAddMessage(L"Parsing world record file...", System::Drawing::Brushes::White);
+			InfoBoxAddMessage(globalStrings->GetString(L"ParseWRs"), System::Drawing::Brushes::White);
 		}
 		else
 		{
 			if (e->ProgressPercentage == 100)
 			{
-				InfoBoxAddMessage(L"Successfully parsed world record file.", System::Drawing::Brushes::Lime);
+				InfoBoxAddMessage(globalStrings->GetString(L"ParseWRsSuccess"), System::Drawing::Brushes::Lime);
 			}
 			else
 			{
-				InfoBoxAddMessage(L"Failed to parse world record file.", System::Drawing::Brushes::Red);
+				InfoBoxAddMessage(globalStrings->GetString(L"ParseWrsFail"), System::Drawing::Brushes::Red);
 			}
 		}
 	}
@@ -786,8 +786,8 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		}
 		else if (e->Cancelled)
 		{
-			InfoBoxAddMessage(L"Stopped finding game", System::Drawing::Brushes::Yellow);
-			this->findButton->Text = L"Find";
+			InfoBoxAddMessage(globalStrings->GetString(L"FindCancel"), System::Drawing::Brushes::Yellow);
+			this->findButton->Text = globalStrings->GetString(L"FindButtonTextFind");
 		}
 		else
 		{
@@ -795,7 +795,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 
 			// Disable buttons
 			this->updateRubrics->Enabled = false;
-			this->findButton->Text = L"Find";
+			this->findButton->Text = globalStrings->GetString(L"FindButtonTextFind");
 			this->findButton->Enabled = false;
 
 			// Expand window
@@ -803,7 +803,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 
 			if (!GetExitCodeProcess(gameProc, &procStatus))
 			{
-				InfoBoxAddMessage(L"Get Exit Code Failed. Error: " + GetLastError(), System::Drawing::Brushes::Red);
+				InfoBoxAddMessage(globalStrings->GetString(L"GetExitCodeFail") + GetLastError(), System::Drawing::Brushes::Red);
 			}
 
 			// Inititalize UI
@@ -839,7 +839,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		if (!GetExitCodeReturn)
 		{
 			InfoBoxAddMessage(this->sysTime->Now.ToString("[h:mm:ss]"), System::Drawing::Brushes::White);
-			InfoBoxAddMessage(L"Get Exit Code Failed. Error: " + GetLastError(), System::Drawing::Brushes::Red);
+			InfoBoxAddMessage(globalStrings->GetString(L"GetExitCodeFail") + GetLastError(), System::Drawing::Brushes::Red);
 		}
 
 		if (procStatus == STILL_ACTIVE)
@@ -856,7 +856,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 				this->shottypeLabel->Text = (globalStrings->GetString(L"Route") + L": " + globalStrings->GetString(convertToStringClass(shottype)));
 				break;
 			case 16:	// HSiFS
-				this->shottypeLabel->Text = (globalStrings->GetString(L"HSiFS_Shottype") + L": " + globalStrings->GetString(convertToStringClass(shottype)));	// Shottype is too long!
+				this->shottypeLabel->Text = (globalStrings->GetString(L"HSiFSShottype") + L": " + globalStrings->GetString(convertToStringClass(shottype)));	// Shottype is too long!
 				break;
 			default:
 				this->shottypeLabel->Text = (globalStrings->GetString(L"Shottype") + L": " + globalStrings->GetString(convertToStringClass(shottype)));
@@ -869,12 +869,12 @@ namespace RealTimeDRCPointsDisplayerGUI {
 				if (no_charge)
 				{
 					this->bombsLabel->ForeColor = Drawing::Color::Lime;
-					this->bombsLabel->Text = L"NoCharge";
+					this->bombsLabel->Text = globalStrings->GetString(L"NoCharge");
 				}
 				else
 				{
 					this->bombsLabel->ForeColor = Drawing::Color::Red;
-					this->bombsLabel->Text = L"Charged";
+					this->bombsLabel->Text = globalStrings->GetString(L"Charged");
 				}
 			}
 			else
@@ -930,7 +930,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			// Set the window to default
 			RealTimeDRCPointsDisplayerGUI::GUI::Width = 299;
 			InfoBoxAddMessage(this->sysTime->Now.ToString("[h:mm:ss]"), System::Drawing::Brushes::White);
-			InfoBoxAddMessage(L"Game not found, stopped reading", System::Drawing::Brushes::Yellow);
+			InfoBoxAddMessage(globalStrings->GetString(L"GameNotFound"), System::Drawing::Brushes::Yellow);
 
 			// Enable buttons
 			this->updateRubrics->Enabled = true;

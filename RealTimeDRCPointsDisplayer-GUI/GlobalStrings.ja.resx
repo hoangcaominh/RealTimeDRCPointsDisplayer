@@ -147,6 +147,9 @@
   <data name="BorderTeam" xml:space="preserve">
     <value>霊夢＆紫</value>
   </data>
+  <data name="Charged" xml:space="preserve">
+    <value>チャージ</value>
+  </data>
   <data name="Cirno" xml:space="preserve">
     <value>チルノ</value>
   </data>
@@ -168,6 +171,24 @@
   <data name="Difficulty" xml:space="preserve">
     <value>難易度</value>
   </data>
+  <data name="DownloadRubrics" xml:space="preserve">
+    <value>Downloading rubric file...</value>
+  </data>
+  <data name="DownloadRubricsFail" xml:space="preserve">
+    <value>Failed to download rubric file. Returned:</value>
+  </data>
+  <data name="DownloadRubricsSuccess" xml:space="preserve">
+    <value>Successfully downloaded rubric file.</value>
+  </data>
+  <data name="DownloadWRs" xml:space="preserve">
+    <value>Downloading world record file...</value>
+  </data>
+  <data name="DownloadWRsFail" xml:space="preserve">
+    <value>Failed to download world record file. Returned:</value>
+  </data>
+  <data name="DownloadWRsSuccess" xml:space="preserve">
+    <value>Successfully downloaded world record file.</value>
+  </data>
   <data name="Eiki" xml:space="preserve">
     <value>映姫</value>
   </data>
@@ -176,6 +197,27 @@
   </data>
   <data name="Final" xml:space="preserve">
     <value>ルート</value>
+  </data>
+  <data name="FindButtonTextCancel" xml:space="preserve">
+    <value>キャンセル</value>
+  </data>
+  <data name="FindButtonTextFind" xml:space="preserve">
+    <value>見つける</value>
+  </data>
+  <data name="FindCancel" xml:space="preserve">
+    <value>Stopped finding game</value>
+  </data>
+  <data name="FindStart" xml:space="preserve">
+    <value>Finding game, please wait warmly...</value>
+  </data>
+  <data name="Found" xml:space="preserve">
+    <value>見当たる</value>
+  </data>
+  <data name="GameNotFound" xml:space="preserve">
+    <value>Game not found, stopped reading</value>
+  </data>
+  <data name="GetExitCodeFail" xml:space="preserve">
+    <value>Get Exit Code Failed. Error:</value>
   </data>
   <data name="GFW" xml:space="preserve">
     <value>妖精大戦争</value>
@@ -189,7 +231,7 @@
   <data name="HSiFS" xml:space="preserve">
     <value>東方天空璋</value>
   </data>
-  <data name="HSiFS_Shottype" xml:space="preserve">
+  <data name="HSiFSShottype" xml:space="preserve">
     <value>キャラ</value>
   </data>
   <data name="IN" xml:space="preserve">
@@ -275,6 +317,27 @@
   </data>
   <data name="NoCharge" xml:space="preserve">
     <value>ノーチャージ</value>
+  </data>
+  <data name="OffsetWarning" xml:space="preserve">
+    <value>Warning: Offsets on!</value>
+  </data>
+  <data name="ParseRubrics" xml:space="preserve">
+    <value>Parsing rubric file...</value>
+  </data>
+  <data name="ParseRubricsFail" xml:space="preserve">
+    <value>Failed to parse rubric file. Returned:</value>
+  </data>
+  <data name="ParseRubricsSuccess" xml:space="preserve">
+    <value>Successfully parsed rubric file.</value>
+  </data>
+  <data name="ParseWRs" xml:space="preserve">
+    <value>Parsing world record file...</value>
+  </data>
+  <data name="ParseWrsFail" xml:space="preserve">
+    <value>Failed to parse world record file. Returned:</value>
+  </data>
+  <data name="ParseWRsSuccess" xml:space="preserve">
+    <value>Successfully parsed world record file.</value>
   </data>
   <data name="PCB" xml:space="preserve">
     <value>東方妖々夢</value>
