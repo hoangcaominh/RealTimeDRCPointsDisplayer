@@ -198,16 +198,16 @@
   <data name="Final" xml:space="preserve">
     <value>Final</value>
   </data>
-  <data name="FindButtonText_Cancel" xml:space="preserve">
+  <data name="FindButtonTextCancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
-  <data name="FindButtonText_Find" xml:space="preserve">
+  <data name="FindButtonTextFind" xml:space="preserve">
     <value>Find</value>
   </data>
-  <data name="Find_Cancel" xml:space="preserve">
+  <data name="FindCancel" xml:space="preserve">
     <value>Stopped finding game</value>
   </data>
-  <data name="Find_Start" xml:space="preserve">
+  <data name="FindStart" xml:space="preserve">
     <value>Finding game, please wait warmly...</value>
   </data>
   <data name="Found" xml:space="preserve">
@@ -231,7 +231,7 @@
   <data name="HSiFS" xml:space="preserve">
     <value>HSiFS</value>
   </data>
-  <data name="HSiFS_Shottype" xml:space="preserve">
+  <data name="HSiFSShottype" xml:space="preserve">
     <value>Shot</value>
   </data>
   <data name="IN" xml:space="preserve">

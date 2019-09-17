@@ -418,7 +418,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		}
 		else
 		{
-			InfoBoxAddMessage(globalStrings->GetString(L"Find_Start"), System::Drawing::Brushes::White);
+			InfoBoxAddMessage(globalStrings->GetString(L"FindStart"), System::Drawing::Brushes::White);
 			this->findButton->Text = globalStrings->GetString(L"FindButtonTextCancel");
 
 			this->findGameThread->RunWorkerAsync();
