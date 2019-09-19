@@ -176,6 +176,9 @@
     <EmbeddedResource Include="GUI.resx">
       <DependentUpon>GUI.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="settings.ja.resx">
+      <DependentUpon>settings.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="settings.resx">
       <DependentUpon>settings.h</DependentUpon>
     </EmbeddedResource>

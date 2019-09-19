@@ -23,6 +23,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		GUI(void)
 		{
 			if (!Load_config()) { MessageBox::Show("Error loading config file!", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error); }
+			if (config["lang"] == "ja") { System::Threading::Thread::CurrentThread->CurrentUICulture = gcnew System::Globalization::CultureInfo(L"ja-JP"); }
 			CheckNewVersion();
 			InitializeComponent();
 			// InitWAV();
@@ -399,12 +400,17 @@ namespace RealTimeDRCPointsDisplayerGUI {
 	{
 		this->infoBox->Items->Clear();
 		this->IndexedColor->Clear();
+
+		System::Threading::Thread::CurrentThread->CurrentUICulture = gcnew System::Globalization::CultureInfo(L"ja-JP");
+		Application::Restart();
+		Environment::Exit(0);
 	}
 
 	private: System::Void settings_Click(System::Object^  sender, System::EventArgs^  e)
 	{
 		RealTimeDRCPointsDisplayerGUI::settings^ settingsForm = gcnew RealTimeDRCPointsDisplayerGUI::settings();
-		settingsForm->ShowDialog();		
+		settingsForm->ShowDialog();
+		delete settingsForm;
 	}
 
 	private: System::Void findGame_Click(System::Object^  sender, System::EventArgs^  e)
