@@ -117,520 +117,187 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="updateRubrics.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 256</value>
-  </data>
-  <data name="updateRubrics.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 23</value>
-  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="updateRubrics.TabIndex" type="System.Int32, mscorlib">
+  <data name="diffLabel.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
-  </data>
-  <data name="updateRubrics.Text" xml:space="preserve">
-    <value>Update Rubrics</value>
-  </data>
-  <data name="&gt;&gt;updateRubrics.Name" xml:space="preserve">
-    <value>updateRubrics</value>
-  </data>
-  <data name="&gt;&gt;updateRubrics.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;updateRubrics.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;updateRubrics.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="infoBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 12</value>
-  </data>
-  <data name="infoBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>266, 238</value>
-  </data>
-  <data name="infoBox.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;infoBox.Name" xml:space="preserve">
-    <value>infoBox</value>
-  </data>
-  <data name="&gt;&gt;infoBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;infoBox.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;infoBox.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="clear.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 285</value>
-  </data>
-  <data name="clear.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 23</value>
-  </data>
-  <data name="clear.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="clear.Text" xml:space="preserve">
-    <value>Clear Log</value>
-  </data>
-  <data name="&gt;&gt;clear.Name" xml:space="preserve">
-    <value>clear</value>
-  </data>
-  <data name="&gt;&gt;clear.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;clear.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;clear.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="findButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 314</value>
-  </data>
-  <data name="findButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>266, 23</value>
-  </data>
-  <data name="findButton.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="findButton.Text" xml:space="preserve">
-    <value>Find</value>
-  </data>
-  <data name="&gt;&gt;findButton.Name" xml:space="preserve">
-    <value>findButton</value>
   </data>
   <data name="&gt;&gt;findButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;findButton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;findButton.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="extraLabel3.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 24pt</value>
-  </data>
-  <data name="extraLabel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>261, 162</value>
-  </data>
-  <data name="extraLabel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 54</value>
-  </data>
-  <data name="extraLabel3.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="extraLabel3.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="extraLabel3.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;extraLabel3.Name" xml:space="preserve">
-    <value>extraLabel3</value>
-  </data>
-  <data name="&gt;&gt;extraLabel3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;extraLabel3.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;extraLabel3.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="extraLabel2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 24pt</value>
   </data>
-  <data name="extraLabel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>174, 162</value>
+  <data name="clear.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 23</value>
   </data>
-  <data name="extraLabel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 54</value>
-  </data>
-  <data name="extraLabel2.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="extraLabel2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="extraLabel2.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;extraLabel2.Name" xml:space="preserve">
-    <value>extraLabel2</value>
-  </data>
-  <data name="&gt;&gt;extraLabel2.Type" xml:space="preserve">
+  <data name="&gt;&gt;shottypeLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;extraLabel2.Parent" xml:space="preserve">
-    <value>panel1</value>
+  <data name="settings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>178, 256</value>
   </data>
-  <data name="&gt;&gt;extraLabel2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="extraLabel1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 24pt</value>
-  </data>
-  <data name="extraLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>87, 162</value>
-  </data>
-  <data name="extraLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 54</value>
-  </data>
-  <data name="extraLabel1.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="extraLabel1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="extraLabel1.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;extraLabel1.Name" xml:space="preserve">
-    <value>extraLabel1</value>
-  </data>
-  <data name="&gt;&gt;extraLabel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;extraLabel1.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;extraLabel1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;settings.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="optionalLabel2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 24pt</value>
+  <data name="findButton.Text" xml:space="preserve">
+    <value>Find</value>
   </data>
-  <data name="optionalLabel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 270</value>
+  <data name="warningLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 339</value>
   </data>
-  <data name="optionalLabel2.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="shottypeLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>348, 54</value>
-  </data>
-  <data name="optionalLabel2.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="optionalLabel2.Text" xml:space="preserve">
-    <value>Optional 2</value>
   </data>
   <data name="optionalLabel2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
   </data>
-  <data name="&gt;&gt;optionalLabel2.Name" xml:space="preserve">
-    <value>optionalLabel2</value>
-  </data>
-  <data name="&gt;&gt;optionalLabel2.Type" xml:space="preserve">
+  <data name="&gt;&gt;diffLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;optionalLabel2.Parent" xml:space="preserve">
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
     <value>panel1</value>
   </data>
-  <data name="&gt;&gt;optionalLabel2.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="optionalLabel1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 24pt</value>
-  </data>
-  <data name="optionalLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 216</value>
-  </data>
-  <data name="optionalLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>348, 54</value>
-  </data>
-  <data name="optionalLabel1.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="optionalLabel1.Text" xml:space="preserve">
-    <value>Optional 1</value>
-  </data>
-  <data name="optionalLabel1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;optionalLabel1.Name" xml:space="preserve">
-    <value>optionalLabel1</value>
-  </data>
-  <data name="&gt;&gt;optionalLabel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;optionalLabel1.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;optionalLabel1.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="bombsLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 24pt</value>
-  </data>
-  <data name="bombsLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>174, 108</value>
-  </data>
-  <data name="bombsLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 54</value>
-  </data>
-  <data name="bombsLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="bombsLabel.Text" xml:space="preserve">
-    <value>Bombs</value>
-  </data>
-  <data name="bombsLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;bombsLabel.Name" xml:space="preserve">
-    <value>bombsLabel</value>
-  </data>
-  <data name="&gt;&gt;bombsLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="updateRubrics.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 256</value>
   </data>
   <data name="&gt;&gt;bombsLabel.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
-  <data name="&gt;&gt;bombsLabel.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="&gt;&gt;bkgWorker.Name" xml:space="preserve">
+    <value>bkgWorker</value>
   </data>
-  <data name="missesLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 24pt</value>
+  <data name="&gt;&gt;about.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="missesLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 108</value>
-  </data>
-  <data name="missesLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 54</value>
-  </data>
-  <data name="missesLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="missesLabel.Text" xml:space="preserve">
-    <value>Misses</value>
-  </data>
-  <data name="missesLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="extraLabel3.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
   </data>
-  <data name="&gt;&gt;missesLabel.Name" xml:space="preserve">
-    <value>missesLabel</value>
-  </data>
-  <data name="&gt;&gt;missesLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;missesLabel.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;missesLabel.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="shottypeLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 24pt</value>
-  </data>
-  <data name="shottypeLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 54</value>
-  </data>
-  <data name="shottypeLabel.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="extraLabel0.Size" type="System.Drawing.Size, System.Drawing">
     <value>348, 54</value>
   </data>
   <data name="shottypeLabel.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="shottypeLabel.Text" xml:space="preserve">
-    <value>Shottype</value>
+  <data name="infoBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>326, 238</value>
   </data>
-  <data name="shottypeLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
+  <data name="&gt;&gt;UpdateNewVersion.Name" xml:space="preserve">
+    <value>UpdateNewVersion</value>
   </data>
-  <data name="&gt;&gt;shottypeLabel.Name" xml:space="preserve">
-    <value>shottypeLabel</value>
-  </data>
-  <data name="&gt;&gt;shottypeLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;shottypeLabel.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;shottypeLabel.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="diffLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 24pt</value>
-  </data>
-  <data name="diffLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="diffLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>348, 54</value>
-  </data>
-  <data name="diffLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="diffLabel.Text" xml:space="preserve">
-    <value>Difficulty</value>
-  </data>
-  <data name="diffLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;diffLabel.Name" xml:space="preserve">
-    <value>diffLabel</value>
-  </data>
-  <data name="&gt;&gt;diffLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;diffLabel.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;diffLabel.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="extraLabel0.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 24pt</value>
-  </data>
-  <data name="extraLabel0.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 162</value>
-  </data>
-  <data name="extraLabel0.Size" type="System.Drawing.Size, System.Drawing">
-    <value>348, 54</value>
-  </data>
-  <data name="extraLabel0.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="extraLabel0.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;extraLabel0.Name" xml:space="preserve">
-    <value>extraLabel0</value>
-  </data>
-  <data name="&gt;&gt;extraLabel0.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;extraLabel0.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;extraLabel0.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>284, 12</value>
-  </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>348, 324</value>
-  </data>
-  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="settings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>148, 256</value>
-  </data>
-  <data name="settings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 23</value>
-  </data>
-  <data name="settings.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="settings.Text" xml:space="preserve">
-    <value>Settings</value>
-  </data>
-  <data name="&gt;&gt;settings.Name" xml:space="preserve">
-    <value>settings</value>
-  </data>
-  <data name="&gt;&gt;settings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;settings.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;settings.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="extraLabel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>174, 162</value>
   </data>
   <data name="about.Location" type="System.Drawing.Point, System.Drawing">
-    <value>148, 285</value>
+    <value>178, 285</value>
   </data>
-  <data name="about.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 23</value>
-  </data>
-  <data name="about.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="about.Text" xml:space="preserve">
-    <value>About</value>
-  </data>
-  <data name="&gt;&gt;about.Name" xml:space="preserve">
-    <value>about</value>
-  </data>
-  <data name="&gt;&gt;about.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;about.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;about.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <metadata name="bkgWorker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="UpdateNewVersion.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>129, 17</value>
-  </metadata>
-  <data name="warningLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 339</value>
-  </data>
-  <data name="warningLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>266, 18</value>
-  </data>
-  <data name="warningLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="warningLabel.Text" xml:space="preserve">
-    <value>Warning: Offsets on!</value>
-  </data>
-  <data name="warningLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;warningLabel.Name" xml:space="preserve">
-    <value>warningLabel</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Live DRC Points Calculator</value>
   </data>
   <data name="&gt;&gt;warningLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;warningLabel.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;findGameThread.Type" xml:space="preserve">
+    <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;warningLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;clear.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <metadata name="checkOffsetsOn.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>286, 17</value>
-  </metadata>
-  <metadata name="findGameThread.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>423, 17</value>
-  </metadata>
-  <metadata name="updateRubricsThread.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>565, 17</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>ja-JP</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+  <data name="diffLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>348, 54</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>645, 360</value>
+  <data name="missesLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;bombsLabel.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="diffLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="optionalLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>348, 54</value>
+  </data>
+  <data name="&gt;&gt;diffLabel.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="optionalLabel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>348, 54</value>
+  </data>
+  <data name="extraLabel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 54</value>
+  </data>
+  <data name="optionalLabel2.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;extraLabel1.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="bombsLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;findButton.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="diffLabel.Text" xml:space="preserve">
+    <value>Difficulty</value>
+  </data>
+  <data name="&gt;&gt;diffLabel.Name" xml:space="preserve">
+    <value>diffLabel</value>
+  </data>
+  <data name="bombsLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>344, 12</value>
+  </data>
+  <data name="bombsLabel.Text" xml:space="preserve">
+    <value>Bombs</value>
+  </data>
+  <data name="&gt;&gt;about.Name" xml:space="preserve">
+    <value>about</value>
+  </data>
+  <data name="&gt;&gt;checkOffsetsOn.Name" xml:space="preserve">
+    <value>checkOffsetsOn</value>
+  </data>
+  <data name="&gt;&gt;bombsLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="extraLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 54</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="extraLabel3.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;optionalLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="findButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>326, 23</value>
+  </data>
+  <data name="extraLabel2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;findButton.Name" xml:space="preserve">
+    <value>findButton</value>
+  </data>
+  <data name="&gt;&gt;extraLabel0.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;UpdateNewVersion.Type" xml:space="preserve">
+    <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;settings.Name" xml:space="preserve">
+    <value>settings</value>
+  </data>
+  <data name="extraLabel0.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 162</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -684,43 +351,376 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 </value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Live DRC Points Calculator</value>
+  <data name="&gt;&gt;optionalLabel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;bkgWorker.Name" xml:space="preserve">
-    <value>bkgWorker</value>
+  <data name="&gt;&gt;extraLabel0.Name" xml:space="preserve">
+    <value>extraLabel0</value>
   </data>
-  <data name="&gt;&gt;bkgWorker.Type" xml:space="preserve">
-    <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;optionalLabel2.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
-  <data name="&gt;&gt;UpdateNewVersion.Name" xml:space="preserve">
-    <value>UpdateNewVersion</value>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
   </data>
-  <data name="&gt;&gt;UpdateNewVersion.Type" xml:space="preserve">
-    <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;extraLabel3.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
-  <data name="&gt;&gt;checkOffsetsOn.Name" xml:space="preserve">
-    <value>checkOffsetsOn</value>
+  <data name="extraLabel0.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;missesLabel.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="extraLabel1.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;about.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="extraLabel0.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 24pt</value>
+  </data>
+  <data name="extraLabel2.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;findButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="bombsLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>174, 108</value>
+  </data>
+  <data name="updateRubrics.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;diffLabel.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="warningLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;updateRubrics.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="extraLabel3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>261, 162</value>
+  </data>
+  <data name="shottypeLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="extraLabel2.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="optionalLabel2.Text" xml:space="preserve">
+    <value>Optional 2</value>
+  </data>
+  <data name="&gt;&gt;extraLabel1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;optionalLabel2.Name" xml:space="preserve">
+    <value>optionalLabel2</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="clear.Text" xml:space="preserve">
+    <value>Clear Log</value>
+  </data>
+  <data name="about.Text" xml:space="preserve">
+    <value>About</value>
   </data>
   <data name="&gt;&gt;checkOffsetsOn.Type" xml:space="preserve">
     <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;findGameThread.Name" xml:space="preserve">
-    <value>findGameThread</value>
+  <data name="settings.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
   </data>
-  <data name="&gt;&gt;findGameThread.Type" xml:space="preserve">
-    <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="warningLabel.Text" xml:space="preserve">
+    <value>Warning: Offsets on!</value>
   </data>
-  <data name="&gt;&gt;updateRubricsThread.Name" xml:space="preserve">
-    <value>updateRubricsThread</value>
+  <data name="&gt;&gt;infoBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="warningLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>326, 18</value>
+  </data>
+  <data name="bombsLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 54</value>
+  </data>
+  <data name="&gt;&gt;extraLabel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="extraLabel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>87, 162</value>
+  </data>
+  <data name="&gt;&gt;updateRubrics.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>348, 324</value>
+  </data>
+  <data name="extraLabel0.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="missesLabel.Text" xml:space="preserve">
+    <value>Misses</value>
+  </data>
+  <data name="settings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 23</value>
+  </data>
+  <data name="clear.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 285</value>
+  </data>
+  <data name="shottypeLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 24pt</value>
+  </data>
+  <data name="&gt;&gt;updateRubrics.Name" xml:space="preserve">
+    <value>updateRubrics</value>
+  </data>
+  <data name="missesLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 108</value>
+  </data>
+  <data name="&gt;&gt;extraLabel3.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="extraLabel3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 24pt</value>
+  </data>
+  <data name="extraLabel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 54</value>
+  </data>
+  <data name="missesLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;settings.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;shottypeLabel.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;infoBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;shottypeLabel.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="extraLabel1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 24pt</value>
   </data>
   <data name="&gt;&gt;updateRubricsThread.Type" xml:space="preserve">
     <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;bkgWorker.Type" xml:space="preserve">
+    <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="optionalLabel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 216</value>
+  </data>
+  <data name="extraLabel1.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="missesLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 24pt</value>
+  </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>GUI</value>
+  </data>
+  <data name="&gt;&gt;findGameThread.Name" xml:space="preserve">
+    <value>findGameThread</value>
+  </data>
+  <data name="&gt;&gt;optionalLabel1.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="warningLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;infoBox.Name" xml:space="preserve">
+    <value>infoBox</value>
+  </data>
+  <data name="extraLabel3.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;clear.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="diffLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;about.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;optionalLabel1.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="updateRubrics.Text" xml:space="preserve">
+    <value>Update Rubrics</value>
+  </data>
+  <data name="optionalLabel1.Text" xml:space="preserve">
+    <value>Optional 1</value>
+  </data>
+  <data name="&gt;&gt;extraLabel0.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;bombsLabel.Name" xml:space="preserve">
+    <value>bombsLabel</value>
+  </data>
+  <data name="&gt;&gt;optionalLabel2.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="findButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 314</value>
+  </data>
+  <data name="shottypeLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 54</value>
+  </data>
+  <data name="extraLabel1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="optionalLabel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 270</value>
+  </data>
+  <data name="missesLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 54</value>
+  </data>
+  <data name="&gt;&gt;extraLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;warningLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;settings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="settings.Text" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="&gt;&gt;extraLabel1.Name" xml:space="preserve">
+    <value>extraLabel1</value>
+  </data>
+  <data name="&gt;&gt;infoBox.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="bombsLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 24pt</value>
+  </data>
+  <data name="&gt;&gt;missesLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="shottypeLabel.Text" xml:space="preserve">
+    <value>Shottype</value>
+  </data>
+  <data name="&gt;&gt;extraLabel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>705, 360</value>
+  </data>
+  <data name="optionalLabel2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 24pt</value>
+  </data>
+  <data name="&gt;&gt;missesLabel.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="about.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 23</value>
+  </data>
+  <data name="updateRubrics.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 23</value>
+  </data>
+  <data name="&gt;&gt;clear.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;extraLabel2.Name" xml:space="preserve">
+    <value>extraLabel2</value>
+  </data>
+  <data name="&gt;&gt;updateRubrics.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="infoBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;warningLabel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;shottypeLabel.Name" xml:space="preserve">
+    <value>shottypeLabel</value>
+  </data>
+  <data name="optionalLabel1.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="diffLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 24pt</value>
+  </data>
+  <data name="optionalLabel1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 24pt</value>
+  </data>
+  <data name="clear.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="about.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;extraLabel3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;clear.Name" xml:space="preserve">
+    <value>clear</value>
+  </data>
+  <data name="&gt;&gt;extraLabel2.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;updateRubricsThread.Name" xml:space="preserve">
+    <value>updateRubricsThread</value>
+  </data>
+  <data name="findButton.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;optionalLabel1.Name" xml:space="preserve">
+    <value>optionalLabel1</value>
+  </data>
+  <data name="&gt;&gt;missesLabel.Name" xml:space="preserve">
+    <value>missesLabel</value>
+  </data>
+  <data name="&gt;&gt;warningLabel.Name" xml:space="preserve">
+    <value>warningLabel</value>
+  </data>
+  <data name="&gt;&gt;extraLabel3.Name" xml:space="preserve">
+    <value>extraLabel3</value>
+  </data>
+  <data name="&gt;&gt;extraLabel0.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="infoBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
+  </data>
+  <data name="optionalLabel1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <metadata name="UpdateNewVersion.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>129, 17</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>ja</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="checkOffsetsOn.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>286, 17</value>
+  </metadata>
+  <metadata name="bkgWorker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="updateRubricsThread.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>565, 17</value>
+  </metadata>
+  <metadata name="findGameThread.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>423, 17</value>
+  </metadata>
 </root>

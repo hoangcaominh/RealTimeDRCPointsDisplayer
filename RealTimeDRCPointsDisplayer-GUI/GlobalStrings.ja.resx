@@ -172,22 +172,22 @@
     <value>難易度</value>
   </data>
   <data name="DownloadRubrics" xml:space="preserve">
-    <value>Downloading rubric file...</value>
+    <value>ルーブリックファイルのダウンロードしています･･･</value>
   </data>
   <data name="DownloadRubricsFail" xml:space="preserve">
-    <value>Failed to download rubric file. Returned:</value>
+    <value>ルーブリックファイルのダウンロードに失敗しました。終了コード：</value>
   </data>
   <data name="DownloadRubricsSuccess" xml:space="preserve">
-    <value>Successfully downloaded rubric file.</value>
+    <value>ルーブリックファイルのダウンロードしました</value>
   </data>
   <data name="DownloadWRs" xml:space="preserve">
-    <value>Downloading world record file...</value>
+    <value>世界記録ファイルのダウンロードしています･･･</value>
   </data>
   <data name="DownloadWRsFail" xml:space="preserve">
-    <value>Failed to download world record file. Returned:</value>
+    <value>世界記録ファイルのダウンロードに失敗しました。終了コード：</value>
   </data>
   <data name="DownloadWRsSuccess" xml:space="preserve">
-    <value>Successfully downloaded world record file.</value>
+    <value>世界記録ファイルのダウンロードしました</value>
   </data>
   <data name="Eiki" xml:space="preserve">
     <value>映姫</value>
@@ -205,19 +205,19 @@
     <value>見つける</value>
   </data>
   <data name="FindCancel" xml:space="preserve">
-    <value>Stopped finding game</value>
+    <value>ゲームの検索を停止しました</value>
   </data>
   <data name="FindStart" xml:space="preserve">
-    <value>Finding game, please wait warmly...</value>
+    <value>ゲームの検索、暖かくお待ちください･･･</value>
   </data>
   <data name="Found" xml:space="preserve">
     <value>見当たる</value>
   </data>
   <data name="GameNotFound" xml:space="preserve">
-    <value>Game not found, stopped reading</value>
+    <value>ゲームが見つかりません、読むのをやめた</value>
   </data>
   <data name="GetExitCodeFail" xml:space="preserve">
-    <value>Get Exit Code Failed. Error:</value>
+    <value>終了コードの取得に失敗しました。 エラーコード：</value>
   </data>
   <data name="GFW" xml:space="preserve">
     <value>妖精大戦争</value>
@@ -319,25 +319,25 @@
     <value>ノーチャージ</value>
   </data>
   <data name="OffsetWarning" xml:space="preserve">
-    <value>Warning: Offsets on!</value>
+    <value>警告！ オフセットがオン</value>
   </data>
   <data name="ParseRubrics" xml:space="preserve">
-    <value>Parsing rubric file...</value>
+    <value>ルーブリックファイルの解析しています･･･</value>
   </data>
   <data name="ParseRubricsFail" xml:space="preserve">
-    <value>Failed to parse rubric file. Returned:</value>
+    <value>ルーブリックファイルの解析に失敗しました。終了コード：</value>
   </data>
   <data name="ParseRubricsSuccess" xml:space="preserve">
-    <value>Successfully parsed rubric file.</value>
+    <value>ルーブリックファイルの解析しました</value>
   </data>
   <data name="ParseWRs" xml:space="preserve">
-    <value>Parsing world record file...</value>
+    <value>世界記録ファイルの解析しています･･･</value>
   </data>
   <data name="ParseWrsFail" xml:space="preserve">
-    <value>Failed to parse world record file. Returned:</value>
+    <value>世界記録ファイルの解析に失敗しました。終了コード：</value>
   </data>
   <data name="ParseWRsSuccess" xml:space="preserve">
-    <value>Successfully parsed world record file.</value>
+    <value>世界記録ファイルの解析しました</value>
   </data>
   <data name="PCB" xml:space="preserve">
     <value>東方妖々夢</value>

@@ -175,7 +175,7 @@
     <value>Downloading rubric file...</value>
   </data>
   <data name="DownloadRubricsFail" xml:space="preserve">
-    <value>Failed to download rubric file. Returned:</value>
+    <value>Failed to download rubric file. Exit code: </value>
   </data>
   <data name="DownloadRubricsSuccess" xml:space="preserve">
     <value>Successfully downloaded rubric file.</value>
@@ -184,7 +184,7 @@
     <value>Downloading world record file...</value>
   </data>
   <data name="DownloadWRsFail" xml:space="preserve">
-    <value>Failed to download world record file. Returned:</value>
+    <value>Failed to download world record file. Exit code: </value>
   </data>
   <data name="DownloadWRsSuccess" xml:space="preserve">
     <value>Successfully downloaded world record file.</value>
@@ -217,7 +217,7 @@
     <value>Game not found, stopped reading</value>
   </data>
   <data name="GetExitCodeFail" xml:space="preserve">
-    <value>Get Exit Code Failed. Error:</value>
+    <value>Get Exit Code Failed. Error code: </value>
   </data>
   <data name="GFW" xml:space="preserve">
     <value>GFW</value>
@@ -319,13 +319,13 @@
     <value>No Charge</value>
   </data>
   <data name="OffsetWarning" xml:space="preserve">
-    <value>Warning: Offsets on!</value>
+    <value>Warning! Offsets on</value>
   </data>
   <data name="ParseRubrics" xml:space="preserve">
     <value>Parsing rubric file...</value>
   </data>
   <data name="ParseRubricsFail" xml:space="preserve">
-    <value>Failed to parse rubric file. Returned:</value>
+    <value>Failed to parse rubric file. Exit code: </value>
   </data>
   <data name="ParseRubricsSuccess" xml:space="preserve">
     <value>Successfully parsed rubric file.</value>
@@ -334,7 +334,7 @@
     <value>Parsing world record file...</value>
   </data>
   <data name="ParseWrsFail" xml:space="preserve">
-    <value>Failed to parse world record file. Returned:</value>
+    <value>Failed to parse world record file. Exit code: </value>
   </data>
   <data name="ParseWRsSuccess" xml:space="preserve">
     <value>Successfully parsed world record file.</value>
