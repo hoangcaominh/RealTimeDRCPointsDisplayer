@@ -7,6 +7,11 @@ An user interface application that displays in-game information and calculates D
 
 ## What's new
 
+#### 1.7
+- Japanese translation, switch to it in Settings (I used Google Translate so if you have a better translation, DM me or create a new issue on Github).
+- Colored log window, it looks pretty neat now.
+- Improved application performance and fixed bugs.
+
 #### 1.6
 - Updated files' download link and improved game searching funciton.
 
