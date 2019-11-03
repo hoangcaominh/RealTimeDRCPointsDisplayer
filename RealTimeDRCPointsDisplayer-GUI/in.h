@@ -79,6 +79,8 @@ namespace ns_in
 			// TIMER = 0x004EA780
 		};
 
+		score = 0;
+
 		ReadProcessMemory(gameProc, (void*)FRAME_COUNT, &frame_count, sizeof(frame_count), 0);
 		ReadProcessMemory(gameProc, (void*)STAGE, &stage, sizeof(stage), 0);
 		ReadProcessMemory(gameProc, (void*)SPELL_ID, &spell_id, sizeof(spell_id), 0);

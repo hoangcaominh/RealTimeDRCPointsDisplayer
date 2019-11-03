@@ -56,6 +56,8 @@ namespace ns_gfw
 			P_IS_BOMB = 0x004B892C
 		};
 
+		score = 0;
+
 		ReadProcessMemory(gameProc, (void*)FRAME_COUNT, &frame_count, sizeof(frame_count), 0);
 		ReadProcessMemory(gameProc, (void*)SCORE, &score, sizeof(uint32_t), 0);
 		ReadProcessMemory(gameProc, (void*)DIFFICULTY, &difficulty, sizeof(difficulty), 0);

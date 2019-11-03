@@ -69,6 +69,8 @@ namespace ns_hsifs
 			P_SPELL_ID = 0x004A6DB0
 		};
 
+		score = 0;
+
 		ReadProcessMemory(gameProc, (void*)FRAME_COUNT, &frame_count, sizeof(frame_count), 0);
 		ReadProcessMemory(gameProc, (void*)SCORE, &score, sizeof(uint32_t), 0);
 		ReadProcessMemory(gameProc, (void*)CHARACTER, &character, sizeof(character), 0);

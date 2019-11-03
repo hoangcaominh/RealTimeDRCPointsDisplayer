@@ -51,6 +51,8 @@ namespace ns_eosd
 			BOMBS = 0x0069BCC4
 		};
 
+		score = 0;
+
 		ReadProcessMemory(gameProc, (void*)FRAME_COUNT, &frame_count, sizeof(frame_count), 0);
 		ReadProcessMemory(gameProc, (void*)CHARACTER, &character, sizeof(character), 0);
 		ReadProcessMemory(gameProc, (void*)TYPE, &type, sizeof(type), 0);

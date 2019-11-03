@@ -45,6 +45,8 @@ namespace ns_lolk
 			P_IS_BOMB = 0x004E9A68,
 		};
 
+		score = 0;
+
 		ReadProcessMemory(gameProc, (void*)FRAME_COUNT, &frame_count, sizeof(frame_count), 0);
 		ReadProcessMemory(gameProc, (void*)SCORE, &score, sizeof(uint32_t), 0);
 		ReadProcessMemory(gameProc, (void*)CHARACTER, &character, sizeof(character), 0);

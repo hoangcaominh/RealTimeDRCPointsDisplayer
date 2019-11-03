@@ -50,6 +50,8 @@ namespace ns_pcb
 			CHERRY_PLUS = 0x0062F890
 		};
 
+		score = 0;
+
 		ReadProcessMemory(gameProc, (void*)DIFFICULTY, &difficulty, sizeof(difficulty), 0);
 		ReadProcessMemory(gameProc, (void*)CHARACTER, &character, sizeof(character), 0);
 		ReadProcessMemory(gameProc, (void*)TYPE, &type, sizeof(type), 0);

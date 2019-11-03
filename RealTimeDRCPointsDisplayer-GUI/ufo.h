@@ -93,6 +93,8 @@ namespace ns_ufo
 			P_IS_BOMB = 0x004B43C4
 		};
 
+		score = 0;
+
 		ReadProcessMemory(gameProc, (void*)FRAME_COUNT, &frame_count, sizeof(frame_count), 0);
 		ReadProcessMemory(gameProc, (void*)SCORE, &score, sizeof(uint32_t), 0);
 		ReadProcessMemory(gameProc, (void*)VAULT_ARRAY, vault_array, sizeof(vault_array), 0);
