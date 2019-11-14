@@ -85,7 +85,8 @@ namespace RealTimeDRCPointsDisplayerGUI {
 	private: Resources::ResourceManager^ globalStrings = gcnew Resources::ResourceManager(L"RealTimeDRCPointsDisplayerGUI.GlobalStrings", this->GetType()->Assembly);
 	private: System::ComponentModel::BackgroundWorker^ updateRubricsThread;
 	private: System::Windows::Forms::Button^ statusCap;
-	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::Button^ logCap;
+
 			 // private: System::Media::SoundPlayer^ player = gcnew System::Media::SoundPlayer();
 
 
@@ -128,7 +129,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->findGameThread = (gcnew System::ComponentModel::BackgroundWorker());
 			this->updateRubricsThread = (gcnew System::ComponentModel::BackgroundWorker());
 			this->statusCap = (gcnew System::Windows::Forms::Button());
-			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->logCap = (gcnew System::Windows::Forms::Button());
 			this->panel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -293,8 +294,8 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			// warningLabel
 			// 
 			this->warningLabel->BackColor = System::Drawing::Color::Transparent;
-			this->warningLabel->ForeColor = System::Drawing::Color::Red;
 			resources->ApplyResources(this->warningLabel, L"warningLabel");
+			this->warningLabel->ForeColor = System::Drawing::Color::Red;
 			this->warningLabel->Name = L"warningLabel";
 			// 
 			// checkOffsetsOn
@@ -323,19 +324,19 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->statusCap->UseVisualStyleBackColor = true;
 			this->statusCap->Click += gcnew System::EventHandler(this, &GUI::StatusCap_Click);
 			// 
-			// button1
+			// logCap
 			// 
-			resources->ApplyResources(this->button1, L"button1");
-			this->button1->Name = L"button1";
-			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &GUI::Button1_Click);
+			resources->ApplyResources(this->logCap, L"logCap");
+			this->logCap->Name = L"logCap";
+			this->logCap->UseVisualStyleBackColor = true;
+			this->logCap->Click += gcnew System::EventHandler(this, &GUI::LogCap_Click);
 			// 
 			// GUI
 			// 
 			resources->ApplyResources(this, L"$this");
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::Control;
-			this->Controls->Add(this->button1);
+			this->Controls->Add(this->logCap);
 			this->Controls->Add(this->statusCap);
 			this->Controls->Add(this->warningLabel);
 			this->Controls->Add(this->about);
@@ -470,7 +471,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		bitmap->Save(L"./screenshots/status_" + count_status + L".png", System::Drawing::Imaging::ImageFormat::Png);
 	}
 
-	private: System::Void Button1_Click(System::Object^ sender, System::EventArgs^ e)
+	private: System::Void LogCap_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		System::Drawing::Bitmap^ bitmap = gcnew System::Drawing::Bitmap(this->infoBox->Width, this->infoBox->Height);
 		this->infoBox->DrawToBitmap(bitmap, System::Drawing::Rectangle(Point::Empty, this->infoBox->Size));
@@ -852,10 +853,11 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		{
 			InfoBoxAddMessage(L"Found " + globalStrings->GetString(convertToStringClass(idx_game[game])), System::Drawing::Brushes::Lime);
 
-			// Disable buttons
+			// Toggle buttons
 			this->updateRubrics->Enabled = false;
 			this->findButton->Text = globalStrings->GetString(L"FindButtonTextFind");
 			this->findButton->Enabled = false;
+			this->statusCap->Enabled = true;
 
 			// Expand window
 			RealTimeDRCPointsDisplayerGUI::GUI::Width = 721;
@@ -991,9 +993,10 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			InfoBoxAddMessage(this->sysTime->Now.ToString("[h:mm:ss]"), System::Drawing::Brushes::White);
 			InfoBoxAddMessage(globalStrings->GetString(L"GameNotFound"), System::Drawing::Brushes::Yellow);
 
-			// Enable buttons
+			// Toggle buttons
 			this->updateRubrics->Enabled = true;
 			this->findButton->Enabled = true;
+			this->statusCap->Enabled = false;
 		}
 	}
 

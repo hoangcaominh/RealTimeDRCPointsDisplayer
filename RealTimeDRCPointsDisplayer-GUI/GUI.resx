@@ -165,7 +165,7 @@
     <value>8</value>
   </data>
   <data name="clear.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 285</value>
+    <value>12, 314</value>
   </data>
   <data name="clear.Size" type="System.Drawing.Size, System.Drawing">
     <value>160, 23</value>
@@ -189,7 +189,7 @@
     <value>7</value>
   </data>
   <data name="findButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 314</value>
+    <value>12, 343</value>
   </data>
   <data name="findButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>326, 23</value>
@@ -555,7 +555,7 @@
     <value>4</value>
   </data>
   <data name="about.Location" type="System.Drawing.Point, System.Drawing">
-    <value>178, 285</value>
+    <value>178, 314</value>
   </data>
   <data name="about.Size" type="System.Drawing.Size, System.Drawing">
     <value>160, 23</value>
@@ -584,11 +584,14 @@
   <metadata name="UpdateNewVersion.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>129, 17</value>
   </metadata>
+  <data name="warningLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
   <data name="warningLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 339</value>
+    <value>344, 343</value>
   </data>
   <data name="warningLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>326, 18</value>
+    <value>348, 23</value>
   </data>
   <data name="warningLabel.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -620,11 +623,14 @@
   <metadata name="updateRubricsThread.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>565, 17</value>
   </metadata>
+  <data name="statusCap.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="statusCap.Location" type="System.Drawing.Point, System.Drawing">
-    <value>241, 337</value>
+    <value>178, 285</value>
   </data>
   <data name="statusCap.Size" type="System.Drawing.Size, System.Drawing">
-    <value>97, 23</value>
+    <value>160, 23</value>
   </data>
   <data name="statusCap.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -644,28 +650,28 @@
   <data name="&gt;&gt;statusCap.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 337</value>
+  <data name="logCap.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 285</value>
   </data>
-  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+  <data name="logCap.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 23</value>
   </data>
-  <data name="button1.TabIndex" type="System.Int32, mscorlib">
+  <data name="logCap.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
-  <data name="button1.Text" xml:space="preserve">
+  <data name="logCap.Text" xml:space="preserve">
     <value>Capture Log</value>
   </data>
-  <data name="&gt;&gt;button1.Name" xml:space="preserve">
-    <value>button1</value>
+  <data name="&gt;&gt;logCap.Name" xml:space="preserve">
+    <value>logCap</value>
   </data>
-  <data name="&gt;&gt;button1.Type" xml:space="preserve">
+  <data name="&gt;&gt;logCap.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;logCap.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;logCap.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -675,7 +681,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>705, 360</value>
+    <value>705, 378</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
