@@ -7,6 +7,7 @@
 namespace RealTimeDRCPointsDisplayerGUI {
 
 	using namespace System;
+	using namespace System::IO;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
 	using namespace System::Windows::Forms;
@@ -83,6 +84,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 
 	private: Resources::ResourceManager^ globalStrings = gcnew Resources::ResourceManager(L"RealTimeDRCPointsDisplayerGUI.GlobalStrings", this->GetType()->Assembly);
 	private: System::ComponentModel::BackgroundWorker^ updateRubricsThread;
+	private: System::Windows::Forms::Button^ statusCap;
 			 // private: System::Media::SoundPlayer^ player = gcnew System::Media::SoundPlayer();
 
 
@@ -124,6 +126,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->checkOffsetsOn = (gcnew System::ComponentModel::BackgroundWorker());
 			this->findGameThread = (gcnew System::ComponentModel::BackgroundWorker());
 			this->updateRubricsThread = (gcnew System::ComponentModel::BackgroundWorker());
+			this->statusCap = (gcnew System::Windows::Forms::Button());
 			this->panel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -136,11 +139,11 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			// 
 			// infoBox
 			// 
-			resources->ApplyResources(this->infoBox, L"infoBox");
 			this->infoBox->BackColor = System::Drawing::Color::Black;
 			this->infoBox->DrawMode = System::Windows::Forms::DrawMode::OwnerDrawFixed;
 			this->infoBox->ForeColor = System::Drawing::Color::White;
 			this->infoBox->FormattingEnabled = true;
+			resources->ApplyResources(this->infoBox, L"infoBox");
 			this->infoBox->Name = L"infoBox";
 			this->infoBox->DrawItem += gcnew System::Windows::Forms::DrawItemEventHandler(this, &GUI::DrawItem);
 			this->infoBox->SelectedIndexChanged += gcnew System::EventHandler(this, &GUI::listBox1_SelectedIndexChanged);
@@ -161,7 +164,6 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			// 
 			// panel1
 			// 
-			resources->ApplyResources(this->panel1, L"panel1");
 			this->panel1->BackColor = System::Drawing::Color::Black;
 			this->panel1->Controls->Add(this->extraLabel3);
 			this->panel1->Controls->Add(this->extraLabel2);
@@ -174,86 +176,87 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->panel1->Controls->Add(this->diffLabel);
 			this->panel1->Controls->Add(this->extraLabel0);
 			this->panel1->ForeColor = System::Drawing::SystemColors::ControlText;
+			resources->ApplyResources(this->panel1, L"panel1");
 			this->panel1->Name = L"panel1";
 			this->panel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GUI::panel1_Paint);
 			// 
 			// extraLabel3
 			// 
-			resources->ApplyResources(this->extraLabel3, L"extraLabel3");
 			this->extraLabel3->BackColor = System::Drawing::Color::Transparent;
 			this->extraLabel3->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			resources->ApplyResources(this->extraLabel3, L"extraLabel3");
 			this->extraLabel3->ForeColor = System::Drawing::Color::Yellow;
 			this->extraLabel3->Name = L"extraLabel3";
 			// 
 			// extraLabel2
 			// 
-			resources->ApplyResources(this->extraLabel2, L"extraLabel2");
 			this->extraLabel2->BackColor = System::Drawing::Color::Transparent;
 			this->extraLabel2->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			resources->ApplyResources(this->extraLabel2, L"extraLabel2");
 			this->extraLabel2->ForeColor = System::Drawing::Color::Lime;
 			this->extraLabel2->Name = L"extraLabel2";
 			// 
 			// extraLabel1
 			// 
-			resources->ApplyResources(this->extraLabel1, L"extraLabel1");
 			this->extraLabel1->BackColor = System::Drawing::Color::Transparent;
 			this->extraLabel1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			resources->ApplyResources(this->extraLabel1, L"extraLabel1");
 			this->extraLabel1->ForeColor = System::Drawing::Color::Lime;
 			this->extraLabel1->Name = L"extraLabel1";
 			// 
 			// optionalLabel2
 			// 
-			resources->ApplyResources(this->optionalLabel2, L"optionalLabel2");
 			this->optionalLabel2->BackColor = System::Drawing::Color::Transparent;
 			this->optionalLabel2->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			resources->ApplyResources(this->optionalLabel2, L"optionalLabel2");
 			this->optionalLabel2->ForeColor = System::Drawing::Color::White;
 			this->optionalLabel2->Name = L"optionalLabel2";
 			// 
 			// optionalLabel1
 			// 
-			resources->ApplyResources(this->optionalLabel1, L"optionalLabel1");
 			this->optionalLabel1->BackColor = System::Drawing::Color::Transparent;
 			this->optionalLabel1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			resources->ApplyResources(this->optionalLabel1, L"optionalLabel1");
 			this->optionalLabel1->ForeColor = System::Drawing::Color::White;
 			this->optionalLabel1->Name = L"optionalLabel1";
 			// 
 			// bombsLabel
 			// 
-			resources->ApplyResources(this->bombsLabel, L"bombsLabel");
 			this->bombsLabel->BackColor = System::Drawing::Color::Transparent;
 			this->bombsLabel->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			resources->ApplyResources(this->bombsLabel, L"bombsLabel");
 			this->bombsLabel->ForeColor = System::Drawing::Color::Lime;
 			this->bombsLabel->Name = L"bombsLabel";
 			// 
 			// missesLabel
 			// 
-			resources->ApplyResources(this->missesLabel, L"missesLabel");
 			this->missesLabel->BackColor = System::Drawing::Color::Transparent;
 			this->missesLabel->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			resources->ApplyResources(this->missesLabel, L"missesLabel");
 			this->missesLabel->ForeColor = System::Drawing::Color::Red;
 			this->missesLabel->Name = L"missesLabel";
 			// 
 			// shottypeLabel
 			// 
-			resources->ApplyResources(this->shottypeLabel, L"shottypeLabel");
 			this->shottypeLabel->BackColor = System::Drawing::Color::Transparent;
 			this->shottypeLabel->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			resources->ApplyResources(this->shottypeLabel, L"shottypeLabel");
 			this->shottypeLabel->ForeColor = System::Drawing::Color::White;
 			this->shottypeLabel->Name = L"shottypeLabel";
 			// 
 			// diffLabel
 			// 
-			resources->ApplyResources(this->diffLabel, L"diffLabel");
 			this->diffLabel->BackColor = System::Drawing::Color::Transparent;
 			this->diffLabel->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			resources->ApplyResources(this->diffLabel, L"diffLabel");
 			this->diffLabel->ForeColor = System::Drawing::Color::White;
 			this->diffLabel->Name = L"diffLabel";
 			// 
 			// extraLabel0
 			// 
-			resources->ApplyResources(this->extraLabel0, L"extraLabel0");
 			this->extraLabel0->BackColor = System::Drawing::Color::Transparent;
 			this->extraLabel0->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			resources->ApplyResources(this->extraLabel0, L"extraLabel0");
 			this->extraLabel0->ForeColor = System::Drawing::Color::White;
 			this->extraLabel0->Name = L"extraLabel0";
 			// 
@@ -287,9 +290,9 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			// 
 			// warningLabel
 			// 
-			resources->ApplyResources(this->warningLabel, L"warningLabel");
 			this->warningLabel->BackColor = System::Drawing::Color::Transparent;
 			this->warningLabel->ForeColor = System::Drawing::Color::Red;
+			resources->ApplyResources(this->warningLabel, L"warningLabel");
 			this->warningLabel->Name = L"warningLabel";
 			// 
 			// checkOffsetsOn
@@ -311,11 +314,19 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->updateRubricsThread->ProgressChanged += gcnew System::ComponentModel::ProgressChangedEventHandler(this, &GUI::updateRubricsThread_ProgressChanged);
 			this->updateRubricsThread->RunWorkerCompleted += gcnew System::ComponentModel::RunWorkerCompletedEventHandler(this, &GUI::updateRubricsThread_RunWorkerCompleted);
 			// 
+			// statusCap
+			// 
+			resources->ApplyResources(this->statusCap, L"statusCap");
+			this->statusCap->Name = L"statusCap";
+			this->statusCap->UseVisualStyleBackColor = true;
+			this->statusCap->Click += gcnew System::EventHandler(this, &GUI::StatusCap_Click);
+			// 
 			// GUI
 			// 
 			resources->ApplyResources(this, L"$this");
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::Control;
+			this->Controls->Add(this->statusCap);
 			this->Controls->Add(this->warningLabel);
 			this->Controls->Add(this->about);
 			this->Controls->Add(this->settings);
@@ -431,6 +442,22 @@ namespace RealTimeDRCPointsDisplayerGUI {
 
 			this->findGameThread->RunWorkerAsync();
 		}
+	}
+
+	private: System::Void StatusCap_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		System::Drawing::Bitmap^ bitmap = gcnew System::Drawing::Bitmap(this->panel1->Width, this->panel1->Height);
+		this->panel1->DrawToBitmap(bitmap, System::Drawing::Rectangle(Point::Empty, this->panel1->Size));
+		if (!Directory::Exists(L"./screenshots"))
+		{
+			Directory::CreateDirectory(L"./screenshots");
+		}
+		int count_ss = 0;
+		while (File::Exists(L"./screenshots/ss_" + count_ss + L".png"))
+		{
+			count_ss++;
+		}
+		bitmap->Save(L"./screenshots/ss_" + count_ss + L".png", System::Drawing::Imaging::ImageFormat::Png);
 	}
 	
 	//
@@ -1007,6 +1034,5 @@ namespace RealTimeDRCPointsDisplayerGUI {
 	{
 
 	}
-
 	};
 }
