@@ -85,6 +85,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 	private: Resources::ResourceManager^ globalStrings = gcnew Resources::ResourceManager(L"RealTimeDRCPointsDisplayerGUI.GlobalStrings", this->GetType()->Assembly);
 	private: System::ComponentModel::BackgroundWorker^ updateRubricsThread;
 	private: System::Windows::Forms::Button^ statusCap;
+	private: System::Windows::Forms::Button^ button1;
 			 // private: System::Media::SoundPlayer^ player = gcnew System::Media::SoundPlayer();
 
 
@@ -127,6 +128,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->findGameThread = (gcnew System::ComponentModel::BackgroundWorker());
 			this->updateRubricsThread = (gcnew System::ComponentModel::BackgroundWorker());
 			this->statusCap = (gcnew System::Windows::Forms::Button());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->panel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -321,11 +323,19 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->statusCap->UseVisualStyleBackColor = true;
 			this->statusCap->Click += gcnew System::EventHandler(this, &GUI::StatusCap_Click);
 			// 
+			// button1
+			// 
+			resources->ApplyResources(this->button1, L"button1");
+			this->button1->Name = L"button1";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &GUI::Button1_Click);
+			// 
 			// GUI
 			// 
 			resources->ApplyResources(this, L"$this");
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::Control;
+			this->Controls->Add(this->button1);
 			this->Controls->Add(this->statusCap);
 			this->Controls->Add(this->warningLabel);
 			this->Controls->Add(this->about);
@@ -452,12 +462,28 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		{
 			Directory::CreateDirectory(L"./screenshots");
 		}
-		int count_ss = 0;
-		while (File::Exists(L"./screenshots/ss_" + count_ss + L".png"))
+		int count_status = 0;
+		while (File::Exists(L"./screenshots/status_" + count_status + L".png"))
 		{
-			count_ss++;
+			count_status++;
 		}
-		bitmap->Save(L"./screenshots/ss_" + count_ss + L".png", System::Drawing::Imaging::ImageFormat::Png);
+		bitmap->Save(L"./screenshots/status_" + count_status + L".png", System::Drawing::Imaging::ImageFormat::Png);
+	}
+
+	private: System::Void Button1_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		System::Drawing::Bitmap^ bitmap = gcnew System::Drawing::Bitmap(this->infoBox->Width, this->infoBox->Height);
+		this->infoBox->DrawToBitmap(bitmap, System::Drawing::Rectangle(Point::Empty, this->infoBox->Size));
+		if (!Directory::Exists(L"./screenshots"))
+		{
+			Directory::CreateDirectory(L"./screenshots");
+		}
+		int count_log = 0;
+		while (File::Exists(L"./screenshots/log_" + count_log + L".png"))
+		{
+			count_log++;
+		}
+		bitmap->Save(L"./screenshots/log_" + count_log + L".png", System::Drawing::Imaging::ImageFormat::Png);
 	}
 	
 	//
@@ -657,12 +683,10 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			)
 		{
 			this->warningLabel->Text = L"";
-			this->Height = 388;
 		}
 		else
 		{
 			this->warningLabel->Text = globalStrings->GetString(L"OffsetWarning");
-			this->Height = 399;
 		}
 	}
 
