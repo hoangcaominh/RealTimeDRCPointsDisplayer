@@ -5,39 +5,10 @@ If you find any bugs, create a new issue on Github or DM me in Discord.
 (formerly known as RealTimeDRCPointsDisplayer)
 An user interface application that displays in-game information and calculates DRC points for you during your run or your replay.
 
-## What's new
-
-#### 1.7
-- Japanese translation, switch to it in Settings (I used Google Translate so if you have a better translation, DM me or create a new issue on Github).
-- Colored log window, it looks pretty neat now.
-- Improved application performance and fixed bugs.
-
-#### 1.6
-- Updated files' download link and improved game searching funciton.
-
-#### 1.5.1
-- Fixed typo
-
-#### 1.5
-- Added options for displaying information (see "Game Information" for more detail), updated WBaWC.
-
-#### 1.4
-- Updated WBaWC to work with version 1.00b.
-
-#### 1.3
-- Updated MoF formula as of June 1st, 2019 and updated find game function.
-
-#### 1.2.2
-- Added WBaWC Demo and updated Settings window.
-
-#### 1.2
-- Added warning and MoF scoring formula.
-
-#### 1.1
-- Added Settings button.
-
-#### 1.0
-- Finished console version, moving to GUI version.
+## Version 1.8
+- Added 2 new screenshot buttons, one for current status, the other for log. They will be saved in /screenshots folder, which is located in the same folder with the application
+- Fixed score overflow when it reaches 4,294,967,296 or above
+- Redesign GUI, which looks better and less glitchy now
 
 ## Supports
 This tool works for native (not modified or patched except for [THCrap](https://www.thpatch.net/wiki/Touhou_Patch_Center) ) maingames and GFW.
@@ -53,13 +24,13 @@ This tool works for native (not modified or patched except for [THCrap](https://
 - During a DRC event, you should have the latest version of DRC Points Calculator as it contains the updated calculating formula from [Maribel Hearn](https://github.com/MaribelHearn/) and some fixed sections.
 
 ## Game Information
-- "Difficulty": The difficulty yor are playing
-- "Shottype": The character/team with specific type you are using
+- "Difficulty": The difficulty yor are playing on
+- "Shottype": The character/team you are using
 - "Misses": The number of times you lose a life
 - "Bombs": The number of times you use a bomb
 
 ### Extra Box (under the Misses/Bombs box)
-A group of one or more boxes for displaying certain information of specific games.
+A group of one or more boxes for displaying certain information of a specific game.
 
 ##### Perfect Cherry Blosson/PCB/Touhou 7
 - "Border Breaks": The number of times you have broken a cherry border
