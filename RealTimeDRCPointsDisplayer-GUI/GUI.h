@@ -403,7 +403,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			"thus calculating DRC points for both survival and scoring during a Touhou run.\n\n" +
 			"Author: Cao Minh\n" +
 			"Version: " + convertToStringClass(config["version"].get<std::string>()) + "\n" + 
-			"GitHub reository name: RealTimeDRCPointsDisplayer",
+			"GitHub repository: RealTimeDRCPointsDisplayer",
 			"About",
 			MessageBoxButtons::OK,
 			MessageBoxIcon::Information);
