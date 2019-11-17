@@ -118,427 +118,1558 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="survivalRB2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 20</value>
+  <data name="bombsOffset.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 49</value>
+  </data>
+  <data name="bombsOffset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 22</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="cancelButton.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>51, 16</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="wolvesOffset.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="label13.Location" type="System.Drawing.Point, System.Drawing">
-    <value>66, 64</value>
-  </data>
-  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="rainbowOffset.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="label7.Text" xml:space="preserve">
-    <value>Blue UFOs</value>
-  </data>
-  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+  <data name="bombsOffset.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;noChargeCB.ZOrder" xml:space="preserve">
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="bombsOffset.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;bombsOffset.Name" xml:space="preserve">
+    <value>bombsOffset</value>
+  </data>
+  <data name="&gt;&gt;bombsOffset.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;bombsOffset.Parent" xml:space="preserve">
+    <value>generalBox</value>
+  </data>
+  <data name="&gt;&gt;bombsOffset.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;noneRB1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>66, 51</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 16</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Bombs</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>generalBox</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>66, 23</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 16</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Misses</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>generalBox</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="missesOffset.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 21</value>
+  </data>
+  <data name="missesOffset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 22</value>
+  </data>
+  <data name="missesOffset.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="missesOffset.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;missesOffset.Name" xml:space="preserve">
+    <value>missesOffset</value>
+  </data>
+  <data name="&gt;&gt;missesOffset.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;missesOffset.Parent" xml:space="preserve">
+    <value>generalBox</value>
+  </data>
+  <data name="&gt;&gt;missesOffset.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="generalBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 130</value>
   </data>
-  <data name="&gt;&gt;redOffset.Name" xml:space="preserve">
-    <value>redOffset</value>
+  <data name="generalBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 77</value>
   </data>
-  <data name="&gt;&gt;greenOffset.Parent" xml:space="preserve">
-    <value>tab_UFO</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>415, 431</value>
-  </data>
-  <data name="label4.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="redOffset.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 22</value>
-  </data>
-  <data name="&gt;&gt;tab_UFO.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;scoreRB1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 214</value>
-  </data>
-  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;optionalOffsetsTab.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tab_WBaWC.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="&gt;&gt;rainbowOffset.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="noChargeCB.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="wolvesOffset.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 22</value>
-  </data>
-  <data name="&gt;&gt;wrRB1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label14.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;label14.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label8.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;eaglesOffset.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="LSOffset.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 22</value>
-  </data>
-  <data name="tab_HSiFS.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="&gt;&gt;survivalRB1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="wrRB1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 58</value>
-  </data>
-  <data name="&gt;&gt;lang_jaRB.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;lang_enRB.ZOrder" xml:space="preserve">
+  <data name="generalBox.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;redOffset.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="generalBox.Text" xml:space="preserve">
+    <value>General Offset</value>
   </data>
-  <data name="label11.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+  <data name="&gt;&gt;generalBox.Name" xml:space="preserve">
+    <value>generalBox</value>
   </data>
-  <data name="&gt;&gt;survivalRB1.Parent" xml:space="preserve">
-    <value>tab_Box1</value>
+  <data name="&gt;&gt;generalBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="redOffset.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+  <data name="&gt;&gt;generalBox.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="&gt;&gt;survivalRB1.Name" xml:space="preserve">
-    <value>survivalRB1</value>
-  </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>391, 176</value>
+  <data name="&gt;&gt;generalBox.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="BBOffset.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 6</value>
   </data>
-  <data name="noneRB1.AutoSize" type="System.Boolean, mscorlib">
+  <data name="BBOffset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 22</value>
+  </data>
+  <data name="BBOffset.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="BBOffset.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;BBOffset.Name" xml:space="preserve">
+    <value>BBOffset</value>
+  </data>
+  <data name="&gt;&gt;BBOffset.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BBOffset.Parent" xml:space="preserve">
+    <value>tab_PCB</value>
+  </data>
+  <data name="&gt;&gt;BBOffset.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
     <value>66, 8</value>
   </data>
-  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 16</value>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 16</value>
   </data>
-  <data name="eaglesOffset.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 22</value>
+  <data name="label3.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
   </data>
-  <data name="label10.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Border Breaks</value>
   </data>
-  <data name="&gt;&gt;generalBox.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
   </data>
-  <data name="noneRB1.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="survivalRB1.Text" xml:space="preserve">
-    <value>Survival Points</value>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>tab_PCB</value>
   </data>
-  <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 16</value>
-  </data>
-  <data name="&gt;&gt;trancesOffset.Parent" xml:space="preserve">
-    <value>tab_TD</value>
-  </data>
-  <data name="tab_Box2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 136</value>
-  </data>
-  <data name="generalBox.Text" xml:space="preserve">
-    <value>General Offset</value>
-  </data>
-  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
-    <value>tab_IN</value>
-  </data>
-  <data name="bombsOffset.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 49</value>
-  </data>
-  <data name="label2.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="label11.Text" xml:space="preserve">
-    <value>Wolves</value>
-  </data>
-  <data name="&gt;&gt;wrRB1.Name" xml:space="preserve">
-    <value>wrRB1</value>
-  </data>
-  <data name="&gt;&gt;label10.Name" xml:space="preserve">
-    <value>label10</value>
-  </data>
-  <data name="&gt;&gt;tab_UFO.Name" xml:space="preserve">
-    <value>tab_UFO</value>
-  </data>
-  <data name="&gt;&gt;cancelButton.Name" xml:space="preserve">
-    <value>cancelButton</value>
-  </data>
-  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
-    <value>tab_UFO</value>
-  </data>
-  <data name="&gt;&gt;tab_IN.Parent" xml:space="preserve">
-    <value>otherOffsetsTab</value>
-  </data>
-  <data name="optionalOffsetsTab.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Settings</value>
-  </data>
-  <data name="wrRB1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="scoreRB2.Text" xml:space="preserve">
-    <value>Score</value>
-  </data>
-  <data name="&gt;&gt;RBOffset.Parent" xml:space="preserve">
-    <value>tab_WBaWC</value>
-  </data>
-  <data name="&gt;&gt;RBOffset.Name" xml:space="preserve">
-    <value>RBOffset</value>
-  </data>
-  <data name="langBox.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="&gt;&gt;scoringRB2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>66, 92</value>
-  </data>
-  <data name="tab_Box1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 25</value>
-  </data>
-  <data name="&gt;&gt;label11.Name" xml:space="preserve">
-    <value>label11</value>
-  </data>
-  <data name="&gt;&gt;tab_PoFV.Name" xml:space="preserve">
-    <value>tab_PoFV</value>
-  </data>
-  <data name="optionalOffsetsTab.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 22</value>
-  </data>
-  <data name="scoreRB1.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="survivalRB2.Text" xml:space="preserve">
-    <value>Survival Points</value>
-  </data>
-  <data name="tab_Box2.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;tab_WBaWC.ZOrder" xml:space="preserve">
-    <value>6</value>
+  <data name="tab_PCB.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 25</value>
   </data>
-  <data name="tab_PoFV.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="tab_PCB.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
-  <data name="&gt;&gt;tab_TD.Parent" xml:space="preserve">
-    <value>otherOffsetsTab</value>
+  <data name="tab_PCB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>371, 120</value>
   </data>
-  <data name="&gt;&gt;cancelButton.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="tab_PCB.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="tab_PCB.Text" xml:space="preserve">
     <value>PCB</value>
   </data>
-  <data name="&gt;&gt;defaultButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;tab_PCB.Name" xml:space="preserve">
+    <value>tab_PCB</value>
   </data>
-  <data name="wolvesOffset.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+  <data name="&gt;&gt;tab_PCB.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="tab_IN.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
+  <data name="&gt;&gt;tab_PCB.Parent" xml:space="preserve">
+    <value>otherOffsetsTab</value>
   </data>
-  <data name="&gt;&gt;scoreRB2.Parent" xml:space="preserve">
-    <value>tab_Box2</value>
-  </data>
-  <data name="&gt;&gt;optinalBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;RBOffset.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="noneRB2.Text" xml:space="preserve">
-    <value>None</value>
-  </data>
-  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>66, 64</value>
-  </data>
-  <data name="bombsOffset.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 22</value>
-  </data>
-  <data name="BBOffset.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;noneRB2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label10.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="cancelButton.Text" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
-  <data name="tab_HSiFS.Text" xml:space="preserve">
-    <value>HSiFS</value>
-  </data>
-  <data name="&gt;&gt;blueOffset.Parent" xml:space="preserve">
-    <value>tab_UFO</value>
+  <data name="&gt;&gt;tab_PCB.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="LSOffset.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 6</value>
   </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>51, 16</value>
+  <data name="LSOffset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 22</value>
   </data>
-  <data name="tab_UFO.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+  <data name="LSOffset.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
   </data>
-  <data name="&gt;&gt;survivalRB1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="LSOffset.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
   </data>
-  <data name="optinalBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+  <data name="&gt;&gt;LSOffset.Name" xml:space="preserve">
+    <value>LSOffset</value>
   </data>
-  <data name="&gt;&gt;noChargeCB.Parent" xml:space="preserve">
-    <value>tab_PoFV</value>
+  <data name="&gt;&gt;LSOffset.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LSOffset.Parent" xml:space="preserve">
+    <value>tab_IN</value>
+  </data>
+  <data name="&gt;&gt;LSOffset.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>66, 8</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 16</value>
+  </data>
+  <data name="label4.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Last Spells Captured</value>
+  </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
+  </data>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+    <value>tab_IN</value>
+  </data>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tab_IN.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 25</value>
+  </data>
+  <data name="tab_IN.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tab_IN.Size" type="System.Drawing.Size, System.Drawing">
+    <value>371, 120</value>
   </data>
   <data name="tab_IN.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;label14.Name" xml:space="preserve">
-    <value>label14</value>
+  <data name="tab_IN.Text" xml:space="preserve">
+    <value>IN</value>
   </data>
-  <data name="tab_WBaWC.Text" xml:space="preserve">
-    <value>WBaWC</value>
+  <data name="&gt;&gt;tab_IN.Name" xml:space="preserve">
+    <value>tab_IN</value>
   </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;tab_IN.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="lang_enRB.Text" xml:space="preserve">
-    <value>English</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>8, 16</value>
-  </data>
-  <data name="&gt;&gt;defaultButton.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;tab_PoFV.Parent" xml:space="preserve">
+  <data name="&gt;&gt;tab_IN.Parent" xml:space="preserve">
     <value>otherOffsetsTab</value>
   </data>
-  <data name="&gt;&gt;label11.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;tab_IN.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
-  <data name="label9.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+  <data name="noChargeCB.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 16</value>
+  <data name="noChargeCB.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
   </data>
-  <data name="&gt;&gt;tab_Box2.Parent" xml:space="preserve">
-    <value>optionalOffsetsTab</value>
+  <data name="noChargeCB.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 6</value>
   </data>
-  <data name="scoringRB2.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+  <data name="noChargeCB.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Yes</value>
   </data>
-  <data name="&gt;&gt;rainbowOffset.Parent" xml:space="preserve">
-    <value>tab_UFO</value>
+  <data name="noChargeCB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>139, 20</value>
   </data>
-  <data name="tab_UFO.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="noChargeCB.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="noChargeCB.Text" xml:space="preserve">
+    <value>No Charge Attacks</value>
+  </data>
+  <data name="&gt;&gt;noChargeCB.Name" xml:space="preserve">
+    <value>noChargeCB</value>
+  </data>
+  <data name="&gt;&gt;noChargeCB.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;noChargeCB.Parent" xml:space="preserve">
+    <value>tab_PoFV</value>
+  </data>
+  <data name="&gt;&gt;noChargeCB.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tab_PoFV.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 25</value>
+  </data>
+  <data name="tab_PoFV.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
-  </data>
-  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
-    <value>tab_UFO</value>
-  </data>
-  <data name="noneRB1.Text" xml:space="preserve">
-    <value>None</value>
-  </data>
-  <data name="label14.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 16</value>
-  </data>
-  <data name="trancesOffset.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 22</value>
   </data>
   <data name="tab_PoFV.Size" type="System.Drawing.Size, System.Drawing">
     <value>371, 120</value>
   </data>
+  <data name="tab_PoFV.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tab_PoFV.Text" xml:space="preserve">
+    <value>PoFV</value>
+  </data>
+  <data name="&gt;&gt;tab_PoFV.Name" xml:space="preserve">
+    <value>tab_PoFV</value>
+  </data>
+  <data name="&gt;&gt;tab_PoFV.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tab_PoFV.Parent" xml:space="preserve">
+    <value>otherOffsetsTab</value>
+  </data>
+  <data name="&gt;&gt;tab_PoFV.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="redOffset.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 6</value>
+  </data>
+  <data name="redOffset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 22</value>
+  </data>
+  <data name="redOffset.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="redOffset.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;redOffset.Name" xml:space="preserve">
+    <value>redOffset</value>
+  </data>
+  <data name="&gt;&gt;redOffset.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;redOffset.Parent" xml:space="preserve">
+    <value>tab_UFO</value>
+  </data>
+  <data name="&gt;&gt;redOffset.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label8.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>66, 92</value>
+  </data>
+  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 16</value>
+  </data>
+  <data name="label8.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Rainbow UFOs</value>
+  </data>
+  <data name="&gt;&gt;label8.Name" xml:space="preserve">
+    <value>label8</value>
+  </data>
+  <data name="&gt;&gt;label8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label8.Parent" xml:space="preserve">
+    <value>tab_UFO</value>
+  </data>
+  <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>66, 8</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 16</value>
+  </data>
+  <data name="label5.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Red UFOs</value>
+  </data>
+  <data name="&gt;&gt;label5.Name" xml:space="preserve">
+    <value>label5</value>
+  </data>
+  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+    <value>tab_UFO</value>
+  </data>
+  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="rainbowOffset.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 90</value>
+  </data>
+  <data name="rainbowOffset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 22</value>
+  </data>
+  <data name="rainbowOffset.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="rainbowOffset.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;rainbowOffset.Name" xml:space="preserve">
+    <value>rainbowOffset</value>
+  </data>
+  <data name="&gt;&gt;rainbowOffset.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rainbowOffset.Parent" xml:space="preserve">
+    <value>tab_UFO</value>
+  </data>
+  <data name="&gt;&gt;rainbowOffset.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="greenOffset.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 34</value>
+  </data>
+  <data name="greenOffset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 22</value>
+  </data>
+  <data name="greenOffset.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="greenOffset.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;greenOffset.Name" xml:space="preserve">
+    <value>greenOffset</value>
+  </data>
+  <data name="&gt;&gt;greenOffset.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;greenOffset.Parent" xml:space="preserve">
+    <value>tab_UFO</value>
+  </data>
+  <data name="&gt;&gt;greenOffset.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="label7.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>66, 64</value>
+  </data>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 16</value>
+  </data>
+  <data name="label7.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Blue UFOs</value>
+  </data>
+  <data name="&gt;&gt;label7.Name" xml:space="preserve">
+    <value>label7</value>
+  </data>
+  <data name="&gt;&gt;label7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
+    <value>tab_UFO</value>
+  </data>
+  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>66, 36</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 16</value>
+  </data>
+  <data name="label6.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Green UFOs</value>
+  </data>
+  <data name="&gt;&gt;label6.Name" xml:space="preserve">
+    <value>label6</value>
+  </data>
+  <data name="&gt;&gt;label6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
+    <value>tab_UFO</value>
+  </data>
+  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="blueOffset.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 62</value>
+  </data>
+  <data name="blueOffset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 22</value>
+  </data>
+  <data name="blueOffset.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="blueOffset.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;blueOffset.Name" xml:space="preserve">
+    <value>blueOffset</value>
+  </data>
+  <data name="&gt;&gt;blueOffset.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;blueOffset.Parent" xml:space="preserve">
+    <value>tab_UFO</value>
+  </data>
+  <data name="&gt;&gt;blueOffset.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="tab_UFO.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 25</value>
+  </data>
+  <data name="tab_UFO.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tab_UFO.Size" type="System.Drawing.Size, System.Drawing">
+    <value>371, 120</value>
+  </data>
+  <data name="tab_UFO.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tab_UFO.Text" xml:space="preserve">
+    <value>UFO</value>
+  </data>
+  <data name="&gt;&gt;tab_UFO.Name" xml:space="preserve">
+    <value>tab_UFO</value>
+  </data>
+  <data name="&gt;&gt;tab_UFO.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tab_UFO.Parent" xml:space="preserve">
+    <value>otherOffsetsTab</value>
+  </data>
+  <data name="&gt;&gt;tab_UFO.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="trancesOffset.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 6</value>
+  </data>
+  <data name="trancesOffset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 22</value>
+  </data>
+  <data name="trancesOffset.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="trancesOffset.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;trancesOffset.Name" xml:space="preserve">
+    <value>trancesOffset</value>
+  </data>
+  <data name="&gt;&gt;trancesOffset.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;trancesOffset.Parent" xml:space="preserve">
+    <value>tab_TD</value>
+  </data>
+  <data name="&gt;&gt;trancesOffset.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label9.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>66, 8</value>
+  </data>
+  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 16</value>
+  </data>
+  <data name="label9.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Trances</value>
+  </data>
+  <data name="&gt;&gt;label9.Name" xml:space="preserve">
+    <value>label9</value>
+  </data>
+  <data name="&gt;&gt;label9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label9.Parent" xml:space="preserve">
+    <value>tab_TD</value>
+  </data>
+  <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tab_TD.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 25</value>
+  </data>
+  <data name="tab_TD.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tab_TD.Size" type="System.Drawing.Size, System.Drawing">
+    <value>371, 120</value>
+  </data>
+  <data name="tab_TD.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="tab_TD.Text" xml:space="preserve">
+    <value>TD</value>
+  </data>
+  <data name="&gt;&gt;tab_TD.Name" xml:space="preserve">
+    <value>tab_TD</value>
+  </data>
+  <data name="&gt;&gt;tab_TD.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tab_TD.Parent" xml:space="preserve">
+    <value>otherOffsetsTab</value>
+  </data>
+  <data name="&gt;&gt;tab_TD.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="releasesOffset.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 6</value>
+  </data>
+  <data name="releasesOffset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 22</value>
+  </data>
+  <data name="releasesOffset.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="releasesOffset.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;releasesOffset.Name" xml:space="preserve">
+    <value>releasesOffset</value>
+  </data>
+  <data name="&gt;&gt;releasesOffset.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;releasesOffset.Parent" xml:space="preserve">
+    <value>tab_HSiFS</value>
+  </data>
+  <data name="&gt;&gt;releasesOffset.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label10.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>66, 8</value>
+  </data>
+  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 16</value>
+  </data>
+  <data name="label10.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>Releases</value>
+  </data>
+  <data name="&gt;&gt;label10.Name" xml:space="preserve">
+    <value>label10</value>
+  </data>
+  <data name="&gt;&gt;label10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label10.Parent" xml:space="preserve">
+    <value>tab_HSiFS</value>
+  </data>
+  <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tab_HSiFS.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 25</value>
+  </data>
+  <data name="tab_HSiFS.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tab_HSiFS.Size" type="System.Drawing.Size, System.Drawing">
+    <value>371, 120</value>
+  </data>
+  <data name="tab_HSiFS.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="tab_HSiFS.Text" xml:space="preserve">
+    <value>HSiFS</value>
+  </data>
+  <data name="&gt;&gt;tab_HSiFS.Name" xml:space="preserve">
+    <value>tab_HSiFS</value>
+  </data>
+  <data name="&gt;&gt;tab_HSiFS.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tab_HSiFS.Parent" xml:space="preserve">
+    <value>otherOffsetsTab</value>
+  </data>
+  <data name="&gt;&gt;tab_HSiFS.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="label14.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label14.Location" type="System.Drawing.Point, System.Drawing">
+    <value>66, 92</value>
+  </data>
+  <data name="label14.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 16</value>
+  </data>
+  <data name="label14.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="label14.Text" xml:space="preserve">
+    <value>Roar Breaks</value>
+  </data>
+  <data name="&gt;&gt;label14.Name" xml:space="preserve">
+    <value>label14</value>
+  </data>
+  <data name="&gt;&gt;label14.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label14.Parent" xml:space="preserve">
+    <value>tab_WBaWC</value>
+  </data>
+  <data name="&gt;&gt;label14.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="RBOffset.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 90</value>
+  </data>
+  <data name="RBOffset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 22</value>
+  </data>
+  <data name="RBOffset.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="RBOffset.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;RBOffset.Name" xml:space="preserve">
+    <value>RBOffset</value>
+  </data>
+  <data name="&gt;&gt;RBOffset.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RBOffset.Parent" xml:space="preserve">
+    <value>tab_WBaWC</value>
+  </data>
+  <data name="&gt;&gt;RBOffset.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="wolvesOffset.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 6</value>
+  </data>
+  <data name="wolvesOffset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 22</value>
+  </data>
+  <data name="wolvesOffset.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="wolvesOffset.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;wolvesOffset.Name" xml:space="preserve">
+    <value>wolvesOffset</value>
+  </data>
+  <data name="&gt;&gt;wolvesOffset.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;wolvesOffset.Parent" xml:space="preserve">
+    <value>tab_WBaWC</value>
+  </data>
+  <data name="&gt;&gt;wolvesOffset.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label11.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>66, 8</value>
+  </data>
+  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 16</value>
+  </data>
+  <data name="label11.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Wolves</value>
+  </data>
+  <data name="&gt;&gt;label11.Name" xml:space="preserve">
+    <value>label11</value>
+  </data>
+  <data name="&gt;&gt;label11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label11.Parent" xml:space="preserve">
+    <value>tab_WBaWC</value>
+  </data>
+  <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="ottersOffset.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 34</value>
+  </data>
+  <data name="ottersOffset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 22</value>
+  </data>
+  <data name="ottersOffset.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="ottersOffset.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;ottersOffset.Name" xml:space="preserve">
+    <value>ottersOffset</value>
+  </data>
+  <data name="&gt;&gt;ottersOffset.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ottersOffset.Parent" xml:space="preserve">
+    <value>tab_WBaWC</value>
+  </data>
+  <data name="&gt;&gt;ottersOffset.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="label12.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
+    <value>66, 36</value>
+  </data>
+  <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 16</value>
+  </data>
+  <data name="label12.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="label12.Text" xml:space="preserve">
+    <value>Otters</value>
+  </data>
+  <data name="&gt;&gt;label12.Name" xml:space="preserve">
+    <value>label12</value>
+  </data>
+  <data name="&gt;&gt;label12.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label12.Parent" xml:space="preserve">
+    <value>tab_WBaWC</value>
+  </data>
+  <data name="&gt;&gt;label12.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="label13.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label13.Location" type="System.Drawing.Point, System.Drawing">
+    <value>66, 64</value>
+  </data>
+  <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 16</value>
+  </data>
+  <data name="label13.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="label13.Text" xml:space="preserve">
+    <value>Eagles</value>
+  </data>
+  <data name="&gt;&gt;label13.Name" xml:space="preserve">
+    <value>label13</value>
+  </data>
+  <data name="&gt;&gt;label13.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label13.Parent" xml:space="preserve">
+    <value>tab_WBaWC</value>
+  </data>
   <data name="&gt;&gt;label13.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="&gt;&gt;survivalRB2.Parent" xml:space="preserve">
-    <value>tab_Box2</value>
+  <data name="eaglesOffset.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 62</value>
   </data>
-  <data name="missesOffset.TabIndex" type="System.Int32, mscorlib">
+  <data name="eaglesOffset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 22</value>
+  </data>
+  <data name="eaglesOffset.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="eaglesOffset.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;eaglesOffset.Name" xml:space="preserve">
+    <value>eaglesOffset</value>
+  </data>
+  <data name="&gt;&gt;eaglesOffset.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;eaglesOffset.Parent" xml:space="preserve">
+    <value>tab_WBaWC</value>
+  </data>
+  <data name="&gt;&gt;eaglesOffset.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="tab_WBaWC.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 25</value>
+  </data>
+  <data name="tab_WBaWC.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tab_WBaWC.Size" type="System.Drawing.Size, System.Drawing">
+    <value>371, 120</value>
+  </data>
+  <data name="tab_WBaWC.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="tab_WBaWC.Text" xml:space="preserve">
+    <value>WBaWC</value>
+  </data>
+  <data name="&gt;&gt;tab_WBaWC.Name" xml:space="preserve">
+    <value>tab_WBaWC</value>
+  </data>
+  <data name="&gt;&gt;tab_WBaWC.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tab_WBaWC.Parent" xml:space="preserve">
+    <value>otherOffsetsTab</value>
+  </data>
+  <data name="&gt;&gt;tab_WBaWC.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="otherOffsetsTab.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 21</value>
+  </data>
+  <data name="otherOffsetsTab.Size" type="System.Drawing.Size, System.Drawing">
+    <value>379, 149</value>
+  </data>
+  <data name="otherOffsetsTab.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;otherOffsetsTab.Name" xml:space="preserve">
+    <value>otherOffsetsTab</value>
+  </data>
+  <data name="&gt;&gt;otherOffsetsTab.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;otherOffsetsTab.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;otherOffsetsTab.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 214</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>391, 176</value>
+  </data>
+  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Other Offsets</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="defaultButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>166, 396</value>
+  </data>
+  <data name="defaultButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="defaultButton.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="defaultButton.Text" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="&gt;&gt;defaultButton.Name" xml:space="preserve">
+    <value>defaultButton</value>
+  </data>
+  <data name="&gt;&gt;defaultButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;defaultButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;defaultButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="saveButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>247, 396</value>
+  </data>
+  <data name="saveButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="saveButton.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="saveButton.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="&gt;&gt;saveButton.Name" xml:space="preserve">
+    <value>saveButton</value>
+  </data>
+  <data name="&gt;&gt;saveButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;saveButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;saveButton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="cancelButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>328, 396</value>
+  </data>
+  <data name="cancelButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="cancelButton.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="cancelButton.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="&gt;&gt;cancelButton.Name" xml:space="preserve">
+    <value>cancelButton</value>
+  </data>
+  <data name="&gt;&gt;cancelButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cancelButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cancelButton.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="noneRB1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="noneRB1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 6</value>
+  </data>
+  <data name="noneRB1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 20</value>
+  </data>
+  <data name="noneRB1.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="noneRB1.Text" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="&gt;&gt;noneRB1.Name" xml:space="preserve">
+    <value>noneRB1</value>
+  </data>
+  <data name="&gt;&gt;noneRB1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;noneRB1.Parent" xml:space="preserve">
+    <value>tab_Box1</value>
+  </data>
+  <data name="&gt;&gt;noneRB1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="scoringRB1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="scoringRB1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 110</value>
+  </data>
+  <data name="scoringRB1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 20</value>
+  </data>
+  <data name="scoringRB1.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="scoringRB1.Text" xml:space="preserve">
+    <value>Scoring Points</value>
+  </data>
+  <data name="&gt;&gt;scoringRB1.Name" xml:space="preserve">
+    <value>scoringRB1</value>
+  </data>
+  <data name="&gt;&gt;scoringRB1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;scoringRB1.Parent" xml:space="preserve">
+    <value>tab_Box1</value>
+  </data>
+  <data name="&gt;&gt;scoringRB1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>66, 51</value>
+  <data name="survivalRB1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+  <data name="survivalRB1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 84</value>
+  </data>
+  <data name="survivalRB1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>114, 20</value>
+  </data>
+  <data name="survivalRB1.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="survivalRB1.Text" xml:space="preserve">
+    <value>Survival Points</value>
+  </data>
+  <data name="&gt;&gt;survivalRB1.Name" xml:space="preserve">
+    <value>survivalRB1</value>
+  </data>
+  <data name="&gt;&gt;survivalRB1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;survivalRB1.Parent" xml:space="preserve">
+    <value>tab_Box1</value>
+  </data>
+  <data name="&gt;&gt;survivalRB1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="wrRB1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="wrRB1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 58</value>
+  </data>
+  <data name="wrRB1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 20</value>
+  </data>
+  <data name="wrRB1.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="wrRB1.Text" xml:space="preserve">
+    <value>World Record</value>
+  </data>
+  <data name="&gt;&gt;wrRB1.Name" xml:space="preserve">
+    <value>wrRB1</value>
+  </data>
+  <data name="&gt;&gt;wrRB1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;wrRB1.Parent" xml:space="preserve">
+    <value>tab_Box1</value>
+  </data>
+  <data name="&gt;&gt;wrRB1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="scoreRB1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="scoreRB1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 32</value>
+  </data>
+  <data name="scoreRB1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 20</value>
+  </data>
+  <data name="scoreRB1.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="scoreRB1.Text" xml:space="preserve">
+    <value>Score</value>
+  </data>
+  <data name="&gt;&gt;scoreRB1.Name" xml:space="preserve">
+    <value>scoreRB1</value>
+  </data>
+  <data name="&gt;&gt;scoreRB1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;scoreRB1.Parent" xml:space="preserve">
+    <value>tab_Box1</value>
+  </data>
+  <data name="&gt;&gt;scoreRB1.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="tab_Box1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 25</value>
+  </data>
+  <data name="tab_Box1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tab_Box1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 136</value>
+  </data>
+  <data name="tab_Box1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tab_Box1.Text" xml:space="preserve">
+    <value>Box 1</value>
+  </data>
+  <data name="&gt;&gt;tab_Box1.Name" xml:space="preserve">
+    <value>tab_Box1</value>
+  </data>
+  <data name="&gt;&gt;tab_Box1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tab_Box1.Parent" xml:space="preserve">
+    <value>optionalOffsetsTab</value>
+  </data>
+  <data name="&gt;&gt;tab_Box1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="noneRB2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="noneRB2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 6</value>
+  </data>
+  <data name="noneRB2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 20</value>
+  </data>
+  <data name="noneRB2.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="noneRB2.Text" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="&gt;&gt;noneRB2.Name" xml:space="preserve">
+    <value>noneRB2</value>
+  </data>
+  <data name="&gt;&gt;noneRB2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;noneRB2.Parent" xml:space="preserve">
+    <value>tab_Box2</value>
+  </data>
+  <data name="&gt;&gt;noneRB2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="scoringRB2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="scoringRB2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 110</value>
+  </data>
+  <data name="scoringRB2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 20</value>
+  </data>
+  <data name="scoringRB2.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="scoringRB2.Text" xml:space="preserve">
+    <value>Scoring Points</value>
+  </data>
+  <data name="&gt;&gt;scoringRB2.Name" xml:space="preserve">
+    <value>scoringRB2</value>
+  </data>
+  <data name="&gt;&gt;scoringRB2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;scoringRB2.Parent" xml:space="preserve">
+    <value>tab_Box2</value>
+  </data>
+  <data name="&gt;&gt;scoringRB2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="survivalRB2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="survivalRB2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 84</value>
+  </data>
+  <data name="survivalRB2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>114, 20</value>
+  </data>
+  <data name="survivalRB2.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="survivalRB2.Text" xml:space="preserve">
+    <value>Survival Points</value>
   </data>
   <data name="&gt;&gt;survivalRB2.Name" xml:space="preserve">
     <value>survivalRB2</value>
   </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 16</value>
+  <data name="&gt;&gt;survivalRB2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;survivalRB2.Parent" xml:space="preserve">
+    <value>tab_Box2</value>
+  </data>
+  <data name="&gt;&gt;survivalRB2.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="wrRB2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="wrRB2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 58</value>
+  </data>
+  <data name="wrRB2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 20</value>
+  </data>
+  <data name="wrRB2.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="wrRB2.Text" xml:space="preserve">
+    <value>World Record</value>
+  </data>
+  <data name="&gt;&gt;wrRB2.Name" xml:space="preserve">
+    <value>wrRB2</value>
+  </data>
+  <data name="&gt;&gt;wrRB2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;wrRB2.Parent" xml:space="preserve">
+    <value>tab_Box2</value>
+  </data>
+  <data name="&gt;&gt;wrRB2.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="scoreRB2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="scoreRB2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 32</value>
+  </data>
+  <data name="scoreRB2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 20</value>
+  </data>
+  <data name="scoreRB2.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="scoreRB2.Text" xml:space="preserve">
+    <value>Score</value>
+  </data>
+  <data name="&gt;&gt;scoreRB2.Name" xml:space="preserve">
+    <value>scoreRB2</value>
+  </data>
+  <data name="&gt;&gt;scoreRB2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;scoreRB2.Parent" xml:space="preserve">
+    <value>tab_Box2</value>
+  </data>
+  <data name="&gt;&gt;scoreRB2.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="tab_Box2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 25</value>
+  </data>
+  <data name="tab_Box2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tab_Box2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 136</value>
+  </data>
+  <data name="tab_Box2.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tab_Box2.Text" xml:space="preserve">
+    <value>Box 2</value>
+  </data>
+  <data name="&gt;&gt;tab_Box2.Name" xml:space="preserve">
+    <value>tab_Box2</value>
+  </data>
+  <data name="&gt;&gt;tab_Box2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tab_Box2.Parent" xml:space="preserve">
+    <value>optionalOffsetsTab</value>
+  </data>
+  <data name="&gt;&gt;tab_Box2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="optionalOffsetsTab.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 22</value>
+  </data>
+  <data name="optionalOffsetsTab.Size" type="System.Drawing.Size, System.Drawing">
+    <value>194, 165</value>
+  </data>
+  <data name="optionalOffsetsTab.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;optionalOffsetsTab.Name" xml:space="preserve">
+    <value>optionalOffsetsTab</value>
+  </data>
+  <data name="&gt;&gt;optionalOffsetsTab.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;optionalOffsetsTab.Parent" xml:space="preserve">
+    <value>optinalBox</value>
+  </data>
+  <data name="&gt;&gt;optionalOffsetsTab.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="optinalBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="optinalBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>195, 13</value>
+  </data>
+  <data name="optinalBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="optinalBox.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="optinalBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 194</value>
+  </data>
+  <data name="optinalBox.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="optinalBox.Text" xml:space="preserve">
+    <value>Optional Display</value>
+  </data>
+  <data name="&gt;&gt;optinalBox.Name" xml:space="preserve">
+    <value>optinalBox</value>
+  </data>
+  <data name="&gt;&gt;optinalBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;optinalBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;optinalBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lang_jaRB.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lang_jaRB.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lang_jaRB.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 47</value>
+  </data>
+  <data name="lang_jaRB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 20</value>
+  </data>
+  <data name="lang_jaRB.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="lang_jaRB.Text" xml:space="preserve">
+    <value>日本語</value>
+  </data>
+  <data name="&gt;&gt;lang_jaRB.Name" xml:space="preserve">
+    <value>lang_jaRB</value>
+  </data>
+  <data name="&gt;&gt;lang_jaRB.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lang_jaRB.Parent" xml:space="preserve">
+    <value>langBox</value>
+  </data>
+  <data name="&gt;&gt;lang_jaRB.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lang_enRB.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lang_enRB.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 21</value>
+  </data>
+  <data name="lang_enRB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 20</value>
+  </data>
+  <data name="lang_enRB.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lang_enRB.Text" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="&gt;&gt;lang_enRB.Name" xml:space="preserve">
+    <value>lang_enRB</value>
+  </data>
+  <data name="&gt;&gt;lang_enRB.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lang_enRB.Parent" xml:space="preserve">
+    <value>langBox</value>
+  </data>
+  <data name="&gt;&gt;lang_enRB.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="langBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 13</value>
+  </data>
+  <data name="langBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 111</value>
+  </data>
+  <data name="langBox.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="langBox.Text" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="&gt;&gt;langBox.Name" xml:space="preserve">
+    <value>langBox</value>
+  </data>
+  <data name="&gt;&gt;langBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;langBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;langBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>8, 16</value>
+  </data>
+  <data name="$this.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>415, 431</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -592,1147 +1723,16 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 </value>
   </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="scoringRB1.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;label14.Parent" xml:space="preserve">
-    <value>tab_WBaWC</value>
-  </data>
-  <data name="&gt;&gt;tab_Box2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="scoringRB1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="langBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 111</value>
-  </data>
-  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 16</value>
-  </data>
-  <data name="&gt;&gt;tab_UFO.Parent" xml:space="preserve">
-    <value>otherOffsetsTab</value>
-  </data>
-  <data name="&gt;&gt;otherOffsetsTab.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>66, 8</value>
-  </data>
-  <data name="langBox.Text" xml:space="preserve">
-    <value>Language</value>
-  </data>
-  <data name="lang_jaRB.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 47</value>
-  </data>
-  <data name="generalBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 77</value>
-  </data>
-  <data name="saveButton.Text" xml:space="preserve">
-    <value>Save</value>
-  </data>
-  <data name="noChargeCB.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="cancelButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>328, 396</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="scoreRB1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 32</value>
-  </data>
-  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>66, 36</value>
-  </data>
-  <data name="&gt;&gt;noneRB1.Name" xml:space="preserve">
-    <value>noneRB1</value>
-  </data>
-  <data name="lang_enRB.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 20</value>
-  </data>
-  <data name="scoringRB1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 110</value>
-  </data>
-  <data name="otherOffsetsTab.Size" type="System.Drawing.Size, System.Drawing">
-    <value>379, 149</value>
-  </data>
-  <data name="releasesOffset.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;wrRB1.Parent" xml:space="preserve">
-    <value>tab_Box1</value>
-  </data>
-  <data name="&gt;&gt;label12.Name" xml:space="preserve">
-    <value>label12</value>
-  </data>
-  <data name="&gt;&gt;releasesOffset.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Last Spells Captured</value>
-  </data>
-  <data name="label8.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
-    <value>66, 36</value>
-  </data>
-  <data name="&gt;&gt;tab_PoFV.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label14.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="scoreRB1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 20</value>
-  </data>
-  <data name="&gt;&gt;tab_WBaWC.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="tab_IN.Size" type="System.Drawing.Size, System.Drawing">
-    <value>371, 120</value>
-  </data>
-  <data name="survivalRB1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 84</value>
-  </data>
-  <data name="tab_PoFV.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 25</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>generalBox</value>
-  </data>
-  <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>66, 8</value>
-  </data>
-  <data name="tab_PCB.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 25</value>
-  </data>
-  <data name="wolvesOffset.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 6</value>
-  </data>
-  <data name="releasesOffset.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 22</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="tab_TD.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="LSOffset.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>51, 16</value>
-  </data>
-  <data name="&gt;&gt;label5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="missesOffset.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="&gt;&gt;label8.Name" xml:space="preserve">
-    <value>label8</value>
-  </data>
-  <data name="&gt;&gt;label13.Name" xml:space="preserve">
-    <value>label13</value>
-  </data>
-  <data name="&gt;&gt;scoringRB1.Name" xml:space="preserve">
-    <value>scoringRB1</value>
-  </data>
-  <data name="&gt;&gt;lang_jaRB.Name" xml:space="preserve">
-    <value>lang_jaRB</value>
-  </data>
-  <data name="&gt;&gt;tab_IN.Name" xml:space="preserve">
-    <value>tab_IN</value>
-  </data>
-  <data name="&gt;&gt;otherOffsetsTab.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;trancesOffset.Name" xml:space="preserve">
-    <value>trancesOffset</value>
-  </data>
-  <data name="cancelButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="label10.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label14.Location" type="System.Drawing.Point, System.Drawing">
-    <value>66, 92</value>
-  </data>
-  <data name="&gt;&gt;label9.Name" xml:space="preserve">
-    <value>label9</value>
-  </data>
-  <data name="&gt;&gt;generalBox.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tab_PoFV.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;blueOffset.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;LSOffset.Name" xml:space="preserve">
-    <value>LSOffset</value>
-  </data>
-  <data name="ottersOffset.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 22</value>
-  </data>
-  <data name="bombsOffset.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;trancesOffset.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="tab_Box1.Text" xml:space="preserve">
-    <value>Box 1</value>
-  </data>
-  <data name="tab_PoFV.Text" xml:space="preserve">
-    <value>PoFV</value>
-  </data>
-  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
-    <value>tab_PCB</value>
-  </data>
-  <data name="wrRB2.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="label7.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;optionalOffsetsTab.Name" xml:space="preserve">
-    <value>optionalOffsetsTab</value>
-  </data>
-  <data name="&gt;&gt;label12.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="scoreRB1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="saveButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="noneRB1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 6</value>
-  </data>
-  <data name="&gt;&gt;label10.Parent" xml:space="preserve">
-    <value>tab_HSiFS</value>
-  </data>
-  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;langBox.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Misses</value>
-  </data>
-  <data name="&gt;&gt;eaglesOffset.Parent" xml:space="preserve">
-    <value>tab_WBaWC</value>
-  </data>
-  <data name="scoringRB2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;noneRB2.Parent" xml:space="preserve">
-    <value>tab_Box2</value>
-  </data>
-  <data name="&gt;&gt;saveButton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>83, 16</value>
-  </data>
-  <data name="&gt;&gt;otherOffsetsTab.Name" xml:space="preserve">
-    <value>otherOffsetsTab</value>
-  </data>
-  <data name="lang_jaRB.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
-    <value>tab_UFO</value>
-  </data>
-  <data name="greenOffset.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="langBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 13</value>
-  </data>
-  <data name="&gt;&gt;BBOffset.Name" xml:space="preserve">
-    <value>BBOffset</value>
-  </data>
-  <data name="&gt;&gt;label13.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;optionalOffsetsTab.Parent" xml:space="preserve">
-    <value>optinalBox</value>
-  </data>
-  <data name="&gt;&gt;optinalBox.Name" xml:space="preserve">
-    <value>optinalBox</value>
-  </data>
-  <data name="&gt;&gt;tab_HSiFS.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;generalBox.Name" xml:space="preserve">
-    <value>generalBox</value>
-  </data>
-  <data name="label7.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;wrRB2.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;optinalBox.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;label11.Parent" xml:space="preserve">
-    <value>tab_WBaWC</value>
-  </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Red UFOs</value>
-  </data>
-  <data name="&gt;&gt;lang_jaRB.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BBOffset.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;saveButton.Name" xml:space="preserve">
-    <value>saveButton</value>
-  </data>
-  <data name="&gt;&gt;LSOffset.Parent" xml:space="preserve">
-    <value>tab_IN</value>
-  </data>
-  <data name="&gt;&gt;tab_Box1.Name" xml:space="preserve">
-    <value>tab_Box1</value>
-  </data>
-  <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;releasesOffset.Name" xml:space="preserve">
-    <value>releasesOffset</value>
-  </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
-  </data>
-  <data name="&gt;&gt;noneRB2.Name" xml:space="preserve">
-    <value>noneRB2</value>
-  </data>
-  <data name="&gt;&gt;cancelButton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;scoringRB1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>99, 16</value>
-  </data>
-  <data name="&gt;&gt;tab_Box2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;langBox.Name" xml:space="preserve">
-    <value>langBox</value>
-  </data>
-  <data name="&gt;&gt;ottersOffset.Name" xml:space="preserve">
-    <value>ottersOffset</value>
-  </data>
-  <data name="&gt;&gt;scoringRB2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="scoreRB1.Text" xml:space="preserve">
-    <value>Score</value>
-  </data>
-  <data name="lang_jaRB.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 20</value>
-  </data>
-  <data name="scoreRB2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 20</value>
-  </data>
-  <data name="survivalRB1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="tab_TD.Text" xml:space="preserve">
-    <value>TD</value>
-  </data>
-  <data name="&gt;&gt;greenOffset.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="wrRB2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Bombs</value>
-  </data>
-  <data name="&gt;&gt;tab_TD.Name" xml:space="preserve">
-    <value>tab_TD</value>
-  </data>
-  <data name="&gt;&gt;scoreRB2.Name" xml:space="preserve">
-    <value>scoreRB2</value>
-  </data>
-  <data name="&gt;&gt;cancelButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="trancesOffset.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="eaglesOffset.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 62</value>
-  </data>
-  <data name="scoringRB2.Text" xml:space="preserve">
-    <value>Scoring Points</value>
-  </data>
-  <data name="&gt;&gt;label9.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="noneRB1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 20</value>
-  </data>
-  <data name="&gt;&gt;LSOffset.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="ottersOffset.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 34</value>
-  </data>
-  <data name="survivalRB1.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;saveButton.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="label3.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;tab_Box1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="noChargeCB.Size" type="System.Drawing.Size, System.Drawing">
-    <value>139, 20</value>
-  </data>
-  <data name="lang_jaRB.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="tab_PCB.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="label8.Text" xml:space="preserve">
-    <value>Rainbow UFOs</value>
-  </data>
-  <data name="scoreRB2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;scoreRB1.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;noneRB1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="scoreRB2.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;tab_TD.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tab_PCB.Name" xml:space="preserve">
-    <value>tab_PCB</value>
-  </data>
-  <data name="blueOffset.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 22</value>
-  </data>
-  <data name="&gt;&gt;otherOffsetsTab.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label14.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="&gt;&gt;ottersOffset.Parent" xml:space="preserve">
-    <value>tab_WBaWC</value>
-  </data>
-  <data name="&gt;&gt;scoreRB1.Name" xml:space="preserve">
-    <value>scoreRB1</value>
-  </data>
-  <data name="&gt;&gt;tab_HSiFS.Parent" xml:space="preserve">
-    <value>otherOffsetsTab</value>
-  </data>
-  <data name="redOffset.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 6</value>
-  </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="releasesOffset.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 6</value>
-  </data>
-  <data name="&gt;&gt;redOffset.Parent" xml:space="preserve">
-    <value>tab_UFO</value>
-  </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 16</value>
-  </data>
-  <data name="redOffset.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="&gt;&gt;wrRB2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tab_HSiFS.Name" xml:space="preserve">
-    <value>tab_HSiFS</value>
-  </data>
-  <data name="tab_TD.Size" type="System.Drawing.Size, System.Drawing">
-    <value>371, 120</value>
-  </data>
-  <data name="releasesOffset.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="blueOffset.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 62</value>
-  </data>
-  <data name="optinalBox.Text" xml:space="preserve">
-    <value>Optional Display</value>
-  </data>
-  <data name="label9.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="optinalBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 194</value>
-  </data>
-  <data name="&gt;&gt;bombsOffset.Parent" xml:space="preserve">
-    <value>generalBox</value>
-  </data>
-  <data name="label13.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="label8.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>66, 23</value>
-  </data>
-  <data name="&gt;&gt;defaultButton.Name" xml:space="preserve">
-    <value>defaultButton</value>
-  </data>
-  <data name="&gt;&gt;eaglesOffset.Name" xml:space="preserve">
-    <value>eaglesOffset</value>
-  </data>
-  <data name="BBOffset.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 22</value>
-  </data>
-  <data name="tab_UFO.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 25</value>
-  </data>
-  <data name="greenOffset.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 22</value>
-  </data>
-  <data name="noChargeCB.Text" xml:space="preserve">
-    <value>No Charge Attacks</value>
-  </data>
-  <data name="&gt;&gt;eaglesOffset.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="eaglesOffset.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tab_Box1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="&gt;&gt;BBOffset.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>generalBox</value>
-  </data>
-  <data name="bombsOffset.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="&gt;&gt;scoreRB2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Settings</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>settings</value>
   </data>
-  <data name="tab_IN.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 25</value>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
-  </data>
-  <data name="&gt;&gt;label13.Parent" xml:space="preserve">
-    <value>tab_WBaWC</value>
-  </data>
-  <data name="blueOffset.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="saveButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>247, 396</value>
-  </data>
-  <data name="&gt;&gt;lang_enRB.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Other Offsets</value>
-  </data>
-  <data name="label12.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="lang_enRB.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 21</value>
-  </data>
-  <data name="&gt;&gt;tab_PCB.Parent" xml:space="preserve">
-    <value>otherOffsetsTab</value>
-  </data>
-  <data name="&gt;&gt;tab_WBaWC.Name" xml:space="preserve">
-    <value>tab_WBaWC</value>
-  </data>
-  <data name="&gt;&gt;wrRB1.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="label11.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label13.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="BBOffset.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;bombsOffset.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LSOffset.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lang_enRB.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;label12.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;bombsOffset.Name" xml:space="preserve">
-    <value>bombsOffset</value>
-  </data>
-  <data name="tab_WBaWC.Size" type="System.Drawing.Size, System.Drawing">
-    <value>371, 120</value>
-  </data>
-  <data name="&gt;&gt;BBOffset.Parent" xml:space="preserve">
-    <value>tab_PCB</value>
-  </data>
-  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 16</value>
-  </data>
-  <data name="survivalRB2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label5.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;optionalOffsetsTab.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="RBOffset.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="label13.Text" xml:space="preserve">
-    <value>Eagles</value>
-  </data>
-  <data name="otherOffsetsTab.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 21</value>
-  </data>
-  <data name="&gt;&gt;RBOffset.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="wrRB2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 20</value>
-  </data>
-  <data name="defaultButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>166, 396</value>
-  </data>
-  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="defaultButton.Text" xml:space="preserve">
-    <value>Default</value>
-  </data>
-  <data name="survivalRB2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 84</value>
-  </data>
-  <data name="&gt;&gt;generalBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;scoringRB1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="noChargeCB.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="trancesOffset.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 6</value>
-  </data>
-  <data name="noChargeCB.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 6</value>
-  </data>
-  <data name="eaglesOffset.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="noChargeCB.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>Yes</value>
-  </data>
-  <data name="defaultButton.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="&gt;&gt;bombsOffset.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;missesOffset.Parent" xml:space="preserve">
-    <value>generalBox</value>
-  </data>
-  <data name="&gt;&gt;noneRB2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Green UFOs</value>
-  </data>
-  <data name="&gt;&gt;label7.Name" xml:space="preserve">
-    <value>label7</value>
-  </data>
-  <data name="ottersOffset.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="noneRB2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 6</value>
-  </data>
-  <data name="&gt;&gt;langBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="generalBox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;survivalRB2.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;tab_TD.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="optinalBox.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="tab_UFO.Text" xml:space="preserve">
-    <value>UFO</value>
-  </data>
-  <data name="&gt;&gt;lang_jaRB.Parent" xml:space="preserve">
-    <value>langBox</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="tab_Box2.Text" xml:space="preserve">
-    <value>Box 2</value>
-  </data>
-  <data name="&gt;&gt;tab_Box1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tab_WBaWC.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="blueOffset.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;wolvesOffset.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="tab_Box2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="ottersOffset.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="rainbowOffset.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 90</value>
-  </data>
-  <data name="defaultButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="&gt;&gt;greenOffset.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;tab_PCB.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="optinalBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>195, 13</value>
-  </data>
-  <data name="scoringRB1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 20</value>
-  </data>
-  <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Border Breaks</value>
-  </data>
-  <data name="&gt;&gt;tab_IN.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;tab_UFO.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;redOffset.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;langBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="optionalOffsetsTab.Size" type="System.Drawing.Size, System.Drawing">
-    <value>194, 165</value>
-  </data>
-  <data name="lang_enRB.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;survivalRB2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="noneRB2.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;scoringRB1.Parent" xml:space="preserve">
-    <value>tab_Box1</value>
-  </data>
-  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="greenOffset.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="lang_jaRB.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;label12.Parent" xml:space="preserve">
-    <value>tab_WBaWC</value>
-  </data>
-  <data name="&gt;&gt;noChargeCB.Name" xml:space="preserve">
-    <value>noChargeCB</value>
-  </data>
-  <data name="label10.Text" xml:space="preserve">
-    <value>Releases</value>
-  </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 16</value>
-  </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;label6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="tab_PCB.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="&gt;&gt;defaultButton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>66, 8</value>
-  </data>
-  <data name="&gt;&gt;releasesOffset.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="RBOffset.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="tab_IN.Text" xml:space="preserve">
-    <value>IN</value>
-  </data>
-  <data name="tab_Box2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 25</value>
-  </data>
-  <data name="tab_PCB.Size" type="System.Drawing.Size, System.Drawing">
-    <value>371, 120</value>
-  </data>
-  <data name="&gt;&gt;saveButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;wrRB2.Parent" xml:space="preserve">
-    <value>tab_Box2</value>
-  </data>
-  <data name="&gt;&gt;releasesOffset.Parent" xml:space="preserve">
-    <value>tab_HSiFS</value>
-  </data>
-  <data name="&gt;&gt;tab_IN.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="wrRB2.Text" xml:space="preserve">
-    <value>World Record</value>
-  </data>
-  <data name="optinalBox.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
-  </data>
-  <data name="&gt;&gt;wolvesOffset.Name" xml:space="preserve">
-    <value>wolvesOffset</value>
-  </data>
-  <data name="&gt;&gt;tab_PCB.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;wolvesOffset.Parent" xml:space="preserve">
-    <value>tab_WBaWC</value>
-  </data>
-  <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>66, 8</value>
-  </data>
-  <data name="scoringRB1.Text" xml:space="preserve">
-    <value>Scoring Points</value>
-  </data>
-  <data name="&gt;&gt;scoreRB2.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="wrRB1.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;wrRB2.Name" xml:space="preserve">
-    <value>wrRB2</value>
-  </data>
-  <data name="greenOffset.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 34</value>
-  </data>
-  <data name="tab_Box1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;lang_enRB.Parent" xml:space="preserve">
-    <value>langBox</value>
-  </data>
-  <data name="label9.Text" xml:space="preserve">
-    <value>Trances</value>
-  </data>
-  <data name="&gt;&gt;lang_enRB.Name" xml:space="preserve">
-    <value>lang_enRB</value>
-  </data>
-  <data name="&gt;&gt;label7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
-  </data>
-  <data name="&gt;&gt;tab_Box2.Name" xml:space="preserve">
-    <value>tab_Box2</value>
-  </data>
-  <data name="tab_Box1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 136</value>
-  </data>
-  <data name="scoringRB2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 20</value>
-  </data>
-  <data name="&gt;&gt;ottersOffset.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;scoreRB1.Parent" xml:space="preserve">
-    <value>tab_Box1</value>
-  </data>
-  <data name="RBOffset.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 90</value>
-  </data>
-  <data name="tab_HSiFS.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 25</value>
-  </data>
-  <data name="wrRB1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 20</value>
-  </data>
-  <data name="&gt;&gt;wolvesOffset.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tab_Box1.Parent" xml:space="preserve">
-    <value>optionalOffsetsTab</value>
-  </data>
-  <data name="&gt;&gt;label5.Name" xml:space="preserve">
-    <value>label5</value>
-  </data>
-  <data name="optinalBox.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="scoringRB2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 110</value>
-  </data>
-  <data name="&gt;&gt;noChargeCB.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;trancesOffset.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;label8.Parent" xml:space="preserve">
-    <value>tab_UFO</value>
-  </data>
-  <data name="&gt;&gt;scoringRB2.Parent" xml:space="preserve">
-    <value>tab_Box2</value>
-  </data>
-  <data name="&gt;&gt;blueOffset.Name" xml:space="preserve">
-    <value>blueOffset</value>
-  </data>
-  <data name="noneRB2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="missesOffset.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 21</value>
-  </data>
-  <data name="&gt;&gt;label3.Name" xml:space="preserve">
-    <value>label3</value>
-  </data>
-  <data name="&gt;&gt;label9.Parent" xml:space="preserve">
-    <value>tab_TD</value>
-  </data>
-  <data name="tab_HSiFS.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="lang_jaRB.Text" xml:space="preserve">
-    <value>日本語</value>
-  </data>
-  <data name="tab_UFO.Size" type="System.Drawing.Size, System.Drawing">
-    <value>371, 120</value>
-  </data>
-  <data name="tab_TD.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;scoringRB2.Name" xml:space="preserve">
-    <value>scoringRB2</value>
-  </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>66, 8</value>
-  </data>
-  <data name="&gt;&gt;blueOffset.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="rainbowOffset.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 22</value>
-  </data>
-  <data name="&gt;&gt;ottersOffset.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;missesOffset.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="noneRB2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 20</value>
-  </data>
-  <data name="&gt;&gt;noneRB1.Parent" xml:space="preserve">
-    <value>tab_Box1</value>
-  </data>
-  <data name="label12.Text" xml:space="preserve">
-    <value>Otters</value>
-  </data>
-  <data name="wrRB1.Text" xml:space="preserve">
-    <value>World Record</value>
-  </data>
-  <data name="saveButton.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="$this.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LSOffset.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="&gt;&gt;tab_HSiFS.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="wrRB2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 58</value>
-  </data>
-  <data name="survivalRB2.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;rainbowOffset.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="missesOffset.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 22</value>
-  </data>
-  <data name="&gt;&gt;greenOffset.Name" xml:space="preserve">
-    <value>greenOffset</value>
-  </data>
-  <data name="scoreRB2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 32</value>
-  </data>
-  <data name="label14.Text" xml:space="preserve">
-    <value>Roar Breaks</value>
-  </data>
-  <data name="survivalRB1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 20</value>
-  </data>
-  <data name="&gt;&gt;missesOffset.Name" xml:space="preserve">
-    <value>missesOffset</value>
-  </data>
-  <data name="&gt;&gt;rainbowOffset.Name" xml:space="preserve">
-    <value>rainbowOffset</value>
-  </data>
-  <data name="tab_TD.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 25</value>
-  </data>
-  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="otherOffsetsTab.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="rainbowOffset.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="RBOffset.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 22</value>
-  </data>
-  <data name="label12.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;label6.Name" xml:space="preserve">
-    <value>label6</value>
-  </data>
-  <data name="trancesOffset.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="&gt;&gt;missesOffset.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="tab_PoFV.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="label6.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;tab_WBaWC.Parent" xml:space="preserve">
-    <value>otherOffsetsTab</value>
-  </data>
-  <data name="tab_WBaWC.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 25</value>
-  </data>
-  <data name="&gt;&gt;optinalBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="tab_HSiFS.Size" type="System.Drawing.Size, System.Drawing">
-    <value>371, 120</value>
-  </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
 </root>

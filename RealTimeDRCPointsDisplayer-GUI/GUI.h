@@ -916,9 +916,6 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			case 12:	// GFW
 				this->shottypeLabel->Text = (globalStrings->GetString(L"Route") + L": " + globalStrings->GetString(convertToStringClass(shottype)));
 				break;
-			case 16:	// HSiFS
-				this->shottypeLabel->Text = (globalStrings->GetString(L"HSiFSShottype") + L": " + globalStrings->GetString(convertToStringClass(shottype)));	// Shottype is too long!
-				break;
 			default:
 				this->shottypeLabel->Text = (globalStrings->GetString(L"Shottype") + L": " + globalStrings->GetString(convertToStringClass(shottype)));
 				break;

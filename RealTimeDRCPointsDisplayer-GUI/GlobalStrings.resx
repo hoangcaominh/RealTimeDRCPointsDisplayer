@@ -231,9 +231,6 @@
   <data name="HSiFS" xml:space="preserve">
     <value>HSiFS</value>
   </data>
-  <data name="HSiFSShottype" xml:space="preserve">
-    <value>Shot</value>
-  </data>
   <data name="IN" xml:space="preserve">
     <value>IN</value>
   </data>

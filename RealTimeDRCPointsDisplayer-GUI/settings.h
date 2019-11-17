@@ -228,19 +228,19 @@ private: System::Windows::Forms::NumericUpDown^ RBOffset;
 			// 
 			// generalBox
 			// 
-			resources->ApplyResources(this->generalBox, L"generalBox");
 			this->generalBox->Controls->Add(this->bombsOffset);
 			this->generalBox->Controls->Add(this->label2);
 			this->generalBox->Controls->Add(this->label1);
 			this->generalBox->Controls->Add(this->missesOffset);
+			resources->ApplyResources(this->generalBox, L"generalBox");
 			this->generalBox->Name = L"generalBox";
 			this->generalBox->TabStop = false;
 			// 
 			// bombsOffset
 			// 
 			resources->ApplyResources(this->bombsOffset, L"bombsOffset");
-			this->bombsOffset->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 50, 0, 0, 0 });
-			this->bombsOffset->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 50, 0, 0, System::Int32::MinValue });
+			this->bombsOffset->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 127, 0, 0, 0 });
+			this->bombsOffset->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 128, 0, 0, System::Int32::MinValue });
 			this->bombsOffset->Name = L"bombsOffset";
 			// 
 			// label2
@@ -256,20 +256,19 @@ private: System::Windows::Forms::NumericUpDown^ RBOffset;
 			// missesOffset
 			// 
 			resources->ApplyResources(this->missesOffset, L"missesOffset");
-			this->missesOffset->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 50, 0, 0, 0 });
-			this->missesOffset->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 50, 0, 0, System::Int32::MinValue });
+			this->missesOffset->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 127, 0, 0, 0 });
+			this->missesOffset->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 128, 0, 0, System::Int32::MinValue });
 			this->missesOffset->Name = L"missesOffset";
 			// 
 			// groupBox1
 			// 
-			resources->ApplyResources(this->groupBox1, L"groupBox1");
 			this->groupBox1->Controls->Add(this->otherOffsetsTab);
+			resources->ApplyResources(this->groupBox1, L"groupBox1");
 			this->groupBox1->Name = L"groupBox1";
 			this->groupBox1->TabStop = false;
 			// 
 			// otherOffsetsTab
 			// 
-			resources->ApplyResources(this->otherOffsetsTab, L"otherOffsetsTab");
 			this->otherOffsetsTab->Controls->Add(this->tab_PCB);
 			this->otherOffsetsTab->Controls->Add(this->tab_IN);
 			this->otherOffsetsTab->Controls->Add(this->tab_PoFV);
@@ -278,23 +277,24 @@ private: System::Windows::Forms::NumericUpDown^ RBOffset;
 			this->otherOffsetsTab->Controls->Add(this->tab_HSiFS);
 			this->otherOffsetsTab->Controls->Add(this->tab_WBaWC);
 			this->otherOffsetsTab->Cursor = System::Windows::Forms::Cursors::Default;
+			resources->ApplyResources(this->otherOffsetsTab, L"otherOffsetsTab");
 			this->otherOffsetsTab->Multiline = true;
 			this->otherOffsetsTab->Name = L"otherOffsetsTab";
 			this->otherOffsetsTab->SelectedIndex = 0;
 			// 
 			// tab_PCB
 			// 
-			resources->ApplyResources(this->tab_PCB, L"tab_PCB");
 			this->tab_PCB->Controls->Add(this->BBOffset);
 			this->tab_PCB->Controls->Add(this->label3);
+			resources->ApplyResources(this->tab_PCB, L"tab_PCB");
 			this->tab_PCB->Name = L"tab_PCB";
 			this->tab_PCB->UseVisualStyleBackColor = true;
 			// 
 			// BBOffset
 			// 
 			resources->ApplyResources(this->BBOffset, L"BBOffset");
-			this->BBOffset->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 50, 0, 0, 0 });
-			this->BBOffset->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 50, 0, 0, System::Int32::MinValue });
+			this->BBOffset->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 127, 0, 0, 0 });
+			this->BBOffset->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 128, 0, 0, System::Int32::MinValue });
 			this->BBOffset->Name = L"BBOffset";
 			// 
 			// label3
@@ -304,9 +304,9 @@ private: System::Windows::Forms::NumericUpDown^ RBOffset;
 			// 
 			// tab_IN
 			// 
-			resources->ApplyResources(this->tab_IN, L"tab_IN");
 			this->tab_IN->Controls->Add(this->LSOffset);
 			this->tab_IN->Controls->Add(this->label4);
+			resources->ApplyResources(this->tab_IN, L"tab_IN");
 			this->tab_IN->Name = L"tab_IN";
 			this->tab_IN->UseVisualStyleBackColor = true;
 			// 
@@ -324,8 +324,8 @@ private: System::Windows::Forms::NumericUpDown^ RBOffset;
 			// 
 			// tab_PoFV
 			// 
-			resources->ApplyResources(this->tab_PoFV, L"tab_PoFV");
 			this->tab_PoFV->Controls->Add(this->noChargeCB);
+			resources->ApplyResources(this->tab_PoFV, L"tab_PoFV");
 			this->tab_PoFV->Name = L"tab_PoFV";
 			this->tab_PoFV->UseVisualStyleBackColor = true;
 			// 
@@ -339,7 +339,6 @@ private: System::Windows::Forms::NumericUpDown^ RBOffset;
 			// 
 			// tab_UFO
 			// 
-			resources->ApplyResources(this->tab_UFO, L"tab_UFO");
 			this->tab_UFO->Controls->Add(this->redOffset);
 			this->tab_UFO->Controls->Add(this->label8);
 			this->tab_UFO->Controls->Add(this->label5);
@@ -348,14 +347,15 @@ private: System::Windows::Forms::NumericUpDown^ RBOffset;
 			this->tab_UFO->Controls->Add(this->label7);
 			this->tab_UFO->Controls->Add(this->label6);
 			this->tab_UFO->Controls->Add(this->blueOffset);
+			resources->ApplyResources(this->tab_UFO, L"tab_UFO");
 			this->tab_UFO->Name = L"tab_UFO";
 			this->tab_UFO->UseVisualStyleBackColor = true;
 			// 
 			// redOffset
 			// 
 			resources->ApplyResources(this->redOffset, L"redOffset");
-			this->redOffset->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 50, 0, 0, 0 });
-			this->redOffset->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 50, 0, 0, System::Int32::MinValue });
+			this->redOffset->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 127, 0, 0, 0 });
+			this->redOffset->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 128, 0, 0, System::Int32::MinValue });
 			this->redOffset->Name = L"redOffset";
 			// 
 			// label8
@@ -371,15 +371,15 @@ private: System::Windows::Forms::NumericUpDown^ RBOffset;
 			// rainbowOffset
 			// 
 			resources->ApplyResources(this->rainbowOffset, L"rainbowOffset");
-			this->rainbowOffset->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 50, 0, 0, 0 });
-			this->rainbowOffset->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 50, 0, 0, System::Int32::MinValue });
+			this->rainbowOffset->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 127, 0, 0, 0 });
+			this->rainbowOffset->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 128, 0, 0, System::Int32::MinValue });
 			this->rainbowOffset->Name = L"rainbowOffset";
 			// 
 			// greenOffset
 			// 
 			resources->ApplyResources(this->greenOffset, L"greenOffset");
-			this->greenOffset->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 50, 0, 0, 0 });
-			this->greenOffset->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 50, 0, 0, System::Int32::MinValue });
+			this->greenOffset->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 127, 0, 0, 0 });
+			this->greenOffset->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 128, 0, 0, System::Int32::MinValue });
 			this->greenOffset->Name = L"greenOffset";
 			// 
 			// label7
@@ -395,23 +395,23 @@ private: System::Windows::Forms::NumericUpDown^ RBOffset;
 			// blueOffset
 			// 
 			resources->ApplyResources(this->blueOffset, L"blueOffset");
-			this->blueOffset->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 50, 0, 0, 0 });
-			this->blueOffset->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 50, 0, 0, System::Int32::MinValue });
+			this->blueOffset->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 127, 0, 0, 0 });
+			this->blueOffset->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 128, 0, 0, System::Int32::MinValue });
 			this->blueOffset->Name = L"blueOffset";
 			// 
 			// tab_TD
 			// 
-			resources->ApplyResources(this->tab_TD, L"tab_TD");
 			this->tab_TD->Controls->Add(this->trancesOffset);
 			this->tab_TD->Controls->Add(this->label9);
+			resources->ApplyResources(this->tab_TD, L"tab_TD");
 			this->tab_TD->Name = L"tab_TD";
 			this->tab_TD->UseVisualStyleBackColor = true;
 			// 
 			// trancesOffset
 			// 
 			resources->ApplyResources(this->trancesOffset, L"trancesOffset");
-			this->trancesOffset->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 50, 0, 0, 0 });
-			this->trancesOffset->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 50, 0, 0, System::Int32::MinValue });
+			this->trancesOffset->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 127, 0, 0, 0 });
+			this->trancesOffset->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 128, 0, 0, System::Int32::MinValue });
 			this->trancesOffset->Name = L"trancesOffset";
 			// 
 			// label9
@@ -421,17 +421,17 @@ private: System::Windows::Forms::NumericUpDown^ RBOffset;
 			// 
 			// tab_HSiFS
 			// 
-			resources->ApplyResources(this->tab_HSiFS, L"tab_HSiFS");
 			this->tab_HSiFS->Controls->Add(this->releasesOffset);
 			this->tab_HSiFS->Controls->Add(this->label10);
+			resources->ApplyResources(this->tab_HSiFS, L"tab_HSiFS");
 			this->tab_HSiFS->Name = L"tab_HSiFS";
 			this->tab_HSiFS->UseVisualStyleBackColor = true;
 			// 
 			// releasesOffset
 			// 
 			resources->ApplyResources(this->releasesOffset, L"releasesOffset");
-			this->releasesOffset->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 200, 0, 0, 0 });
-			this->releasesOffset->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 200, 0, 0, System::Int32::MinValue });
+			this->releasesOffset->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1000, 0, 0, 0 });
+			this->releasesOffset->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1000, 0, 0, System::Int32::MinValue });
 			this->releasesOffset->Name = L"releasesOffset";
 			// 
 			// label10
@@ -441,7 +441,6 @@ private: System::Windows::Forms::NumericUpDown^ RBOffset;
 			// 
 			// tab_WBaWC
 			// 
-			resources->ApplyResources(this->tab_WBaWC, L"tab_WBaWC");
 			this->tab_WBaWC->Controls->Add(this->label14);
 			this->tab_WBaWC->Controls->Add(this->RBOffset);
 			this->tab_WBaWC->Controls->Add(this->wolvesOffset);
@@ -450,6 +449,7 @@ private: System::Windows::Forms::NumericUpDown^ RBOffset;
 			this->tab_WBaWC->Controls->Add(this->label12);
 			this->tab_WBaWC->Controls->Add(this->label13);
 			this->tab_WBaWC->Controls->Add(this->eaglesOffset);
+			resources->ApplyResources(this->tab_WBaWC, L"tab_WBaWC");
 			this->tab_WBaWC->Name = L"tab_WBaWC";
 			this->tab_WBaWC->UseVisualStyleBackColor = true;
 			// 
@@ -461,15 +461,15 @@ private: System::Windows::Forms::NumericUpDown^ RBOffset;
 			// RBOffset
 			// 
 			resources->ApplyResources(this->RBOffset, L"RBOffset");
-			this->RBOffset->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 50, 0, 0, 0 });
-			this->RBOffset->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 50, 0, 0, System::Int32::MinValue });
+			this->RBOffset->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 500, 0, 0, 0 });
+			this->RBOffset->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 500, 0, 0, System::Int32::MinValue });
 			this->RBOffset->Name = L"RBOffset";
 			// 
 			// wolvesOffset
 			// 
 			resources->ApplyResources(this->wolvesOffset, L"wolvesOffset");
-			this->wolvesOffset->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 50, 0, 0, 0 });
-			this->wolvesOffset->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 50, 0, 0, System::Int32::MinValue });
+			this->wolvesOffset->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 500, 0, 0, 0 });
+			this->wolvesOffset->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 500, 0, 0, System::Int32::MinValue });
 			this->wolvesOffset->Name = L"wolvesOffset";
 			// 
 			// label11
@@ -480,8 +480,8 @@ private: System::Windows::Forms::NumericUpDown^ RBOffset;
 			// ottersOffset
 			// 
 			resources->ApplyResources(this->ottersOffset, L"ottersOffset");
-			this->ottersOffset->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 50, 0, 0, 0 });
-			this->ottersOffset->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 50, 0, 0, System::Int32::MinValue });
+			this->ottersOffset->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 500, 0, 0, 0 });
+			this->ottersOffset->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 500, 0, 0, System::Int32::MinValue });
 			this->ottersOffset->Name = L"ottersOffset";
 			// 
 			// label12
@@ -497,8 +497,8 @@ private: System::Windows::Forms::NumericUpDown^ RBOffset;
 			// eaglesOffset
 			// 
 			resources->ApplyResources(this->eaglesOffset, L"eaglesOffset");
-			this->eaglesOffset->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 50, 0, 0, 0 });
-			this->eaglesOffset->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 50, 0, 0, System::Int32::MinValue });
+			this->eaglesOffset->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 500, 0, 0, 0 });
+			this->eaglesOffset->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 500, 0, 0, System::Int32::MinValue });
 			this->eaglesOffset->Name = L"eaglesOffset";
 			// 
 			// defaultButton
@@ -517,34 +517,34 @@ private: System::Windows::Forms::NumericUpDown^ RBOffset;
 			// 
 			// cancelButton
 			// 
-			resources->ApplyResources(this->cancelButton, L"cancelButton");
 			this->cancelButton->DialogResult = System::Windows::Forms::DialogResult::Cancel;
+			resources->ApplyResources(this->cancelButton, L"cancelButton");
 			this->cancelButton->Name = L"cancelButton";
 			this->cancelButton->UseVisualStyleBackColor = true;
 			// 
 			// optinalBox
 			// 
-			resources->ApplyResources(this->optinalBox, L"optinalBox");
 			this->optinalBox->Controls->Add(this->optionalOffsetsTab);
+			resources->ApplyResources(this->optinalBox, L"optinalBox");
 			this->optinalBox->Name = L"optinalBox";
 			this->optinalBox->TabStop = false;
 			// 
 			// optionalOffsetsTab
 			// 
-			resources->ApplyResources(this->optionalOffsetsTab, L"optionalOffsetsTab");
 			this->optionalOffsetsTab->Controls->Add(this->tab_Box1);
 			this->optionalOffsetsTab->Controls->Add(this->tab_Box2);
+			resources->ApplyResources(this->optionalOffsetsTab, L"optionalOffsetsTab");
 			this->optionalOffsetsTab->Name = L"optionalOffsetsTab";
 			this->optionalOffsetsTab->SelectedIndex = 0;
 			// 
 			// tab_Box1
 			// 
-			resources->ApplyResources(this->tab_Box1, L"tab_Box1");
 			this->tab_Box1->Controls->Add(this->noneRB1);
 			this->tab_Box1->Controls->Add(this->scoringRB1);
 			this->tab_Box1->Controls->Add(this->survivalRB1);
 			this->tab_Box1->Controls->Add(this->wrRB1);
 			this->tab_Box1->Controls->Add(this->scoreRB1);
+			resources->ApplyResources(this->tab_Box1, L"tab_Box1");
 			this->tab_Box1->Name = L"tab_Box1";
 			this->tab_Box1->UseVisualStyleBackColor = true;
 			// 
@@ -583,12 +583,12 @@ private: System::Windows::Forms::NumericUpDown^ RBOffset;
 			// 
 			// tab_Box2
 			// 
-			resources->ApplyResources(this->tab_Box2, L"tab_Box2");
 			this->tab_Box2->Controls->Add(this->noneRB2);
 			this->tab_Box2->Controls->Add(this->scoringRB2);
 			this->tab_Box2->Controls->Add(this->survivalRB2);
 			this->tab_Box2->Controls->Add(this->wrRB2);
 			this->tab_Box2->Controls->Add(this->scoreRB2);
+			resources->ApplyResources(this->tab_Box2, L"tab_Box2");
 			this->tab_Box2->Name = L"tab_Box2";
 			this->tab_Box2->UseVisualStyleBackColor = true;
 			// 
@@ -627,9 +627,9 @@ private: System::Windows::Forms::NumericUpDown^ RBOffset;
 			// 
 			// langBox
 			// 
-			resources->ApplyResources(this->langBox, L"langBox");
 			this->langBox->Controls->Add(this->lang_jaRB);
 			this->langBox->Controls->Add(this->lang_enRB);
+			resources->ApplyResources(this->langBox, L"langBox");
 			this->langBox->Name = L"langBox";
 			this->langBox->TabStop = false;
 			// 

@@ -303,7 +303,7 @@
     <value>2</value>
   </data>
   <data name="optionalLabel2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 24pt</value>
+    <value>Microsoft Sans Serif, 21.75pt</value>
   </data>
   <data name="optionalLabel2.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 270</value>
@@ -333,7 +333,7 @@
     <value>3</value>
   </data>
   <data name="optionalLabel1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 24pt</value>
+    <value>Microsoft Sans Serif, 21.75pt</value>
   </data>
   <data name="optionalLabel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 216</value>
@@ -363,7 +363,7 @@
     <value>4</value>
   </data>
   <data name="bombsLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 24pt</value>
+    <value>Microsoft Sans Serif, 21.75pt</value>
   </data>
   <data name="bombsLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>174, 108</value>
@@ -393,7 +393,7 @@
     <value>5</value>
   </data>
   <data name="missesLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 24pt</value>
+    <value>Microsoft Sans Serif, 21.75pt</value>
   </data>
   <data name="missesLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 108</value>
@@ -423,7 +423,7 @@
     <value>6</value>
   </data>
   <data name="shottypeLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 24pt</value>
+    <value>Microsoft Sans Serif, 21.75pt</value>
   </data>
   <data name="shottypeLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 54</value>
@@ -453,7 +453,7 @@
     <value>7</value>
   </data>
   <data name="diffLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 24pt</value>
+    <value>Microsoft Sans Serif, 21.75pt</value>
   </data>
   <data name="diffLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
