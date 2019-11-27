@@ -171,7 +171,7 @@
     <value>160, 23</value>
   </data>
   <data name="clear.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>5</value>
   </data>
   <data name="clear.Text" xml:space="preserve">
     <value>Clear Log</value>
@@ -195,7 +195,7 @@
     <value>326, 23</value>
   </data>
   <data name="findButton.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>7</value>
   </data>
   <data name="findButton.Text" xml:space="preserve">
     <value>Find</value>
@@ -516,7 +516,7 @@
     <value>348, 324</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>8</value>
   </data>
   <data name="&gt;&gt;panel1.Name" xml:space="preserve">
     <value>panel1</value>
@@ -537,7 +537,7 @@
     <value>160, 23</value>
   </data>
   <data name="settings.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>2</value>
   </data>
   <data name="settings.Text" xml:space="preserve">
     <value>Settings</value>
@@ -561,7 +561,7 @@
     <value>160, 23</value>
   </data>
   <data name="about.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="about.Text" xml:space="preserve">
     <value>About</value>
@@ -594,7 +594,7 @@
     <value>348, 23</value>
   </data>
   <data name="warningLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="warningLabel.Text" xml:space="preserve">
     <value>Warning: Offsets on!</value>
@@ -633,7 +633,7 @@
     <value>160, 23</value>
   </data>
   <data name="statusCap.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>4</value>
   </data>
   <data name="statusCap.Text" xml:space="preserve">
     <value>Capture Status</value>
@@ -657,7 +657,7 @@
     <value>160, 23</value>
   </data>
   <data name="logCap.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>3</value>
   </data>
   <data name="logCap.Text" xml:space="preserve">
     <value>Capture Log</value>
