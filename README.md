@@ -5,10 +5,8 @@ If you find any bugs, create a new issue on Github or DM me in Discord.
 (formerly known as RealTimeDRCPointsDisplayer)
 An user interface application that displays in-game information and calculates DRC points for you during your run or your replay.
 
-## Version 1.8
-- Added 2 new screenshot buttons, one for current status, the other for log. They will be saved in /screenshots folder, which is located in the same folder with the application
-- Fixed score overflow when it reaches 4,294,967,296 or above
-- Redesign GUI, which looks better and less glitchy now
+## Version 1.8.1
+- TD: Use addresses from version 1.00c instead of version 1.00b
 
 ## Supports
 This tool works for native (not modified or patched except for [THCrap](https://www.thpatch.net/wiki/Touhou_Patch_Center) ) maingames and GFW.
