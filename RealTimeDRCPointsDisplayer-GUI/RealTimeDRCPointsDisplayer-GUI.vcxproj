@@ -192,6 +192,11 @@
     <Image Include="icon.ico" />
     <Image Include="icon1.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AutoUpdater\AutoUpdater.csproj">
+      <Project>{0a43f8e3-00a7-4180-9eec-8d97847c1fe3}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

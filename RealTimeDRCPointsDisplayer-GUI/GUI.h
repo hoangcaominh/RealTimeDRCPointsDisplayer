@@ -13,11 +13,13 @@ namespace RealTimeDRCPointsDisplayerGUI {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::Net;
+	using namespace AutoUpdater;
 
 	/// <summary>
 	/// Summary for GUI
 	/// </summary>
-	public ref class GUI : public System::Windows::Forms::Form
+	public ref class GUI : public System::Windows::Forms::Form, public IAutoUpdater
 	{
 	public:
 
@@ -25,6 +27,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		{
 			if (!Load_config()) { MessageBox::Show("Error loading config file!", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error); }
 			if (config["lang"] == "ja") { System::Threading::Thread::CurrentThread->CurrentUICulture = gcnew System::Globalization::CultureInfo(L"ja-JP"); }
+			updater = gcnew Updater(this);
 			CheckNewVersion();
 			InitializeComponent();
 			// InitWAV();
@@ -75,7 +78,6 @@ namespace RealTimeDRCPointsDisplayerGUI {
 	private: System::Windows::Forms::Label^  extraLabel1;
 	private: System::Windows::Forms::Label^  extraLabel3;
 	private: System::Windows::Forms::Label^  extraLabel2;
-	private: System::ComponentModel::BackgroundWorker^  UpdateNewVersion;
 	private: System::Windows::Forms::Label^  warningLabel;
 	private: System::ComponentModel::BackgroundWorker^  checkOffsetsOn;
 	private: System::ComponentModel::BackgroundWorker^ findGameThread;
@@ -89,7 +91,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 
 			 // private: System::Media::SoundPlayer^ player = gcnew System::Media::SoundPlayer();
 
-
+	private: Updater^ updater;
 
 	private:
 		/// <summary>
@@ -123,7 +125,6 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->settings = (gcnew System::Windows::Forms::Button());
 			this->about = (gcnew System::Windows::Forms::Button());
 			this->bkgWorker = (gcnew System::ComponentModel::BackgroundWorker());
-			this->UpdateNewVersion = (gcnew System::ComponentModel::BackgroundWorker());
 			this->warningLabel = (gcnew System::Windows::Forms::Label());
 			this->checkOffsetsOn = (gcnew System::ComponentModel::BackgroundWorker());
 			this->findGameThread = (gcnew System::ComponentModel::BackgroundWorker());
@@ -149,7 +150,6 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			resources->ApplyResources(this->infoBox, L"infoBox");
 			this->infoBox->Name = L"infoBox";
 			this->infoBox->DrawItem += gcnew System::Windows::Forms::DrawItemEventHandler(this, &GUI::DrawItem);
-			this->infoBox->SelectedIndexChanged += gcnew System::EventHandler(this, &GUI::listBox1_SelectedIndexChanged);
 			// 
 			// clear
 			// 
@@ -181,7 +181,6 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->panel1->ForeColor = System::Drawing::SystemColors::ControlText;
 			resources->ApplyResources(this->panel1, L"panel1");
 			this->panel1->Name = L"panel1";
-			this->panel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &GUI::panel1_Paint);
 			// 
 			// extraLabel3
 			// 
@@ -284,13 +283,6 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->bkgWorker->DoWork += gcnew System::ComponentModel::DoWorkEventHandler(this, &GUI::bkgWorker_DoWork);
 			this->bkgWorker->ProgressChanged += gcnew System::ComponentModel::ProgressChangedEventHandler(this, &GUI::bkgWorker_ReportProgress);
 			// 
-			// UpdateNewVersion
-			// 
-			this->UpdateNewVersion->WorkerReportsProgress = true;
-			this->UpdateNewVersion->DoWork += gcnew System::ComponentModel::DoWorkEventHandler(this, &GUI::UpdateNewVersion_DoWork);
-			this->UpdateNewVersion->ProgressChanged += gcnew System::ComponentModel::ProgressChangedEventHandler(this, &GUI::UpdateNewVersion_ProgressChanged);
-			this->UpdateNewVersion->RunWorkerCompleted += gcnew System::ComponentModel::RunWorkerCompletedEventHandler(this, &GUI::UpdateNewVersion_RunWorkerCompleted);
-			// 
 			// warningLabel
 			// 
 			this->warningLabel->BackColor = System::Drawing::Color::Transparent;
@@ -349,33 +341,72 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->MaximizeBox = false;
 			this->Name = L"GUI";
-			this->Load += gcnew System::EventHandler(this, &GUI::GUI_Load);
 			this->panel1->ResumeLayout(false);
 			this->ResumeLayout(false);
 
 		}
 
 #pragma endregion
-	private: System::Void GUI_Load(System::Object^  sender, System::EventArgs^  e)
+#pragma region AutoUpdater
+	public: virtual property System::Version^ ApplicationVersion
 	{
-
+		System::Version^ get()
+		{
+			return gcnew Version(convertToStringClass(config["version"].get<std::string>()));
+		}
 	}
 
-	private: System::Void listBox1_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e)
+	public: virtual property System::Reflection::Assembly^ ApplicationAssembly
 	{
-
+		System::Reflection::Assembly^ get()
+		{
+			return System::Reflection::Assembly::GetExecutingAssembly();
+		}
 	}
 
-	private: System::Void label1_Click(System::Object^  sender, System::EventArgs^  e)
+	public: virtual property System::Drawing::Icon^ ApplicationIcon
 	{
-
+		System::Drawing::Icon^ get()
+		{
+			return this->Icon;
+		}
 	}
 
-	private: System::Void panel1_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e)
+	public: virtual property System::Uri^ UpdateInfoLocation
 	{
-
+		System::Uri^ get()
+		{
+			try
+			{
+				
+				HttpWebRequest^ req = (HttpWebRequest^)WebRequest::Create(L"https://github.com/hoangcaominh/RealTimeDRCPointsDisplayer/releases/latest");
+				HttpWebResponse^ res = (HttpWebResponse^)req->GetResponse();
+				res->Close();
+				array<String^>^ splits = res->ResponseUri->ToString()->Split('/');
+				return gcnew Uri(L"https://github.com/hoangcaominh/RealTimeDRCPointsDisplayer/releases/download/" + splits[splits->Length - 1] + L"/update.json");
+				
+				/*
+				//Uri^ uri = gcnew Uri(L"https://raw.githubusercontent.com/hoangcaominh/RealTimeDRCPointsDisplayer/master/RealTimeDRCPointsDisplayer-GUI/config.json");
+				Uri^ uri = gcnew Uri(L"file:///D:/update.json");
+				return uri;
+				*/
+			}
+			catch (Exception^ ex)
+			{
+				MessageBox::Show(ex->Message, "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+				return nullptr;
+			}
+		}
 	}
 
+	public: virtual property System::Windows::Forms::Form^ Context
+	{
+		System::Windows::Forms::Form^ get()
+		{
+			return this;
+		}
+	}
+#pragma endregion
 	// convert to String from const char*
 	private: String^ convertToStringClass(const char* &str)
 	{
@@ -403,7 +434,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			"thus calculating DRC points for both survival and scoring during a Touhou run.\n\n" +
 			"Author: Cao Minh\n" +
 			"Version: " + convertToStringClass(config["version"].get<std::string>()) + "\n" + 
-			"GitHub repository: RealTimeDRCPointsDisplayer",
+			"GitHub repository: hoangcaominh/RealTimeDRCPointsDisplayer",
 			"About",
 			MessageBoxButtons::OK,
 			MessageBoxIcon::Information);
@@ -493,6 +524,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 
 	private: System::Void CheckNewVersion()
 	{
+		/*
 		json temp_config;
 
 		BOOL fail = Download_config();
@@ -517,6 +549,8 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			}
 		}
 		IO::File::Delete("_config.json");
+		*/
+		updater->Update();
 	}
 
 	private: System::Void initLabel()
@@ -1041,22 +1075,6 @@ namespace RealTimeDRCPointsDisplayerGUI {
 	private: System::Void checkOffsetsOn_ProgressChanged(System::Object^  sender, System::ComponentModel::ProgressChangedEventArgs^  e)
 	{
 		this->ToggleWarning();
-	}
-
-	// updateNewVersion: not done yet
-	private: System::Void UpdateNewVersion_DoWork(System::Object^ sender, System::ComponentModel::DoWorkEventArgs^ e)
-	{
-
-	}
-
-	private: System::Void UpdateNewVersion_ProgressChanged(System::Object^ sender, System::ComponentModel::ProgressChangedEventArgs^ e)
-	{
-
-	}
-
-	private: System::Void UpdateNewVersion_RunWorkerCompleted(System::Object^ sender, System::ComponentModel::RunWorkerCompletedEventArgs^ e)
-	{
-
 	}
 	};
 }
