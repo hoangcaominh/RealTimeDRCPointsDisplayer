@@ -117,8 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="updateRubrics.Text" xml:space="preserve">
-    <value>ルーブリックアップデート</value>
+  <data name="updateData.Text" xml:space="preserve">
+    <value>データアップデート</value>
   </data>
   <data name="clear.Text" xml:space="preserve">
     <value>ログ削除する</value>

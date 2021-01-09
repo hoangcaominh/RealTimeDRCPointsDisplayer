@@ -139,7 +139,7 @@
     <value>AyaWinter</value>
   </data>
   <data name="Bombs" xml:space="preserve">
-    <value>Bombs</value>
+    <value>Bomb</value>
   </data>
   <data name="BorderBreaks" xml:space="preserve">
     <value>Border Breaks</value>
@@ -301,7 +301,7 @@
     <value>Merlin</value>
   </data>
   <data name="Misses" xml:space="preserve">
-    <value>Misses</value>
+    <value>Miss</value>
   </data>
   <data name="MoF" xml:space="preserve">
     <value>MoF</value>

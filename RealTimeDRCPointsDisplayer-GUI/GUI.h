@@ -31,7 +31,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			CheckNewVersion();
 			InitializeComponent();
 			// InitWAV();
-			this->updateRubricsThread->RunWorkerAsync();
+			this->updateDataThread->RunWorkerAsync();
 			this->checkOffsetsOn->RunWorkerAsync();
 			RealTimeDRCPointsDisplayerGUI::GUI::Width = 359;
 		}
@@ -50,7 +50,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		}
 	private: System::DateTime^ sysTime = gcnew System::DateTime();
 
-	private: System::Windows::Forms::Button^  updateRubrics;
+	private: System::Windows::Forms::Button^  updateData;
 	protected:
 
 	private: System::Windows::Forms::ListBox^  infoBox;
@@ -62,8 +62,10 @@ namespace RealTimeDRCPointsDisplayerGUI {
 
 
 	private: System::Windows::Forms::Panel^  panel1;
-	private: System::Windows::Forms::Label^  bombsLabel;
-	private: System::Windows::Forms::Label^  missesLabel;
+	private: System::Windows::Forms::Label^ bombLabel;
+
+	private: System::Windows::Forms::Label^ missLabel;
+
 	private: System::Windows::Forms::Label^  shottypeLabel;
 	private: System::Windows::Forms::Label^  diffLabel;
 	private: System::Windows::Forms::Label^ optionalLabel1;
@@ -85,7 +87,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 	private: System::Collections::Generic::List<System::Drawing::Brush^>^ IndexedColor = gcnew System::Collections::Generic::List<System::Drawing::Brush^>();
 
 	private: Resources::ResourceManager^ globalStrings = gcnew Resources::ResourceManager(L"RealTimeDRCPointsDisplayerGUI.GlobalStrings", this->GetType()->Assembly);
-	private: System::ComponentModel::BackgroundWorker^ updateRubricsThread;
+	private: System::ComponentModel::BackgroundWorker^ updateDataThread;
 	private: System::Windows::Forms::Button^ statusCap;
 	private: System::Windows::Forms::Button^ logCap;
 
@@ -107,7 +109,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(GUI::typeid));
-			this->updateRubrics = (gcnew System::Windows::Forms::Button());
+			this->updateData = (gcnew System::Windows::Forms::Button());
 			this->infoBox = (gcnew System::Windows::Forms::ListBox());
 			this->clear = (gcnew System::Windows::Forms::Button());
 			this->findButton = (gcnew System::Windows::Forms::Button());
@@ -117,8 +119,8 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->extraLabel1 = (gcnew System::Windows::Forms::Label());
 			this->optionalLabel2 = (gcnew System::Windows::Forms::Label());
 			this->optionalLabel1 = (gcnew System::Windows::Forms::Label());
-			this->bombsLabel = (gcnew System::Windows::Forms::Label());
-			this->missesLabel = (gcnew System::Windows::Forms::Label());
+			this->bombLabel = (gcnew System::Windows::Forms::Label());
+			this->missLabel = (gcnew System::Windows::Forms::Label());
 			this->shottypeLabel = (gcnew System::Windows::Forms::Label());
 			this->diffLabel = (gcnew System::Windows::Forms::Label());
 			this->extraLabel0 = (gcnew System::Windows::Forms::Label());
@@ -128,26 +130,26 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->warningLabel = (gcnew System::Windows::Forms::Label());
 			this->checkOffsetsOn = (gcnew System::ComponentModel::BackgroundWorker());
 			this->findGameThread = (gcnew System::ComponentModel::BackgroundWorker());
-			this->updateRubricsThread = (gcnew System::ComponentModel::BackgroundWorker());
+			this->updateDataThread = (gcnew System::ComponentModel::BackgroundWorker());
 			this->statusCap = (gcnew System::Windows::Forms::Button());
 			this->logCap = (gcnew System::Windows::Forms::Button());
 			this->panel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
-			// updateRubrics
+			// updateData
 			// 
-			resources->ApplyResources(this->updateRubrics, L"updateRubrics");
-			this->updateRubrics->Name = L"updateRubrics";
-			this->updateRubrics->UseVisualStyleBackColor = true;
-			this->updateRubrics->Click += gcnew System::EventHandler(this, &GUI::update_Click);
+			resources->ApplyResources(this->updateData, L"updateData");
+			this->updateData->Name = L"updateData";
+			this->updateData->UseVisualStyleBackColor = true;
+			this->updateData->Click += gcnew System::EventHandler(this, &GUI::update_Click);
 			// 
 			// infoBox
 			// 
+			resources->ApplyResources(this->infoBox, L"infoBox");
 			this->infoBox->BackColor = System::Drawing::Color::Black;
 			this->infoBox->DrawMode = System::Windows::Forms::DrawMode::OwnerDrawFixed;
 			this->infoBox->ForeColor = System::Drawing::Color::White;
 			this->infoBox->FormattingEnabled = true;
-			resources->ApplyResources(this->infoBox, L"infoBox");
 			this->infoBox->Name = L"infoBox";
 			this->infoBox->DrawItem += gcnew System::Windows::Forms::DrawItemEventHandler(this, &GUI::DrawItem);
 			// 
@@ -167,98 +169,98 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			// 
 			// panel1
 			// 
+			resources->ApplyResources(this->panel1, L"panel1");
 			this->panel1->BackColor = System::Drawing::Color::Black;
 			this->panel1->Controls->Add(this->extraLabel3);
 			this->panel1->Controls->Add(this->extraLabel2);
 			this->panel1->Controls->Add(this->extraLabel1);
 			this->panel1->Controls->Add(this->optionalLabel2);
 			this->panel1->Controls->Add(this->optionalLabel1);
-			this->panel1->Controls->Add(this->bombsLabel);
-			this->panel1->Controls->Add(this->missesLabel);
+			this->panel1->Controls->Add(this->bombLabel);
+			this->panel1->Controls->Add(this->missLabel);
 			this->panel1->Controls->Add(this->shottypeLabel);
 			this->panel1->Controls->Add(this->diffLabel);
 			this->panel1->Controls->Add(this->extraLabel0);
 			this->panel1->ForeColor = System::Drawing::SystemColors::ControlText;
-			resources->ApplyResources(this->panel1, L"panel1");
 			this->panel1->Name = L"panel1";
 			// 
 			// extraLabel3
 			// 
+			resources->ApplyResources(this->extraLabel3, L"extraLabel3");
 			this->extraLabel3->BackColor = System::Drawing::Color::Transparent;
 			this->extraLabel3->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			resources->ApplyResources(this->extraLabel3, L"extraLabel3");
 			this->extraLabel3->ForeColor = System::Drawing::Color::Yellow;
 			this->extraLabel3->Name = L"extraLabel3";
 			// 
 			// extraLabel2
 			// 
+			resources->ApplyResources(this->extraLabel2, L"extraLabel2");
 			this->extraLabel2->BackColor = System::Drawing::Color::Transparent;
 			this->extraLabel2->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			resources->ApplyResources(this->extraLabel2, L"extraLabel2");
 			this->extraLabel2->ForeColor = System::Drawing::Color::Lime;
 			this->extraLabel2->Name = L"extraLabel2";
 			// 
 			// extraLabel1
 			// 
+			resources->ApplyResources(this->extraLabel1, L"extraLabel1");
 			this->extraLabel1->BackColor = System::Drawing::Color::Transparent;
 			this->extraLabel1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			resources->ApplyResources(this->extraLabel1, L"extraLabel1");
 			this->extraLabel1->ForeColor = System::Drawing::Color::Lime;
 			this->extraLabel1->Name = L"extraLabel1";
 			// 
 			// optionalLabel2
 			// 
+			resources->ApplyResources(this->optionalLabel2, L"optionalLabel2");
 			this->optionalLabel2->BackColor = System::Drawing::Color::Transparent;
 			this->optionalLabel2->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			resources->ApplyResources(this->optionalLabel2, L"optionalLabel2");
 			this->optionalLabel2->ForeColor = System::Drawing::Color::White;
 			this->optionalLabel2->Name = L"optionalLabel2";
 			// 
 			// optionalLabel1
 			// 
+			resources->ApplyResources(this->optionalLabel1, L"optionalLabel1");
 			this->optionalLabel1->BackColor = System::Drawing::Color::Transparent;
 			this->optionalLabel1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			resources->ApplyResources(this->optionalLabel1, L"optionalLabel1");
 			this->optionalLabel1->ForeColor = System::Drawing::Color::White;
 			this->optionalLabel1->Name = L"optionalLabel1";
 			// 
-			// bombsLabel
+			// bombLabel
 			// 
-			this->bombsLabel->BackColor = System::Drawing::Color::Transparent;
-			this->bombsLabel->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			resources->ApplyResources(this->bombsLabel, L"bombsLabel");
-			this->bombsLabel->ForeColor = System::Drawing::Color::Lime;
-			this->bombsLabel->Name = L"bombsLabel";
+			resources->ApplyResources(this->bombLabel, L"bombLabel");
+			this->bombLabel->BackColor = System::Drawing::Color::Transparent;
+			this->bombLabel->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->bombLabel->ForeColor = System::Drawing::Color::Lime;
+			this->bombLabel->Name = L"bombLabel";
 			// 
-			// missesLabel
+			// missLabel
 			// 
-			this->missesLabel->BackColor = System::Drawing::Color::Transparent;
-			this->missesLabel->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			resources->ApplyResources(this->missesLabel, L"missesLabel");
-			this->missesLabel->ForeColor = System::Drawing::Color::Red;
-			this->missesLabel->Name = L"missesLabel";
+			resources->ApplyResources(this->missLabel, L"missLabel");
+			this->missLabel->BackColor = System::Drawing::Color::Transparent;
+			this->missLabel->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->missLabel->ForeColor = System::Drawing::Color::Red;
+			this->missLabel->Name = L"missLabel";
 			// 
 			// shottypeLabel
 			// 
+			resources->ApplyResources(this->shottypeLabel, L"shottypeLabel");
 			this->shottypeLabel->BackColor = System::Drawing::Color::Transparent;
 			this->shottypeLabel->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			resources->ApplyResources(this->shottypeLabel, L"shottypeLabel");
 			this->shottypeLabel->ForeColor = System::Drawing::Color::White;
 			this->shottypeLabel->Name = L"shottypeLabel";
 			// 
 			// diffLabel
 			// 
+			resources->ApplyResources(this->diffLabel, L"diffLabel");
 			this->diffLabel->BackColor = System::Drawing::Color::Transparent;
 			this->diffLabel->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			resources->ApplyResources(this->diffLabel, L"diffLabel");
 			this->diffLabel->ForeColor = System::Drawing::Color::White;
 			this->diffLabel->Name = L"diffLabel";
 			// 
 			// extraLabel0
 			// 
+			resources->ApplyResources(this->extraLabel0, L"extraLabel0");
 			this->extraLabel0->BackColor = System::Drawing::Color::Transparent;
 			this->extraLabel0->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			resources->ApplyResources(this->extraLabel0, L"extraLabel0");
 			this->extraLabel0->ForeColor = System::Drawing::Color::White;
 			this->extraLabel0->Name = L"extraLabel0";
 			// 
@@ -282,11 +284,12 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->bkgWorker->WorkerSupportsCancellation = true;
 			this->bkgWorker->DoWork += gcnew System::ComponentModel::DoWorkEventHandler(this, &GUI::bkgWorker_DoWork);
 			this->bkgWorker->ProgressChanged += gcnew System::ComponentModel::ProgressChangedEventHandler(this, &GUI::bkgWorker_ReportProgress);
+			this->bkgWorker->RunWorkerCompleted += gcnew System::ComponentModel::RunWorkerCompletedEventHandler(this, &GUI::bkgWorker_RunWorkerCompleted);
 			// 
 			// warningLabel
 			// 
-			this->warningLabel->BackColor = System::Drawing::Color::Transparent;
 			resources->ApplyResources(this->warningLabel, L"warningLabel");
+			this->warningLabel->BackColor = System::Drawing::Color::Transparent;
 			this->warningLabel->ForeColor = System::Drawing::Color::Red;
 			this->warningLabel->Name = L"warningLabel";
 			// 
@@ -302,12 +305,12 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->findGameThread->DoWork += gcnew System::ComponentModel::DoWorkEventHandler(this, &GUI::findGameThread_DoWork);
 			this->findGameThread->RunWorkerCompleted += gcnew System::ComponentModel::RunWorkerCompletedEventHandler(this, &GUI::findGameThread_RunWorkerCompleted);
 			// 
-			// updateRubricsThread
+			// updateDataThread
 			// 
-			this->updateRubricsThread->WorkerReportsProgress = true;
-			this->updateRubricsThread->DoWork += gcnew System::ComponentModel::DoWorkEventHandler(this, &GUI::updateRubricsThread_DoWork);
-			this->updateRubricsThread->ProgressChanged += gcnew System::ComponentModel::ProgressChangedEventHandler(this, &GUI::updateRubricsThread_ProgressChanged);
-			this->updateRubricsThread->RunWorkerCompleted += gcnew System::ComponentModel::RunWorkerCompletedEventHandler(this, &GUI::updateRubricsThread_RunWorkerCompleted);
+			this->updateDataThread->WorkerReportsProgress = true;
+			this->updateDataThread->DoWork += gcnew System::ComponentModel::DoWorkEventHandler(this, &GUI::updateDataThread_DoWork);
+			this->updateDataThread->ProgressChanged += gcnew System::ComponentModel::ProgressChangedEventHandler(this, &GUI::updateDataThread_ProgressChanged);
+			this->updateDataThread->RunWorkerCompleted += gcnew System::ComponentModel::RunWorkerCompletedEventHandler(this, &GUI::updateDataThread_RunWorkerCompleted);
 			// 
 			// statusCap
 			// 
@@ -337,10 +340,11 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->Controls->Add(this->findButton);
 			this->Controls->Add(this->clear);
 			this->Controls->Add(this->infoBox);
-			this->Controls->Add(this->updateRubrics);
+			this->Controls->Add(this->updateData);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->MaximizeBox = false;
 			this->Name = L"GUI";
+			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &GUI::GUIClosing);
 			this->panel1->ResumeLayout(false);
 			this->ResumeLayout(false);
 
@@ -352,7 +356,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 	{
 		System::Version^ get()
 		{
-			return gcnew Version(convertToStringClass(config["version"].get<std::string>()));
+			return gcnew Version(L"2.0.1");
 		}
 	}
 
@@ -433,7 +437,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			"A tool that tracks in-game data such as misses, bombs, etc, " +
 			"thus calculating DRC points for both survival and scoring during a Touhou run.\n\n" +
 			"Author: Cao Minh\n" +
-			"Version: " + convertToStringClass(config["version"].get<std::string>()) + "\n" + 
+			"Version: " + ApplicationVersion + "\n" + 
 			"GitHub repository: hoangcaominh/RealTimeDRCPointsDisplayer",
 			"About",
 			MessageBoxButtons::OK,
@@ -443,9 +447,9 @@ namespace RealTimeDRCPointsDisplayerGUI {
 
 	private: System::Void update_Click(System::Object^  sender, System::EventArgs^  e)
 	{
-		if (!this->updateRubricsThread->IsBusy)
+		if (!this->updateDataThread->IsBusy)
 		{
-			this->updateRubricsThread->RunWorkerAsync();
+			this->updateDataThread->RunWorkerAsync();
 		}
 	}
 
@@ -747,56 +751,56 @@ namespace RealTimeDRCPointsDisplayerGUI {
 	// Background Worker
 	//
 
-	private: System::Void updateRubricsThread_DoWork(System::Object^ sender, System::ComponentModel::DoWorkEventArgs^ e)
+	private: System::Void updateDataThread_DoWork(System::Object^ sender, System::ComponentModel::DoWorkEventArgs^ e)
 	{
 		// boolean variable for findButton->Enabled
 		e->Result = true;
-		this->updateRubricsThread->ReportProgress(0);
-		updateRubricsFailed = Download_rubrics();
-		if (updateRubricsFailed)
+		this->updateDataThread->ReportProgress(0);
+		updateDataFailed = Download_rubrics();
+		if (updateDataFailed)
 		{
-			this->updateRubricsThread->ReportProgress(24);
+			this->updateDataThread->ReportProgress(24);
 		}
 		else
 		{
-			this->updateRubricsThread->ReportProgress(25);
+			this->updateDataThread->ReportProgress(25);
 		}
-		updateRubricsFailed = Download_wrs();
-		if (updateRubricsFailed)
+		updateDataFailed = Download_wrs();
+		if (updateDataFailed)
 		{
-			this->updateRubricsThread->ReportProgress(49);
+			this->updateDataThread->ReportProgress(49);
 		}
 		else
 		{
-			this->updateRubricsThread->ReportProgress(50);
+			this->updateDataThread->ReportProgress(50);
 		}
-		updateRubricsFailed = Load_rubrics();
-		if (updateRubricsFailed)
+		updateDataFailed = Load_rubrics();
+		if (updateDataFailed)
 		{
-			this->updateRubricsThread->ReportProgress(74);
+			this->updateDataThread->ReportProgress(74);
 			e->Result = false;
 		}
 		else
 		{
-			this->updateRubricsThread->ReportProgress(75);
+			this->updateDataThread->ReportProgress(75);
 		}
-		updateRubricsFailed = Load_wrs();
-		if (updateRubricsFailed)
+		updateDataFailed = Load_wrs();
+		if (updateDataFailed)
 		{
-			this->updateRubricsThread->ReportProgress(99);
+			this->updateDataThread->ReportProgress(99);
 			e->Result = false;
 		}
 		else
 		{
-			this->updateRubricsThread->ReportProgress(100);
+			this->updateDataThread->ReportProgress(100);
 		}
 	}
 
-	private: System::Void updateRubricsThread_ProgressChanged(System::Object^ sender, System::ComponentModel::ProgressChangedEventArgs^ e)
+	private: System::Void updateDataThread_ProgressChanged(System::Object^ sender, System::ComponentModel::ProgressChangedEventArgs^ e)
 	{
 		if (e->ProgressPercentage == 0)
 		{
-			this->updateRubrics->Enabled = false;
+			this->updateData->Enabled = false;
 			this->findButton->Enabled = false;
 			InfoBoxAddMessage(this->sysTime->Now.ToString("[h:mm:ss]"), System::Drawing::Brushes::White);
 			InfoBoxAddMessage(globalStrings->GetString(L"DownloadRubrics"), System::Drawing::Brushes::White);
@@ -809,7 +813,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			}
 			else
 			{
-				InfoBoxAddMessage(globalStrings->GetString(L"DownloadRubricsFail") + updateRubricsFailed, System::Drawing::Brushes::Red);
+				InfoBoxAddMessage(globalStrings->GetString(L"DownloadRubricsFail") + updateDataFailed, System::Drawing::Brushes::Red);
 			}
 			InfoBoxAddMessage(globalStrings->GetString(L"DownloadWRs"), System::Drawing::Brushes::White);
 		}
@@ -821,7 +825,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			}
 			else
 			{
-				InfoBoxAddMessage(globalStrings->GetString(L"DownloadWRsFail") + updateRubricsFailed, System::Drawing::Brushes::Red);
+				InfoBoxAddMessage(globalStrings->GetString(L"DownloadWRsFail") + updateDataFailed, System::Drawing::Brushes::Red);
 			}
 			InfoBoxAddMessage(globalStrings->GetString(L"ParseRubrics"), System::Drawing::Brushes::White);
 		}
@@ -850,9 +854,9 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		}
 	}
 
-	private: System::Void updateRubricsThread_RunWorkerCompleted(System::Object^ sender, System::ComponentModel::RunWorkerCompletedEventArgs^ e)
+	private: System::Void updateDataThread_RunWorkerCompleted(System::Object^ sender, System::ComponentModel::RunWorkerCompletedEventArgs^ e)
 	{
-		this->updateRubrics->Enabled = true;
+		this->updateData->Enabled = true;
 		this->findButton->Enabled = (bool)e->Result;
 	}
 
@@ -888,7 +892,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			InfoBoxAddMessage(L"Found " + globalStrings->GetString(convertToStringClass(idx_game[game])), System::Drawing::Brushes::Lime);
 
 			// Toggle buttons
-			this->updateRubrics->Enabled = false;
+			this->updateData->Enabled = false;
 			this->findButton->Text = globalStrings->GetString(L"FindButtonTextFind");
 			this->findButton->Enabled = false;
 			this->statusCap->Enabled = true;
@@ -911,6 +915,12 @@ namespace RealTimeDRCPointsDisplayerGUI {
 
 	private: System::Void bkgWorker_DoWork(System::Object^  sender, System::ComponentModel::DoWorkEventArgs^  e)
 	{
+		if (this->findGameThread->CancellationPending)
+		{
+			e->Cancel = true;
+			return;
+		}
+
 		while (procStatus == STILL_ACTIVE)
 		{
 			GetExitCodeReturn = GetExitCodeProcess(gameProc, &procStatus);
@@ -926,7 +936,6 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->bkgWorker->ReportProgress(100);
 			System::Threading::Thread::Sleep(10);
 		}
-		this->bkgWorker->CancelAsync();
 	}
 
 	private: System::Void bkgWorker_ReportProgress(System::Object^  sender, System::ComponentModel::ProgressChangedEventArgs^  e)
@@ -955,24 +964,24 @@ namespace RealTimeDRCPointsDisplayerGUI {
 				break;
 			}
 
-			this->missesLabel->Text = (globalStrings->GetString(L"Misses") + L": " + misses);
+			this->missLabel->Text = (globalStrings->GetString(L"Misses") + L": " + misses);
 			if (strcmp(idx_game[game], "PoDD") == 0 || strcmp(idx_game[game], "PoFV") == 0)	// Phantasmagoria
 			{
 				if (no_charge)
 				{
-					this->bombsLabel->ForeColor = Drawing::Color::Lime;
-					this->bombsLabel->Text = globalStrings->GetString(L"NoCharge");
+					this->bombLabel->ForeColor = Drawing::Color::Lime;
+					this->bombLabel->Text = globalStrings->GetString(L"NoCharge");
 				}
 				else
 				{
-					this->bombsLabel->ForeColor = Drawing::Color::Red;
-					this->bombsLabel->Text = globalStrings->GetString(L"Charged");
+					this->bombLabel->ForeColor = Drawing::Color::Red;
+					this->bombLabel->Text = globalStrings->GetString(L"Charged");
 				}
 			}
 			else
 			{
-				this->bombsLabel->ForeColor = Drawing::Color::Lime;
-				this->bombsLabel->Text = (globalStrings->GetString(L"Bombs") + L": " + bombs);
+				this->bombLabel->ForeColor = Drawing::Color::Lime;
+				this->bombLabel->Text = (globalStrings->GetString(L"Bombs") + L": " + bombs);
 			}
 
 			switch (game)
@@ -1025,9 +1034,25 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			InfoBoxAddMessage(globalStrings->GetString(L"GameNotFound"), System::Drawing::Brushes::Yellow);
 
 			// Toggle buttons
-			this->updateRubrics->Enabled = true;
+			this->updateData->Enabled = true;
 			this->findButton->Enabled = true;
 			this->statusCap->Enabled = false;
+		}
+	}
+
+	private: System::Void bkgWorker_RunWorkerCompleted(System::Object^ sender, System::ComponentModel::RunWorkerCompletedEventArgs^ e)
+	{
+		if (e->Error != nullptr)
+		{
+			MessageBox::Show(e->Error->Message, "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		}
+		else if (e->Cancelled)
+		{
+
+		}
+		else
+		{
+
 		}
 	}
 
@@ -1055,6 +1080,28 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		}
 	}
 
+	private: System::Void GUIClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e)
+	{
+		/*
+		if (checkOffsetsOn->IsBusy)
+		{
+			checkOffsetsOn->CancelAsync();
+		}
+		if (findGameThread->IsBusy)
+		{
+			findGameThread->CancelAsync();
+		}
+		if (updateDataThread->IsBusy)
+		{
+			updateDataThread->CancelAsync();
+		}
+		*/
+		if (bkgWorker->IsBusy && bkgWorker->WorkerSupportsCancellation)
+		{
+			bkgWorker->CancelAsync();
+		}
+	}
+
 	/*
 	private: System::Void InitWAV()
 	{
@@ -1076,5 +1123,5 @@ namespace RealTimeDRCPointsDisplayerGUI {
 	{
 		this->ToggleWarning();
 	}
-	};
+};
 }
