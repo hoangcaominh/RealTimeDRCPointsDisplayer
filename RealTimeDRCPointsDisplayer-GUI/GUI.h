@@ -356,7 +356,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 	{
 		System::Version^ get()
 		{
-			return gcnew Version(L"2.0.1");
+			return gcnew Version(L"2.0.2");
 		}
 	}
 

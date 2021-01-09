@@ -66,7 +66,7 @@ namespace AutoUpdater
                 }
 
                 Version version = Version.Parse(json["version"].ToObject<string>());
-                Uri uri = new Uri(json["uri"].ToObject<string>());
+                Uri uri = new Uri(String.Format("https://github.com/hoangcaominh/RealTimeDRCPointsDisplayer/releases/download/{0}/Live.DRC.Points.Calculator.{0}.zip", version.ToString()));
                 string executable = json["executable"].ToObject<string>();
                 string md5 = json["md5"].ToObject<string>();
                 string launchArgs = json["launchArgs"].ToObject<string>();
