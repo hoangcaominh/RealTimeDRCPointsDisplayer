@@ -5,11 +5,11 @@ If you find any bugs, create a new issue on Github or DM me in Discord.
 (formerly known as RealTimeDRCPointsDisplayer)
 An user interface application that displays in-game information and calculates DRC points for you during your run or your replay.
 
-## Version 1.8.1
-- TD: Use addresses from version 1.00c instead of version 1.00b
+## Version 2.0.1
+Update UI and data url
 
 ## Supports
-This tool works for native (not modified or patched except for [THCrap](https://www.thpatch.net/wiki/Touhou_Patch_Center) ) maingames and GFW.
+This tool works for native (not modified or patched except [THCrap](https://www.thpatch.net/wiki/Touhou_Patch_Center) ) maingames and GFW.
 
 ## Requirements
 - OS: Windows 7/8/Vista/10
@@ -24,8 +24,8 @@ This tool works for native (not modified or patched except for [THCrap](https://
 ## Game Information
 - "Difficulty": The difficulty yor are playing on
 - "Shottype": The character/team you are using
-- "Misses": The number of times you lose a life
-- "Bombs": The number of times you use a bomb
+- "Miss": The number of times you lose a life
+- "Bomb": The number of times you use a bomb
 
 ### Extra Box (under the Misses/Bombs box)
 A group of one or more boxes for displaying certain information of a specific game.
@@ -59,7 +59,7 @@ A group of one or more boxes for displaying certain information of a specific ga
 Two individual boxes for displaying one of the following: score, world record (of the same shottype), survival points, scoring points. You can change the output type of these boxes in "Optinal Display" in Settings.
 
 ## Settings
-Settings for adjusting output values (misses, bombs, data displayed in Extra Box), mainly for calculating DRC points.
+Settings for adjusting output values (miss, bomb, data displayed in Extra Box), mainly for calculating DRC points.
 
 ## Inspiration
 - [Dodging Rain Competition](https://maribelhearn.com/drc)
