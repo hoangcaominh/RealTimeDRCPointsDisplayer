@@ -46,9 +46,8 @@
             this.downloadInfo.AutoSize = true;
             this.downloadInfo.Location = new System.Drawing.Point(12, 42);
             this.downloadInfo.Name = "downloadInfo";
-            this.downloadInfo.Size = new System.Drawing.Size(50, 13);
+            this.downloadInfo.Size = new System.Drawing.Size(0, 13);
             this.downloadInfo.TabIndex = 2;
-            this.downloadInfo.Text = "0 B / 0 B";
             // 
             // bgWorker
             // 

@@ -142,7 +142,7 @@
     <value>Bomb</value>
   </data>
   <data name="BorderBreaks" xml:space="preserve">
-    <value>Border Breaks</value>
+    <value>Border Break</value>
   </data>
   <data name="BorderTeam" xml:space="preserve">
     <value>BorderTeam</value>
@@ -241,7 +241,7 @@
     <value>Komachi</value>
   </data>
   <data name="LastSpells" xml:space="preserve">
-    <value>Last Spells</value>
+    <value>Last Spell</value>
   </data>
   <data name="LLS" xml:space="preserve">
     <value>LLS</value>
@@ -316,7 +316,7 @@
     <value>No Charge</value>
   </data>
   <data name="OffsetWarning" xml:space="preserve">
-    <value>Warning! Offsets on</value>
+    <value>Warning! Offsets on!</value>
   </data>
   <data name="ParseRubrics" xml:space="preserve">
     <value>Parsing rubric file...</value>
@@ -382,7 +382,7 @@
     <value>Reisen</value>
   </data>
   <data name="Releases" xml:space="preserve">
-    <value>Releases</value>
+    <value>Release</value>
   </data>
   <data name="Remilia" xml:space="preserve">
     <value>Remilia</value>
@@ -439,7 +439,7 @@
     <value>Tewi</value>
   </data>
   <data name="Trances" xml:space="preserve">
-    <value>Trances</value>
+    <value>Trance</value>
   </data>
   <data name="UFO" xml:space="preserve">
     <value>UFO</value>

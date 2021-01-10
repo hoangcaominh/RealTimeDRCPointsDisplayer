@@ -35,7 +35,7 @@ namespace AutoUpdater
         private void WebClient_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {
             downloadProgress.Value = e.ProgressPercentage;
-            downloadInfo.Text = String.Format("{0} B / {1} B", e.BytesReceived, e.TotalBytesToReceive);
+            downloadInfo.Text = String.Format("{0:n1} KB / {1:n1} KB", (float)e.BytesReceived / 1024, (float)e.TotalBytesToReceive / 1024);
         }
 
         private void WebClient_DownloadFileCompleted(object sender, AsyncCompletedEventArgs e)

@@ -264,3 +264,4 @@ __pycache__/
 *.txt
 *.json
 !config.json
+screenshots/

@@ -705,7 +705,7 @@ private: System::Windows::Forms::NumericUpDown^ RBOffset;
 			this->langBox->ResumeLayout(false);
 			this->langBox->PerformLayout();
 			this->ResumeLayout(false);
-
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterParent;
 		}
 #pragma endregion
 

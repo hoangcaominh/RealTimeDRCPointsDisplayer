@@ -347,7 +347,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &GUI::GUIClosing);
 			this->panel1->ResumeLayout(false);
 			this->ResumeLayout(false);
-
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 		}
 
 #pragma endregion
@@ -492,6 +492,8 @@ namespace RealTimeDRCPointsDisplayerGUI {
 
 	private: System::Void StatusCap_Click(System::Object^ sender, System::EventArgs^ e)
 	{
+		InfoBoxAddMessage(this->sysTime->Now.ToString("[h:mm:ss]"), System::Drawing::Brushes::White);
+
 		System::Drawing::Bitmap^ bitmap = gcnew System::Drawing::Bitmap(this->panel1->Width, this->panel1->Height);
 		this->panel1->DrawToBitmap(bitmap, System::Drawing::Rectangle(Point::Empty, this->panel1->Size));
 		if (!Directory::Exists(L"./screenshots"))
@@ -499,15 +501,18 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			Directory::CreateDirectory(L"./screenshots");
 		}
 		int count_status = 0;
-		while (File::Exists(L"./screenshots/status_" + count_status + L".png"))
+		while (File::Exists(String::Format(L"./screenshots/status_{0:D2}.png", count_status)))
 		{
 			count_status++;
 		}
-		bitmap->Save(L"./screenshots/status_" + count_status + L".png", System::Drawing::Imaging::ImageFormat::Png);
+		bitmap->Save(String::Format(L"./screenshots/status_{0:D2}.png", count_status), System::Drawing::Imaging::ImageFormat::Png);
+		InfoBoxAddMessage(String::Format(L"Saved screenshot as status_{0:D2}.png.", count_status), System::Drawing::Brushes::White);
 	}
 
 	private: System::Void LogCap_Click(System::Object^ sender, System::EventArgs^ e)
 	{
+		InfoBoxAddMessage(this->sysTime->Now.ToString("[h:mm:ss]"), System::Drawing::Brushes::White);
+
 		System::Drawing::Bitmap^ bitmap = gcnew System::Drawing::Bitmap(this->infoBox->Width, this->infoBox->Height);
 		this->infoBox->DrawToBitmap(bitmap, System::Drawing::Rectangle(Point::Empty, this->infoBox->Size));
 		if (!Directory::Exists(L"./screenshots"))
@@ -515,11 +520,12 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			Directory::CreateDirectory(L"./screenshots");
 		}
 		int count_log = 0;
-		while (File::Exists(L"./screenshots/log_" + count_log + L".png"))
+		while (File::Exists(String::Format(L"./screenshots/log_{0:D2}.png", count_log)))
 		{
 			count_log++;
 		}
-		bitmap->Save(L"./screenshots/log_" + count_log + L".png", System::Drawing::Imaging::ImageFormat::Png);
+		bitmap->Save(String::Format(L"./screenshots/log_{0:D2}.png", count_log), System::Drawing::Imaging::ImageFormat::Png);
+		InfoBoxAddMessage(String::Format(L"Saved screenshot as log_{0:D2}.png.", count_log), System::Drawing::Brushes::White);
 	}
 	
 	//
