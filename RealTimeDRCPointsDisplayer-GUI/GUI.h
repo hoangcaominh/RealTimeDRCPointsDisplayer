@@ -31,7 +31,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			CheckNewVersion();
 			InitializeComponent();
 			// InitWAV();
-			this->updateDataThread->RunWorkerAsync();
+			if (config["updateOnStartup"]) { this->updateDataThread->RunWorkerAsync(); }
 			this->checkOffsetsOn->RunWorkerAsync();
 			RealTimeDRCPointsDisplayerGUI::GUI::Width = 359;
 		}

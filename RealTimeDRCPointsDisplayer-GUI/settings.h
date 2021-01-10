@@ -84,17 +84,17 @@ namespace RealTimeDRCPointsDisplayerGUI {
 	private: System::Windows::Forms::Button^ cancelButton;
 
 	private: System::Windows::Forms::GroupBox^ optinalBox;
-	private: System::Windows::Forms::TabControl^ optionalOffsetsTab;
-	private: System::Windows::Forms::TabPage^ tab_Box1;
-	private: System::Windows::Forms::RadioButton^ scoringRB1;
-	private: System::Windows::Forms::RadioButton^ survivalRB1;
-	private: System::Windows::Forms::RadioButton^ wrRB1;
-	private: System::Windows::Forms::RadioButton^ scoreRB1;
-	private: System::Windows::Forms::TabPage^ tab_Box2;
-	private: System::Windows::Forms::RadioButton^ scoringRB2;
-	private: System::Windows::Forms::RadioButton^ survivalRB2;
-	private: System::Windows::Forms::RadioButton^ wrRB2;
-	private: System::Windows::Forms::RadioButton^ scoreRB2;
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -117,11 +117,25 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		System::ComponentModel::Container ^components;
 
 private: System::Windows::Forms::Label^ label14;
-private: System::Windows::Forms::RadioButton^ noneRB1;
-private: System::Windows::Forms::RadioButton^ noneRB2;
+
+
 private: System::Windows::Forms::GroupBox^ langBox;
 private: System::Windows::Forms::RadioButton^ lang_jaRB;
 private: System::Windows::Forms::RadioButton^ lang_enRB;
+private: System::Windows::Forms::ComboBox^ ddlBox1;
+
+
+
+
+private: System::Windows::Forms::Label^ label16;
+private: System::Windows::Forms::Label^ label15;
+private: System::Windows::Forms::ComboBox^ ddlBox2;
+private: System::Windows::Forms::CheckBox^ udCheck;
+
+
+
+
+
 private: System::Windows::Forms::NumericUpDown^ RBOffset;
 
 
@@ -179,22 +193,14 @@ private: System::Windows::Forms::NumericUpDown^ RBOffset;
 			this->saveButton = (gcnew System::Windows::Forms::Button());
 			this->cancelButton = (gcnew System::Windows::Forms::Button());
 			this->optinalBox = (gcnew System::Windows::Forms::GroupBox());
-			this->optionalOffsetsTab = (gcnew System::Windows::Forms::TabControl());
-			this->tab_Box1 = (gcnew System::Windows::Forms::TabPage());
-			this->noneRB1 = (gcnew System::Windows::Forms::RadioButton());
-			this->scoringRB1 = (gcnew System::Windows::Forms::RadioButton());
-			this->survivalRB1 = (gcnew System::Windows::Forms::RadioButton());
-			this->wrRB1 = (gcnew System::Windows::Forms::RadioButton());
-			this->scoreRB1 = (gcnew System::Windows::Forms::RadioButton());
-			this->tab_Box2 = (gcnew System::Windows::Forms::TabPage());
-			this->noneRB2 = (gcnew System::Windows::Forms::RadioButton());
-			this->scoringRB2 = (gcnew System::Windows::Forms::RadioButton());
-			this->survivalRB2 = (gcnew System::Windows::Forms::RadioButton());
-			this->wrRB2 = (gcnew System::Windows::Forms::RadioButton());
-			this->scoreRB2 = (gcnew System::Windows::Forms::RadioButton());
+			this->ddlBox2 = (gcnew System::Windows::Forms::ComboBox());
+			this->label16 = (gcnew System::Windows::Forms::Label());
+			this->label15 = (gcnew System::Windows::Forms::Label());
+			this->ddlBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->langBox = (gcnew System::Windows::Forms::GroupBox());
 			this->lang_jaRB = (gcnew System::Windows::Forms::RadioButton());
 			this->lang_enRB = (gcnew System::Windows::Forms::RadioButton());
+			this->udCheck = (gcnew System::Windows::Forms::CheckBox());
 			this->generalBox->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bombsOffset))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->missesOffset))->BeginInit();
@@ -220,9 +226,6 @@ private: System::Windows::Forms::NumericUpDown^ RBOffset;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ottersOffset))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->eaglesOffset))->BeginInit();
 			this->optinalBox->SuspendLayout();
-			this->optionalOffsetsTab->SuspendLayout();
-			this->tab_Box1->SuspendLayout();
-			this->tab_Box2->SuspendLayout();
 			this->langBox->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -524,106 +527,46 @@ private: System::Windows::Forms::NumericUpDown^ RBOffset;
 			// 
 			// optinalBox
 			// 
-			this->optinalBox->Controls->Add(this->optionalOffsetsTab);
+			this->optinalBox->Controls->Add(this->ddlBox2);
+			this->optinalBox->Controls->Add(this->udCheck);
+			this->optinalBox->Controls->Add(this->label16);
+			this->optinalBox->Controls->Add(this->label15);
+			this->optinalBox->Controls->Add(this->ddlBox1);
 			resources->ApplyResources(this->optinalBox, L"optinalBox");
 			this->optinalBox->Name = L"optinalBox";
 			this->optinalBox->TabStop = false;
 			// 
-			// optionalOffsetsTab
+			// ddlBox2
 			// 
-			this->optionalOffsetsTab->Controls->Add(this->tab_Box1);
-			this->optionalOffsetsTab->Controls->Add(this->tab_Box2);
-			resources->ApplyResources(this->optionalOffsetsTab, L"optionalOffsetsTab");
-			this->optionalOffsetsTab->Name = L"optionalOffsetsTab";
-			this->optionalOffsetsTab->SelectedIndex = 0;
+			this->ddlBox2->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->ddlBox2->FormattingEnabled = true;
+			this->ddlBox2->Items->AddRange(gcnew cli::array< System::Object^  >(5) {
+				resources->GetString(L"ddlBox2.Items"), resources->GetString(L"ddlBox2.Items1"),
+					resources->GetString(L"ddlBox2.Items2"), resources->GetString(L"ddlBox2.Items3"), resources->GetString(L"ddlBox2.Items4")
+			});
+			resources->ApplyResources(this->ddlBox2, L"ddlBox2");
+			this->ddlBox2->Name = L"ddlBox2";
 			// 
-			// tab_Box1
+			// label16
 			// 
-			this->tab_Box1->Controls->Add(this->noneRB1);
-			this->tab_Box1->Controls->Add(this->scoringRB1);
-			this->tab_Box1->Controls->Add(this->survivalRB1);
-			this->tab_Box1->Controls->Add(this->wrRB1);
-			this->tab_Box1->Controls->Add(this->scoreRB1);
-			resources->ApplyResources(this->tab_Box1, L"tab_Box1");
-			this->tab_Box1->Name = L"tab_Box1";
-			this->tab_Box1->UseVisualStyleBackColor = true;
+			resources->ApplyResources(this->label16, L"label16");
+			this->label16->Name = L"label16";
 			// 
-			// noneRB1
+			// label15
 			// 
-			resources->ApplyResources(this->noneRB1, L"noneRB1");
-			this->noneRB1->Name = L"noneRB1";
-			this->noneRB1->TabStop = true;
-			this->noneRB1->UseVisualStyleBackColor = true;
+			resources->ApplyResources(this->label15, L"label15");
+			this->label15->Name = L"label15";
 			// 
-			// scoringRB1
+			// ddlBox1
 			// 
-			resources->ApplyResources(this->scoringRB1, L"scoringRB1");
-			this->scoringRB1->Name = L"scoringRB1";
-			this->scoringRB1->UseVisualStyleBackColor = true;
-			// 
-			// survivalRB1
-			// 
-			resources->ApplyResources(this->survivalRB1, L"survivalRB1");
-			this->survivalRB1->Checked = true;
-			this->survivalRB1->Name = L"survivalRB1";
-			this->survivalRB1->TabStop = true;
-			this->survivalRB1->UseVisualStyleBackColor = true;
-			// 
-			// wrRB1
-			// 
-			resources->ApplyResources(this->wrRB1, L"wrRB1");
-			this->wrRB1->Name = L"wrRB1";
-			this->wrRB1->UseVisualStyleBackColor = true;
-			// 
-			// scoreRB1
-			// 
-			resources->ApplyResources(this->scoreRB1, L"scoreRB1");
-			this->scoreRB1->Name = L"scoreRB1";
-			this->scoreRB1->UseVisualStyleBackColor = true;
-			// 
-			// tab_Box2
-			// 
-			this->tab_Box2->Controls->Add(this->noneRB2);
-			this->tab_Box2->Controls->Add(this->scoringRB2);
-			this->tab_Box2->Controls->Add(this->survivalRB2);
-			this->tab_Box2->Controls->Add(this->wrRB2);
-			this->tab_Box2->Controls->Add(this->scoreRB2);
-			resources->ApplyResources(this->tab_Box2, L"tab_Box2");
-			this->tab_Box2->Name = L"tab_Box2";
-			this->tab_Box2->UseVisualStyleBackColor = true;
-			// 
-			// noneRB2
-			// 
-			resources->ApplyResources(this->noneRB2, L"noneRB2");
-			this->noneRB2->Name = L"noneRB2";
-			this->noneRB2->TabStop = true;
-			this->noneRB2->UseVisualStyleBackColor = true;
-			// 
-			// scoringRB2
-			// 
-			resources->ApplyResources(this->scoringRB2, L"scoringRB2");
-			this->scoringRB2->Checked = true;
-			this->scoringRB2->Name = L"scoringRB2";
-			this->scoringRB2->TabStop = true;
-			this->scoringRB2->UseVisualStyleBackColor = true;
-			// 
-			// survivalRB2
-			// 
-			resources->ApplyResources(this->survivalRB2, L"survivalRB2");
-			this->survivalRB2->Name = L"survivalRB2";
-			this->survivalRB2->UseVisualStyleBackColor = true;
-			// 
-			// wrRB2
-			// 
-			resources->ApplyResources(this->wrRB2, L"wrRB2");
-			this->wrRB2->Name = L"wrRB2";
-			this->wrRB2->UseVisualStyleBackColor = true;
-			// 
-			// scoreRB2
-			// 
-			resources->ApplyResources(this->scoreRB2, L"scoreRB2");
-			this->scoreRB2->Name = L"scoreRB2";
-			this->scoreRB2->UseVisualStyleBackColor = true;
+			this->ddlBox1->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->ddlBox1->FormattingEnabled = true;
+			this->ddlBox1->Items->AddRange(gcnew cli::array< System::Object^  >(5) {
+				resources->GetString(L"ddlBox1.Items"), resources->GetString(L"ddlBox1.Items1"),
+					resources->GetString(L"ddlBox1.Items2"), resources->GetString(L"ddlBox1.Items3"), resources->GetString(L"ddlBox1.Items4")
+			});
+			resources->ApplyResources(this->ddlBox1, L"ddlBox1");
+			this->ddlBox1->Name = L"ddlBox1";
 			// 
 			// langBox
 			// 
@@ -646,6 +589,12 @@ private: System::Windows::Forms::NumericUpDown^ RBOffset;
 			this->lang_enRB->Name = L"lang_enRB";
 			this->lang_enRB->TabStop = true;
 			this->lang_enRB->UseVisualStyleBackColor = true;
+			// 
+			// udCheck
+			// 
+			resources->ApplyResources(this->udCheck, L"udCheck");
+			this->udCheck->Name = L"udCheck";
+			this->udCheck->UseVisualStyleBackColor = true;
 			// 
 			// settings
 			// 
@@ -697,15 +646,11 @@ private: System::Windows::Forms::NumericUpDown^ RBOffset;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ottersOffset))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->eaglesOffset))->EndInit();
 			this->optinalBox->ResumeLayout(false);
-			this->optionalOffsetsTab->ResumeLayout(false);
-			this->tab_Box1->ResumeLayout(false);
-			this->tab_Box1->PerformLayout();
-			this->tab_Box2->ResumeLayout(false);
-			this->tab_Box2->PerformLayout();
+			this->optinalBox->PerformLayout();
 			this->langBox->ResumeLayout(false);
 			this->langBox->PerformLayout();
 			this->ResumeLayout(false);
-			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterParent;
+
 		}
 #pragma endregion
 
@@ -714,14 +659,17 @@ private: System::Windows::Forms::NumericUpDown^ RBOffset;
 		// Language
 		this->lang_enRB->Checked = config["lang"] == "en";
 		this->lang_jaRB->Checked = config["lang"] == "ja";
+		
+		// Download data on startup
+		this->udCheck->Checked = config["updateOnStartup"].get<bool>();
 
 		// General offset
 		this->missesOffset->Value = config["InitialMisses"].get<int8_t>();
 		this->bombsOffset->Value = config["InitialBombs"].get<int8_t>();
 
 		// Optional offsets
-		SetOptionalBoxValue(config["OptionalBox1"].get<uint8_t>(), this->noneRB1, this->scoreRB1, this->wrRB1, this->survivalRB1, this->scoringRB1);
-		SetOptionalBoxValue(config["OptionalBox2"].get<uint8_t>(), this->noneRB2, this->scoreRB2, this->wrRB2, this->survivalRB2, this->scoringRB2);
+		this->ddlBox1->SelectedIndex = config["OptionalBox1"].get<uint8_t>();
+		this->ddlBox2->SelectedIndex = config["OptionalBox2"].get<uint8_t>();
 
 		// Other offsets
 		this->BBOffset->Value = config["InitialBorderBreaks"].get<int8_t>();
@@ -744,13 +692,16 @@ private: System::Windows::Forms::NumericUpDown^ RBOffset;
 		// Language
 		config["lang"] = (this->lang_enRB->Checked) ? "en" : "ja";
 
+		// Download data on startup
+		config["updateOnStartup"] = this->udCheck->Checked;
+
 		// General offset
 		config["InitialMisses"] = Convert::ToSByte(this->missesOffset->Value);
 		config["InitialBombs"] = Convert::ToSByte(this->bombsOffset->Value);
 
 		// Optional offsets
-		config["OptionalBox1"] = Convert::ToByte(GetOptionalBoxValue(this->noneRB1->Checked, this->scoreRB1->Checked, this->wrRB1->Checked, this->survivalRB1->Checked, this->scoringRB1->Checked));
-		config["OptionalBox2"] = Convert::ToByte(GetOptionalBoxValue(this->noneRB2->Checked, this->scoreRB2->Checked, this->wrRB2->Checked, this->survivalRB2->Checked, this->scoringRB2->Checked));
+		config["OptionalBox1"] = this->ddlBox1->SelectedIndex;
+		config["OptionalBox2"] = this->ddlBox2->SelectedIndex;
 
 		// Other offsets
 		config["InitialBorderBreaks"] = Convert::ToSByte(this->BBOffset->Value);
@@ -783,8 +734,8 @@ private: System::Windows::Forms::NumericUpDown^ RBOffset;
 		this->bombsOffset->Value = 0;
 
 		// Optional offsets
-		SetOptionalBoxValue(3, this->noneRB1, this->scoreRB1, this->wrRB1, this->survivalRB1, this->scoringRB1);
-		SetOptionalBoxValue(4, this->noneRB2, this->scoreRB2, this->wrRB2, this->survivalRB2, this->scoringRB2);
+		this->ddlBox1->SelectedIndex = 0;
+		this->ddlBox2->SelectedIndex = 0;
 
 		// Other offsets
 		this->BBOffset->Value = 0;
@@ -808,51 +759,5 @@ private: System::Windows::Forms::NumericUpDown^ RBOffset;
 	{
 		this->SaveConfig();
 	}
-
-	private: uint8_t GetOptionalBoxValue(bool a, bool b, bool c, bool d, bool e)
-	{
-		if (a)
-			return 0;
-		else if (b)
-			return 1;
-		else if (c)
-			return 2;
-		else if (d)
-			return 3;
-		else if (e)
-			return 4;
-		else
-			return -1;
-	}
-
-	private: void SetOptionalBoxValue(uint8_t value, 
-		System::Windows::Forms::RadioButton^% a, 
-		System::Windows::Forms::RadioButton^% b, 
-		System::Windows::Forms::RadioButton^% c, 
-		System::Windows::Forms::RadioButton^% d, 
-		System::Windows::Forms::RadioButton^% e)
-	{
-		switch (value)
-		{
-		case 0:
-			a->Checked = true;
-			break;
-		case 1:
-			b->Checked = true;
-			break;
-		case 2:
-			c->Checked = true;
-			break;
-		case 3:
-			d->Checked = true;
-			break;
-		case 4:
-			e->Checked = true;
-			break;
-		default:
-			break;
-		}
-	}
-	
-	};
+};
 }
