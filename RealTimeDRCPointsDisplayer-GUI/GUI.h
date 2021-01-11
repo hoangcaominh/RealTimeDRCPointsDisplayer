@@ -31,7 +31,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			CheckNewVersion();
 			InitializeComponent();
 			// InitWAV();
-			if (config["updateOnStartup"]) { this->updateDataThread->RunWorkerAsync(); }
+			this->updateDataThread->RunWorkerAsync();
 			this->checkOffsetsOn->RunWorkerAsync();
 			RealTimeDRCPointsDisplayerGUI::GUI::Width = 359;
 		}
@@ -762,23 +762,26 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		// boolean variable for findButton->Enabled
 		e->Result = true;
 		this->updateDataThread->ReportProgress(0);
-		updateDataFailed = Download_rubrics();
-		if (updateDataFailed)
+		if (!config["loadLocalData"])
 		{
-			this->updateDataThread->ReportProgress(24);
-		}
-		else
-		{
-			this->updateDataThread->ReportProgress(25);
-		}
-		updateDataFailed = Download_wrs();
-		if (updateDataFailed)
-		{
-			this->updateDataThread->ReportProgress(49);
-		}
-		else
-		{
-			this->updateDataThread->ReportProgress(50);
+			updateDataFailed = Download_rubrics();
+			if (updateDataFailed)
+			{
+				this->updateDataThread->ReportProgress(24);
+			}
+			else
+			{
+				this->updateDataThread->ReportProgress(25);
+			}
+			updateDataFailed = Download_wrs();
+			if (updateDataFailed)
+			{
+				this->updateDataThread->ReportProgress(49);
+			}
+			else
+			{
+				this->updateDataThread->ReportProgress(50);
+			}
 		}
 		updateDataFailed = Load_rubrics();
 		if (updateDataFailed)
@@ -809,7 +812,10 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->updateData->Enabled = false;
 			this->findButton->Enabled = false;
 			InfoBoxAddMessage(this->sysTime->Now.ToString("[h:mm:ss]"), System::Drawing::Brushes::White);
-			InfoBoxAddMessage(globalStrings->GetString(L"DownloadRubrics"), System::Drawing::Brushes::White);
+			if (!config["loadLocalData"])
+				InfoBoxAddMessage(globalStrings->GetString(L"DownloadRubrics"), System::Drawing::Brushes::White);
+			else
+				InfoBoxAddMessage(globalStrings->GetString(L"ParseRubrics"), System::Drawing::Brushes::White);
 		}
 		else if (e->ProgressPercentage <= 25)
 		{

@@ -117,86 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;bombsOffset.Name" xml:space="preserve">
-    <value>bombsOffset</value>
-  </data>
-  <data name="&gt;&gt;bombsOffset.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;bombsOffset.Parent" xml:space="preserve">
-    <value>generalBox</value>
-  </data>
-  <data name="&gt;&gt;bombsOffset.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
-  </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>generalBox</value>
-  </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>generalBox</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;missesOffset.Name" xml:space="preserve">
-    <value>missesOffset</value>
-  </data>
-  <data name="&gt;&gt;missesOffset.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;missesOffset.Parent" xml:space="preserve">
-    <value>generalBox</value>
-  </data>
-  <data name="&gt;&gt;missesOffset.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="generalBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 130</value>
-  </data>
-  <data name="generalBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 77</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="generalBox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="generalBox.Text" xml:space="preserve">
-    <value>General Offset</value>
-  </data>
-  <data name="&gt;&gt;generalBox.Name" xml:space="preserve">
-    <value>generalBox</value>
-  </data>
-  <data name="&gt;&gt;generalBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;generalBox.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;generalBox.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <data name="bombsOffset.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 49</value>
   </data>
   <data name="bombsOffset.Size" type="System.Drawing.Size, System.Drawing">
     <value>54, 22</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="bombsOffset.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
@@ -294,197 +222,29 @@
   <data name="&gt;&gt;missesOffset.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;otherOffsetsTab.Name" xml:space="preserve">
-    <value>otherOffsetsTab</value>
+  <data name="generalBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 130</value>
   </data>
-  <data name="&gt;&gt;otherOffsetsTab.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="generalBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 77</value>
   </data>
-  <data name="&gt;&gt;otherOffsetsTab.Parent" xml:space="preserve">
-    <value>groupBox1</value>
+  <data name="generalBox.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
-  <data name="&gt;&gt;otherOffsetsTab.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="generalBox.Text" xml:space="preserve">
+    <value>General Offset</value>
   </data>
-  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 214</value>
+  <data name="&gt;&gt;generalBox.Name" xml:space="preserve">
+    <value>generalBox</value>
   </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>391, 176</value>
-  </data>
-  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Other Offsets</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+  <data name="&gt;&gt;generalBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;generalBox.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;tab_PCB.Name" xml:space="preserve">
-    <value>tab_PCB</value>
-  </data>
-  <data name="&gt;&gt;tab_PCB.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tab_PCB.Parent" xml:space="preserve">
-    <value>otherOffsetsTab</value>
-  </data>
-  <data name="&gt;&gt;tab_PCB.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tab_IN.Name" xml:space="preserve">
-    <value>tab_IN</value>
-  </data>
-  <data name="&gt;&gt;tab_IN.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tab_IN.Parent" xml:space="preserve">
-    <value>otherOffsetsTab</value>
-  </data>
-  <data name="&gt;&gt;tab_IN.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;tab_PoFV.Name" xml:space="preserve">
-    <value>tab_PoFV</value>
-  </data>
-  <data name="&gt;&gt;tab_PoFV.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tab_PoFV.Parent" xml:space="preserve">
-    <value>otherOffsetsTab</value>
-  </data>
-  <data name="&gt;&gt;tab_PoFV.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;tab_UFO.Name" xml:space="preserve">
-    <value>tab_UFO</value>
-  </data>
-  <data name="&gt;&gt;tab_UFO.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tab_UFO.Parent" xml:space="preserve">
-    <value>otherOffsetsTab</value>
-  </data>
-  <data name="&gt;&gt;tab_UFO.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;tab_TD.Name" xml:space="preserve">
-    <value>tab_TD</value>
-  </data>
-  <data name="&gt;&gt;tab_TD.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tab_TD.Parent" xml:space="preserve">
-    <value>otherOffsetsTab</value>
-  </data>
-  <data name="&gt;&gt;tab_TD.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;tab_HSiFS.Name" xml:space="preserve">
-    <value>tab_HSiFS</value>
-  </data>
-  <data name="&gt;&gt;tab_HSiFS.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tab_HSiFS.Parent" xml:space="preserve">
-    <value>otherOffsetsTab</value>
-  </data>
-  <data name="&gt;&gt;tab_HSiFS.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;generalBox.ZOrder" xml:space="preserve">
     <value>5</value>
-  </data>
-  <data name="&gt;&gt;tab_WBaWC.Name" xml:space="preserve">
-    <value>tab_WBaWC</value>
-  </data>
-  <data name="&gt;&gt;tab_WBaWC.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tab_WBaWC.Parent" xml:space="preserve">
-    <value>otherOffsetsTab</value>
-  </data>
-  <data name="&gt;&gt;tab_WBaWC.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="otherOffsetsTab.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 21</value>
-  </data>
-  <data name="otherOffsetsTab.Size" type="System.Drawing.Size, System.Drawing">
-    <value>379, 149</value>
-  </data>
-  <data name="otherOffsetsTab.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;otherOffsetsTab.Name" xml:space="preserve">
-    <value>otherOffsetsTab</value>
-  </data>
-  <data name="&gt;&gt;otherOffsetsTab.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;otherOffsetsTab.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;otherOffsetsTab.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;BBOffset.Name" xml:space="preserve">
-    <value>BBOffset</value>
-  </data>
-  <data name="&gt;&gt;BBOffset.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BBOffset.Parent" xml:space="preserve">
-    <value>tab_PCB</value>
-  </data>
-  <data name="&gt;&gt;BBOffset.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;label3.Name" xml:space="preserve">
-    <value>label3</value>
-  </data>
-  <data name="&gt;&gt;label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
-    <value>tab_PCB</value>
-  </data>
-  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tab_PCB.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 25</value>
-  </data>
-  <data name="tab_PCB.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tab_PCB.Size" type="System.Drawing.Size, System.Drawing">
-    <value>371, 120</value>
-  </data>
-  <data name="tab_PCB.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="tab_PCB.Text" xml:space="preserve">
-    <value>PCB</value>
-  </data>
-  <data name="&gt;&gt;tab_PCB.Name" xml:space="preserve">
-    <value>tab_PCB</value>
-  </data>
-  <data name="&gt;&gt;tab_PCB.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tab_PCB.Parent" xml:space="preserve">
-    <value>otherOffsetsTab</value>
-  </data>
-  <data name="&gt;&gt;tab_PCB.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="BBOffset.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 6</value>
@@ -537,56 +297,32 @@
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;LSOffset.Name" xml:space="preserve">
-    <value>LSOffset</value>
-  </data>
-  <data name="&gt;&gt;LSOffset.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LSOffset.Parent" xml:space="preserve">
-    <value>tab_IN</value>
-  </data>
-  <data name="&gt;&gt;LSOffset.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
-  </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
-    <value>tab_IN</value>
-  </data>
-  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tab_IN.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="tab_PCB.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 25</value>
   </data>
-  <data name="tab_IN.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="tab_PCB.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
-  <data name="tab_IN.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tab_PCB.Size" type="System.Drawing.Size, System.Drawing">
     <value>371, 120</value>
   </data>
-  <data name="tab_IN.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="tab_PCB.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="tab_IN.Text" xml:space="preserve">
-    <value>IN</value>
+  <data name="tab_PCB.Text" xml:space="preserve">
+    <value>PCB</value>
   </data>
-  <data name="&gt;&gt;tab_IN.Name" xml:space="preserve">
-    <value>tab_IN</value>
+  <data name="&gt;&gt;tab_PCB.Name" xml:space="preserve">
+    <value>tab_PCB</value>
   </data>
-  <data name="&gt;&gt;tab_IN.Type" xml:space="preserve">
+  <data name="&gt;&gt;tab_PCB.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tab_IN.Parent" xml:space="preserve">
+  <data name="&gt;&gt;tab_PCB.Parent" xml:space="preserve">
     <value>otherOffsetsTab</value>
   </data>
-  <data name="&gt;&gt;tab_IN.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;tab_PCB.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="LSOffset.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 6</value>
@@ -639,6 +375,54 @@
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="tab_IN.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 25</value>
+  </data>
+  <data name="tab_IN.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tab_IN.Size" type="System.Drawing.Size, System.Drawing">
+    <value>371, 120</value>
+  </data>
+  <data name="tab_IN.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tab_IN.Text" xml:space="preserve">
+    <value>IN</value>
+  </data>
+  <data name="&gt;&gt;tab_IN.Name" xml:space="preserve">
+    <value>tab_IN</value>
+  </data>
+  <data name="&gt;&gt;tab_IN.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tab_IN.Parent" xml:space="preserve">
+    <value>otherOffsetsTab</value>
+  </data>
+  <data name="&gt;&gt;tab_IN.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="noChargeCB.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="noChargeCB.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="noChargeCB.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 6</value>
+  </data>
+  <data name="noChargeCB.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Yes</value>
+  </data>
+  <data name="noChargeCB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>139, 20</value>
+  </data>
+  <data name="noChargeCB.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="noChargeCB.Text" xml:space="preserve">
+    <value>No Charge Attacks</value>
+  </data>
   <data name="&gt;&gt;noChargeCB.Name" xml:space="preserve">
     <value>noChargeCB</value>
   </data>
@@ -677,162 +461,6 @@
   </data>
   <data name="&gt;&gt;tab_PoFV.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="noChargeCB.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="noChargeCB.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="noChargeCB.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 6</value>
-  </data>
-  <data name="noChargeCB.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>Yes</value>
-  </data>
-  <data name="noChargeCB.Size" type="System.Drawing.Size, System.Drawing">
-    <value>139, 20</value>
-  </data>
-  <data name="noChargeCB.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="noChargeCB.Text" xml:space="preserve">
-    <value>No Charge Attacks</value>
-  </data>
-  <data name="&gt;&gt;noChargeCB.Name" xml:space="preserve">
-    <value>noChargeCB</value>
-  </data>
-  <data name="&gt;&gt;noChargeCB.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;noChargeCB.Parent" xml:space="preserve">
-    <value>tab_PoFV</value>
-  </data>
-  <data name="&gt;&gt;noChargeCB.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;redOffset.Name" xml:space="preserve">
-    <value>redOffset</value>
-  </data>
-  <data name="&gt;&gt;redOffset.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;redOffset.Parent" xml:space="preserve">
-    <value>tab_UFO</value>
-  </data>
-  <data name="&gt;&gt;redOffset.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;label8.Name" xml:space="preserve">
-    <value>label8</value>
-  </data>
-  <data name="&gt;&gt;label8.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label8.Parent" xml:space="preserve">
-    <value>tab_UFO</value>
-  </data>
-  <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;label5.Name" xml:space="preserve">
-    <value>label5</value>
-  </data>
-  <data name="&gt;&gt;label5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
-    <value>tab_UFO</value>
-  </data>
-  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;rainbowOffset.Name" xml:space="preserve">
-    <value>rainbowOffset</value>
-  </data>
-  <data name="&gt;&gt;rainbowOffset.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rainbowOffset.Parent" xml:space="preserve">
-    <value>tab_UFO</value>
-  </data>
-  <data name="&gt;&gt;rainbowOffset.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;greenOffset.Name" xml:space="preserve">
-    <value>greenOffset</value>
-  </data>
-  <data name="&gt;&gt;greenOffset.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;greenOffset.Parent" xml:space="preserve">
-    <value>tab_UFO</value>
-  </data>
-  <data name="&gt;&gt;greenOffset.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;label7.Name" xml:space="preserve">
-    <value>label7</value>
-  </data>
-  <data name="&gt;&gt;label7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
-    <value>tab_UFO</value>
-  </data>
-  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;label6.Name" xml:space="preserve">
-    <value>label6</value>
-  </data>
-  <data name="&gt;&gt;label6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
-    <value>tab_UFO</value>
-  </data>
-  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;blueOffset.Name" xml:space="preserve">
-    <value>blueOffset</value>
-  </data>
-  <data name="&gt;&gt;blueOffset.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;blueOffset.Parent" xml:space="preserve">
-    <value>tab_UFO</value>
-  </data>
-  <data name="&gt;&gt;blueOffset.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="tab_UFO.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 25</value>
-  </data>
-  <data name="tab_UFO.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tab_UFO.Size" type="System.Drawing.Size, System.Drawing">
-    <value>371, 120</value>
-  </data>
-  <data name="tab_UFO.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="tab_UFO.Text" xml:space="preserve">
-    <value>UFO</value>
-  </data>
-  <data name="&gt;&gt;tab_UFO.Name" xml:space="preserve">
-    <value>tab_UFO</value>
-  </data>
-  <data name="&gt;&gt;tab_UFO.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tab_UFO.Parent" xml:space="preserve">
-    <value>otherOffsetsTab</value>
-  </data>
-  <data name="&gt;&gt;tab_UFO.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="redOffset.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 6</value>
@@ -1038,56 +666,32 @@
   <data name="&gt;&gt;blueOffset.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="&gt;&gt;trancesOffset.Name" xml:space="preserve">
-    <value>trancesOffset</value>
-  </data>
-  <data name="&gt;&gt;trancesOffset.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;trancesOffset.Parent" xml:space="preserve">
-    <value>tab_TD</value>
-  </data>
-  <data name="&gt;&gt;trancesOffset.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;label9.Name" xml:space="preserve">
-    <value>label9</value>
-  </data>
-  <data name="&gt;&gt;label9.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label9.Parent" xml:space="preserve">
-    <value>tab_TD</value>
-  </data>
-  <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tab_TD.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="tab_UFO.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 25</value>
   </data>
-  <data name="tab_TD.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="tab_UFO.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
-  <data name="tab_TD.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tab_UFO.Size" type="System.Drawing.Size, System.Drawing">
     <value>371, 120</value>
   </data>
-  <data name="tab_TD.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="tab_UFO.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
-  <data name="tab_TD.Text" xml:space="preserve">
-    <value>TD</value>
+  <data name="tab_UFO.Text" xml:space="preserve">
+    <value>UFO</value>
   </data>
-  <data name="&gt;&gt;tab_TD.Name" xml:space="preserve">
-    <value>tab_TD</value>
+  <data name="&gt;&gt;tab_UFO.Name" xml:space="preserve">
+    <value>tab_UFO</value>
   </data>
-  <data name="&gt;&gt;tab_TD.Type" xml:space="preserve">
+  <data name="&gt;&gt;tab_UFO.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tab_TD.Parent" xml:space="preserve">
+  <data name="&gt;&gt;tab_UFO.Parent" xml:space="preserve">
     <value>otherOffsetsTab</value>
   </data>
-  <data name="&gt;&gt;tab_TD.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="&gt;&gt;tab_UFO.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="trancesOffset.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 6</value>
@@ -1140,56 +744,32 @@
   <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;releasesOffset.Name" xml:space="preserve">
-    <value>releasesOffset</value>
-  </data>
-  <data name="&gt;&gt;releasesOffset.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;releasesOffset.Parent" xml:space="preserve">
-    <value>tab_HSiFS</value>
-  </data>
-  <data name="&gt;&gt;releasesOffset.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;label10.Name" xml:space="preserve">
-    <value>label10</value>
-  </data>
-  <data name="&gt;&gt;label10.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label10.Parent" xml:space="preserve">
-    <value>tab_HSiFS</value>
-  </data>
-  <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tab_HSiFS.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="tab_TD.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 25</value>
   </data>
-  <data name="tab_HSiFS.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="tab_TD.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
-  <data name="tab_HSiFS.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tab_TD.Size" type="System.Drawing.Size, System.Drawing">
     <value>371, 120</value>
   </data>
-  <data name="tab_HSiFS.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="tab_TD.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
   </data>
-  <data name="tab_HSiFS.Text" xml:space="preserve">
-    <value>HSiFS</value>
+  <data name="tab_TD.Text" xml:space="preserve">
+    <value>TD</value>
   </data>
-  <data name="&gt;&gt;tab_HSiFS.Name" xml:space="preserve">
-    <value>tab_HSiFS</value>
+  <data name="&gt;&gt;tab_TD.Name" xml:space="preserve">
+    <value>tab_TD</value>
   </data>
-  <data name="&gt;&gt;tab_HSiFS.Type" xml:space="preserve">
+  <data name="&gt;&gt;tab_TD.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tab_HSiFS.Parent" xml:space="preserve">
+  <data name="&gt;&gt;tab_TD.Parent" xml:space="preserve">
     <value>otherOffsetsTab</value>
   </data>
-  <data name="&gt;&gt;tab_HSiFS.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="&gt;&gt;tab_TD.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="releasesOffset.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 6</value>
@@ -1242,128 +822,32 @@
   <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;label14.Name" xml:space="preserve">
-    <value>label14</value>
-  </data>
-  <data name="&gt;&gt;label14.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label14.Parent" xml:space="preserve">
-    <value>tab_WBaWC</value>
-  </data>
-  <data name="&gt;&gt;label14.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;RBOffset.Name" xml:space="preserve">
-    <value>RBOffset</value>
-  </data>
-  <data name="&gt;&gt;RBOffset.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;RBOffset.Parent" xml:space="preserve">
-    <value>tab_WBaWC</value>
-  </data>
-  <data name="&gt;&gt;RBOffset.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;wolvesOffset.Name" xml:space="preserve">
-    <value>wolvesOffset</value>
-  </data>
-  <data name="&gt;&gt;wolvesOffset.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;wolvesOffset.Parent" xml:space="preserve">
-    <value>tab_WBaWC</value>
-  </data>
-  <data name="&gt;&gt;wolvesOffset.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;label11.Name" xml:space="preserve">
-    <value>label11</value>
-  </data>
-  <data name="&gt;&gt;label11.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label11.Parent" xml:space="preserve">
-    <value>tab_WBaWC</value>
-  </data>
-  <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;ottersOffset.Name" xml:space="preserve">
-    <value>ottersOffset</value>
-  </data>
-  <data name="&gt;&gt;ottersOffset.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ottersOffset.Parent" xml:space="preserve">
-    <value>tab_WBaWC</value>
-  </data>
-  <data name="&gt;&gt;ottersOffset.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;label12.Name" xml:space="preserve">
-    <value>label12</value>
-  </data>
-  <data name="&gt;&gt;label12.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label12.Parent" xml:space="preserve">
-    <value>tab_WBaWC</value>
-  </data>
-  <data name="&gt;&gt;label12.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;label13.Name" xml:space="preserve">
-    <value>label13</value>
-  </data>
-  <data name="&gt;&gt;label13.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label13.Parent" xml:space="preserve">
-    <value>tab_WBaWC</value>
-  </data>
-  <data name="&gt;&gt;label13.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;eaglesOffset.Name" xml:space="preserve">
-    <value>eaglesOffset</value>
-  </data>
-  <data name="&gt;&gt;eaglesOffset.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;eaglesOffset.Parent" xml:space="preserve">
-    <value>tab_WBaWC</value>
-  </data>
-  <data name="&gt;&gt;eaglesOffset.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="tab_WBaWC.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="tab_HSiFS.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 25</value>
   </data>
-  <data name="tab_WBaWC.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="tab_HSiFS.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
-  <data name="tab_WBaWC.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tab_HSiFS.Size" type="System.Drawing.Size, System.Drawing">
     <value>371, 120</value>
   </data>
-  <data name="tab_WBaWC.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+  <data name="tab_HSiFS.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
   </data>
-  <data name="tab_WBaWC.Text" xml:space="preserve">
-    <value>WBaWC</value>
+  <data name="tab_HSiFS.Text" xml:space="preserve">
+    <value>HSiFS</value>
   </data>
-  <data name="&gt;&gt;tab_WBaWC.Name" xml:space="preserve">
-    <value>tab_WBaWC</value>
+  <data name="&gt;&gt;tab_HSiFS.Name" xml:space="preserve">
+    <value>tab_HSiFS</value>
   </data>
-  <data name="&gt;&gt;tab_WBaWC.Type" xml:space="preserve">
+  <data name="&gt;&gt;tab_HSiFS.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tab_WBaWC.Parent" xml:space="preserve">
+  <data name="&gt;&gt;tab_HSiFS.Parent" xml:space="preserve">
     <value>otherOffsetsTab</value>
   </data>
-  <data name="&gt;&gt;tab_WBaWC.ZOrder" xml:space="preserve">
-    <value>6</value>
+  <data name="&gt;&gt;tab_HSiFS.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="label14.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1569,6 +1053,78 @@
   <data name="&gt;&gt;eaglesOffset.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
+  <data name="tab_WBaWC.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 25</value>
+  </data>
+  <data name="tab_WBaWC.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tab_WBaWC.Size" type="System.Drawing.Size, System.Drawing">
+    <value>371, 120</value>
+  </data>
+  <data name="tab_WBaWC.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="tab_WBaWC.Text" xml:space="preserve">
+    <value>WBaWC</value>
+  </data>
+  <data name="&gt;&gt;tab_WBaWC.Name" xml:space="preserve">
+    <value>tab_WBaWC</value>
+  </data>
+  <data name="&gt;&gt;tab_WBaWC.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tab_WBaWC.Parent" xml:space="preserve">
+    <value>otherOffsetsTab</value>
+  </data>
+  <data name="&gt;&gt;tab_WBaWC.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="otherOffsetsTab.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 21</value>
+  </data>
+  <data name="otherOffsetsTab.Size" type="System.Drawing.Size, System.Drawing">
+    <value>379, 149</value>
+  </data>
+  <data name="otherOffsetsTab.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;otherOffsetsTab.Name" xml:space="preserve">
+    <value>otherOffsetsTab</value>
+  </data>
+  <data name="&gt;&gt;otherOffsetsTab.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;otherOffsetsTab.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;otherOffsetsTab.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 214</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>391, 176</value>
+  </data>
+  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Other Offsets</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
   <data name="defaultButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>166, 396</value>
   </data>
@@ -1641,31 +1197,31 @@
   <data name="&gt;&gt;cancelButton.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="ldCheck.AutoSize" type="System.Boolean, mscorlib">
+  <data name="llCheck.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="ldCheck.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="llCheck.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 167</value>
   </data>
-  <data name="ldCheck.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 20</value>
+  <data name="llCheck.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 20</value>
   </data>
-  <data name="ldCheck.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
+  <data name="llCheck.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
   </data>
-  <data name="ldCheck.Text" xml:space="preserve">
-    <value>Load data during runtime</value>
+  <data name="llCheck.Text" xml:space="preserve">
+    <value>Load local data only</value>
   </data>
-  <data name="&gt;&gt;ldCheck.Name" xml:space="preserve">
-    <value>ldCheck</value>
+  <data name="&gt;&gt;llCheck.Name" xml:space="preserve">
+    <value>llCheck</value>
   </data>
-  <data name="&gt;&gt;ldCheck.Type" xml:space="preserve">
+  <data name="&gt;&gt;llCheck.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ldCheck.Parent" xml:space="preserve">
+  <data name="&gt;&gt;llCheck.Parent" xml:space="preserve">
     <value>optinalBox</value>
   </data>
-  <data name="&gt;&gt;ldCheck.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;llCheck.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="ddlBox2.Items" xml:space="preserve">
@@ -1704,36 +1260,6 @@
   <data name="&gt;&gt;ddlBox2.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="udCheck.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="udCheck.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="udCheck.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 141</value>
-  </data>
-  <data name="udCheck.Size" type="System.Drawing.Size, System.Drawing">
-    <value>163, 20</value>
-  </data>
-  <data name="udCheck.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="udCheck.Text" xml:space="preserve">
-    <value>Update data on startup</value>
-  </data>
-  <data name="&gt;&gt;udCheck.Name" xml:space="preserve">
-    <value>udCheck</value>
-  </data>
-  <data name="&gt;&gt;udCheck.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;udCheck.Parent" xml:space="preserve">
-    <value>optinalBox</value>
-  </data>
-  <data name="&gt;&gt;udCheck.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="label16.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1762,7 +1288,7 @@
     <value>optinalBox</value>
   </data>
   <data name="&gt;&gt;label16.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="label15.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1789,7 +1315,7 @@
     <value>optinalBox</value>
   </data>
   <data name="&gt;&gt;label15.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="ddlBox1.Items" xml:space="preserve">
     <value>None</value>
@@ -1825,7 +1351,7 @@
     <value>optinalBox</value>
   </data>
   <data name="&gt;&gt;ddlBox1.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="optinalBox.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.75pt</value>
@@ -1859,54 +1385,6 @@
   </data>
   <data name="&gt;&gt;optinalBox.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="&gt;&gt;lang_jaRB.Name" xml:space="preserve">
-    <value>lang_jaRB</value>
-  </data>
-  <data name="&gt;&gt;lang_jaRB.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lang_jaRB.Parent" xml:space="preserve">
-    <value>langBox</value>
-  </data>
-  <data name="&gt;&gt;lang_jaRB.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;lang_enRB.Name" xml:space="preserve">
-    <value>lang_enRB</value>
-  </data>
-  <data name="&gt;&gt;lang_enRB.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lang_enRB.Parent" xml:space="preserve">
-    <value>langBox</value>
-  </data>
-  <data name="&gt;&gt;lang_enRB.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="langBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 13</value>
-  </data>
-  <data name="langBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 111</value>
-  </data>
-  <data name="langBox.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="langBox.Text" xml:space="preserve">
-    <value>Language</value>
-  </data>
-  <data name="&gt;&gt;langBox.Name" xml:space="preserve">
-    <value>langBox</value>
-  </data>
-  <data name="&gt;&gt;langBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;langBox.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;langBox.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="lang_jaRB.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1964,6 +1442,30 @@
   </data>
   <data name="&gt;&gt;lang_enRB.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="langBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 13</value>
+  </data>
+  <data name="langBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 111</value>
+  </data>
+  <data name="langBox.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="langBox.Text" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="&gt;&gt;langBox.Name" xml:space="preserve">
+    <value>langBox</value>
+  </data>
+  <data name="&gt;&gt;langBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;langBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;langBox.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

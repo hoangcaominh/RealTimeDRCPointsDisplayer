@@ -88,8 +88,9 @@ namespace RealTimeDRCPointsDisplayerGUI {
 	private: System::Windows::Forms::Label^ label16;
 	private: System::Windows::Forms::Label^ label15;
 	private: System::Windows::Forms::ComboBox^ ddlBox2;
-	private: System::Windows::Forms::CheckBox^ udCheck;
-	private: System::Windows::Forms::CheckBox^ ldCheck;
+
+	private: System::Windows::Forms::CheckBox^ llCheck;
+
 
 	protected:
 
@@ -149,9 +150,8 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->saveButton = (gcnew System::Windows::Forms::Button());
 			this->cancelButton = (gcnew System::Windows::Forms::Button());
 			this->optinalBox = (gcnew System::Windows::Forms::GroupBox());
-			this->ldCheck = (gcnew System::Windows::Forms::CheckBox());
+			this->llCheck = (gcnew System::Windows::Forms::CheckBox());
 			this->ddlBox2 = (gcnew System::Windows::Forms::ComboBox());
-			this->udCheck = (gcnew System::Windows::Forms::CheckBox());
 			this->label16 = (gcnew System::Windows::Forms::Label());
 			this->label15 = (gcnew System::Windows::Forms::Label());
 			this->ddlBox1 = (gcnew System::Windows::Forms::ComboBox());
@@ -484,9 +484,8 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			// 
 			// optinalBox
 			// 
-			this->optinalBox->Controls->Add(this->ldCheck);
+			this->optinalBox->Controls->Add(this->llCheck);
 			this->optinalBox->Controls->Add(this->ddlBox2);
-			this->optinalBox->Controls->Add(this->udCheck);
 			this->optinalBox->Controls->Add(this->label16);
 			this->optinalBox->Controls->Add(this->label15);
 			this->optinalBox->Controls->Add(this->ddlBox1);
@@ -494,11 +493,11 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			this->optinalBox->Name = L"optinalBox";
 			this->optinalBox->TabStop = false;
 			// 
-			// ldCheck
+			// llCheck
 			// 
-			resources->ApplyResources(this->ldCheck, L"ldCheck");
-			this->ldCheck->Name = L"ldCheck";
-			this->ldCheck->UseVisualStyleBackColor = true;
+			resources->ApplyResources(this->llCheck, L"llCheck");
+			this->llCheck->Name = L"llCheck";
+			this->llCheck->UseVisualStyleBackColor = true;
 			// 
 			// ddlBox2
 			// 
@@ -510,12 +509,6 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			});
 			resources->ApplyResources(this->ddlBox2, L"ddlBox2");
 			this->ddlBox2->Name = L"ddlBox2";
-			// 
-			// udCheck
-			// 
-			resources->ApplyResources(this->udCheck, L"udCheck");
-			this->udCheck->Name = L"udCheck";
-			this->udCheck->UseVisualStyleBackColor = true;
 			// 
 			// label16
 			// 
@@ -631,8 +624,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		// Optional offsets
 		this->ddlBox1->SelectedIndex = config["OptionalBox1"].get<uint8_t>();
 		this->ddlBox2->SelectedIndex = config["OptionalBox2"].get<uint8_t>();
-		this->udCheck->Checked = config["updateOnStartup"].get<bool>();
-		this->ldCheck->Checked = config["loadData"].get<bool>();
+		this->llCheck->Checked = config["loadLocalData"].get<bool>();
 
 		// Other offsets
 		this->BBOffset->Value = config["InitialBorderBreaks"].get<int8_t>();
@@ -662,8 +654,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		// Optional
 		config["OptionalBox1"] = this->ddlBox1->SelectedIndex;
 		config["OptionalBox2"] = this->ddlBox2->SelectedIndex;
-		config["updateOnStartup"] = this->udCheck->Checked;
-		config["loadData"] = this->ldCheck->Checked;
+		config["loadLocalData"] = this->llCheck->Checked;
 
 		// Other offsets
 		config["InitialBorderBreaks"] = Convert::ToSByte(this->BBOffset->Value);
