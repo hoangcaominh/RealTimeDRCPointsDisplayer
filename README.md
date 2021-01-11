@@ -1,12 +1,14 @@
 ## Note
-If you find any bugs, create a new issue on Github or DM me in Discord.
+If you find any bugs, create a new issue on Github or DM me on Discord: `Cao Minh#1185`.
 
 ## Live DRC Points Calculator
 (formerly known as RealTimeDRCPointsDisplayer)
 An user interface application that displays in-game information and calculates DRC points for you during your run or your replay.
 
-## Version 2.0.1
-Update UI and data url
+## Version 2.1
+- Data can now be loaded locally only. This means you can skip the data downloading process. You can toggle this option in settings.
+- Application now starts at the center of the screen
+- Graphical updates
 
 ## Supports
 This tool works for native (not modified or patched except [THCrap](https://www.thpatch.net/wiki/Touhou_Patch_Center) ) maingames and GFW.
@@ -31,7 +33,7 @@ This tool works for native (not modified or patched except [THCrap](https://www.
 A group of one or more boxes for displaying certain information of a specific game.
 
 ##### Perfect Cherry Blosson/PCB/Touhou 7
-- "Border Breaks": The number of times you have broken a cherry border
+- "Border Break": The number of times you have broken a cherry border
 
 ##### Imperishable Night/IN/Touhou 8
 - Box 1: The number of last spells you have captured. Depends on the difficulty/final stage there will be different maximum number of last spells.
@@ -44,10 +46,10 @@ A group of one or more boxes for displaying certain information of a specific ga
 - Box 4: The number of Rainbow Ufos you have summoned
 
 ##### Ten Desires/TD/Touhou 13
-- "Trances": The number of times you have used a Trance
+- "Trance": The number of times you have used a Trance
 
 ##### Hidden Star in Four Seasons/HSiFS/Touhou 16
-- "Releases": The number of times you have used a Release
+- "Release": The number of times you have used a Release
 
 ##### Wily Beast and Weakest Creature/WBaWC/Touhou 17
 - Box 1: The number of Wolf Mode you have triggered
@@ -60,6 +62,9 @@ Two individual boxes for displaying one of the following: score, world record (o
 
 ## Settings
 Settings for adjusting output values (miss, bomb, data displayed in Extra Box), mainly for calculating DRC points.
+- "Load local data only" option skips the downloading process and loads the pre-existing data locally.
+- "Default" does not reset language and the "Load local data only" option
+
 
 ## Inspiration
 - [Dodging Rain Competition](https://maribelhearn.com/drc)
