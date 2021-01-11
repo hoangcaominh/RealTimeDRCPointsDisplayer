@@ -61,10 +61,6 @@ namespace RealTimeDRCPointsDisplayerGUI {
 	private: System::Windows::Forms::NumericUpDown^  LSOffset;
 	private: System::Windows::Forms::Label^  label3;
 	private: System::Windows::Forms::NumericUpDown^  BBOffset;
-
-
-
-
 	private: System::Windows::Forms::TabControl^ otherOffsetsTab;
 	private: System::Windows::Forms::TabPage^ tab_PCB;
 	private: System::Windows::Forms::TabPage^ tab_IN;
@@ -76,72 +72,32 @@ namespace RealTimeDRCPointsDisplayerGUI {
 	private: System::Windows::Forms::NumericUpDown^ wolvesOffset;
 	private: System::Windows::Forms::Label^ label11;
 	private: System::Windows::Forms::NumericUpDown^ ottersOffset;
+	private: System::Windows::Forms::NumericUpDown^ RBOffset;
 	private: System::Windows::Forms::Label^ label12;
 	private: System::Windows::Forms::Label^ label13;
 	private: System::Windows::Forms::NumericUpDown^ eaglesOffset;
 	private: System::Windows::Forms::Button^ defaultButton;
 	private: System::Windows::Forms::Button^ saveButton;
 	private: System::Windows::Forms::Button^ cancelButton;
-
 	private: System::Windows::Forms::GroupBox^ optinalBox;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	private: System::Windows::Forms::Label^ label14;
+	private: System::Windows::Forms::GroupBox^ langBox;
+	private: System::Windows::Forms::RadioButton^ lang_jaRB;
+	private: System::Windows::Forms::RadioButton^ lang_enRB;
+	private: System::Windows::Forms::ComboBox^ ddlBox1;
+	private: System::Windows::Forms::Label^ label16;
+	private: System::Windows::Forms::Label^ label15;
+	private: System::Windows::Forms::ComboBox^ ddlBox2;
+	private: System::Windows::Forms::CheckBox^ udCheck;
+	private: System::Windows::Forms::CheckBox^ ldCheck;
 
 	protected:
-
-
 
 	private:
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
 		System::ComponentModel::Container ^components;
-
-private: System::Windows::Forms::Label^ label14;
-
-
-private: System::Windows::Forms::GroupBox^ langBox;
-private: System::Windows::Forms::RadioButton^ lang_jaRB;
-private: System::Windows::Forms::RadioButton^ lang_enRB;
-private: System::Windows::Forms::ComboBox^ ddlBox1;
-
-
-
-
-private: System::Windows::Forms::Label^ label16;
-private: System::Windows::Forms::Label^ label15;
-private: System::Windows::Forms::ComboBox^ ddlBox2;
-private: System::Windows::Forms::CheckBox^ udCheck;
-
-
-
-
-
-private: System::Windows::Forms::NumericUpDown^ RBOffset;
-
-
-
-
-
 #pragma region Windows Form Designer generated code
 		/// <summary>
 		/// Required method for Designer support - do not modify
@@ -193,14 +149,15 @@ private: System::Windows::Forms::NumericUpDown^ RBOffset;
 			this->saveButton = (gcnew System::Windows::Forms::Button());
 			this->cancelButton = (gcnew System::Windows::Forms::Button());
 			this->optinalBox = (gcnew System::Windows::Forms::GroupBox());
+			this->ldCheck = (gcnew System::Windows::Forms::CheckBox());
 			this->ddlBox2 = (gcnew System::Windows::Forms::ComboBox());
+			this->udCheck = (gcnew System::Windows::Forms::CheckBox());
 			this->label16 = (gcnew System::Windows::Forms::Label());
 			this->label15 = (gcnew System::Windows::Forms::Label());
 			this->ddlBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->langBox = (gcnew System::Windows::Forms::GroupBox());
 			this->lang_jaRB = (gcnew System::Windows::Forms::RadioButton());
 			this->lang_enRB = (gcnew System::Windows::Forms::RadioButton());
-			this->udCheck = (gcnew System::Windows::Forms::CheckBox());
 			this->generalBox->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bombsOffset))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->missesOffset))->BeginInit();
@@ -527,6 +484,7 @@ private: System::Windows::Forms::NumericUpDown^ RBOffset;
 			// 
 			// optinalBox
 			// 
+			this->optinalBox->Controls->Add(this->ldCheck);
 			this->optinalBox->Controls->Add(this->ddlBox2);
 			this->optinalBox->Controls->Add(this->udCheck);
 			this->optinalBox->Controls->Add(this->label16);
@@ -535,6 +493,12 @@ private: System::Windows::Forms::NumericUpDown^ RBOffset;
 			resources->ApplyResources(this->optinalBox, L"optinalBox");
 			this->optinalBox->Name = L"optinalBox";
 			this->optinalBox->TabStop = false;
+			// 
+			// ldCheck
+			// 
+			resources->ApplyResources(this->ldCheck, L"ldCheck");
+			this->ldCheck->Name = L"ldCheck";
+			this->ldCheck->UseVisualStyleBackColor = true;
 			// 
 			// ddlBox2
 			// 
@@ -546,6 +510,12 @@ private: System::Windows::Forms::NumericUpDown^ RBOffset;
 			});
 			resources->ApplyResources(this->ddlBox2, L"ddlBox2");
 			this->ddlBox2->Name = L"ddlBox2";
+			// 
+			// udCheck
+			// 
+			resources->ApplyResources(this->udCheck, L"udCheck");
+			this->udCheck->Name = L"udCheck";
+			this->udCheck->UseVisualStyleBackColor = true;
 			// 
 			// label16
 			// 
@@ -589,12 +559,6 @@ private: System::Windows::Forms::NumericUpDown^ RBOffset;
 			this->lang_enRB->Name = L"lang_enRB";
 			this->lang_enRB->TabStop = true;
 			this->lang_enRB->UseVisualStyleBackColor = true;
-			// 
-			// udCheck
-			// 
-			resources->ApplyResources(this->udCheck, L"udCheck");
-			this->udCheck->Name = L"udCheck";
-			this->udCheck->UseVisualStyleBackColor = true;
 			// 
 			// settings
 			// 
@@ -659,9 +623,6 @@ private: System::Windows::Forms::NumericUpDown^ RBOffset;
 		// Language
 		this->lang_enRB->Checked = config["lang"] == "en";
 		this->lang_jaRB->Checked = config["lang"] == "ja";
-		
-		// Download data on startup
-		this->udCheck->Checked = config["updateOnStartup"].get<bool>();
 
 		// General offset
 		this->missesOffset->Value = config["InitialMisses"].get<int8_t>();
@@ -670,6 +631,8 @@ private: System::Windows::Forms::NumericUpDown^ RBOffset;
 		// Optional offsets
 		this->ddlBox1->SelectedIndex = config["OptionalBox1"].get<uint8_t>();
 		this->ddlBox2->SelectedIndex = config["OptionalBox2"].get<uint8_t>();
+		this->udCheck->Checked = config["updateOnStartup"].get<bool>();
+		this->ldCheck->Checked = config["loadData"].get<bool>();
 
 		// Other offsets
 		this->BBOffset->Value = config["InitialBorderBreaks"].get<int8_t>();
@@ -692,16 +655,15 @@ private: System::Windows::Forms::NumericUpDown^ RBOffset;
 		// Language
 		config["lang"] = (this->lang_enRB->Checked) ? "en" : "ja";
 
-		// Download data on startup
-		config["updateOnStartup"] = this->udCheck->Checked;
-
 		// General offset
 		config["InitialMisses"] = Convert::ToSByte(this->missesOffset->Value);
 		config["InitialBombs"] = Convert::ToSByte(this->bombsOffset->Value);
 
-		// Optional offsets
+		// Optional
 		config["OptionalBox1"] = this->ddlBox1->SelectedIndex;
 		config["OptionalBox2"] = this->ddlBox2->SelectedIndex;
+		config["updateOnStartup"] = this->udCheck->Checked;
+		config["loadData"] = this->ldCheck->Checked;
 
 		// Other offsets
 		config["InitialBorderBreaks"] = Convert::ToSByte(this->BBOffset->Value);
@@ -733,7 +695,7 @@ private: System::Windows::Forms::NumericUpDown^ RBOffset;
 		this->missesOffset->Value = 0;
 		this->bombsOffset->Value = 0;
 
-		// Optional offsets
+		// Optional
 		this->ddlBox1->SelectedIndex = 0;
 		this->ddlBox2->SelectedIndex = 0;
 
