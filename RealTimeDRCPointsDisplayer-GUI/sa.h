@@ -77,7 +77,6 @@ namespace ns_sa
 		}
 
 		getShottype();
-		getRubrics();
 
 		countMisses();
 		countBombs();

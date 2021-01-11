@@ -106,7 +106,6 @@ namespace ns_in
 		bombs += deathbombs;
 
 		getShottype();
-		getRubrics();
 
 		countLastSpellsCaptured();
 

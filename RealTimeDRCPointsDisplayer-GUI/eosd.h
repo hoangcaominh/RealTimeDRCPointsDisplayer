@@ -67,7 +67,6 @@ namespace ns_eosd
 			false_misses = 0;
 		}
 
-		getRubrics();
 		getShottype();
 
 		countMisses();

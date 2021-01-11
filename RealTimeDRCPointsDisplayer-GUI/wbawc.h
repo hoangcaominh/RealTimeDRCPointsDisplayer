@@ -129,7 +129,6 @@ namespace ns_wbawc
 		}
 
 		getShottype();
-		getRubrics();
 
 		countBombs();
 		countGoasts();

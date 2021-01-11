@@ -76,7 +76,6 @@ namespace ns_ddc
 		}
 
 		getShottype();
-		getRubrics();
 
 		countMisses();
 		countBombs();

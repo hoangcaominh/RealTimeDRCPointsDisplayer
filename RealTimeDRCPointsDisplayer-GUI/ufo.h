@@ -115,7 +115,6 @@ namespace ns_ufo
 		}
 
 		getShottype();
-		getRubrics();
 
 		countMisses();
 		countBombs();

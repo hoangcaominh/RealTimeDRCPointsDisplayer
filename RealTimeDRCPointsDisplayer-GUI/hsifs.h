@@ -94,10 +94,6 @@ namespace ns_hsifs
 
 		getShottype();
 
-		getRubrics();
-		first_release = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["firstRelease"].get<uint8_t>();
-		release = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["release"].get<float>();
-
 		countBombs();
 		countReleases();
 

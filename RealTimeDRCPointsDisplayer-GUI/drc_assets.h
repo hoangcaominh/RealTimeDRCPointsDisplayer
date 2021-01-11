@@ -32,9 +32,17 @@ float drcpoints_survival, drcpoints_scoring;
 
 // game index (global)
 const char* idx_game[] = { "HRtP", "SoEW", "PoDD", "LLS", "MS", "EoSD", "PCB", "IN", "PoFV", "MoF", "SA", "UFO", "GFW", "TD", "DDC", "LoLK", "HSiFS", "WBaWC" };
+enum enum_game
+{
+	e_HRtP, e_SoEW, e_PoDD, e_LLS, e_MS, e_EoSD, e_PCB, e_IN, e_PoFV, e_MoF, e_SA, e_UFO, e_GFW, e_TD, e_DDC, e_LoLK, e_HSiFS, e_WBaWC
+};
 
 // difficulty index (global)
 const char* idx_difficulty[] = { "Easy", "Normal", "Hard", "Lunatic", "Extra", "Phantasm" };
+enum enum_diff
+{
+	e_Easy, e_Normal, e_Hard, e_Lunatic, e_Extra, e_Phantasm
+};
 
 // Global variables
 uint8_t game, character, type, difficulty;
@@ -105,7 +113,7 @@ uint64_t getWR()
 // get rubrics for survival
 void getSurvRubrics()
 {
-	if (strcmp(idx_game[game], "PoDD") != 0 && strcmp(idx_game[game], "PoFV") != 0)
+	if (game != e_PoDD && game != e_PoFV)
 	{
 		surv_base = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["base"].get<uint16_t>();
 		surv_exp = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["exp"].get<float>();
@@ -133,7 +141,7 @@ void getRubrics()
 {
 	getSurvRubrics();
 	// scoring rubric for MoF is in mofFormula
-	if (strcmp(idx_game[game], "MoF") != 0)
+	if (game != e_MoF)
 		getScoreRubrics();
 }
 
@@ -141,7 +149,7 @@ void getRubrics()
 void phantasmagoria()
 {
 	float shottypeMultiplier = getMultiplier(idx_game[game], shottype.c_str());
-	if (strcmp(idx_difficulty[difficulty], "Extra") == 0)
+	if (difficulty == e_Extra)
 		shottypeMultiplier = 1.0f;
 
 	drcpoints_survival = roundf(shottypeMultiplier * ((surv_base - ((surv_base - min) / lives * misses)) + (no_charge ? no_bomb_bonus : 0) ));
@@ -162,17 +170,17 @@ void survivalPoints()
 	}
 	n += _bombs * bomb;
 
-	if (strcmp(idx_game[game], "PCB") == 0)
+	if (game == e_PCB)
 	{
 		n += border_breaks * bomb;
 	}
 
-	if (strcmp(idx_game[game], "TD") == 0)
+	if (game == e_TD)
 	{
 		n += trances * bomb;
 	}
 
-	if (strcmp(idx_game[game], "HSiFS") == 0)
+	if (game == e_HSiFS)
 	{
 		float decrement = 0;
 		// make a copy of releases
@@ -198,19 +206,19 @@ void survivalPoints()
 
 	drcpoints_survival = surv_base * pow(surv_exp, -n);
 
-	if (strcmp(idx_game[game], "IN") == 0)
+	if (game == e_IN)
 	{
-		if (strcmp(idx_difficulty[difficulty], "Extra") == 0)
+		if (difficulty == e_Extra)
 		{
 			drcpoints_survival += (last_spells_captured == 1) ? 5 : 0;
 		}
 		else
 		{
-			drcpoints_survival += last_spells_captured * ((strcmp(idx_difficulty[difficulty], "Easy") == 0) ? 1 : 2);
+			drcpoints_survival += last_spells_captured * (difficulty == e_Easy ? 1 : 2);
 		}
 	}
 
-	if (strcmp(idx_difficulty[difficulty], "Extra") != 0 && strcmp(idx_difficulty[difficulty], "Phantasm") != 0 && !(strcmp(idx_game[game], "LoLK") == 0 && bombs > 0)) 
+	if (difficulty != e_Extra && difficulty != e_Phantasm && !(game == e_LoLK && bombs > 0)) 
 	{
 		drcpoints_survival = drcpoints_survival * getMultiplier(idx_game[game], shottype.c_str());
 	}
@@ -273,7 +281,7 @@ void scoringPoints()
 			}
 			else // consider this case as a normal one
 			{
-				std::string wrshottype = ((strcmp(idx_game[game], "HSiFS") == 0 && strcmp(idx_difficulty[difficulty], "Easy") != 0) ? (removeSeason(shottype) + bestSeason()) : shottype);
+				std::string wrshottype = ((game == e_HSiFS && difficulty != e_Easy) ? (removeSeason(shottype) + bestSeason()) : shottype);
 				wr = WRs[idx_game[game]][idx_difficulty[difficulty]][wrshottype][0].get<uint64_t>();
 			}
 		}
@@ -284,12 +292,12 @@ void scoringPoints()
 	}
 	else
 	{
-		std::string wrshottype = ((strcmp(idx_game[game], "HSiFS") == 0 && strcmp(idx_difficulty[difficulty], "Easy") != 0) ? (removeSeason(shottype) + bestSeason()) : shottype);
+		std::string wrshottype = ((game == e_HSiFS && difficulty != e_Easy) ? (removeSeason(shottype) + bestSeason()) : shottype);
 		wr = WRs[idx_game[game]][idx_difficulty[difficulty]][wrshottype][0].get<uint64_t>();
 	}
 
 	// Change scoring exp value to 7 if game == DDC and difficulty == Extra and shottype == MarisaB
-	score_exp = (strcmp(idx_game[game], "DDC") == 0 && strcmp(idx_difficulty[difficulty], "Extra") == 0 && shottype == "MarisaB") ? 7 : score_exp;
+	score_exp = (game == e_DDC && difficulty == e_Extra && shottype == "MarisaB") ? 7 : score_exp;
 
 	drcpoints_scoring = (score >= wr) ? score_base : score_base * (float)pow((long double)score / wr, score_exp);
 }
@@ -300,12 +308,12 @@ void mofFormula()
 	drcpoints_scoring = 0;
 
 	// rubric currently only determined for Easy, Lunatic ReimuB and Lunatic MarisaC
-	if (strcmp(idx_difficulty[difficulty], "Easy") != 0 && strcmp(idx_difficulty[difficulty], "Lunatic") != 0)
+	if (difficulty != e_Easy && difficulty != e_Lunatic)
 	{
 		drcpoints_scoring = -1.0f;
 		return;
 	}
-	else if (strcmp(idx_difficulty[difficulty], "Lunatic") == 0 && shottype != "ReimuB" && shottype != "MarisaC")
+	else if (difficulty == e_Lunatic && shottype != "ReimuB" && shottype != "MarisaC")
 	{
 		drcpoints_scoring = -1.0f;
 		return;
@@ -334,18 +342,25 @@ void mofFormula()
 		}
 	}
 	
-	drcpoints_scoring = min(drcpoints_scoring, ((strcmp(idx_difficulty[difficulty], "Easy") != 0) ? 375 : 500));
+	drcpoints_scoring = min(drcpoints_scoring, (difficulty != e_Easy ? 375 : 500));
 }
 
 // calculating DRC points for survival and scoring
 void calculateDRCPoints()
 {
-	if (strcmp(idx_game[game], "PoDD") != 0 && strcmp(idx_game[game], "PoFV") != 0)
+	getRubrics();
+	if (game == e_HSiFS)
+	{
+		first_release = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["firstRelease"].get<uint8_t>();
+		release = Rubrics["SURV"][idx_game[game]][idx_difficulty[difficulty]]["release"].get<float>();
+	}
+
+	if (game != e_PoDD && game != e_PoFV)
 		survivalPoints();
 	else
 		phantasmagoria();
 	
-	if (strcmp(idx_game[game], "MoF") == 0)
+	if (game == e_MoF)
 		mofFormula();
 	else
 		scoringPoints();

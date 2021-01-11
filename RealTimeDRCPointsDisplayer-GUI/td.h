@@ -87,7 +87,6 @@ namespace ns_td
 		}
 
 		getShottype();
-		getRubrics();
 
 		countBombs();
 		countTrances();

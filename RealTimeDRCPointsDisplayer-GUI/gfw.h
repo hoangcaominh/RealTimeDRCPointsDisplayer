@@ -74,7 +74,6 @@ namespace ns_gfw
 		}
 
 		getShottype();
-		getRubrics();
 
 		countMisses();
 		countBombs();

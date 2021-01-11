@@ -63,7 +63,6 @@ namespace ns_lolk
 		}
 
 		getShottype();
-		getRubrics();
 
 		countBombs();
 

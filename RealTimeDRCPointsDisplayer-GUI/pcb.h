@@ -79,7 +79,6 @@ namespace ns_pcb
 		}
 
 		getShottype();
-		getRubrics();
 
 		misses = (int8_t)_misses;
 		bombs = (int8_t)_bombs;

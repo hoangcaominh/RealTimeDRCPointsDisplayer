@@ -77,7 +77,6 @@ namespace ns_mof
 		}
 
 		getShottype();
-		getRubrics();
 
 		countMisses();
 		countBombs();

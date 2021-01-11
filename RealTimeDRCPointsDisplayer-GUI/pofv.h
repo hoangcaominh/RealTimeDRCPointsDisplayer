@@ -59,7 +59,6 @@ namespace ns_pofv
 		}
 
 		getShottype();
-		getRubrics();
 
 		countMisses();
 
