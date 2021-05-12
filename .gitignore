@@ -263,5 +263,4 @@ __pycache__/
 # Additional files
 *.txt
 *.json
-!config.json
 screenshots/

@@ -969,7 +969,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 			switch (game)
 			{
 			case 12:	// GFW
-				this->shottypeLabel->Text = (globalStrings->GetString(L"Route") + L": " + globalStrings->GetString(convertToStringClass(shottype)));
+				this->shottypeLabel->Text = (globalStrings->GetString(L"Route") + L": " + convertToStringClass(shottype));
 				break;
 			default:
 				this->shottypeLabel->Text = (globalStrings->GetString(L"Shottype") + L": " + globalStrings->GetString(convertToStringClass(shottype)));
