@@ -904,7 +904,6 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		else
 		{
 			int result = (int)e->Result;
-			result = 0;
 			if (result != 0)
 			{
 				std::string version_info = (result == 1) ? gamehash[game][filehash].first + ", " + gamehash[game][filehash].second : "unknown";
