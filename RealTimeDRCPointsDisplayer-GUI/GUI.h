@@ -356,7 +356,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 	{
 		System::Version^ get()
 		{
-			return gcnew Version(L"2.1");
+			return gcnew Version(L"2.2");
 		}
 	}
 
@@ -874,18 +874,20 @@ namespace RealTimeDRCPointsDisplayerGUI {
 
 	private: System::Void findGameThread_DoWork(System::Object^ sender, System::ComponentModel::DoWorkEventArgs^ e)
 	{
-		BOOL find = GetProcess();
-		while (find)
+		BOOL find;
+		do
 		{
+			find = GetProcess();
+			e->Result = find;
+
 			if (this->findGameThread->CancellationPending)
 			{
 				e->Cancel = true;
 				break;
 			}
 
-			find = GetProcess();
 			System::Threading::Thread::Sleep(100);
-		}
+		} while (find < 0);
 	}
 
 	private: System::Void findGameThread_RunWorkerCompleted(System::Object^ sender, System::ComponentModel::RunWorkerCompletedEventArgs^ e)
@@ -901,6 +903,32 @@ namespace RealTimeDRCPointsDisplayerGUI {
 		}
 		else
 		{
+			int result = (int)e->Result;
+			result = 0;
+			if (result != 0)
+			{
+				std::string version_info = (result == 1) ? gamehash[game][filehash].first + ", " + gamehash[game][filehash].second : "unknown";
+				std::string hash_temp = gamehash_supported[game];
+
+				InfoBoxAddMessage(L"You are running " + convertToStringClass(idx_game[game]) + ", version " + convertToStringClass(version_info) + ".", System::Drawing::Brushes::Yellow);
+				InfoBoxAddMessage(L"This version is currently not supported", System::Drawing::Brushes::Yellow);
+				InfoBoxAddMessage(L"Please use version " +
+					convertToStringClass(gamehash[game][hash_temp].first) + ", " + convertToStringClass(gamehash[game][hash_temp].second) +
+					L" instead.", System::Drawing::Brushes::Yellow);
+				InfoBoxAddMessage(L"SHA256 hash of the supported version is in SHA256-" + convertToStringClass(idx_game[game]) + ".txt", System::Drawing::Brushes::Yellow);
+
+				// create file
+				std::string fname("SHA256-.txt");
+				fname.insert(7, idx_game[game]);
+				std::ofstream f(fname);
+				f << hash_temp;
+				f.close();
+
+				this->findButton->Text = globalStrings->GetString(L"FindButtonTextFind");
+
+				return;
+			}
+
 			InfoBoxAddMessage(L"Found " + globalStrings->GetString(convertToStringClass(idx_game[game])), System::Drawing::Brushes::Lime);
 
 			// Toggle buttons

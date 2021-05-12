@@ -134,6 +134,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="sha256.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -165,6 +166,7 @@
     <ClInclude Include="settings.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="sha256.h" />
     <ClInclude Include="td.h" />
     <ClInclude Include="ufo.h" />
     <ClInclude Include="wbawc.h" />
