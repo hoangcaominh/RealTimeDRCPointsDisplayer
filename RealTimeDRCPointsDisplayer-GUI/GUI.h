@@ -910,7 +910,7 @@ namespace RealTimeDRCPointsDisplayerGUI {
 				std::string hash_temp = gamehash_supported[game];
 
 				InfoBoxAddMessage(L"You are running " + convertToStringClass(idx_game[game]) + ", version " + convertToStringClass(version_info) + ".", System::Drawing::Brushes::Yellow);
-				InfoBoxAddMessage(L"This version is currently not supported", System::Drawing::Brushes::Yellow);
+				InfoBoxAddMessage(L"The calculator may not work correctly with this version", System::Drawing::Brushes::Yellow);
 				InfoBoxAddMessage(L"Please use version " +
 					convertToStringClass(gamehash[game][hash_temp].first) + ", " + convertToStringClass(gamehash[game][hash_temp].second) +
 					L" instead.", System::Drawing::Brushes::Yellow);
@@ -923,9 +923,10 @@ namespace RealTimeDRCPointsDisplayerGUI {
 				f << hash_temp;
 				f.close();
 
+				/*
 				this->findButton->Text = globalStrings->GetString(L"FindButtonTextFind");
-
 				return;
+				*/
 			}
 
 			InfoBoxAddMessage(L"Found " + globalStrings->GetString(convertToStringClass(idx_game[game])), System::Drawing::Brushes::Lime);

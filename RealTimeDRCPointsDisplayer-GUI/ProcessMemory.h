@@ -297,7 +297,7 @@ BOOL GetProcess()
 				GetProcessFullPath(pe32.th32ProcessID, fullpath);
 
 				BOOL verify = VerifyVersion(fullpath, game);
-				if (verify == 0)
+				if (verify >= 0)
 				{
 					// Open game process
 					gameProc = OpenProcess(PROCESS_ALL_ACCESS, false, pe32.th32ProcessID);
